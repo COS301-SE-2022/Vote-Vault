@@ -8,7 +8,9 @@ Welcome to the Vote-Vault!
 * [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
 * [Team member description and professional profile](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Meet-The-Team)
 * Useful commands:
-  * > ionic serve
-  * > ionic cap run build android/ios
-  * > ionic g page //page name//
-  * > ionic g component //component name//
+  ```
+  ionic serve
+  ionic cap run build android/ios
+  ionic g page //page name//
+  ionic g component //component name//
+  ```
