@@ -1,5 +1,7 @@
 # Vote-Vault
+
 ![unknown](https://user-images.githubusercontent.com/86471999/166426210-88cb2c90-15d7-45fb-b062-684eba26cb75.png)
+
 Welcome to the Vote-Vault!
 
 * [Project Description](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Description)
