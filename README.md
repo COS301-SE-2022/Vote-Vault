@@ -16,3 +16,10 @@ Welcome to the Vote-Vault!
   ionic g page //page name//
   ionic g component //component name//
   ```
+
+* For installing dependencies:
+  ```
+  npm install -g @angular/cli
+  npm install -g @angular/core
+  npm install -g @//packadge name//
+  ```
