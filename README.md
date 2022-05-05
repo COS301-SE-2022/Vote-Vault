@@ -25,3 +25,9 @@ Welcome to the Vote-Vault!
   npm install -g @angular/core
   npm install -g @//packadge name//
   ```
+
+* For issues relating to Jasmine
+
+  ```
+  npm install @types/jasmine
+  ```
