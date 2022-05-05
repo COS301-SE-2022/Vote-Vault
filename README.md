@@ -4,7 +4,15 @@
 
 Welcome to the Vote-Vault!
 
-* [Project Description](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Description)
+* SSDpressed - Vote Vault - The system needs to automate the voting process, while also making sure the votes are
+  valid and secure. The voting system will make use of a blockchain and Smart Contracts
+  to save and verify user votes. The system will be available to users on the web or in the
+  form of a mobile application. The votes will be verified by scanning voter IDs, then users
+  will be allowed to vote. Votes will be verified and counted using the blockchain. Users
+  will be able to see progress on the voting system. Instead of hard coding forms for
+  elections, it should be dynamically generated according to input provided by the voting
+  official. A dashboard should be made to give some additional information about the
+  voting process, such as distributions about the users.
 * //Demo video link
 * [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
 * [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
