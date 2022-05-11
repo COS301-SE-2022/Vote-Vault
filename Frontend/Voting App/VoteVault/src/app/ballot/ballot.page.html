@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ballot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    Ballot
+      <ion-item *ngFor="let o of options" (click)="selectCandidate(o)">
+        <ion-label>{{o.surname}}, {{o.name}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="o.isChecked" ></ion-checkbox>
+      </ion-item>
+
+  </ion-card>
+
+  <ion-button id="vote" (click)="vote()">
+    Vote
+  </ion-button>
+</ion-content>

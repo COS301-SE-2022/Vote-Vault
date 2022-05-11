@@ -18,7 +18,15 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },  {
+    path: 'ballot',
+    loadChildren: () => import('./ballot/ballot.module').then( m => m.BallotPageModule)
+  },
+  {
+    path: 'generate-ballot',
+    loadChildren: () => import('./generate-ballot/generate-ballot.module').then( m => m.GenerateBallotPageModule)
   }
+
 ];
 
 @NgModule({

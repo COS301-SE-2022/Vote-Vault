@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>generate-ballot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-item id="addItem">
+    <ion-label position="floating">Name</ion-label>
+    <ion-input [(ngModel)] = "name"></ion-input>   
+  </ion-item>
+
+  <ion-item id="addItem">
+    <ion-label position="floating">Surname</ion-label>
+    <ion-input [(ngModel)] = "surname"></ion-input>
+  </ion-item>
+
+  <ion-item id="addItem">
+    <ion-label position="floating">ID Number</ion-label>
+    <ion-input [(ngModel)] = "idNum"></ion-input>
+  </ion-item>
+  <ion-button (click) = "addOption()" size="small">Add</ion-button>
+  </ion-card>
+
+  <ion-card>
+  Candidate List
+    <ion-item *ngFor="let o of options">
+      <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+    </ion-item>
+
+</ion-card>
+
+  <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
+</ion-content>
