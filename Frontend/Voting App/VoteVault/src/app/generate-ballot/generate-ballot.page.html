@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>generate-ballot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item id="addItem">
+    <ion-label position="floating">Add Option</ion-label>
+    <ion-input [(ngModel)] = "optionInput"></ion-input>
+  </ion-item>
+  <ion-button (click) = "addOption()" size="small">Add</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let o of options">
+      <ion-label>{{o}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
+</ion-content>

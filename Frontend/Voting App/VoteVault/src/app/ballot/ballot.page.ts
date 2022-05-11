@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-ballot',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BallotPage implements OnInit {
 
-  constructor() { }
+  options : any[]
+
+  constructor(private dataService : DataService) { }
 
   ngOnInit() {
+    this.options = this.dataService.electionOptions
   }
+
 
 }
