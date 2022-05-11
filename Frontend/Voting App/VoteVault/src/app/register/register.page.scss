@@ -1,5 +1,28 @@
 ion-card-title {
     text-decoration: underline;
+    color: white;
+}
+
+ion-card {
+    background-color: #242E5B;
+}
+
+.input-fields-class {
+    border-radius: 3%;
+    background-color: white;
+}
+
+ion-list {
+    background-color: white;
+}
+
+ion-row {
+    color: #0047BA;
+}
+
+.first-name-list {
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 }
 
 .voter-Details {
@@ -12,7 +35,8 @@ ion-card-title {
 }
 
 ion-button {
-    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 4%;
 }
 
 ion-input {
@@ -20,6 +44,9 @@ ion-input {
     width: 50px;
     text-align: left;
     border: 1px solid rgb(26, 25, 25);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 @media(max-width: 992px) {
