@@ -10,3 +10,14 @@ footer {
     color: white;
 }
 
+input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 13px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+  
+
