@@ -17,7 +17,9 @@ ion-button {
 
 ion-input {
     padding-left: 0;
+    width: 50px;
     text-align: left;
+    border: 1px solid rgb(26, 25, 25);
 }
 
 @media(max-width: 992px) {
