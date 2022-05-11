@@ -6,13 +6,14 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   electionOptions : any[]
-
+  votes           : any[]
   constructor() { 
     this.electionOptions = []
+    this.votes = []
   }
 
-  addOption(s : String) {
-    this.electionOptions.push(s)
+  addOption(o) {
+    this.electionOptions.push(o)
   }
 
 }

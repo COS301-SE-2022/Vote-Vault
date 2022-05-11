@@ -1,0 +1,20 @@
+ion-item {
+    --background: transparent !important;
+    --background-color: transparent;
+}
+
+ion-label {
+    --color: transparent;
+}
+
+ion-card { 
+    padding: 2vh;
+    margin-bottom: 10vh;
+}
+
+#vote {
+    width: 80%;
+    margin-left: 10%;
+    position: fixed;
+    bottom: 2vh;
+}

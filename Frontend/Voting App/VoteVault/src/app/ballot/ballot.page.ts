@@ -7,7 +7,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./ballot.page.scss'],
 })
 export class BallotPage implements OnInit {
-
+  selected : any
   options : any[]
 
   constructor(private dataService : DataService) { }
@@ -16,5 +16,11 @@ export class BallotPage implements OnInit {
     this.options = this.dataService.electionOptions
   }
 
+  selectCandidate(o) : void {
+    this.selected = o
+  }
 
+  vote() : void {
+    this.dataService.votes.push(this.selected)
+  }
 }

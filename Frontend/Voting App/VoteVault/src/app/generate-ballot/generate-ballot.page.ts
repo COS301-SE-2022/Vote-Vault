@@ -11,6 +11,10 @@ export class GenerateBallotPage implements OnInit {
 
   options : any[]
   optionInput : string
+  name : string
+  surname : string
+  idNum : string
+
   constructor(private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
@@ -18,7 +22,8 @@ export class GenerateBallotPage implements OnInit {
   }
 
   addOption() : void {
-    this.dataService.addOption(this.optionInput)
+    const newCandidate = {"name" : this.name, "surname" : this.surname, "id" : this.idNum}
+    this.dataService.addOption(newCandidate)
     this.options = this.dataService.electionOptions
   }
 
