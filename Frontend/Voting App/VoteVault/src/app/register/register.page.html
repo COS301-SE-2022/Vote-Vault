@@ -7,61 +7,35 @@
 
   <ion-card class="voter-Details ion-text-center ion-padding">
     <ion-card-header>
-        <ion-card-title>
-          Voter Details
-        </ion-card-title>
+      <ion-card-title>
+        Voter Details
+      </ion-card-title>
     </ion-card-header>
 
-    <ion-card class="input-fields-class">
-        <ion-list class="first-name-list">
-            <ion-grid>
-                <ion-row>
-                    <ion-label>First Name:</ion-label>
-                </ion-row>
-                <ion-row>
-                    <ion-input placeholder="Enter first name here"></ion-input>
-                </ion-row>
-            </ion-grid> 
-        </ion-list>
+    <ion-item color="light">
+      <ion-label position="floating">First Name:</ion-label>
+      <ion-input placeholder="Enter first name here"></ion-input>
+    </ion-item>
 
-        <ion-list>
-            <ion-grid>
-                <ion-row>
-                    <ion-label>Last Name:</ion-label>
-                </ion-row>
-                <ion-row>
-                    <ion-input placeholder="Enter last name here"></ion-input>
-                </ion-row>
-            </ion-grid> 
-        </ion-list>
+    <ion-item color="light">
+      <ion-label position="floating">Last Name:</ion-label>
+      <ion-input placeholder="Enter last name here"></ion-input>
+    </ion-item>
 
-        <ion-list>
-            <ion-grid>
-                <ion-row>
-                    <ion-label>ID Number:</ion-label>
-                </ion-row>
-                <ion-row>
-                    <ion-input placeholder="Enter ID number here"></ion-input>
-                </ion-row>
-            </ion-grid> 
-        </ion-list>
+    <ion-item color="light">
+      <ion-label position="floating">ID Number:</ion-label>
+      <ion-input placeholder="Enter ID number here"></ion-input>
+    </ion-item>
 
-        <ion-list>
-            <ion-grid>
-                <ion-row class="ion-align-items-center">
-                        <ion-label>Scan ID:</ion-label>
-                </ion-row>
-                <ion-row class="ion-align-items-center">
-                        <ion-button>
-                            <ion-icon name="camera-outline"></ion-icon>
-                        </ion-button>
-                </ion-row>
-            </ion-grid> 
-        </ion-list>
+    <ion-item  class="ion-align-items-center" color="light">
+      <ion-label position="floating">Scan ID:</ion-label>
+      <ion-button size="medium">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
 
-        <ion-button>
-            Register Voter
-        </ion-button>
-    </ion-card>
+    <ion-button>
+        Register Voter
+    </ion-button>
   </ion-card>
 </body>
