@@ -1,12 +1,81 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>generate-ballot</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-card>
-  <ion-item id="addItem">
+  <p id="header">Generate Ballot</p>
+  
+  <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
+    <ion-slide>
+      <ion-item id="pageName">
+        <ion-label position="floating">Ballot Name</ion-label>
+        <ion-input [(ngModel)] = "ballotName"></ion-input>  
+        <ion-button id="ballotNameBtn" slot="end" (click)="saveBallotName()">Confirm Name</ion-button> 
+      </ion-item>
+      <ion-card>
+        <ion-item id="addItem">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input [(ngModel)] = "name"></ion-input>   
+        </ion-item>
+      
+        <ion-item id="addItem">
+          <ion-label position="floating">Surname</ion-label>
+          <ion-input [(ngModel)] = "surname"></ion-input>
+        </ion-item>
+      
+        <ion-item id="addItem">
+          <ion-label position="floating">ID Number</ion-label>
+          <ion-input [(ngModel)] = "idNum"></ion-input>
+        </ion-item>
+        <ion-button (click) = "addOption()" size="small">Add</ion-button>
+        </ion-card>
+      
+        <ion-card>
+        Candidate List
+          <ion-item *ngFor="let o of ballot1Options">
+            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+          </ion-item>
+      
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-item id="pageName">
+        <ion-label position="floating">Ballot Name</ion-label>
+        <ion-input [(ngModel)] = "ballotName1"></ion-input>   
+        <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button> 
+      </ion-item>
+      <ion-card>
+        <ion-item id="addItem">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input [(ngModel)] = "name"></ion-input>   
+        </ion-item>
+      
+        <ion-item id="addItem">
+          <ion-label position="floating">Surname</ion-label>
+          <ion-input [(ngModel)] = "surname"></ion-input>
+        </ion-item>
+      
+        <ion-item id="addItem">
+          <ion-label position="floating">ID Number</ion-label>
+          <ion-input [(ngModel)] = "idNum"></ion-input>
+        </ion-item>
+        <ion-button (click) = "addOption()" size="small">Add</ion-button>
+        </ion-card>
+      
+        <ion-card>
+        Candidate List
+          <ion-item *ngFor="let o of ballot2Options">
+            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+          </ion-item>
+      
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-item id="pageName">
+        <ion-label position="floating">Ballot Name</ion-label>
+        <ion-input [(ngModel)] = "ballotName2"></ion-input>   
+        <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button> 
+      </ion-item>
+    <ion-card>
+    <ion-item id="addItem">
     <ion-label position="floating">Name</ion-label>
     <ion-input [(ngModel)] = "name"></ion-input>   
   </ion-item>
@@ -25,11 +94,15 @@
 
   <ion-card>
   Candidate List
-    <ion-item *ngFor="let o of options">
+    <ion-item *ngFor="let o of ballot3Options">
       <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
     </ion-item>
 
-</ion-card>
-
+  </ion-card>
   <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
+
+  </ion-slide>
+  </ion-slides>
+  
+
 </ion-content>

@@ -1,3 +1,19 @@
+ion-content { 
+    height : 100%;
+}
+
+#header { 
+    font-size : 3vh;
+    padding: 2vh;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+}
+
+#ballotNameBtn {
+    margin-top: 5vh;
+}
+
 #addItem {
     padding: 1vh;
     margin:auto;
@@ -5,13 +21,18 @@
     // --background: transparent;
 }
 
+ion-slide {
+    display: inline;
+}
+
+
 ion-card {
     padding: 2vh;
     margin-bottom: 10vh;
 }
 ion-button {
     width:30%;
-    margin-left: 40%;
+    margin-top: 2vh;
 }
 
 ion-item {
@@ -25,8 +46,6 @@ ion-label {
 
 #genBtn {
     width: 80%;
-    position: fixed;
+    // position: fixed;
     bottom: 2vh;
-    left: 10%;
-    margin: auto;
 }
