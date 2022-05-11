@@ -40,3 +40,13 @@ Welcome to the Vote-Vault!
   ```
   npm install @types/jasmine
   ```
+
+* To change the branch you are woking on in VSCode of Git Bash terminal:
+
+  ```
+  git checkout feature-API
+  git checkout feature-Mobile-App
+  git checkout feature-blockchain
+  git checkout feature-website
+  ```
+  
