@@ -23,6 +23,9 @@ export class GenerateBallotPage implements OnInit {
   ballot2Options : any[]
   ballot3Options : any[]
   ballotName : string = ""
+  ballotName1 : string = ""
+  ballotName2 : string = ""
+ 
 
   constructor(private router : Router, private dataService : DataService) { }
 
@@ -73,7 +76,20 @@ export class GenerateBallotPage implements OnInit {
   }
 
   saveBallotName() : void {
-    this.dataService.saveBallotName(this.ballotName, this.slideIndex)
+    switch(this.slideIndex) {
+      case 0:{
+        this.dataService.saveBallotName(this.ballotName, this.slideIndex)
+        break;
+      }
+      case 1:{
+        this.dataService.saveBallotName(this.ballotName1, this.slideIndex)
+        break;
+      }
+      case 2:{
+        this.dataService.saveBallotName(this.ballotName2, this.slideIndex)
+        break;
+      }
+    }
   }
 
 }

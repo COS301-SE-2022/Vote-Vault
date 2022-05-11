@@ -66,6 +66,23 @@ export class DataService {
     }
   }
 
+  getBallot(i) {
+    switch(i) {
+      case 0:{
+        return this.ballot1
+        break
+      }
+      case 1: {
+        return this.ballot2
+        break
+      }
+      case 2: {
+        return this.ballot3
+        break
+      }
+    }
+  }
+
   saveBallotName(name, index) {
     switch(index) {
       case 0:{

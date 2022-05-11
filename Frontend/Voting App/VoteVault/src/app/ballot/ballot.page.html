@@ -5,14 +5,40 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    Ballot
-      <ion-item *ngFor="let o of options" (click)="selectCandidate(o)">
-        <ion-label>{{o.surname}}, {{o.name}}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
-      </ion-item>
+  <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
+    <ion-slide>
+      <ion-card>
+        {{ballot1.name}}
+          <ion-item *ngFor="let o of ballot1.options" (click)="selectCandidate(o)">
+            <ion-label>{{o.surname}}, {{o.name}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
+          </ion-item>
+    
+      </ion-card>
+    </ion-slide>
 
-  </ion-card>
+    <ion-slide>
+      <ion-card>
+        {{ballot2.name}}
+          <ion-item *ngFor="let o of ballot2.options" (click)="selectCandidate(o)">
+            <ion-label>{{o.surname}}, {{o.name}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
+          </ion-item>
+    
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        {{ballot3.name}}
+          <ion-item *ngFor="let o of ballot3.options" (click)="selectCandidate(o)">
+            <ion-label>{{o.surname}}, {{o.name}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
+          </ion-item>
+    
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 
   <ion-button id="vote" (click)="vote()">
     Vote
