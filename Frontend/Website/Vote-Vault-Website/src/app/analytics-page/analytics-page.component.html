@@ -7,6 +7,12 @@
     ANALYTICS
   </header>
   <body>
+    <div class="navbar">
+      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+      <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
+      <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+    </div>
     <table style="width: 100%; height: 500px;" cellpadding="5" cellspacing="5" border="2">
       <tbody>
       <tr>
@@ -16,12 +22,7 @@
       </tr>
       </tbody>
       </table>
-    <div class="navbar">
-      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-      <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
-      <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
-      <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-    </div>
+
     This s the body
   </body>
   <footer>
