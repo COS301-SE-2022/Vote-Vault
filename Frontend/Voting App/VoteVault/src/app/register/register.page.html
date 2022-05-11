@@ -12,23 +12,56 @@
         </ion-card-title>
     </ion-card-header>
 
-    <ion-item>
-      <ion-label>First Name:</ion-label>
-      <ion-input placeholder="Enter first name here"></ion-input>
-    </ion-item>
+    <ion-card class="input-fields-class">
+        <ion-list class="first-name-list">
+            <ion-grid>
+                <ion-row>
+                    <ion-label>First Name:</ion-label>
+                </ion-row>
+                <ion-row>
+                    <ion-input placeholder="Enter first name here"></ion-input>
+                </ion-row>
+            </ion-grid> 
+        </ion-list>
 
-    <ion-item>
-      <ion-label>Last Name:</ion-label>
-      <ion-input placeholder="Enter last name here"></ion-input>
-    </ion-item>
+        <ion-list>
+            <ion-grid>
+                <ion-row>
+                    <ion-label>Last Name:</ion-label>
+                </ion-row>
+                <ion-row>
+                    <ion-input placeholder="Enter last name here"></ion-input>
+                </ion-row>
+            </ion-grid> 
+        </ion-list>
 
-    <ion-item>
-      <ion-label>ID Number:</ion-label>
-      <ion-input placeholder="Enter ID number here"></ion-input>
-    </ion-item>
+        <ion-list>
+            <ion-grid>
+                <ion-row>
+                    <ion-label>ID Number:</ion-label>
+                </ion-row>
+                <ion-row>
+                    <ion-input placeholder="Enter ID number here"></ion-input>
+                </ion-row>
+            </ion-grid> 
+        </ion-list>
 
-    <ion-item class="ion-text-center">
-      <ion-label>Scan ID:</ion-label>
-    </ion-item>
+        <ion-list>
+            <ion-grid>
+                <ion-row class="ion-align-items-center">
+                        <ion-label>Scan ID:</ion-label>
+                </ion-row>
+                <ion-row class="ion-align-items-center">
+                        <ion-button>
+                            <ion-icon name="camera-outline"></ion-icon>
+                        </ion-button>
+                </ion-row>
+            </ion-grid> 
+        </ion-list>
+
+        <ion-button>
+            Register Voter
+        </ion-button>
+    </ion-card>
   </ion-card>
 </body>
