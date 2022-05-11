@@ -7,6 +7,19 @@ ion-card-title {
     left: 25%;
 }
 
+#scan-id {
+    width: 200%;
+}
+
+ion-button {
+    margin-left: 0%;
+}
+
+ion-input {
+    padding-left: 0;
+    text-align: left;
+}
+
 @media(max-width: 992px) {
     .voter-Details {
         width: auto;
