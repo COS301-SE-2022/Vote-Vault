@@ -1,1 +1,17 @@
+#info1 {
+  border: 5px solid black;
+  margin: 10px;
+  position: fixed;
+  width: 45%;
+  height: 28%;
+  top: 150px;
+}
 
+#info2 {
+  border: 5px solid black;
+  margin: 10px;
+  position: fixed;
+  top: 50%;
+  width: 45%;
+  height: 28%;
+}
