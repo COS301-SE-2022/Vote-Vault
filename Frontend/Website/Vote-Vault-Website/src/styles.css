@@ -39,5 +39,24 @@ footer {
 }
 
 .navbar {
+  background-color: rgb(50, 87, 255);
+  overflow: hidden;
+}
 
+.navbar a:hover {
+  background-color: rgb(84, 123, 250);
+  color: black;
+}
+
+.navbar a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+a.active {
+  background-color: aliceblue;
 }
