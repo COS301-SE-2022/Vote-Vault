@@ -4,12 +4,24 @@
 
   </head>
   <header>
-    This is the header
+    RESULTS
   </header>
   <body>
+    <div class="navbar">
+      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+      <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
+      <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+    </div>
     This s the body
   </body>
   <footer>
-    This is the footer
+    Vote Vault voting software
+    <br>
+    <br>
+    Product of SSDpressed
+    <br>
+    <br>
+    University of Pretoria
   </footer>
 </html>
