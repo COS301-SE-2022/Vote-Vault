@@ -2,3 +2,42 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  background-color: rgb(50, 87, 255);
+  width: 100%;
+  margin: 0px;
+  height: 60px;
+  border: 0px;
+  text-align: center;
+  position: relative;
+  color: black;
+  border-top: 100px;
+}
+
+footer {
+  background-color: rgb(50, 87, 255);
+  width: 100%;
+  margin: 0px;
+  height: 90px;
+  border: 0px;
+  text-align: center;
+  position: relative;
+  color: black;
+  border-top: 100px;
+  position: fixed;
+  bottom: 0px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.navbar {
+
+}
