@@ -1,0 +1,12 @@
+td{
+    width : 33%;
+    border-radius: 7px;
+}
+
+footer {
+    background-color: rgb(58, 103, 228);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
