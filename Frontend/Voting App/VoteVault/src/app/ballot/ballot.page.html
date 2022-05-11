@@ -9,7 +9,7 @@
     Ballot
       <ion-item *ngFor="let o of options" (click)="selectCandidate(o)">
         <ion-label>{{o.surname}}, {{o.name}}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="o.isChecked" ></ion-checkbox>
+        <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
       </ion-item>
 
   </ion-card>

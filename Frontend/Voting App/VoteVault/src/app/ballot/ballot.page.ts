@@ -17,7 +17,11 @@ export class BallotPage implements OnInit {
   }
 
   selectCandidate(o) : void {
+    if(this.selected != null)
+      this.selected.isChecked = false
     this.selected = o
+    this.selected.isChecked = true
+
   }
 
   vote() : void {
