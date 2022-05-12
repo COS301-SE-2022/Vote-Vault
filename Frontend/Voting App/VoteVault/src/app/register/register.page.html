@@ -14,17 +14,17 @@
 
     <ion-item color="light">
       <ion-label position="floating">First Name:</ion-label>
-      <ion-input placeholder="Enter first name here"></ion-input>
+      <ion-input [(ngModel)] = "name" placeholder="Enter first name here"></ion-input>
     </ion-item>
 
     <ion-item color="light">
       <ion-label position="floating">Last Name:</ion-label>
-      <ion-input placeholder="Enter last name here"></ion-input>
+      <ion-input [(ngModel)] = "surname" placeholder="Enter last name here"></ion-input>
     </ion-item>
 
     <ion-item color="light">
       <ion-label position="floating">ID Number:</ion-label>
-      <ion-input placeholder="Enter ID number here"></ion-input>
+      <ion-input [(ngModel)] = "idNum" placeholder="Enter ID number here"></ion-input>
     </ion-item>
 
     <ion-item  class="ion-align-items-center" color="light">
@@ -34,7 +34,7 @@
       </ion-button>
     </ion-item>
 
-    <ion-button>
+    <ion-button (click) = "registerVoter()">
         Register Voter
     </ion-button>
   </ion-card>
