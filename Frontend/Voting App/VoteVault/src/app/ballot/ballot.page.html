@@ -1,9 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>ballot</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
     <ion-slide>
@@ -38,9 +32,15 @@
     
       </ion-card>
     </ion-slide>
+    
+    <ion-slide>
+        You are about to submit your votes.
+      <ion-button id="vote" (click)="vote()">
+        Submit Votes
+      </ion-button>
+    </ion-slide>
+   
   </ion-slides>
 
-  <ion-button id="vote" (click)="vote()">
-    Vote
-  </ion-button>
+  
 </ion-content>
