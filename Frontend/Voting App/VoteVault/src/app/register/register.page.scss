@@ -11,6 +11,11 @@ ion-card {
     left: 25%;
 }
 
+body > ion-card > ion-card-header > ion-card-title {
+    color: white;
+    font-size: 150%;
+}
+
 @media(max-width: 992px) {
     .voter-Details {
         width: auto;
