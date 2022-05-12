@@ -23,12 +23,12 @@ jobs:
         run: npm install --frozen-lockfile
 
 #       - name: "🌹 Format Code"
-#         working-directory: ./client
+#         working-directory: ./Frontend/Voting App/VoteVault
 #         run: yarn format
 
-      - name: "🧶 Lint Code"
-        working-directory: ./Frontend/Voting App/VoteVault
-        run: ng lint
+#       - name: "🧶 Lint Code"
+#         working-directory: ./Frontend/Voting App/VoteVault
+#         run: ng lint
 
       - name: "✅ Run Unit Tests"
         working-directory: ./Frontend/Voting App/VoteVault
