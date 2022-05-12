@@ -20,3 +20,9 @@
   height: 48%;
   display: block;
 }
+
+h1 {
+  width: 100%;
+  position: fixed;
+  left: 300px;
+}
