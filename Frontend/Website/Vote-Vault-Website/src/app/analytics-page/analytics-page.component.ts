@@ -11,5 +11,22 @@ export class AnalyticsPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  type = 'bar';
+  data = {
+    labels: ["Male", "Female"],
+    datasets: [
+      {
+        backgroundColor: ['blue','red'],
+        data: [59, 59]
+      }
+    ]
+  };
+  options = {
+    legend:{
+      display: false
+    },
+    title:"Gender Distribution",
+    responsive: true,
+    maintainAspectRatio: false
+  };
 }

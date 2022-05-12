@@ -7,6 +7,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
+import { ChartModule } from 'angular2-chartjs';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HowtoPageComponent } from './howto-page/howto-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

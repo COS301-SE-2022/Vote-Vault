@@ -16,32 +16,7 @@
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
     </div>
     <div id="info1"></div>
-    <canvas id="info2"></canvas>
-    <script>
-      var xValues = ["Party1", "Party2", "Party3", "Party4", "Party5"];
-      var yValues = [60, 50, 40, 30, 20];
-      var barColors = ["red", "green","blue","orange","brown"];
-      var info = document.getElementById("info2");
-      console.log("info");
-      var info2 = new Chart("info2", {
-        type: "bar",
-        data: {
-          labels: xValues,
-          datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-          }]
-        },
-        options: {
-          legend: {display: false},
-          title: {
-            display: true,
-            text: "Vote Results"
-          }
-        }
-      });
-
-    </script>
+    <chart id="info2" [type]="type" [data]="data" [options]="options"></chart>
   </body>
   <footer>
     Vote Vault voting software
