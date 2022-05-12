@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { DataService } from '../data.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class BallotPage implements OnInit {
   ballot3 : any
   slideIndex : number
 
-  constructor(private dataService : DataService) { }
+  constructor(private dataService : DataService, private toastController: ToastController) { }
 
   ngOnInit() {
     this.options = this.dataService.electionOptions
@@ -35,6 +36,7 @@ export class BallotPage implements OnInit {
 
   vote() : void {
     this.dataService.votes.push(this.selected)
+    this.toast_vote()
   }
 
   ionSlidesDidLoad(slides) {
@@ -42,6 +44,17 @@ export class BallotPage implements OnInit {
       this.slideIndex = index
       console.log(this.slideIndex)
     });
+  }
+
+  async toast_vote() {
+    const toast = await this.toastController.create({
+      duration: 800,
+      message: 'Vote recorded',
+      color: 'light',
+      mode: 'ios'
+    });
+
+    await toast.present();
   }
 
 }
