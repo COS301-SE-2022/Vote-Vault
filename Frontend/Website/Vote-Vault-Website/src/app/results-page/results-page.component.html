@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+    <meta http-equiv="refresh" content="10"/>
   </head>
   <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
@@ -15,7 +14,7 @@
       <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
     </div>
-    <div id="info1"></div>
+    <div id="info1"><h2>Vote Vault Results - Election Name</h2></div>
     <chart id="info2" [type]="type" [data]="data" [options]="options"></chart>
   </body>
   <footer>
