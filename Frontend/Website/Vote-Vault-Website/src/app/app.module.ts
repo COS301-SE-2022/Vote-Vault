@@ -18,7 +18,7 @@ import { HowtoPageComponent } from './howto-page/howto-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
