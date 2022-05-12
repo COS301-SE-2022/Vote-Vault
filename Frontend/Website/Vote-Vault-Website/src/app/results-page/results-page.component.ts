@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
+
   }
 
 }
