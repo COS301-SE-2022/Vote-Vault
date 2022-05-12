@@ -13,7 +13,7 @@ export class BallotPage implements OnInit {
   ballot1 : any
   ballot2 : any
   ballot3 : any
-  slideIndex : number
+  slideIndex : number = 0
 
   constructor(private dataService : DataService, private toastController: ToastController) { }
 
@@ -23,7 +23,7 @@ export class BallotPage implements OnInit {
     console.log(this.ballot1)
     this.ballot2 = this.dataService.getBallot(1)
     this.ballot3 = this.dataService.getBallot(2)
-
+    this.selected = {}
   }
 
   selectCandidate(o) : void {

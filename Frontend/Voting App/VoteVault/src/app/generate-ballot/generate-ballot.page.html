@@ -3,7 +3,7 @@
     <ion-slide>
       <ion-item id="pageName">
         <ion-label position="floating">Ballot Name</ion-label>
-        <ion-input [(ngModel)] = "ballotName"></ion-input>  
+        <ion-input id="name" [(ngModel)] = "ballotName"></ion-input>  
         <!-- <ion-button id="ballotNameBtn" slot="end" (click)="saveBallotName()">Confirm Name</ion-button>  -->
       </ion-item>
       <ion-card>
@@ -45,7 +45,7 @@
         Candidate Details
         <ion-item id="addItem">
           <ion-label position="floating">Name</ion-label>
-          <ion-input [(ngModel)] = "name"></ion-input>   
+          <ion-input id="name" [(ngModel)] = "name"></ion-input>   
         </ion-item>
       
         <ion-item id="addItem">
@@ -80,7 +80,7 @@
       Candidate Details
     <ion-item id="addItem">
     <ion-label position="floating">Name</ion-label>
-    <ion-input [(ngModel)] = "name"></ion-input>   
+    <ion-input id="name" [(ngModel)] = "name"></ion-input>   
   </ion-item>
 
   <ion-item id="addItem">

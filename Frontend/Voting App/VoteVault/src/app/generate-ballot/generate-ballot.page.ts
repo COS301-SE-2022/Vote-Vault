@@ -16,10 +16,10 @@ export class GenerateBallotPage implements OnInit {
   @ViewChild('slides' , {  static: true })  slides: IonSlides
   slideIndex : number = 0
   options : any[]
-  optionInput : string
-  name : string
-  surname : string
-  idNum : string
+  optionInput : string = ""
+  name : string = ""
+  surname : string = ""
+  idNum : string = ""
   ballot1Options : any[]
   ballot2Options : any[]
   ballot3Options : any[]
