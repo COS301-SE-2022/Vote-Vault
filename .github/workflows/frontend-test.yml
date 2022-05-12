@@ -1,0 +1,35 @@
+name: Frontend-Check
+
+on:
+  pull_request:
+    branches: [ develop, main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "⚡ Checkout"
+        uses: actions/checkout@v3
+
+      - name: "🧪 Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: "📦 Install Dependencies"
+        working-directory: ./Frontend/Voting App/VoteVault
+        run: npm install
+
+#       - name: "🌹 Format Code"
+#         working-directory: ./Frontend/Voting App/VoteVault
+#         run: yarn format
+
+#       - name: "🧶 Lint Code"
+#         working-directory: ./Frontend/Voting App/VoteVault
+#         run: npm lint
+
+      - name: "✅ Run Unit Tests"
+        working-directory: ./Frontend/Voting App/VoteVault
+        run: npm test

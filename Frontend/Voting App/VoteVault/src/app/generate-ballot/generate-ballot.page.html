@@ -3,10 +3,11 @@
     <ion-slide>
       <ion-item id="pageName">
         <ion-label position="floating">Ballot Name</ion-label>
-        <ion-input [(ngModel)] = "ballotName"></ion-input>  
-        <ion-button id="ballotNameBtn" slot="end" (click)="saveBallotName()">Confirm Name</ion-button> 
+        <ion-input id="name" [(ngModel)] = "ballotName"></ion-input>  
+        <!-- <ion-button id="ballotNameBtn" slot="end" (click)="saveBallotName()">Confirm Name</ion-button>  -->
       </ion-item>
       <ion-card>
+        Candidate Details
         <ion-item id="addItem">
           <ion-label position="floating">Name</ion-label>
           <ion-input [(ngModel)] = "name"></ion-input>   
@@ -31,18 +32,20 @@
           </ion-item>
       
       </ion-card>
+      <ion-button id="ballotNameBtn" (click)="saveBallotName()">Save Ballot</ion-button>
     </ion-slide>
 
     <ion-slide>
       <ion-item id="pageName">
         <ion-label position="floating">Ballot Name</ion-label>
         <ion-input [(ngModel)] = "ballotName1"></ion-input>   
-        <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button> 
+        <!-- <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button>  -->
       </ion-item>
       <ion-card>
+        Candidate Details
         <ion-item id="addItem">
           <ion-label position="floating">Name</ion-label>
-          <ion-input [(ngModel)] = "name"></ion-input>   
+          <ion-input id="name" [(ngModel)] = "name"></ion-input>   
         </ion-item>
       
         <ion-item id="addItem">
@@ -64,18 +67,20 @@
           </ion-item>
       
       </ion-card>
+      <ion-button id="ballotNameBtn" (click)="saveBallotName()">Save Ballot</ion-button>
     </ion-slide>
 
     <ion-slide>
       <ion-item id="pageName">
         <ion-label position="floating">Ballot Name</ion-label>
         <ion-input [(ngModel)] = "ballotName2"></ion-input>   
-        <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button> 
+        <!-- <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button>  -->
       </ion-item>
     <ion-card>
+      Candidate Details
     <ion-item id="addItem">
     <ion-label position="floating">Name</ion-label>
-    <ion-input [(ngModel)] = "name"></ion-input>   
+    <ion-input id="name" [(ngModel)] = "name"></ion-input>   
   </ion-item>
 
   <ion-item id="addItem">
@@ -97,8 +102,13 @@
     </ion-item>
 
   </ion-card>
-  <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
+  <ion-button id="ballotNameBtn" (click)="saveBallotName()">Save Ballot</ion-button>
+  <!-- <ion-button id="genBtn" (click)="generate()">Generate</ion-button> -->
+  </ion-slide>
 
+  <ion-slide id="finalSlide">
+    You are about to generate the ballots.
+  <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
   </ion-slide>
   </ion-slides>
   
