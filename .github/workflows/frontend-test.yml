@@ -20,7 +20,7 @@ jobs:
 
       - name: "📦 Install Dependencies"
         working-directory: ./Frontend/Voting App/VoteVault
-        run: npm install --frozen-lockfile
+        run: npm install && npm install @angular/cli
 
 #       - name: "🌹 Format Code"
 #         working-directory: ./Frontend/Voting App/VoteVault
