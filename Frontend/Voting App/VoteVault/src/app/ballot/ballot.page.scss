@@ -1,16 +1,18 @@
 ion-item {
     --background: transparent !important;
     --background-color: transparent;
+    width: 90%;
 }
 
 ion-label {
     --color: transparent;
+    width: 100%;
 }
 
 ion-card { 
-    padding: 2vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     margin-bottom: 10vh;
-    Padding: 10vh;
 }
 
 ion-slides {
