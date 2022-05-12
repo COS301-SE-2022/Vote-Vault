@@ -7,28 +7,35 @@
 
   <ion-card class="voter-Details ion-text-center ion-padding">
     <ion-card-header>
-        <ion-card-title>
-          Voter Details
-        </ion-card-title>
+      <ion-card-title>
+        Voter Details
+      </ion-card-title>
     </ion-card-header>
 
-    <ion-item>
-      <ion-label>First Name:</ion-label>
-      <ion-input placeholder="Enter first name here"></ion-input>
+    <ion-item color="light">
+      <ion-label position="floating">First Name:</ion-label>
+      <ion-input [(ngModel)] = "name" placeholder="Enter first name here"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Last Name:</ion-label>
-      <ion-input placeholder="Enter last name here"></ion-input>
+    <ion-item color="light">
+      <ion-label position="floating">Last Name:</ion-label>
+      <ion-input [(ngModel)] = "surname" placeholder="Enter last name here"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>ID Number:</ion-label>
-      <ion-input placeholder="Enter ID number here"></ion-input>
+    <ion-item color="light">
+      <ion-label position="floating">ID Number:</ion-label>
+      <ion-input [(ngModel)] = "idNum" placeholder="Enter ID number here"></ion-input>
     </ion-item>
 
-    <ion-item class="ion-text-center">
-      <ion-label>Scan ID:</ion-label>
+    <ion-item  class="ion-align-items-center" color="light">
+      <ion-label position="floating">Scan ID:</ion-label>
+      <ion-button size="medium">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
     </ion-item>
+
+    <ion-button (click) = "registerVoter()">
+        Register Voter
+    </ion-button>
   </ion-card>
 </body>
