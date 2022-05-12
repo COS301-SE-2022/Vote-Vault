@@ -16,6 +16,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["Male", "Female"],
     datasets: [
       {
+        label:'wdqwd',
         backgroundColor: ['blue','red'],
         data: [59, 59]
       }
@@ -25,7 +26,10 @@ export class AnalyticsPageComponent implements OnInit {
     legend:{
       display: false
     },
-    title:"Gender Distribution",
+    title:{
+      display: true,
+      text:"Gender Distribution"
+    },
     responsive: true,
     maintainAspectRatio: false
   };
