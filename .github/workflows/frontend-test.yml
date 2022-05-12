@@ -32,4 +32,4 @@ jobs:
 
       - name: "✅ Run Unit Tests"
         working-directory: ./Frontend/Voting App/VoteVault
-        run: npm i -D karma-chrome-launcher && npm test
+        run: karma start && npm test
