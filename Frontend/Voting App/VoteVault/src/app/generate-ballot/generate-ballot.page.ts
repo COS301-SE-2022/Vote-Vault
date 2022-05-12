@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-generate-ballot',
@@ -27,7 +28,7 @@ export class GenerateBallotPage implements OnInit {
   ballotName2 : string = ""
  
 
-  constructor(private router : Router, private dataService : DataService) { }
+  constructor(private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
     this.options = []
@@ -61,6 +62,7 @@ export class GenerateBallotPage implements OnInit {
     this.name = ""
     this.surname = ""
     this.idNum = ""
+    this.toast_addUser();
   }
 
   generate() : void {
@@ -90,6 +92,28 @@ export class GenerateBallotPage implements OnInit {
         break;
       }
     }
+    this.toast_saveButton();
   }
 
+  async toast_saveButton() {
+    const toast = await this.toastController.create({
+      duration: 800,
+      message: 'Ballot saved succesfully',
+      color: 'light',
+      mode: 'ios'
+    });
+
+    await toast.present();
+  }
+
+  async toast_addUser() {
+    const toast = await this.toastController.create({
+      duration: 800,
+      message: 'User added successfully',
+      color: 'light',
+      mode: 'ios'
+    });
+
+    await toast.present();
+  }
 }
