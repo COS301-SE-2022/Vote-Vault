@@ -13,6 +13,7 @@ ion-content {
 #ballotNameBtn {
     margin-top: 5vh;
     width:      40%;
+    margin-bottom: 8vh;
 }
 
 #addItem {
@@ -25,7 +26,6 @@ ion-content {
 ion-slide {
     display: inline;
 }
-
 
 ion-card {
     padding: 2vh;
@@ -49,4 +49,8 @@ ion-label {
     width: 80%;
     // position: fixed;
     bottom: 2vh;
+}
+
+#finalSlide {
+    margin: auto;
 }
