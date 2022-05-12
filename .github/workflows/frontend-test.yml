@@ -19,7 +19,7 @@ jobs:
           node-version: '16.x'
 
       - name: "📦 Install Dependencies"
-        working-directory: ./Frontend/Voting\ App/VoteVault
+        working-directory: Frontend/Voting\ App/VoteVault
         run: npm install --frozen-lockfile
 
 #       - name: "🌹 Format Code"
@@ -27,9 +27,9 @@ jobs:
 #         run: yarn format
 
       - name: "🧶 Lint Code"
-        working-directory: ./Frontend/Voting\ App/VoteVault
+        working-directory: Frontend/Voting\ App/VoteVault
         run: ng lint
 
       - name: "✅ Run Unit Tests"
-        working-directory: ./Frontend/Voting\ App/VoteVault
+        working-directory: Frontend/Voting\ App/VoteVault
         run: ng test
