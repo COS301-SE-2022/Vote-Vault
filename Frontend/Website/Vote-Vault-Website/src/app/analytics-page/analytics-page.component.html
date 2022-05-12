@@ -4,6 +4,7 @@
 
   </head>
   <header>
+    <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
     <input type="text" placeholder="Search...">
   </header>
   <body>
@@ -16,9 +17,9 @@
     <table style="width: 100%; height: 500px;" cellpadding="5" cellspacing="5" border="2">
       <tbody>
       <tr>
-      <td >Gender Distribution</td>
-      <td >Location Distribution</td>
-      <td >Age Distrbution</td>
+      <td ><chart id="gD" [type]="type" [data]="data" [options]="options"></chart></td>
+      <td ><chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart></td>
+      <td ><chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart></td>
       </tr>
       </tbody>
       </table>
@@ -33,4 +34,5 @@
     <br>
     University of Pretoria
   </footer>
+
 </html>
