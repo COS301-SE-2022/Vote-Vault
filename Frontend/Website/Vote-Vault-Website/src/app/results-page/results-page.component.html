@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
   </head>
   <header>
@@ -16,7 +16,7 @@
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
     </div>
     <div id="info1"></div>
-    <div id="info2"></div>
+    <canvas id="info2"></canvas>
   </body>
   <footer>
     Vote Vault voting software
@@ -29,10 +29,10 @@
   </footer>
   <script>
     var xValues = ["Party1", "Party2", "Party3", "Party4", "Party5"];
-    var yValues = [55, 49, 44, 24, 15];
+    var yValues = [60, 50, 40, 30, 20];
     var barColors = ["red", "green","blue","orange","brown"];
 
-    new Chart("info2", {
+    var info2 = new Chart("info2", {
       type: "bar",
       data: {
         labels: xValues,
@@ -49,5 +49,6 @@
         }
       }
     });
+
   </script>
 </html>
