@@ -1,12 +1,13 @@
 <ion-content>  
-  <ion-slides #slides mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
+  <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
     <ion-slide>
       <ion-item id="pageName">
         <ion-label position="floating">Ballot Name</ion-label>
-        <ion-input [(ngModel)] = "ballotName"></ion-input>  
+        <ion-input id="name" [(ngModel)] = "ballotName"></ion-input>  
         <!-- <ion-button id="ballotNameBtn" slot="end" (click)="saveBallotName()">Confirm Name</ion-button>  -->
       </ion-item>
       <ion-card>
+        Candidate Details
         <ion-item id="addItem">
           <ion-label position="floating">Name</ion-label>
           <ion-input [(ngModel)] = "name"></ion-input>   
@@ -41,9 +42,10 @@
         <!-- <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button>  -->
       </ion-item>
       <ion-card>
+        Candidate Details
         <ion-item id="addItem">
           <ion-label position="floating">Name</ion-label>
-          <ion-input [(ngModel)] = "name"></ion-input>   
+          <ion-input id="name" [(ngModel)] = "name"></ion-input>   
         </ion-item>
       
         <ion-item id="addItem">
@@ -75,9 +77,10 @@
         <!-- <ion-button (click)="saveBallotName()" id="ballotNameBtn" slot="end">Confirm Name</ion-button>  -->
       </ion-item>
     <ion-card>
+      Candidate Details
     <ion-item id="addItem">
     <ion-label position="floating">Name</ion-label>
-    <ion-input [(ngModel)] = "name"></ion-input>   
+    <ion-input id="name" [(ngModel)] = "name"></ion-input>   
   </ion-item>
 
   <ion-item id="addItem">

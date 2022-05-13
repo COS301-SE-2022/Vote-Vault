@@ -13,7 +13,7 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 60px;
+  height: 80px;
   border: 0px;
   text-align: center;
   position: relative;
@@ -39,7 +39,7 @@ footer {
 }
 
 .navbar {
-  background-color: rgb(50, 87, 255);
+  background-color: rgb(112, 139, 255);
   overflow: hidden;
 }
 
@@ -65,8 +65,14 @@ input[type=text] {
   float: right;
   padding: 6px;
   border: none;
-  margin-top: 13px;
+  margin-top: 22px;
   margin-right: 16px;
   font-size: 17px;
   border-radius: 5px;
+}
+
+#logo {
+  position: fixed;
+  left: 20px;
+  top: 30px;
 }
