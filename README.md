@@ -16,7 +16,7 @@ Welcome to the Vote-Vault!
 * [Demo Video](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
 * [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
 * [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
-* [Professional profile of each team member](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Meet-The-Team)
+* [Professional profile and description of each team member](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Meet-The-Team)
 * Useful commands:
 
   ```
