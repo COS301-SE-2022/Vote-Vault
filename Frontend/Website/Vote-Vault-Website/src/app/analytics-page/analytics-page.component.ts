@@ -79,4 +79,23 @@ export class AnalyticsPageComponent implements OnInit {
 
 
 
+
+  showGenderInfo(){
+      this.div1=true;
+      this.div2=false;
+      this.div3=false
+  }
+
+  showAgeInfo(){
+      this.div2=true;
+      this.div1=false;
+      this.div3=false
+  }
+
+  showProvinceInfo(){
+      this.div3=true;
+      this.div2=false;
+      this.div1=false
+  }
+
 }
