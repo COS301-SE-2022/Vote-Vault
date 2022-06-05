@@ -8,6 +8,7 @@ import { AnalyticsPageComponent } from './analytics-page/analytics-page.componen
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ChartModule } from 'angular2-chartjs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChartModule } from 'angular2-chartjs';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

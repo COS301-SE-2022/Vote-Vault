@@ -76,4 +76,7 @@ export class AnalyticsPageComponent implements OnInit {
     responsive: true,
     maintainAspectRatio: false
   };
+
+
+
 }

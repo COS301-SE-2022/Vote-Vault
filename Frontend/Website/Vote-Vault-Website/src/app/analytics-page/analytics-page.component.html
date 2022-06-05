@@ -3,12 +3,12 @@
   <head>
 
   </head>
-  <header>
+  <!-- <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
     <input type="text" placeholder="Search...">
-  </header>
+  </header> -->
   <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
@@ -22,7 +22,20 @@
       <td ><chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart></td>
       </tr>
       </tbody>
-      </table>
+      </table> -->
+
+        <div class="col">
+			<div ngbDropdown class="d-inline-block">
+				<button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle>View Demographics</button>
+				<div ngbDropdownMenu aria-labelledby="demographicsDropdown">
+					<button ngbDropdownItem>Gender Information</button>
+					<button ngbDropdownItem>Provinces Information</button>
+					<button ngbDropdownItem>Age Information</button>
+				</div>
+			</div>
+        </div>
+
+
 
   </body>
   <footer>
