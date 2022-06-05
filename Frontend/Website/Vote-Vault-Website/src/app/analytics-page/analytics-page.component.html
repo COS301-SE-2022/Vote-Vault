@@ -28,9 +28,9 @@
 			<div ngbDropdown class="d-inline-block">
 				<button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle>View Demographics</button>
 				<div ngbDropdownMenu aria-labelledby="demographicsDropdown">
-					<button ngbDropdownItem>Gender Information</button>
-					<button ngbDropdownItem>Provinces Information</button>
-					<button ngbDropdownItem>Age Information</button>
+					<button ngbDropdownItem (click)="showGenderInfo()">Gender Information</button>
+					<button ngbDropdownItem (click)="showAgeInfo()">Provinces Information</button>
+					<button ngbDropdownItem (click)="showProvinceInfo()">Age Information</button>
 				</div>
 			</div>
         </div>
