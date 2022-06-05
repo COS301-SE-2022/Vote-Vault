@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-results-page',
-  templateUrl: './results-page.component.html',
-  styleUrls: ['./results-page.component.css']
+  selector: 'app-history-page',
+  templateUrl: './history-page.component.html',
+  styleUrls: ['./history-page.component.css']
 })
-export class ResultsPageComponent implements OnInit {
+export class HistoryPageComponent implements OnInit {
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
-
   }
 
   type = 'bar';
@@ -43,3 +40,4 @@ export class ResultsPageComponent implements OnInit {
     maintainAspectRatio: false
   };
 }
+
