@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <meta http-equiv="refresh" content="15"/>
   </head>
   <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
@@ -12,13 +12,11 @@
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
-      <a class="active" [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-      <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+      <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+      <a class="active" [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
-    <div id="div1">Information</div>
-    <div id="div2">Information</div>
-    <div id="div3">Information</div>
-    <div id="div4">Information</div>
+    <div id="info1"><h2>Vote Vault Results - Election Name</h2></div>
+    <chart id="info2" [type]="type" [data]="data" [options]="options"></chart>
   </body>
   <footer>
     Vote Vault voting software
@@ -29,4 +27,5 @@
     <br>
     University of Pretoria
   </footer>
+
 </html>
