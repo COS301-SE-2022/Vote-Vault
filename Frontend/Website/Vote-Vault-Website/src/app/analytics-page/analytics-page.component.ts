@@ -77,7 +77,7 @@ export class AnalyticsPageComponent implements OnInit {
     maintainAspectRatio: false
   };
 
-
+  div0:boolean=true;
   div1:boolean=false;
   div2:boolean=false;
   div3:boolean=false;
