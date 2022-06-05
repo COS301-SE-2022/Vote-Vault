@@ -15,7 +15,17 @@
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a class="active" [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
-    <div id="info1"><h2>Vote Vault Results - Election Name</h2></div>
+    <div id="info1"><h2>Vote Vault Results - Election Name</h2>
+      <div id="selectYear">
+        <label for="cars">Choose an election year: </label>
+        <select name="cars" id="cars">
+          <option value="volvo">2021</option>
+          <option value="saab">2020</option>
+          <option value="mercedes">2019</option>
+          <option value="audi">2018</option>
+        </select>
+      </div>
+    </div>
     <chart id="info2" [type]="type" [data]="data" [options]="options"></chart>
   </body>
   <footer>

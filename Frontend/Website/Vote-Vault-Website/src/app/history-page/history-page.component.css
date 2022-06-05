@@ -26,3 +26,17 @@ h1 {
   position: fixed;
   left: 300px;
 }
+
+h2 {
+  width: 100%;
+  position: fixed;
+  left: 5%;
+  top: 22%;
+}
+
+#selectYear {
+  position: fixed;
+  left: 78%;
+  top: 25%;
+  font-size: larger;
+}
