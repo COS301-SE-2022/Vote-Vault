@@ -1,4 +1,10 @@
 .Title{
   font-size: xx-large;
+  padding: 0.8rem;
+}
+
+.Details {
+  width: 30%;
   padding: 1rem;
+  font-size: x-large;
 }
