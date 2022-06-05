@@ -78,9 +78,9 @@ export class AnalyticsPageComponent implements OnInit {
   };
 
 
-  div1:boolean=true;
-  div2:boolean=true;
-  div3:boolean=true;
+  div1:boolean=false;
+  div2:boolean=false;
+  div3:boolean=false;
 
   showGenderInfo(){
       this.div1=true;
