@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalyticsPageComponent implements OnInit {
 
-  constructor() { }
+  votes : any[]
+
+  constructor() { 
+    this.votes = [{"electionID" : 2, "candidateID" : ["3", "5", "5"], "gender" : "male", "age" : 25, "location" : "Cape Town"}]
+  }
 
   ngOnInit(): void {
+    
   }
+
   type = 'bar';
   data = {
     labels: ["Male", "Female"],
