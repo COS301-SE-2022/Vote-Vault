@@ -22,7 +22,8 @@ import { HistoryPageComponent } from './history-page/history-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
+    NgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

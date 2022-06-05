@@ -82,4 +82,28 @@ export class AnalyticsPageComponent implements OnInit {
     responsive: true,
     maintainAspectRatio: false
   };
+
+  div0:boolean=true;
+  div1:boolean=false;
+  div2:boolean=false;
+  div3:boolean=false;
+
+  showGenderInfo(){
+      this.div1=true;
+      this.div2=false;
+      this.div3=false
+  }
+
+  showAgeInfo(){
+      this.div2=true;
+      this.div1=false;
+      this.div3=false
+  }
+
+  showProvinceInfo(){
+      this.div3=true;
+      this.div2=false;
+      this.div1=false
+  }
+
 }
