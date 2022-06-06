@@ -13,8 +13,9 @@
       <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+      <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
-    <table style="width: 100%; height: 500px;" cellpadding="5" cellspacing="5" border="2">
+    <!-- <table style="width: 100%; height: 500px;" cellpadding="5" cellspacing="5" border="2">
       <tbody>
       <tr>
       <td ><chart id="gD" [type]="type" [data]="data" [options]="options"></chart></td>
@@ -22,7 +23,32 @@
       <td ><chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart></td>
       </tr>
       </tbody>
-      </table>
+      </table> -->
+
+      <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle>View Demographics</button>
+          <div ngbDropdownMenu aria-labelledby="demographicsDropdown">
+            <button ngbDropdownItem (click)="showGenderInfo()">Gender Information</button>
+            <button ngbDropdownItem (click)="showAgeInfo()">Provinces Information</button>
+            <button ngbDropdownItem (click)="showProvinceInfo()">Age Information</button>
+          </div>
+        </div>
+          </div>
+
+          <div *ngIf="div0">
+            <h1 style="text-align: center; font-size: 200%; margin-top: 2rem;">Use the dropdown to select a graph</h1>
+          </div>
+
+          <div *ngIf="div1">
+            <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+          </div>
+          <div *ngIf="div2">
+            <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
+          </div>
+          <div *ngIf="div3">
+            <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
+          </div>
 
   </body>
   <footer>

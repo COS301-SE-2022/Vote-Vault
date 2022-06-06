@@ -1,42 +1,19 @@
-#info1 {
-  border: 5px solid black;
-  border-radius: 15px;
-  margin: 10px;
-  position: fixed;
-  width: 94%;
-  height: 10%;
-  top: 140px;
-  left: 2%;
+td{
+  width : 33%;
+  border-radius: 7px;
 }
 
-#info2 {
-  border: 5px solid black;
-  border-radius: 15px;
-  margin: 10px;
-  position: fixed;
-  top: 32%;
-  left: 2%;
-  width: 94%;
-  height: 48%;
-  display: block;
+footer {
+  background-color: rgb(58, 103, 228);
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
 
-h1 {
-  width: 100%;
-  position: fixed;
-  left: 300px;
+#gD {
+height: 400px;
 }
 
-h2 {
-  width: 100%;
-  position: fixed;
-  left: 5%;
-  top: 22%;
-}
 
-#selectYear {
-  position: fixed;
-  left: 78%;
-  top: 25%;
-  font-size: larger;
-}
+
+
