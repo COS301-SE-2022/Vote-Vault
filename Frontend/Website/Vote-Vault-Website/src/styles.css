@@ -41,6 +41,8 @@ footer {
 .navbar {
   background-color: rgb(112, 139, 255);
   overflow: hidden;
+  position: sticky;
+  top: 0%;
 }
 
 .navbar a:hover {
