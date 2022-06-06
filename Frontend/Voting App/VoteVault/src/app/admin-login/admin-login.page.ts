@@ -25,12 +25,11 @@ export class AdminLoginPage implements OnInit {
       const user = await signInWithEmailAndPassword(this.auth, this.email, this.password)
       console.log(user)
       this.loadingController.dismiss()
-      this.router.navigate([''])
+      this.router.navigate(['admin-dashboard'])
     } catch(e) {
       this.loadingController.dismiss()
       this.presentAlert("Invalid credentials")
     }
-    // this.router.navigate(['ballot'])
   }
 
   async presentAlert(s) {
@@ -52,5 +51,9 @@ export class AdminLoginPage implements OnInit {
 
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
+  }
+
+  userLogin() {
+    this.router.navigate(['login'])
   }
 }

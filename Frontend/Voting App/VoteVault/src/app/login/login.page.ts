@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
   }
 
   navigate() {
-    this.router.navigate([''])
+    this.router.navigate(['voter-dashboard'])
   }
 
   adminLogin() {
