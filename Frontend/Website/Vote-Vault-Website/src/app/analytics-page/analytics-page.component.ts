@@ -9,12 +9,12 @@ export class AnalyticsPageComponent implements OnInit {
 
   votes : any[]
 
-  constructor() { 
+  constructor() {
     this.votes = [{"electionID" : 2, "candidateID" : ["3", "5", "5"], "gender" : "male", "age" : 25, "location" : "Cape Town"}]
   }
 
   ngOnInit(): void {
-    
+
   }
 
   type = 'bar';
@@ -34,6 +34,16 @@ export class AnalyticsPageComponent implements OnInit {
     title:{
       display: true,
       text:"Gender Distribution"
+    },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+            min: 0
+          }
+      }]
     },
     responsive: true,
     maintainAspectRatio: false
@@ -57,6 +67,16 @@ export class AnalyticsPageComponent implements OnInit {
       display: true,
       text:"Location Distribution"
     },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+            min: 0
+          }
+      }]
+    },
     responsive: true,
     maintainAspectRatio: false
   };
@@ -78,6 +98,16 @@ export class AnalyticsPageComponent implements OnInit {
     title:{
       display: true,
       text:"Age Distribution"
+    },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+            min: 0
+          }
+      }]
     },
     responsive: true,
     maintainAspectRatio: false
