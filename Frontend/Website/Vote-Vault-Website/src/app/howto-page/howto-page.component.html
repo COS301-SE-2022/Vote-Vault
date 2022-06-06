@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+
+  </head>
   <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
     <input type="text" placeholder="Search...">
@@ -10,10 +13,19 @@
       <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a class="active" [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-      <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
     <div class="Title">How To Register:</div>
-    <div class="Details"></div>
+    <div class="Details">
+      To register for an upcoming election you can do one of 
+      following two things:<br><br>
+      1. Go to your local voting station and let a voting official
+      register you.<br>
+      2. Register yourself through the VoteVault app.<br><br>
+      To register yourself you need to download the VoteVault app 
+      and enter your name, surname and ID number. You will also need to
+      scan the barcode on the back of your ID. After the scan is complete
+      you can press the "Register Now" button.
+    </div>
   </body>
   <footer>
     Vote Vault voting software

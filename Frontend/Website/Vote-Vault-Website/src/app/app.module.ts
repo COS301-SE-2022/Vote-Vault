@@ -8,8 +8,6 @@ import { AnalyticsPageComponent } from './analytics-page/analytics-page.componen
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ChartModule } from 'angular2-chartjs';
-import { HistoryPageComponent } from './history-page/history-page.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,15 +15,12 @@ import { RouterModule } from '@angular/router';
     HomePageComponent,
     AnalyticsPageComponent,
     ResultsPageComponent,
-    HowtoPageComponent,
-    HistoryPageComponent
+    HowtoPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule,
-    NgModule,
-    RouterModule
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
