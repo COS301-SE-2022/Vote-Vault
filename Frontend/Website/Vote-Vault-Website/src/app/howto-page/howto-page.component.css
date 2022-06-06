@@ -4,11 +4,17 @@
 }
 
 .Details {
-  width: 30%;
   padding: 1rem;
   font-size: x-large;
 }
 
 #HowToReg {
+  width: 30%;
   padding: 1rem;
+}
+
+#HowToVote {
+  width: 30%;
+  padding: 1rem;
+  float: right;
 }
