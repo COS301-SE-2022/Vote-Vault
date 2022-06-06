@@ -3,6 +3,15 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+footer {
+  background-color: rgb(58, 103, 228);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: sticky;
+  bottom: 0%;
+}
+
 body {
   border: 0px;
   padding: 0px;
@@ -13,7 +22,7 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 80px;
+  height: 100px;
   border: 0px;
   text-align: center;
   position: relative;
@@ -38,17 +47,19 @@ footer {
     color: white;
 }
 
-.navbar {
+.navbar1 {
   background-color: rgb(112, 139, 255);
   overflow: hidden;
+  position: sticky;
+  top: 0%;
 }
 
-.navbar a:hover {
+.navbar1 a:hover {
   background-color: rgb(84, 123, 250);
   color: black;
 }
 
-.navbar a {
+.navbar1 a {
   float: left;
   color: #000000;
   text-align: center;
@@ -72,7 +83,6 @@ input[type=text] {
 }
 
 #logo {
-  position: fixed;
-  left: 20px;
-  top: 30px;
+  position: relative;
+  top: 35%;
 }

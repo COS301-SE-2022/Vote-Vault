@@ -26,18 +26,22 @@ export class ResultsPageComponent implements OnInit {
     ]
   };
   options = {
-    scales:{
-      yAxis: {
-        min: 40,
-        max: 100
-      }
-    },
     legend:{
       display: false
     },
     title:{
       display: true,
       text:"Election Results"
+    },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+            min: 0
+          }
+      }]
     },
     responsive: true,
     maintainAspectRatio: false
