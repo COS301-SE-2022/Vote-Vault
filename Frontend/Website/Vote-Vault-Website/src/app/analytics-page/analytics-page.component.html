@@ -35,6 +35,10 @@
         </div>
           </div>
 
+          <div *ngIf="div0">
+            <h1 style="text-align: center; font-size: 200%; margin-top: 5rem;">Use the dropdown to select a graph</h1>
+          </div>
+
           <div *ngIf="div1">
             <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
           </div>
