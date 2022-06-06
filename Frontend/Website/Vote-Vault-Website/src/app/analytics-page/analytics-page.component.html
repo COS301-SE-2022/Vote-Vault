@@ -35,6 +35,16 @@
         </div>
           </div>
 
+          <div *ngIf="div1">
+            <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+          </div>
+          <div *ngIf="div2">
+            <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
+          </div>
+          <div *ngIf="div3">
+            <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
+          </div>
+
   </body>
   <footer>
     Vote Vault voting software
