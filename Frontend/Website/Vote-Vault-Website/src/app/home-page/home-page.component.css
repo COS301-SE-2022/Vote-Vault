@@ -1,5 +1,4 @@
 #info1 {
-  border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
   position: fixed;
@@ -9,19 +8,20 @@
   left: 2%;
   text-align: center;
   padding-top: 3%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #info2 {
-  border: 5px solid black;
+  /*border: 5px solid black;*/
   border-radius: 15px;
   margin: 10px;
   position: fixed;
-  top: 52%;
+  top: 35%;
   left: 2%;
   width: 45%;
   height: 28%;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: scroll;
   text-overflow: ellipsis;
 }
 
@@ -40,5 +40,10 @@
   text-align: justify;
   position: absolute;
   padding: 2% 2% 2% 2%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+}
+
+#appInstall{
+  padding-top: 50%;
 }
