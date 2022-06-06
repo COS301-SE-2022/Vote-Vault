@@ -8,13 +8,21 @@
   font-size: x-large;
 }
 
+body {
+height: fit-content;
+margin-bottom: 6%;
+}
+
 #HowToReg {
-  width: 45rem;
+  top: 10%;
+  width: 100%;
+  height: auto;
   padding: 1rem;
 }
 
 #HowToVote {
-  width: 45rem;
+  width: 100%;
+  height: auto;
   padding: 1rem;
-  float: right;
+  top: 10%;
 }

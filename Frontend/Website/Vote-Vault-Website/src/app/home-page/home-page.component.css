@@ -1,4 +1,8 @@
 #info1 {
+<<<<<<< HEAD
+=======
+  /* //border: 5px solid black; */
+>>>>>>> 50bddc4505180b6a0b2ae8da4eaa3e1d5a185c3f
   border-radius: 15px;
   margin: 10px;
   position: fixed;
@@ -12,7 +16,11 @@
 }
 
 #info2 {
+<<<<<<< HEAD
   /*border: 5px solid black;*/
+=======
+  /* border: 5px solid black; */
+>>>>>>> 50bddc4505180b6a0b2ae8da4eaa3e1d5a185c3f
   border-radius: 15px;
   margin: 10px;
   position: fixed;
@@ -27,7 +35,7 @@
 
 #info3 {
   border-radius: 15px;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   margin: 10px;
   position: fixed;
   top: 150px;
