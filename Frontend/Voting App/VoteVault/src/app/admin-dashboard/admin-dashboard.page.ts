@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class AdminDashboardPage implements OnInit {
 
-  constructor(private menu : MenuController) { }
+  constructor(private router : Router, private menu : MenuController) { }
 
   ngOnInit() {
   }
@@ -25,6 +26,10 @@ export class AdminDashboardPage implements OnInit {
   openCustom() {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
+  }
+
+  navigate(s) {
+    this.router.navigate([s])
   }
 
 }
