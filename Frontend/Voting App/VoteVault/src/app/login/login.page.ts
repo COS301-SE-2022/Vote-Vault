@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +11,21 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router : Router) { }
+  email : string
+  password : string
+
+  constructor(private loadingController : LoadingController, private alertController : AlertController, private router : Router, private auth : Auth) { }
 
   ngOnInit() {
   }
 
   navigate() {
-    this.router.navigate(['ballot'])
+    this.router.navigate([''])
   }
 
   adminLogin() {
     this.router.navigate(['admin-login'])
   }
+  
 }
 

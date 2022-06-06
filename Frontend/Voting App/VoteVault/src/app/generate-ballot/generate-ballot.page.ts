@@ -57,8 +57,8 @@ export class GenerateBallotPage implements OnInit {
         break
       }
     }
-    console.log(this.ballot1Options)
-    console.log(this.ballot2Options)
+    // console.log(this.ballot1Options)
+    // console.log(this.ballot2Options)
     this.name = ""
     this.surname = ""
     this.idNum = ""
@@ -72,7 +72,7 @@ export class GenerateBallotPage implements OnInit {
   ionSlidesDidLoad(slides) {
     slides.getActiveIndex().then((index : number) => {
       this.slideIndex = index
-      console.log(this.slideIndex)
+      // console.log(this.slideIndex)
       this.options = this.dataService.getOptions(this.slideIndex)
     });
   }
