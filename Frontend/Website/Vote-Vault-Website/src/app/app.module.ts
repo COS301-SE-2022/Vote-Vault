@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
@@ -23,7 +24,8 @@ import { HistoryPageComponent } from './history-page/history-page.component';
     BrowserModule,
     AppRoutingModule,
     ChartModule,
-    NgModule
+    NgModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
