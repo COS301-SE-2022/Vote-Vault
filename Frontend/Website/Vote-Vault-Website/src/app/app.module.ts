@@ -7,6 +7,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
+import { ChartModule } from 'angular2-chartjs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HistoryPageComponent } from './history-page/history-page.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { HowtoPageComponent } from './howto-page/howto-page.component';
     HomePageComponent,
     AnalyticsPageComponent,
     ResultsPageComponent,
-    HowtoPageComponent
+    HowtoPageComponent,
+    HistoryPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

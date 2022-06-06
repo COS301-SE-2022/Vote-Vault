@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'folder/:id',
@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'generate-ballot',
     loadChildren: () => import('./generate-ballot/generate-ballot.module').then( m => m.GenerateBallotPageModule)
+  },  {
+    path: 'admin-login',
+    loadChildren: () => import('./admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
   }
+
 
 ];
 

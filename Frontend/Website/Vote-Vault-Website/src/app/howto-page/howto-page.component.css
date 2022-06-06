@@ -1,0 +1,20 @@
+.Title{
+  font-size: xx-large;
+  padding: 0.8rem;
+}
+
+.Details {
+  padding: 1rem;
+  font-size: x-large;
+}
+
+#HowToReg {
+  width: 45rem;
+  padding: 1rem;
+}
+
+#HowToVote {
+  width: 45rem;
+  padding: 1rem;
+  float: right;
+}
