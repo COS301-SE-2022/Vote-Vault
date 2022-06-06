@@ -1,16 +1,16 @@
 #info1 {
-  border: 5px solid black;
+  /* border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
   position: fixed;
   width: 94%;
   height: 10%;
-  top: 140px;
+  top: 22%;
   left: 2%;
 }
 
 #info2 {
-  border: 5px solid black;
+  /* border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
   position: fixed;
