@@ -3,6 +3,15 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+footer {
+  background-color: rgb(58, 103, 228);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: sticky;
+  bottom: 0%;
+}
+
 body {
   border: 0px;
   padding: 0px;
