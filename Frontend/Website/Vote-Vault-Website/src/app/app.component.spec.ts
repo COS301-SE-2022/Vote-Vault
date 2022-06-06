@@ -33,3 +33,25 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('Vote-Vault-Website app is running!');
   });
 });
+
+
+showGenderInfo(){
+  this.div0=false;
+  this.div1=true;
+  this.div2=false;
+  this.div3=false
+}
+
+showAgeInfo(){
+  this.div0=false;
+  this.div2=true;
+  this.div1=false;
+  this.div3=false
+}
+
+showProvinceInfo(){
+  this.div0=false;
+  this.div3=true;
+  this.div2=false;
+  this.div1=false
+}
