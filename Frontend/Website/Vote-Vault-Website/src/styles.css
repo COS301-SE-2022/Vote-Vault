@@ -72,7 +72,6 @@ input[type=text] {
 }
 
 #logo {
-  position: fixed;
-  left: 20px;
-  top: 30px;
+  position: relative;
+  top: 35%;
 }
