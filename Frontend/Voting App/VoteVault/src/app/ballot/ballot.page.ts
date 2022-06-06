@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { MenuController, ToastController } from '@ionic/angular';
 import { DataService } from '../data.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class BallotPage implements OnInit {
   ballot3 : any
   slideIndex : number = 0
 
-  constructor(private dataService : DataService, private toastController: ToastController) { }
+  constructor(private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) { }
 
   ngOnInit() {
     this.options = this.dataService.electionOptions
@@ -55,6 +56,14 @@ export class BallotPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  openCustom() {
+    this.router.navigate(['admin-dashboard'])
+  }
+
+  navigate(s) {
+    this.router.navigate([s])
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
 
@@ -28,7 +28,7 @@ export class GenerateBallotPage implements OnInit {
   ballotName2 : string = ""
  
 
-  constructor(private toastController: ToastController, private router : Router, private dataService : DataService) { }
+  constructor(private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
     this.options = []
@@ -116,4 +116,13 @@ export class GenerateBallotPage implements OnInit {
 
     await toast.present();
   }
+  
+  openCustom() {
+    this.router.navigate(['admin-dashboard'])
+  }
+
+  navigate(s) {
+    this.router.navigate([s])
+  }
+
 }

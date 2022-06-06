@@ -16,7 +16,7 @@
       <ion-item lines="none" detail="false" (click)="navigate('generate-ballot')">
         <ion-icon name="copy-outline"></ion-icon><ion-label>Generate Ballots</ion-label>
       </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('register-user')">
+      <ion-item lines="none" detail="false" (click)="navigate('register')">
         <ion-icon name="people-outline"></ion-icon><ion-label>Register Voters</ion-label>
       </ion-item>
       <ion-item lines="none" detail="false" (click)="navigate('ballot')">
@@ -27,5 +27,6 @@
 </ion-menu>
 
 <ion-content id="main">
+  <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon size="large" name="menu-outline"></ion-icon></ion-button>
 
 </ion-content>
