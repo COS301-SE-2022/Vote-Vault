@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ChartModule } from 'angular2-chartjs';
-import { HistoryPageComponent } from './history-page/history-page.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +15,12 @@ import { HistoryPageComponent } from './history-page/history-page.component';
     HomePageComponent,
     AnalyticsPageComponent,
     ResultsPageComponent,
-    HowtoPageComponent,
-    HistoryPageComponent
+    HowtoPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule,
-    NgModule,
-    RouterModule
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,12 +3,12 @@
   <head>
 
   </head>
-  <!-- <header>
+  <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
     <input type="text" placeholder="Search...">
-  </header> -->
+  </header>
   <body>
-    <!-- <div class="navbar">
+    <div class="navbar">
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
@@ -22,32 +22,7 @@
       <td ><chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart></td>
       </tr>
       </tbody>
-      </table> -->
-
-        <div class="col">
-			<div ngbDropdown class="d-inline-block">
-				<button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle>View Demographics</button>
-				<div ngbDropdownMenu aria-labelledby="demographicsDropdown">
-					<button ngbDropdownItem (click)="showGenderInfo()">Gender Information</button>
-					<button ngbDropdownItem (click)="showAgeInfo()">Provinces Information</button>
-					<button ngbDropdownItem (click)="showProvinceInfo()">Age Information</button>
-				</div>
-			</div>
-        </div>
-
-		<div *ngIf="div0">
-			<h1 style="text-align: center; font-size: 200%; margin-top: 5rem;">Use the dropdown to select a graph</h1>
-		</div>
-
-		<div *ngIf="div1">
-			<chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
-		</div>
-		<div *ngIf="div2">
-			<chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
-		</div>
-		<div *ngIf="div3">
-			<chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
-		</div>
+      </table>
 
   </body>
   <footer>

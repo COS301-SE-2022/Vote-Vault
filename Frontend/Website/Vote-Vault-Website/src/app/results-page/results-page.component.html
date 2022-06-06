@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    
+  </head>
   <header>
     <img id="logo" alt="Logo for Vote Vault" src="fortuna.png">
     <input type="text" placeholder="Search...">
@@ -10,7 +13,6 @@
       <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-      <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
     <div id="info1"><h2>Vote Vault Results - Election Name</h2></div>
     <chart id="info2" [type]="type" [data]="data" [options]="options"></chart>
