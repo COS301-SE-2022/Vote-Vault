@@ -34,6 +34,10 @@ describe('AppComponent', () => {
   });
 });
 
+div0:boolean=true;
+div1:boolean=false;
+div2:boolean=false;
+div3:boolean=false;
 
 showGenderInfo(){
   this.div0=false;
