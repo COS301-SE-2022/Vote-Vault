@@ -24,8 +24,9 @@
   width: 45%;
   height: 28%;
   text-align: center;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   text-overflow: ellipsis;
+  height: 100%;
 }
 
 #info3 {
