@@ -9,6 +9,7 @@ import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ChartModule } from 'angular2-chartjs';
 import { HistoryPageComponent } from './history-page/history-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HistoryPageComponent } from './history-page/history-page.component';
     BrowserModule,
     AppRoutingModule,
     ChartModule,
-    NgModule
+    NgModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
