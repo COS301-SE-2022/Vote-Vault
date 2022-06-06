@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'admin-dashboard',
     loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+  },
+  {
+    path: 'voter-dashboard',
+    loadChildren: () => import('./voter-dashboard/voter-dashboard.module').then( m => m.VoterDashboardPageModule)
   }
 
 
