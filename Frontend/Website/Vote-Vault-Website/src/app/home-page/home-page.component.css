@@ -1,8 +1,6 @@
 #info1 {
-<<<<<<< HEAD
-=======
+
   /* //border: 5px solid black; */
->>>>>>> 50bddc4505180b6a0b2ae8da4eaa3e1d5a185c3f
   border-radius: 15px;
   margin: 10px;
   position: fixed;
@@ -16,15 +14,12 @@
 }
 
 #info2 {
-<<<<<<< HEAD
+
   /*border: 5px solid black;*/
-=======
-  /* border: 5px solid black; */
->>>>>>> 50bddc4505180b6a0b2ae8da4eaa3e1d5a185c3f
   border-radius: 15px;
   margin: 10px;
   position: fixed;
-  top: 35%;
+  top: 40%;
   left: 2%;
   width: 45%;
   height: 28%;
@@ -34,11 +29,11 @@
 }
 
 #info3 {
-  border-radius: 15px;
-  /* border: 5px solid black; */
+  /*border-radius: 15px;*/
+  /*border: 5px solid black;*/ 
   margin: 10px;
-  position: fixed;
-  top: 150px;
+  position: relative;
+  
   width: 45%;
   height: 59.5%;
   left: 50%;
@@ -53,5 +48,21 @@
 }
 
 #appInstall{
-  padding-top: 50%;
+  align-self: center;
+  width: 70%;
+  height: 80%;
+  margin-left: 15%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 15%;
+}
+
+#text3{
+  position: absolute;
+  bottom: 80%;
+  left: 30%;
+  right: 30%;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
 }
