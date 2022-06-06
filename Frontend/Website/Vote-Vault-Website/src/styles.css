@@ -38,19 +38,19 @@ footer {
     color: white;
 }
 
-.navbar {
+.navbar1 {
   background-color: rgb(112, 139, 255);
   overflow: hidden;
   position: sticky;
   top: 0%;
 }
 
-.navbar a:hover {
+.navbar1 a:hover {
   background-color: rgb(84, 123, 250);
   color: black;
 }
 
-.navbar a {
+.navbar1 a {
   float: left;
   color: #000000;
   text-align: center;
