@@ -49,6 +49,8 @@ Welcome to the Vote-Vault!
   git checkout feature-website
   ```
  
+ # Meet the Team
+ 
 * ## Bevan Slabbert
      - **Bio:**
          Third year Computer Science at the University of Pretoria.
