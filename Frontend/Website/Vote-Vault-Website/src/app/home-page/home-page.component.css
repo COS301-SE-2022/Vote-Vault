@@ -21,6 +21,8 @@
   width: 45%;
   height: 28%;
   text-align: center;
+  overflow-y: auto;
+  text-overflow: ellipsis;
 }
 
 #info3 {
@@ -32,4 +34,11 @@
   width: 45%;
   height: 59.5%;
   left: 50%;
+}
+
+#text2{
+  text-align: justify;
+  position: absolute;
+  padding: 2% 2% 2% 2%;
+
 }
