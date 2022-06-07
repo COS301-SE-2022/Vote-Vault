@@ -3,18 +3,51 @@
   padding: 0.8rem;
 }
 
-.Details {
+/* .Details {
   padding: 1rem;
   font-size: x-large;
+} */
+
+body {
+height: fit-content;
+margin-bottom: 6%;
 }
 
 #HowToReg {
-  width: 45rem;
+  top: 10%;
+  width: 100%;
+  height: auto;
   padding: 1rem;
+  padding-bottom: 0rem;
+  margin-bottom: 3rem;
 }
 
 #HowToVote {
-  width: 45rem;
+  width: 100%;
+  height: auto;
   padding: 1rem;
-  float: right;
+  top: 10%;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.how-to-register-image {
+  width: 100%;
+}
+
+.how-to-vote-image {
+  width: 100%;
+}
+
+#voteDiv {
+  margin-top: 3rem;
+}
+
+hr {
+  width: 80%;
+  margin-left: 10%;
 }

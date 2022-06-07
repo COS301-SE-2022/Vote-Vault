@@ -16,6 +16,7 @@ body {
   border: 0px;
   padding: 0px;
   margin: 0px;
+  height: fit-content;
 }
 
 header {
@@ -30,18 +31,16 @@ header {
   border-top: 100px;
 }
 
-footer {
+#ftrr {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
   height: 90px;
   border: 0px;
   text-align: center;
-  position: relative;
   color: black;
   border-top: 100px;
   position: fixed;
-  bottom: 0px;
     padding: 10px;
     text-align: center;
     color: white;
@@ -84,5 +83,6 @@ input[type=text] {
 
 #logo {
   position: relative;
-  top: 35%;
+  top: 15%;
+  height: 70%;
 }
