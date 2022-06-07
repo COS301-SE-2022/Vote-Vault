@@ -1,34 +1,8 @@
 <ion-header>
-
 </ion-header>
 
-<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <!-- <ion-item lines="none" detail="false" (click)="navigate('admin-dashboard')">
-        <ion-icon name="home-outline"></ion-icon><ion-label>Dashboard</ion-label>
-      </ion-item> -->
-      <ion-item lines="none" detail="false" (click)="navigate('generate-ballot')">
-        <ion-icon name="copy-outline"></ion-icon><ion-label>Generate Ballots</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('register')">
-        <ion-icon name="people-outline"></ion-icon><ion-label>Register Voters</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('ballot')">
-        <ion-icon name="checkbox-outline"></ion-icon>  <ion-label>Vote</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 
 <ion-content id="main">
-  <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon size="large" name="menu-outline"></ion-icon></ion-button>
-  
   <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
     <ion-card-header>
       <ion-card-title>{{e.electionName}}</ion-card-title>
@@ -36,4 +10,9 @@
       <ion-card-subtitle>#{{e.electionId}}</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

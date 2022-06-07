@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, MenuController } from '@ionic/angular';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,7 +12,7 @@ export class AdminDashboardPage implements OnInit {
 
   elections : any[]
 
-  constructor(private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
+  constructor(private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
     this.elections = [{"electionId" : 1, "electionName" : "Provincial Election"},
                       {"electionId" : 86, "electionName" : "National Election"},
                       {"electionId" : 129, "electionName" : "District Election"}]
@@ -47,20 +48,20 @@ export class AdminDashboardPage implements OnInit {
         icon: 'copy-outline',
         data: 10,
         handler: () => {
-          console.log('Share clicked');
+          this.navigate("generate-ballot")
         }
       }, {
         text: 'Register User',
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
-          console.log('Play clicked');
+          this.navigate("register")
         }
       }, {
         text: 'Vote',
         icon: 'checkmark-done-circle-outline',
         handler: () => {
-          console.log('Favorite clicked');
+          this.navigate("ballot")
         }
       }, {
         text: 'Cancel',
@@ -90,6 +91,11 @@ export class AdminDashboardPage implements OnInit {
   }
 
   electionClicked(e : any) {
+    this.dataService.election = e
     this.presentActionSheet(e)
+  }
+
+  createElection() {
+    this.router.navigate(['generate-ballot'])
   }
 }

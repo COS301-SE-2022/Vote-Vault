@@ -17,6 +17,8 @@ export class DataService {
   ballot3         : Ballot
   votes           : any[]
   userEmail       : string
+  election        : any
+  elections       : any[]
 
   constructor() { 
     this.electionOptions = []
@@ -31,6 +33,7 @@ export class DataService {
     this.ballot3.name = ""
     this.votes = []
     this.userEmail = ""
+    this.elections = []
   }
 
   setUserEmail(s) { 
