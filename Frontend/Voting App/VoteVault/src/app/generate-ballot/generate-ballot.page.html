@@ -56,7 +56,7 @@
         <ion-card>
         Candidate List
           <ion-item *ngFor="let o of ballot1Options">
-            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)="removeCandidate(o)" class = "itemIcon" size = "large" name="close-circle-outline" position="end"></ion-icon></ion-label>
           </ion-item>
       
       </ion-card>
@@ -91,7 +91,7 @@
         <ion-card>
         Candidate List
           <ion-item *ngFor="let o of ballot2Options">
-            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)="removeCandidate(o)" class = "itemIcon" size = "large" name="close-circle-outline" position="end"></ion-icon></ion-label>
           </ion-item>
       
       </ion-card>
@@ -126,7 +126,7 @@
   <ion-card>
   Candidate List
     <ion-item *ngFor="let o of ballot3Options">
-      <ion-label>{{o.name}} {{o.surname}}, {{o.id}}</ion-label>
+      <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)="removeCandidate(o)" class = "itemIcon" size = "large" name="close-circle-outline" position="end"></ion-icon></ion-label>
     </ion-item>
 
   </ion-card>

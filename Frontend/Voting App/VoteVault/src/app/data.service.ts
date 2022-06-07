@@ -82,6 +82,26 @@ export class DataService {
     console.log(this.ballot1)
   }
 
+  removeOption(index, i) {
+    switch(i) {
+      case 0:{
+        if(index != -1)
+          this.ballot1.options.splice(index,1)
+        break
+      }
+      case 1: {
+        if(index != -1)
+          this.ballot2.options.splice(index,1)
+        break
+      }
+      case 2: {
+        if(index != -1)
+          this.ballot3.options.splice(index,1)
+        break
+      }
+    }
+  }
+
   getOptions(i) {
     switch(i) {
       case 0:{

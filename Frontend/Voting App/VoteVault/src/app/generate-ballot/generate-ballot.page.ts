@@ -132,4 +132,30 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.router.navigate([s])
   }
 
+  removeCandidate(c) {
+    switch(this.slideIndex) {
+      case 0: {
+        let i = this.ballot1Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }
+        break
+      }
+      case 1: {
+        let i = this.ballot2Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }       
+        break
+      }
+      case 2: {
+        let i = this.ballot3Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }
+        break
+      }
+    }
+  }
+
 }
