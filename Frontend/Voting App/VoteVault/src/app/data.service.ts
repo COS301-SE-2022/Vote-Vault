@@ -41,6 +41,17 @@ export class DataService {
     this.registeredUsers = []
   }
 
+  editElection(e) {
+    this.ballot1.options = e.ballot1.options
+    this.ballot2.options = e.ballot2.options
+    this.ballot3.options = e.ballot3.options
+    this.ballot1.name    = e.ballot1.name
+    this.ballot2.name    = e.ballot2.name
+    this.ballot3.name    = e.ballot3.name
+
+
+  }
+
   async saveElection() {
     //Create election object and save to firestore
     const election = {"adminEmail" : this.userEmail,
@@ -60,9 +71,10 @@ export class DataService {
   }
 
   async mapAdminToElection(ref) {
-    const id = ref.id
+    // const id = ref.id
+    
+    // const adminRef = doc(this.db, 'admins' , this.userEmail)
 
-    const adminRef = doc(this.db, "admins", this.userEmail)
     // await updateDoc(adminRef, {
     //   elections: arrayUnion(id)
     // })

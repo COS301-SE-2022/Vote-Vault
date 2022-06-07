@@ -91,7 +91,7 @@ export class AdminDashboardPage implements OnInit {
   }
 
   electionClicked(e : any) {
-    this.dataService.election = e
+    this.dataService.editElection(e)
     this.presentActionSheet(e)
   }
 
