@@ -30,6 +30,10 @@ jobs:
 #         working-directory: ./Frontend/Voting App/VoteVault
 #         run: npm lint
 
-      - name: "✅ Run Unit Tests"
+      - name: "✅ Run Unit Tests App"
         working-directory: ./Frontend/Voting App/VoteVault
+        run: npm test
+        
+      - name: "✅ Run Unit Tests Website"
+        working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm test
