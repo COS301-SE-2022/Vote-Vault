@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonSlides, MenuController } from '@ionic/angular';
+import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
 
@@ -28,7 +28,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ballotName2 : string = ""
   electionTitle : string = ""
 
-  constructor(private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
+  constructor(private loadingController : LoadingController, private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
     this.options = []
@@ -71,7 +71,17 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
   generate() : void {
     this.dataService.saveElectionName(this.electionTitle)
+    this.presentLoading()
     this.dataService.saveElection()
+    .then((res) => {
+      console.log(res)
+      this.loadingController.dismiss()
+    })
+    .catch((e) => {
+      console.error(e)
+      this.loadingController.dismiss()
+    })
+  
     this.router.navigate(['admin-dashboard'])
   }
 
@@ -122,6 +132,18 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
     await toast.present();
   }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
   
   openCustom() {
     this.dataService.clear()
@@ -157,5 +179,4 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
       }
     }
   }
-
 }

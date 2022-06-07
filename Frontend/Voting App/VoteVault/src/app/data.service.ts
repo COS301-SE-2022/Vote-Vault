@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
 
 interface Ballot {
   name: string,
@@ -21,7 +23,7 @@ export class DataService {
   election        : any
   elections       : any[]
 
-  constructor() { 
+  constructor(private db : Firestore) { 
     this.electionOptions = []
     this.ballot1 = {} as Ballot
     this.ballot2 = {} as Ballot
@@ -37,9 +39,20 @@ export class DataService {
     this.elections = []
   }
 
-  saveElection() {
+  async saveElection() {
     //Create election object and save to firestore
+    const election = {"adminEmail" : this.userEmail,
+                      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+                      "electionName" : this.electionName,
+                      "active" : true}
+
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
+    const electionRef = await addDoc(collection(this.db, 'elections'), {
+      election
+    })
+
+    //Add to admin elections
+    // this.mapAdminToElection(electionRef)
   }
 
   clear() {
