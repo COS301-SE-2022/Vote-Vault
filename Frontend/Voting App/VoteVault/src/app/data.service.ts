@@ -12,6 +12,7 @@ interface Ballot {
 export class DataService {
 
   electionOptions : any[]
+  electionName    : string
   ballot1         : Ballot
   ballot2         : Ballot
   ballot3         : Ballot
@@ -38,6 +39,10 @@ export class DataService {
 
   setUserEmail(s) { 
     this.userEmail = s
+  }
+
+  saveElectionName(s) {
+    this.electionName = s
   }
 
   addOption(o, i) {

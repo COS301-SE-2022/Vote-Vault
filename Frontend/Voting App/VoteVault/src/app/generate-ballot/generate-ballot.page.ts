@@ -26,7 +26,7 @@ export class GenerateBallotPage implements OnInit {
   ballotName : string = ""
   ballotName1 : string = ""
   ballotName2 : string = ""
- 
+  electionTitle : string = ""
 
   constructor(private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
@@ -66,6 +66,7 @@ export class GenerateBallotPage implements OnInit {
   }
 
   generate() : void {
+    this.dataService.saveElectionName(this.electionTitle)
     this.router.navigate(['/ballot'])
   }
 
