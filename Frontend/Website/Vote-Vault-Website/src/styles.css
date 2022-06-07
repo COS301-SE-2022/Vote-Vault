@@ -83,5 +83,6 @@ input[type=text] {
 
 #logo {
   position: relative;
-  top: 35%;
+  top: 15%;
+  height: 70%;
 }

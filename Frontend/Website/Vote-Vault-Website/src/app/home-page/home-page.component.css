@@ -1,4 +1,5 @@
 #info1 {
+
   /* //border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
@@ -9,28 +10,31 @@
   left: 2%;
   text-align: center;
   padding-top: 3%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #info2 {
-  /* border: 5px solid black; */
+
+  /*border: 5px solid black;*/
   border-radius: 15px;
   margin: 10px;
   position: fixed;
-  top: 52%;
+  top: 40%;
   left: 2%;
   width: 45%;
   height: 28%;
   text-align: center;
-  overflow-y: auto;
+  /* overflow-y: scroll; */
   text-overflow: ellipsis;
+  height: 100%;
 }
 
 #info3 {
-  border-radius: 15px;
-  /* border: 5px solid black; */
+  /*border-radius: 15px;*/
+  /*border: 5px solid black;*/ 
   margin: 10px;
-  position: fixed;
-  top: 150px;
+  position: relative;
+  
   width: 45%;
   height: 59.5%;
   left: 50%;
@@ -40,5 +44,26 @@
   text-align: justify;
   position: absolute;
   padding: 2% 2% 2% 2%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+}
+
+#appInstall{
+  align-self: center;
+  width: 70%;
+  height: 80%;
+  margin-left: 15%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 15%;
+}
+
+#text3{
+  position: absolute;
+  bottom: 80%;
+  left: 30%;
+  right: 30%;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
 }
