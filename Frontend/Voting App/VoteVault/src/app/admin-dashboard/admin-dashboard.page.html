@@ -28,5 +28,12 @@
 
 <ion-content id="main">
   <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon size="large" name="menu-outline"></ion-icon></ion-button>
-
+  
+  <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
+    <ion-card-header>
+      <ion-card-title>{{e.electionName}}</ion-card-title>
+      <br>
+      <ion-card-subtitle>#{{e.electionId}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

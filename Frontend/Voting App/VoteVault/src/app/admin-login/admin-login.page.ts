@@ -3,6 +3,7 @@ import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { AlertController, LoadingController } from '@ionic/angular';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -14,7 +15,7 @@ export class AdminLoginPage implements OnInit {
   email : string
   password : string
 
-  constructor(private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { }
+  constructor(private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,7 @@ export class AdminLoginPage implements OnInit {
     this.presentLoading()
     try {
       const user = await signInWithEmailAndPassword(this.auth, this.email, this.password)
-      console.log(user)
+      this.dataService.setUserEmail(user.user.email)
       this.loadingController.dismiss()
       this.router.navigate(['admin-dashboard'])
     } catch(e) {
