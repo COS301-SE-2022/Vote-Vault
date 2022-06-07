@@ -72,7 +72,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   generate() : void {
     this.dataService.saveElectionName(this.electionTitle)
     this.dataService.saveElection()
-    this.router.navigate(['/ballot'])
+    this.router.navigate(['admin-dashboard'])
   }
 
   ionSlidesDidLoad(slides) {
