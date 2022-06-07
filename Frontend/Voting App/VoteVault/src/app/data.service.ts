@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
+import { addDoc, arrayUnion, collection, doc, setDoc, updateDoc } from "firebase/firestore"; 
 
 interface Ballot {
   name: string,
@@ -22,6 +22,7 @@ export class DataService {
   userEmail       : string
   election        : any
   elections       : any[]
+  registeredUsers : any[]
 
   constructor(private db : Firestore) { 
     this.electionOptions = []
@@ -37,6 +38,7 @@ export class DataService {
     this.votes = []
     this.userEmail = ""
     this.elections = []
+    this.registeredUsers = []
   }
 
   async saveElection() {
@@ -44,7 +46,9 @@ export class DataService {
     const election = {"adminEmail" : this.userEmail,
                       ballots    : [this.ballot1, this.ballot2, this.ballot3],
                       "electionName" : this.electionName,
-                      "active" : true}
+                      "active" : true,
+                      "users"  : this.registeredUsers
+                    }
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.db, 'elections'), {
@@ -52,7 +56,16 @@ export class DataService {
     })
 
     //Add to admin elections
-    // this.mapAdminToElection(electionRef)
+    this.mapAdminToElection(electionRef)
+  }
+
+  async mapAdminToElection(ref) {
+    const id = ref.id
+
+    const adminRef = doc(this.db, "admins", this.userEmail)
+    // await updateDoc(adminRef, {
+    //   elections: arrayUnion(id)
+    // })
   }
 
   clear() {
