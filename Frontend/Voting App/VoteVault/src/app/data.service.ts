@@ -37,6 +37,25 @@ export class DataService {
     this.elections = []
   }
 
+  saveElection() {
+    //Create election object and save to firestore
+    //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
+  }
+
+  clear() {
+    this.ballot1 = {} as Ballot
+    this.ballot2 = {} as Ballot
+    this.ballot3 = {} as Ballot
+    this.ballot1.options = []
+    this.ballot1.name = ""
+    this.ballot2.options = []
+    this.ballot2.name = ""
+    this.ballot3.options = []
+    this.ballot3.name = ""
+    this.votes = []
+    this.elections = []
+  }
+
   setUserEmail(s) { 
     this.userEmail = s
   }

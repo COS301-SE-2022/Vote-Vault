@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 })
 
 
-export class GenerateBallotPage implements OnInit {
+export class GenerateBallotPage implements OnInit, OnDestroy{
 
   @ViewChild('slides' , {  static: true })  slides: IonSlides
   slideIndex : number = 0
@@ -37,6 +37,11 @@ export class GenerateBallotPage implements OnInit {
     this.ballot3Options = []
   }
 
+  ngOnDestroy() {
+    this.dataService.clear()
+  }
+  
+
   addOption() : void {
     const newCandidate = {"name" : this.name, "surname" : this.surname, "id" : this.idNum, "isChecked" : false}
 
@@ -49,7 +54,6 @@ export class GenerateBallotPage implements OnInit {
       }
       case 1: {
         this.ballot2Options = this.dataService.getOptions(this.slideIndex)
-        console.log("HERE")
         break
       }
       case 2: {
@@ -67,6 +71,7 @@ export class GenerateBallotPage implements OnInit {
 
   generate() : void {
     this.dataService.saveElectionName(this.electionTitle)
+    this.dataService.saveElection()
     this.router.navigate(['/ballot'])
   }
 
@@ -119,6 +124,7 @@ export class GenerateBallotPage implements OnInit {
   }
   
   openCustom() {
+    this.dataService.clear()
     this.router.navigate(['admin-dashboard'])
   }
 
