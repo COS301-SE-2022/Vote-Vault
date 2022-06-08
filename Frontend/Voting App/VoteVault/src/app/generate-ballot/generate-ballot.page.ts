@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
 
@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 })
 
 
-export class GenerateBallotPage implements OnInit {
+export class GenerateBallotPage implements OnInit, OnDestroy{
 
   @ViewChild('slides' , {  static: true })  slides: IonSlides
   slideIndex : number = 0
@@ -26,9 +26,9 @@ export class GenerateBallotPage implements OnInit {
   ballotName : string = ""
   ballotName1 : string = ""
   ballotName2 : string = ""
- 
+  electionTitle : string = ""
 
-  constructor(private toastController: ToastController, private router : Router, private dataService : DataService) { }
+  constructor(private loadingController : LoadingController, private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
     this.options = []
@@ -36,6 +36,11 @@ export class GenerateBallotPage implements OnInit {
     this.ballot2Options = []
     this.ballot3Options = []
   }
+
+  ngOnDestroy() {
+    this.dataService.clear()
+  }
+  
 
   addOption() : void {
     const newCandidate = {"name" : this.name, "surname" : this.surname, "id" : this.idNum, "isChecked" : false}
@@ -49,7 +54,6 @@ export class GenerateBallotPage implements OnInit {
       }
       case 1: {
         this.ballot2Options = this.dataService.getOptions(this.slideIndex)
-        console.log("HERE")
         break
       }
       case 2: {
@@ -57,8 +61,8 @@ export class GenerateBallotPage implements OnInit {
         break
       }
     }
-    console.log(this.ballot1Options)
-    console.log(this.ballot2Options)
+    // console.log(this.ballot1Options)
+    // console.log(this.ballot2Options)
     this.name = ""
     this.surname = ""
     this.idNum = ""
@@ -66,13 +70,25 @@ export class GenerateBallotPage implements OnInit {
   }
 
   generate() : void {
-    this.router.navigate(['/ballot'])
+    this.dataService.saveElectionName(this.electionTitle)
+    this.presentLoading()
+    this.dataService.saveElection()
+    .then((res) => {
+      console.log(res)
+      this.loadingController.dismiss()
+    })
+    .catch((e) => {
+      console.error(e)
+      this.loadingController.dismiss()
+    })
+  
+    this.router.navigate(['admin-dashboard'])
   }
 
   ionSlidesDidLoad(slides) {
     slides.getActiveIndex().then((index : number) => {
       this.slideIndex = index
-      console.log(this.slideIndex)
+      // console.log(this.slideIndex)
       this.options = this.dataService.getOptions(this.slideIndex)
     });
   }
@@ -115,5 +131,52 @@ export class GenerateBallotPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+  
+  openCustom() {
+    this.dataService.clear()
+    this.router.navigate(['admin-dashboard'])
+  }
+
+  navigate(s) {
+    this.router.navigate([s])
+  }
+
+  removeCandidate(c) {
+    switch(this.slideIndex) {
+      case 0: {
+        let i = this.ballot1Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }
+        break
+      }
+      case 1: {
+        let i = this.ballot2Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }       
+        break
+      }
+      case 2: {
+        let i = this.ballot3Options.indexOf(c)
+        if(i != -1){
+          this.dataService.removeOption(i, this.slideIndex)
+        }
+        break
+      }
+    }
   }
 }
