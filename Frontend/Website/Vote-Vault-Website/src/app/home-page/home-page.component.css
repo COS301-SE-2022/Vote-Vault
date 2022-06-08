@@ -3,10 +3,10 @@
   /* //border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
-  position: fixed;
+  position: relative;
   width: 45%;
   height: 28%;
-  top: 150px;
+  top: 70px;
   left: 2%;
   text-align: center;
   padding-top: 3%;
@@ -18,8 +18,8 @@
   /*border: 5px solid black;*/
   border-radius: 15px;
   margin: 10px;
-  position: fixed;
-  top: 40%;
+  position: relative;
+  top: 20%;
   left: 2%;
   width: 45%;
   height: 28%;
@@ -42,7 +42,7 @@
 
 #text2{
   text-align: justify;
-  position: absolute;
+  position: relative;
   padding: 2% 2% 2% 2%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
