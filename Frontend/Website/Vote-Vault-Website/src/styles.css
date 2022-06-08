@@ -5,7 +5,7 @@ html {
 
 footer {
   background-color: rgb(58, 103, 228);
-  padding: 10px;
+  padding-top: 1%;
   text-align: center;
   color: white;
 }
@@ -34,15 +34,22 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 90px;
+  height: 8%;
   border: 0px;
   text-align: center;
   color: black;
   position: sticky;
   border-top: 100px;
+<<<<<<< HEAD
   padding: 10px;
   text-align: center;
   color: white;
+=======
+  position: fixed;
+    /* padding-top: 3%; */
+    text-align: center;
+    color: white;
+>>>>>>> 8813e5f08ba754da046718ab54e96d055648861e
 }
 
 .navbar1 {
