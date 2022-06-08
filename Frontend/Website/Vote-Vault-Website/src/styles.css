@@ -8,8 +8,6 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
-  position: sticky;
-  bottom: 0%;
 }
 
 body {
@@ -40,11 +38,11 @@ header {
   border: 0px;
   text-align: center;
   color: black;
+  position: sticky;
   border-top: 100px;
-  position: fixed;
-    padding: 10px;
-    text-align: center;
-    color: white;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
 
 .navbar1 {
