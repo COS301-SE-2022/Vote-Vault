@@ -26,7 +26,19 @@ const routes: Routes = [
   {
     path: 'generate-ballot',
     loadChildren: () => import('./generate-ballot/generate-ballot.module').then( m => m.GenerateBallotPageModule)
+  },  {
+    path: 'admin-login',
+    loadChildren: () => import('./admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
+  },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+  },
+  {
+    path: 'voter-dashboard',
+    loadChildren: () => import('./voter-dashboard/voter-dashboard.module').then( m => m.VoterDashboardPageModule)
   }
+
 
 ];
 
