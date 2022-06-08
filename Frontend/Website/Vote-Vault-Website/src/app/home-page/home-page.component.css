@@ -4,13 +4,14 @@ body {
 
 #info1 {
 
-  border: 5px solid black;
+  /* border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
   position: relative;
   width: 45%;
-  height: 28vh;
+  height: 50%;
   top: 40px;
+  float: left;
   left: 2%;
   text-align: center;
   padding-top: 3%;
@@ -18,7 +19,7 @@ body {
 
 }
 
-#info2 {
+/* #info2 {
 
   border: 5px solid black;
   border-radius: 15px;
@@ -34,26 +35,30 @@ body {
   text-align: justify;
   padding: 2% 2% 2% 2%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} */
 
 #info3 {
   border-radius: 15px;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   position: relative;
   width: 47.5%;
   height: 60%;
   left: 50%;
+  top: 10;
 }
 
 
 #appInstall{
   align-self: center;
-  width: 70%;
-  height: 80%;
-  margin-left: 15%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-right: 15%;
+  position: relative;
+ width: 50%;
+ height: 60%;
+  bottom: 80%;
+  left: 10%;
+ margin-left: 15%;
+ margin-top: 10%;
+ margin-bottom: 10%;
+ margin-right: 15%;
 }
 
 #text3{
