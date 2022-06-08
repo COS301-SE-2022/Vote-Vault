@@ -5,10 +5,10 @@
       <br>
       <br>
       <ion-card-subtitle>ID</ion-card-subtitle>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="email"></ion-input>
       <br>
       <ion-card-subtitle>Password</ion-card-subtitle>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="password"></ion-input>
     </ion-card-header>
   </ion-card>
   <ion-button size = "medium" (click)="navigate()">Login</ion-button>

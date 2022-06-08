@@ -13,6 +13,7 @@ ion-card {
     padding-top: 10vh;
     padding-bottom: 10vh;
     margin-bottom: 10vh;
+    width: 90%;
 }
 
 ion-slides {
@@ -23,4 +24,8 @@ ion-slides {
     width: 80%;
     position: fixed;
     bottom: 4vh;
+}
+
+#menuButton { 
+    --background : transparent;
 }
