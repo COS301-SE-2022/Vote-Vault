@@ -1,43 +1,43 @@
 #info1 {
 
-  /* //border: 5px solid black; */
+  border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
   position: relative;
   width: 45%;
-  height: 28%;
-  top: 70px;
+  height: 28vh;
+  top: 40px;
   left: 2%;
   text-align: center;
   padding-top: 3%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  float:left
 }
 
 #info2 {
 
-  /*border: 5px solid black;*/
+  border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
   position: relative;
-  top: 20%;
-  left: 2%;
   width: 45%;
   height: 28%;
   text-align: center;
   /* overflow-y: scroll; */
   text-overflow: ellipsis;
-  height: 100%;
+  top: 10%;
+  left: 2%;
 }
 
 #info3 {
   /*border-radius: 15px;*/
-  /*border: 5px solid black;*/ 
+  border: 5px solid black;
   margin: 10px;
   position: relative;
+  width: 53%;
+  height: 60%;
+  float: right;
   
-  width: 45%;
-  height: 59.5%;
-  left: 50%;
 }
 
 #text2{
