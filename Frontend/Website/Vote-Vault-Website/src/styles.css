@@ -5,18 +5,17 @@ html {
 
 footer {
   background-color: rgb(58, 103, 228);
-  padding: 10px;
+  padding-top: 1%;
   text-align: center;
   color: white;
-  position: sticky;
-  bottom: 0%;
 }
 
 body {
   border: 0px;
   padding: 0px;
   margin: 0px;
-  height: fit-content;
+  height: 100vh;
+  width: 100vw;
 }
 
 header {
@@ -35,15 +34,15 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 90px;
+  height: 8%;
   border: 0px;
   text-align: center;
   color: black;
+  position: sticky;
   border-top: 100px;
-  position: fixed;
-    padding: 10px;
-    text-align: center;
-    color: white;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
 
 .navbar1 {
@@ -51,6 +50,7 @@ header {
   overflow: hidden;
   position: sticky;
   top: 0%;
+  z-index: 1;
 }
 
 .navbar1 a:hover {
