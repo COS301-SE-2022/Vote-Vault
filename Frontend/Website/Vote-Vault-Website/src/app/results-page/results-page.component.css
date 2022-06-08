@@ -21,6 +21,10 @@
   display: block;
 } */
 
+body {
+  height: fit-content;
+}
+
 h1 {
   width: 100%;
   position: fixed;

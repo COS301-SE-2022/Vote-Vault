@@ -1,3 +1,7 @@
+body {
+  height: fit-content;
+}
+
 #info1 {
 
   border: 5px solid black;
