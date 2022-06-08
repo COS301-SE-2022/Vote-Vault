@@ -40,16 +40,13 @@ header {
   color: black;
   position: sticky;
   border-top: 100px;
-<<<<<<< HEAD
   padding: 10px;
   text-align: center;
   color: white;
-=======
   position: fixed;
     /* padding-top: 3%; */
     text-align: center;
     color: white;
->>>>>>> 8813e5f08ba754da046718ab54e96d055648861e
 }
 
 .navbar1 {
