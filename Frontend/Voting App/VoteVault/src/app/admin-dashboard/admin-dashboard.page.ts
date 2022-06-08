@@ -97,6 +97,7 @@ export class AdminDashboardPage implements OnInit {
   }
 
   createElection() {
+    this.dataService.clear()
     this.router.navigate(['generate-ballot'])
   }
 }
