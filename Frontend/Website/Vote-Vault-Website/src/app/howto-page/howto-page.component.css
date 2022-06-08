@@ -1,44 +1,53 @@
-#div1{
-    border: 5px solid black;
-    border-radius: 15px;
-    margin: 10px;
-    position: fixed;
-    width: 45%;
-    height: 28%;
-    top: 150px;
-    left: 2%;
+.Title{
+  font-size: xx-large;
+  padding: 0.8rem;
 }
 
-#div2{
-    border: 5px solid black;
-    border-radius: 15px;
-    margin: 10px;
-    position: fixed;
-    top: 52%;
-    left: 2%;
-    width: 45%;
-    height: 28%;
+/* .Details {
+  padding: 1rem;
+  font-size: x-large;
+} */
+
+body {
+height: fit-content;
+margin-bottom: 6%;
 }
 
-#div3{
-    border-radius: 15px;
-  border: 5px solid black;
-  margin: 10px;
-  position: fixed;
-  top: 150px;
-  width: 45%;
-  height: 28%;
-  left: 50%;
+#HowToReg {
+  top: 10%;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  padding-bottom: 0rem;
+  margin-bottom: 3rem;
 }
 
-#div4{
-    border-radius: 15px;
-  border: 5px solid black;
-  margin: 10px;
-  position: fixed;
-  top: 150px;
-  width: 45%;
-  height: 28%;
-  left: 50%;
-  top: 52%;
+#HowToVote {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  top: 10%;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.how-to-register-image {
+  width: 100%;
+}
+
+.how-to-vote-image {
+  width: 100%;
+}
+
+#voteDiv {
+  margin-top: 3rem;
+}
+
+hr {
+  width: 80%;
+  margin-left: 10%;
 }
