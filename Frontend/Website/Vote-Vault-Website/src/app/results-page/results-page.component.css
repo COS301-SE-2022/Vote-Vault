@@ -22,13 +22,13 @@
 } */
 
 body {
-  height: fit-content;
+  height: 100vh;
 }
 
 h1 {
   width: 100%;
   position: fixed;
-  left: 300px;
+  left: 5%;
 }
 
 #b1 {
