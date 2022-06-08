@@ -42,14 +42,14 @@ export class DataService {
   }
 
   editElection(e) {
-    this.ballot1.options = e.ballot1.options
-    this.ballot2.options = e.ballot2.options
-    this.ballot3.options = e.ballot3.options
-    this.ballot1.name    = e.ballot1.name
-    this.ballot2.name    = e.ballot2.name
-    this.ballot3.name    = e.ballot3.name
-
-
+    console.log(e)
+    this.ballot1.options = e.ballots[0].options
+    this.ballot2.options = e.ballots[1].options
+    this.ballot3.options = e.ballots[2].options
+    this.ballot1.name    = e.ballots[0].name
+    this.ballot2.name    = e.ballots[1].name
+    this.ballot3.name    = e.ballots[2].name
+    this.electionName    = e.name
   }
 
   async saveElection() {
