@@ -5,7 +5,7 @@ html {
 
 footer {
   background-color: rgb(58, 103, 228);
-  padding: 10px;
+  padding-top: 1%;
   text-align: center;
   color: white;
   position: sticky;
@@ -36,13 +36,13 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 90px;
+  height: 8%;
   border: 0px;
   text-align: center;
   color: black;
   border-top: 100px;
   position: fixed;
-    padding: 10px;
+    /* padding-top: 3%; */
     text-align: center;
     color: white;
 }
