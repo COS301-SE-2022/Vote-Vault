@@ -24,7 +24,7 @@ export class DataService {
   elections       : any[]
   registeredUsers : any[]
 
-  constructor(private db : Firestore) { 
+  constructor(private firestore : Firestore) { 
     this.electionOptions = []
     this.ballot1 = {} as Ballot
     this.ballot2 = {} as Ballot
@@ -62,7 +62,7 @@ export class DataService {
                     }
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
-    const electionRef = await addDoc(collection(this.db, 'elections'), {
+    const electionRef = await addDoc(collection(this.firestore, 'elections'), {
       election
     })
 
@@ -73,7 +73,7 @@ export class DataService {
   async mapAdminToElection(ref) {
     // const id = ref.id
     
-    // const adminRef = doc(this.db, 'admins' , this.userEmail)
+    // const adminRef = doc(this.firestore, 'admins' , this.userEmail)
 
     // await updateDoc(adminRef, {
     //   elections: arrayUnion(id)
