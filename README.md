@@ -1,4 +1,4 @@
-# Vote-Vault
+# SSDpressed - Vote-Vault - Project Description
 
 ![unknown](https://user-images.githubusercontent.com/86471999/166426210-88cb2c90-15d7-45fb-b062-684eba26cb75.png)
 
@@ -13,8 +13,15 @@ Welcome to the Vote-Vault!
   elections, it should be dynamically generated according to input provided by the voting
   official. A dashboard should be made to give some additional information about the
   voting process, such as distributions about the users.
-* [Demo Video](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
-* [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
+# Demo Links
+Demo 1
+* [SSDpressed-Demo1](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
+* [SRS Documentation Demo1](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
+
+Demo 2
+* [SSDpressed-Demo2](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
+* [SRS Documentation Demo2](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
+# Other Links
 * [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
 * [Professional profile and description of each team member](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Meet-The-Team)
 * Useful commands:
@@ -53,7 +60,7 @@ Welcome to the Vote-Vault!
  
 * ## Bevan Slabbert
      - **Bio:**
-         Third year Computer Science at the University of Pretoria.
+         Third year Computer Science student at the University of Pretoria.
      - **Info:**
           - Has experience in Ionic/Angular PWA development.
           - Has experience in using Firebase in conjunction with Ionic/Angular.
@@ -66,7 +73,7 @@ Welcome to the Vote-Vault!
           https://www.linkedin.com/in/bevan-slabbert-5ba17a152/
 * ## Hugo Esterhuyse
      - **Bio:**
-         Third year Computer Science at the University of Pretoria.
+         Third year Computer Science student at the University of Pretoria.
      - **Info:**
           - Experience in Angular development.
           - Experience in database management.
