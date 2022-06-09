@@ -43,7 +43,7 @@ jobs:
           # Options are `alpine`, `linux`, `macos`, `windows`
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
-          ./codecov -t ${CODECOV_TOKEN}
+          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
   Website:
     runs-on: ubuntu-latest
 
@@ -77,4 +77,4 @@ jobs:
           # Options are `alpine`, `linux`, `macos`, `windows`
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
-          ./codecov -t ${CODECOV_TOKEN}
+          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
