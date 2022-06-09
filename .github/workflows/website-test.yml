@@ -31,4 +31,4 @@ jobs:
         
       - name: "✅ Building"
         working-directory: ./Frontend/Website/Vote-Vault-Website
-        run: npm build
+        run: npm run build
