@@ -1,10 +1,6 @@
 name: Frontend-Check
 
-on:
-  pull_request:
-    branches: [ develop, main ]
-
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   App:
@@ -12,6 +8,9 @@ jobs:
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
@@ -65,6 +64,7 @@ jobs:
         working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm run build
 
+
       - name: Codecov
       # You may pin to the exact commit or the version.
       # uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
@@ -72,3 +72,4 @@ jobs:
         with:
         # Repository upload token - get it from codecov.io. Required only for private repositories
           token: ${{ secrets.CODECOV_TOKEN }} # optional
+
