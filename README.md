@@ -24,6 +24,7 @@ Welcome to the Vote-Vault!
 <a href="">![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
 
 </div>
+
 # Demo Links
 Demo 1
 * [SSDpressed-Demo1](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
