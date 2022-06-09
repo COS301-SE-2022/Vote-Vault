@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
@@ -33,12 +36,23 @@ jobs:
       - name: "✅ Run Unit Tests App"
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm test
+        
+      - name: Upload coverage reports to Codecov
+        run: |
+          # Replace `linux` below with the appropriate OS
+          # Options are `alpine`, `linux`, `macos`, `windows`
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
   Website:
     runs-on: ubuntu-latest
 
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
@@ -56,3 +70,11 @@ jobs:
       - name: "✅ Building"
         working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm run build
+
+      - name: Upload coverage reports to Codecov
+        run: |
+          # Replace `linux` below with the appropriate OS
+          # Options are `alpine`, `linux`, `macos`, `windows`
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
