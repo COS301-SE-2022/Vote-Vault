@@ -1,9 +1,12 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { RouterTestingModule } from '@angular/router/testing';
+import { Firestore } from 'firebase/firestore';
 
 import { AppComponent } from './app.component';
+import { DataService } from './data.service';
 
 describe('AppComponent', () => {
 
@@ -13,7 +16,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [ RouterTestingModule.withRoutes([])],
+      imports: [     provideFirestore(() => getFirestore()),
+        RouterTestingModule.withRoutes([])],
     }).compileComponents();
   }));
 
