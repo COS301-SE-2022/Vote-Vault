@@ -8,12 +8,15 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 
+import { RouterTestingModule } from '@angular/router/testing';
+import { FirestoreModule } from '@angular/fire/firestore';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    RouterTestingModule.withRoutes([])
   ],
   declarations: [RegisterPage]
 })

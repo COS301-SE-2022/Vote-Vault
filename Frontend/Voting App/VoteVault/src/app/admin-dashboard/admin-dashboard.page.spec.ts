@@ -21,4 +21,8 @@ describe('AdminDashboardPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should have an elections class member', () => {
+  //   expect(component.elections).toEqual(jasmine.any(Object));
+  // })
 });
