@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, MenuController } from '@ionic/angular';
+import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
 
 @Component({
@@ -13,9 +14,9 @@ export class AdminDashboardPage implements OnInit {
   elections : any[]
 
   constructor(private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
-    this.elections = [{"electionId" : 1, "electionName" : "Provincial Election"},
-                      {"electionId" : 86, "electionName" : "National Election"},
-                      {"electionId" : 129, "electionName" : "District Election"}]
+    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+                      {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+                      {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]}]
    }
 
   ngOnInit() {
@@ -96,6 +97,7 @@ export class AdminDashboardPage implements OnInit {
   }
 
   createElection() {
+    this.dataService.clear()
     this.router.navigate(['generate-ballot'])
   }
 }

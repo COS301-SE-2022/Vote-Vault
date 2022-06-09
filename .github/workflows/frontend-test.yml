@@ -37,13 +37,13 @@ jobs:
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm test
         
-      - name: Upload coverage reports to Codecov
-        run: |
-          # Replace `linux` below with the appropriate OS
-          # Options are `alpine`, `linux`, `macos`, `windows`
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
+      - name: Codecov
+      # You may pin to the exact commit or the version.
+      # uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+        uses: codecov/codecov-action@v3.1.0
+        with:
+        # Repository upload token - get it from codecov.io. Required only for private repositories
+          token: ${{ secrets.CODECOV_TOKEN }} # optional
   Website:
     runs-on: ubuntu-latest
 
@@ -51,9 +51,6 @@ jobs:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
         
-      - name: Codecov
-        uses: codecov/codecov-action@v3.1.0
-
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
         with:
@@ -71,10 +68,12 @@ jobs:
         working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm run build
 
-      - name: Upload coverage reports to Codecov
-        run: |
-          # Replace `linux` below with the appropriate OS
-          # Options are `alpine`, `linux`, `macos`, `windows`
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov -t ${6aa901bb-7bc5-4b18-90fd-3aedab16975d}
+
+      - name: Codecov
+      # You may pin to the exact commit or the version.
+      # uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+        uses: codecov/codecov-action@v3.1.0
+        with:
+        # Repository upload token - get it from codecov.io. Required only for private repositories
+          token: ${{ secrets.CODECOV_TOKEN }} # optional
+

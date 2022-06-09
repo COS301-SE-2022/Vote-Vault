@@ -31,10 +31,18 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   constructor(private loadingController : LoadingController, private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.options = []
-    this.ballot1Options = []
-    this.ballot2Options = []
-    this.ballot3Options = []
+    this.electionTitle = this.dataService.electionName
+    this.ballot1Options = this.dataService.ballot1.options
+    console.log(this.dataService.ballot1.name)
+    this.ballotName = this.dataService.ballot1.name
+    this.ballot2Options = this.dataService.ballot2.options
+    this.ballotName1 = this.dataService.ballot2.name
+    this.ballot3Options = this.dataService.ballot3.options
+    this.ballotName2 = this.dataService.ballot3.name
   }
 
   ngOnDestroy() {

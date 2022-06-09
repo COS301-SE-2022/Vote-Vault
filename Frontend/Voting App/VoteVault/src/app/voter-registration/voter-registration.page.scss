@@ -1,0 +1,29 @@
+ion-card-title {
+    text-decoration: underline;
+}
+
+ion-card {
+    background-color: var(--ion-color-tertiary-shade);
+}
+
+.voter-Details {
+    width: 50%;
+    left: 25%;
+}
+
+body > ion-card > ion-card-header > ion-card-title {
+    color: white;
+    font-size: 150%;
+}
+
+@media(max-width: 992px) {
+    .voter-Details {
+        width: auto;
+        left: auto;
+    }
+}
+
+#menuButton { 
+    --background : transparent;
+    width: auto;
+}

@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'voter-dashboard',
     loadChildren: () => import('./voter-dashboard/voter-dashboard.module').then( m => m.VoterDashboardPageModule)
+  },
+  {
+    path: 'voter-registration',
+    loadChildren: () => import('./voter-registration/voter-registration.module').then( m => m.VoterRegistrationPageModule)
   }
 
 
