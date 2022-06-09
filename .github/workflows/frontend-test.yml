@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
@@ -39,6 +42,9 @@ jobs:
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
