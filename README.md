@@ -22,6 +22,7 @@ Welcome to the Vote-Vault!
 <a href="">![Codecov branch](https://img.shields.io/codecov/c/gh/COS301-SE-2022/Vote-Vault/main?color=ff69b4&style=for-the-badge&token=13KLW5MK77)</a>
 <a href="">![GitHub commit activity](https://img.shields.io/github/commit-activity/w/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
 <a href="">![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
+<a href="">![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2FVoteVault.com)</a>
 
 </div>
 
