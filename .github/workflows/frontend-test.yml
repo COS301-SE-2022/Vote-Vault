@@ -21,10 +21,6 @@ jobs:
       - name: "📦 Install Dependencies App"
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm install
-        
-      - name: "📦 Install Dependencies Website"
-        working-directory: ./Frontend/Website/Vote-Vault-Website
-        run: npm install
 
 #       - name: "🌹 Format Code"
 #         working-directory: ./Frontend/Voting App/VoteVault
@@ -36,8 +32,4 @@ jobs:
 
       - name: "✅ Run Unit Tests App"
         working-directory: ./Frontend/Voting App/VoteVault
-        run: npm test
-        
-      - name: "✅ Run Unit Tests Website"
-        working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm test
