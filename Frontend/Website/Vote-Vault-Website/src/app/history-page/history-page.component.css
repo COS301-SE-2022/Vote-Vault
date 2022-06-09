@@ -4,9 +4,11 @@ td{
 }
 
 #gD {
-height: 400px;
+height: 55%;
 }
 
 
-
+body {
+  height: 81.5vh;
+}
 
