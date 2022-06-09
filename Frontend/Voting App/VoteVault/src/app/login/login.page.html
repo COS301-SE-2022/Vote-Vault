@@ -1,15 +1,18 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Admin Login</ion-card-title>
+      <ion-card-title>Login</ion-card-title>
       <br>
       <br>
-      <ion-card-subtitle>Email</ion-card-subtitle>
-      <ion-input></ion-input>
+      <ion-card-subtitle>ID</ion-card-subtitle>
+      <ion-input [(ngModel)]="email"></ion-input>
       <br>
       <ion-card-subtitle>Password</ion-card-subtitle>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="password"></ion-input>
     </ion-card-header>
   </ion-card>
-  <ion-button size = "medium">Login</ion-button>
+  <ion-button size = "medium" (click)="navigate()">Login</ion-button>
+  <br>
+  <br>
+  <ion-button (click)="adminLogin()" class="adminLogin" color="transparent">Admin Login</ion-button>
 </ion-content>

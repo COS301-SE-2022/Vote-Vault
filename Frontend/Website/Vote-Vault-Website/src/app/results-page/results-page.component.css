@@ -1,16 +1,16 @@
-#info1 {
-  border: 5px solid black;
+/* #info1 {
+  /* border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
   position: fixed;
   width: 94%;
   height: 10%;
-  top: 140px;
+  top: 22%;
   left: 2%;
-}
+} */
 
-#info2 {
-  border: 5px solid black;
+/* #info2 {
+  /* border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
   position: fixed;
@@ -19,10 +19,36 @@
   width: 94%;
   height: 48%;
   display: block;
+} */
+
+body {
+  height: 100vh;
 }
 
 h1 {
   width: 100%;
   position: fixed;
-  left: 300px;
+  left: 5%;
+}
+
+#b1 {
+  margin: 4%;
+  height: 50%;
+  margin-bottom: 7%;
+}
+
+#b2 {
+  margin: 4%;
+  height: 50%;
+  margin-bottom: 7%;
+}
+
+#b3 {
+  margin: 4%;
+  height: 50%;
+  margin-bottom: 10%;
+}
+
+.ch {
+  height: 50vh;
 }

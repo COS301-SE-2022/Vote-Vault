@@ -60,3 +60,21 @@ ion-label {
     bottom: 0px;
     padding-bottom: 3px;
 }
+
+#menuButton { 
+    --background : transparent;
+    width: auto;
+}
+
+#titleInput {
+    display : flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.itemIcon {
+    position: absolute;
+    right: 0;
+    bottom: 1vh;
+}
