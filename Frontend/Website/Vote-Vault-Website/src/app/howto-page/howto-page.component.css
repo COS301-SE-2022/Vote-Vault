@@ -32,15 +32,15 @@ margin-bottom: 6%;
 .flex-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 18px;
 }
 
 .how-to-register-image {
-  width: 100%;
+  width: 90%;
 }
 
 .how-to-vote-image {
-  width: 100%;
+  width: 90%;
 }
 
 #voteDiv {

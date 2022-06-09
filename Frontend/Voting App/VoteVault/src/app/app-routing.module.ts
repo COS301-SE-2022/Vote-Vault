@@ -29,6 +29,18 @@ const routes: Routes = [
   },  {
     path: 'admin-login',
     loadChildren: () => import('./admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
+  },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+  },
+  {
+    path: 'voter-dashboard',
+    loadChildren: () => import('./voter-dashboard/voter-dashboard.module').then( m => m.VoterDashboardPageModule)
+  },
+  {
+    path: 'voter-registration',
+    loadChildren: () => import('./voter-registration/voter-registration.module').then( m => m.VoterRegistrationPageModule)
   }
 
 

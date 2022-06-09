@@ -1,61 +1,65 @@
+
+body {
+  height: 100vh;
+}
+
 #info1 {
 
-  /* //border: 5px solid black; */
+  /* border: 5px solid black; */
   border-radius: 15px;
   margin: 10px;
-  position: fixed;
+  position: relative;
   width: 45%;
-  height: 28%;
-  top: 150px;
+  height: 50%;
+  top: 40px;
+  float: left;
   left: 2%;
   text-align: center;
   padding-top: 3%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
-#info2 {
+/* #info2 {
 
-  /*border: 5px solid black;*/
+  border: 5px solid black;
   border-radius: 15px;
   margin: 10px;
-  position: fixed;
-  top: 40%;
-  left: 2%;
+  position: relative;
   width: 45%;
   height: 28%;
   text-align: center;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   text-overflow: ellipsis;
-  height: 100%;
-}
-
-#info3 {
-  /*border-radius: 15px;*/
-  /*border: 5px solid black;*/ 
-  margin: 10px;
-  position: relative;
-  
-  width: 45%;
-  height: 59.5%;
-  left: 50%;
-}
-
-#text2{
+  top: 10%;
+  left: 2%;
   text-align: justify;
-  position: absolute;
   padding: 2% 2% 2% 2%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} */
 
+#info3 {
+  border-radius: 15px;
+  /* border: 5px solid black; */
+  position: relative;
+  width: 47.5%;
+  height: 60%;
+  left: 50%;
+/* margin-bottom: 5.5%; */
 }
+
 
 #appInstall{
   align-self: center;
-  width: 70%;
-  height: 80%;
-  margin-left: 15%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-right: 15%;
+  position: relative;
+ width: 50%;
+ height: 60%;
+  bottom: 80%;
+  left: 10%;
+ margin-left: 15%;
+ margin-top: 10%;
+ margin-bottom: 0%;
+ margin-right: 15%;
 }
 
 #text3{

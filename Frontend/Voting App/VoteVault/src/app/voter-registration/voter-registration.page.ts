@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  selector: 'app-voter-registration',
+  templateUrl: './voter-registration.page.html',
+  styleUrls: ['./voter-registration.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class VoterRegistrationPage implements OnInit {
   name: string
   surname: string
   idNum: string
   voterNames: any[]
   voterSurnames: any[]
   voterIDs: any[]
+
   constructor(private router : Router) { }
 
   ngOnInit() {
