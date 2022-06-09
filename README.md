@@ -13,6 +13,9 @@ Welcome to the Vote-Vault!
   elections, it should be dynamically generated according to input provided by the voting
   official. A dashboard should be made to give some additional information about the
   voting process, such as distributions about the users.
+* [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
+
+![example ding](https://github.com/COS301-SE-2022/Vote-Vault/blob/main/.github/workflows/frontend-test.yml/badge.svg)
 # Demo Links
 Demo 1
 * [SSDpressed-Demo1](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
@@ -21,9 +24,7 @@ Demo 1
 Demo 2
 * [SSDpressed-Demo2](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
 * [SRS Documentation Demo2](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
-# Other Links
-* [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
-* [Professional profile and description of each team member](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Meet-The-Team)
+# Commands
 * Useful commands:
 
   ```
