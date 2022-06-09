@@ -90,8 +90,9 @@ export class DataService {
     this.ballot2.name = ""
     this.ballot3.options = []
     this.ballot3.name = ""
-    this.votes = []
-    this.elections = []
+    // this.votes = []
+    // this.elections = []
+    this.electionName = ""
   }
 
   setUserEmail(s) { 

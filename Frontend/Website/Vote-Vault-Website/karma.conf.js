@@ -29,7 +29,7 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/vote-vault-website'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
+        { type: 'cobertura' },
         { type: 'text-summary' }
       ]
     },

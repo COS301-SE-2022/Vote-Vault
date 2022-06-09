@@ -1,17 +1,16 @@
 name: Frontend-Check
 
-on:
-  pull_request:
-    branches: [ develop, main ]
-
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
-  build:
+  App:
     runs-on: ubuntu-latest
     steps:
       - name: "⚡ Checkout"
         uses: actions/checkout@v3
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
 
       - name: "🧪 Setup node"
         uses: actions/setup-node@v2
@@ -20,10 +19,6 @@ jobs:
 
       - name: "📦 Install Dependencies App"
         working-directory: ./Frontend/Voting App/VoteVault
-        run: npm install
-        
-      - name: "📦 Install Dependencies Website"
-        working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm install
 
 #       - name: "🌹 Format Code"
@@ -38,6 +33,43 @@ jobs:
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm test
         
+      - name: Codecov
+      # You may pin to the exact commit or the version.
+      # uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+        uses: codecov/codecov-action@v3.1.0
+        with:
+        # Repository upload token - get it from codecov.io. Required only for private repositories
+          token: ${{ secrets.CODECOV_TOKEN }} # optional
+  Website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "⚡ Checkout"
+        uses: actions/checkout@v3
+        
+      - name: "🧪 Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+        
+      - name: "📦 Install Dependencies Website"
+        working-directory: ./Frontend/Website/Vote-Vault-Website
+        run: npm install
+        
       - name: "✅ Run Unit Tests Website"
         working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm test
+        
+      - name: "✅ Building"
+        working-directory: ./Frontend/Website/Vote-Vault-Website
+        run: npm run build
+
+
+      - name: Codecov
+      # You may pin to the exact commit or the version.
+      # uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+        uses: codecov/codecov-action@v3.1.0
+        with:
+        # Repository upload token - get it from codecov.io. Required only for private repositories
+          token: ${{ secrets.CODECOV_TOKEN }} # optional
+
