@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-voter-dashboard',
@@ -7,9 +10,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VoterDashboardPage implements OnInit {
 
-  constructor() { }
+  elections : any[]
+
+  constructor(private dataService : DataService, private router : Router, private actionSheetController : ActionSheetController) { 
+    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+    {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+    {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]}]
+  }
 
   ngOnInit() {
   }
 
+  electionClicked(e : any) {
+    this.dataService.editElection(e)
+    this.presentActionSheet(e)
+  }
+
+  navigate(s : string) {
+    this.router.navigate([s])
+  }
+
+  async presentActionSheet(e : any) {
+    const actionSheet = await this.actionSheetController.create({
+      header: e.electionName,
+      cssClass: 'my-custom-class',
+      buttons: [ {
+        text: 'Vote',
+        icon: 'checkmark-done-circle-outline',
+        handler: () => {
+          this.navigate("ballot")
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+
+    const { role, data } = await actionSheet.onDidDismiss();
+    console.log('onDidDismiss resolved with role and data', role, data);
+  }
 }
