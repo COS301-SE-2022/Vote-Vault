@@ -13,9 +13,9 @@ export class VoterDashboardPage implements OnInit {
   elections : any[]
 
   constructor(private dataService : DataService, private router : Router, private actionSheetController : ActionSheetController) { 
-    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
-    {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
-    {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : []},{"name" : "", "options" : []},{"name" : "", "options" : []}]}]
+    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
+                      {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+                      {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
   }
 
   ngOnInit() {
