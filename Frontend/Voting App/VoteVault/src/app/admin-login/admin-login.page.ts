@@ -21,8 +21,8 @@ export class AdminLoginPage implements OnInit {
   }
 
   async navigate() {
-    this.presentLoading()
     try {
+      this.presentLoading()
       const user = await signInWithEmailAndPassword(this.auth, this.email, this.password)
       this.dataService.setUserEmail(user.user.email)
       this.loadingController.dismiss()
