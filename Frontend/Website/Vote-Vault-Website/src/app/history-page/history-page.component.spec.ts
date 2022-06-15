@@ -22,4 +22,22 @@ describe('HistoryPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display 2019 results', () => {
+    component.get19();
+
+    expect(component.currentYear).toEqual(2019);
+  });
+
+  it('should display 2020 results', () => {
+    component.get20();
+
+    expect(component.currentYear).toEqual(2020);
+  });
+
+  it('should display 2021 results', () => {
+    component.get21();
+
+    expect(component.currentYear).toEqual(2021);
+  });
 });
