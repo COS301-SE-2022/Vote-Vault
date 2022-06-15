@@ -17,12 +17,12 @@ Welcome to the Vote-Vault!
 
 <div align="center">
 
-<a href="">[![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/COS301-SE-2022/Vote-Vault?color=Green&style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)</a>
-<a href="">[![GitHub open issues](https://img.shields.io/github/issues-raw/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)</a>
-<a href="">![Codecov branch](https://img.shields.io/codecov/c/gh/COS301-SE-2022/Vote-Vault/main?color=ff69b4&style=for-the-badge&token=13KLW5MK77)</a>
-<a href="">![GitHub commit activity](https://img.shields.io/github/commit-activity/w/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
-<a href="">![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
-<a href="">![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2FVoteVault.com)</a>
+[![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/COS301-SE-2022/Vote-Vault?color=Green&style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![GitHub open issues](https://img.shields.io/github/issues-raw/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/COS301-SE-2022/Vote-Vault/main?color=ff69b4&style=for-the-badge&token=13KLW5MK77)](https://app.codecov.io/gh/COS301-SE-2022/Vote-Vault)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2FVoteVault.com)](https://github.com/COS301-SE-2022/Vote-Vault)
 
 </div>
 
