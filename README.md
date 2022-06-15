@@ -71,6 +71,7 @@ Demo 2
  # Meet the Team
  
 * ## Bevan Slabbert
+     ![bevon](https://user-images.githubusercontent.com/86471999/173820687-010608e4-82ef-4d63-8731-a6cff7710dc9.jpg)  
      - **Bio:**
          Third year Computer Science student at the University of Pretoria.
      - **Info:**
@@ -111,6 +112,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/markus-van-tubbergh-63a635141/
 * ## Hanroe Geyser
+     ![hanroe](https://user-images.githubusercontent.com/86471999/173820704-a4e0b038-7438-40a6-b349-ae298755859f.jpg)
      - **Bio:**
          Third year BSc Computer Science student at the University of Pretoria.
      - **Info:**
@@ -125,6 +127,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/hanroe-geyser-197b1721b
 * ## Dhashin Reddy
+     ![dhashin2](https://user-images.githubusercontent.com/86471999/173822394-27762c27-6033-48c7-a5c1-42b11c18234a.png)
      - **Bio:**
          Third year Computer Science student at the University of Pretoria
      - **Info:**
