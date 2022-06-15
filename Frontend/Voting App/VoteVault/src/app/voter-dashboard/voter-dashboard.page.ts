@@ -10,27 +10,27 @@ import { DataService } from '../data.service';
 })
 export class VoterDashboardPage implements OnInit {
 
-  elections : any[]
+  elections: any[];
 
-  constructor(private dataService : DataService, private router : Router, private actionSheetController : ActionSheetController) { 
-    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
-                      {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
-                      {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
+  constructor(private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
+    this.elections = [{id : 1, name : 'Provincial Election', ballots : [{name : 'Cool', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]}]},
+                      {id : 86, name : 'National Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []},{name : '', options : []}]},
+                      {id : 129, name : 'District Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []}]}];
   }
 
   ngOnInit() {
   }
 
-  electionClicked(e : any) {
-    this.dataService.editElection(e)
-    this.presentActionSheet(e)
+  electionClicked(e: any) {
+    this.dataService.editElection(e);
+    this.presentActionSheet(e);
   }
 
-  navigate(s : string) {
-    this.router.navigate([s])
+  navigate(s: string) {
+    this.router.navigate([s]);
   }
 
-  async presentActionSheet(e : any) {
+  async presentActionSheet(e: any) {
     const actionSheet = await this.actionSheetController.create({
       header: e.electionName,
       cssClass: 'my-custom-class',
@@ -38,7 +38,7 @@ export class VoterDashboardPage implements OnInit {
         text: 'Vote',
         icon: 'checkmark-done-circle-outline',
         handler: () => {
-          this.navigate("ballot")
+          this.navigate('ballot');
         }
       }, {
         text: 'Cancel',

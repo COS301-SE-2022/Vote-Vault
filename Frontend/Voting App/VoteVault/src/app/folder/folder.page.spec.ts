@@ -12,6 +12,7 @@ describe('FolderPage', () => {
   let component: FolderPage;
   let fixture: ComponentFixture<FolderPage>;
 
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FolderPage ],
@@ -27,5 +28,6 @@ describe('FolderPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  console.log('FOLDER');
   });
 });

@@ -12,6 +12,10 @@ describe('VoterDashboardPage', () => {
   let component: VoterDashboardPage;
   let fixture: ComponentFixture<VoterDashboardPage>;
 
+  beforeAll(waitForAsync(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
+  }));
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VoterDashboardPage ],
@@ -27,11 +31,16 @@ describe('VoterDashboardPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have custom timeout', () => {
+    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL); //prints 999999
   });
 
-  it('should have an elections class member', () => {
-    expect(component.elections).toEqual(jasmine.any(Object));
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  console.log('VOTER DASH');
   });
+
+  // it('should have an elections class member', () => {
+  //   expect(component.elections).toEqual(jasmine.any(Object));
+  // });
 });

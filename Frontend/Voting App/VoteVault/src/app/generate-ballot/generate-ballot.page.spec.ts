@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { GenerateBallotPage } from './generate-ballot.page';
-import { By } from 'protractor';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from 'src/environments/environment';
@@ -10,6 +9,7 @@ import { environment } from 'src/environments/environment';
 describe('GenerateBallotPage', () => {
   let component: GenerateBallotPage;
   let fixture: ComponentFixture<GenerateBallotPage>;
+
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -27,6 +27,7 @@ describe('GenerateBallotPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  console.log('GENERATE BALLOT');
   });
 
   it('should have a slideIndex class member', () => {

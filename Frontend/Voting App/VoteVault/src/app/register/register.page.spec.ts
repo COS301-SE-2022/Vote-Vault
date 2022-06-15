@@ -12,6 +12,7 @@ describe('RegisterPage', () => {
   let component: RegisterPage;
   let fixture: ComponentFixture<RegisterPage>;
 
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterPage ],
@@ -27,5 +28,6 @@ describe('RegisterPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  console.log('REGISTER');
   });
 });

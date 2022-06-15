@@ -13,6 +13,7 @@ describe('AdminLoginPage', () => {
   let component: AdminLoginPage;
   let fixture: ComponentFixture<AdminLoginPage>;
 
+
   beforeAll(waitForAsync(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
   }));
@@ -42,5 +43,6 @@ describe('AdminLoginPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  console.log('ADMIN LOGIN');
   });
 });

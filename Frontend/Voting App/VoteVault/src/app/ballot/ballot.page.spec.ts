@@ -12,6 +12,7 @@ describe('BallotPage', () => {
   let component: BallotPage;
   let fixture: ComponentFixture<BallotPage>;
 
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BallotPage ],
@@ -27,6 +28,7 @@ describe('BallotPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  console.log('BALLOT');
   });
 
   it('should have a ballot1 class member', () => {

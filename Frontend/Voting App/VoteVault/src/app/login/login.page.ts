@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
@@ -26,6 +25,6 @@ export class LoginPage implements OnInit {
   adminLogin() {
     this.router.navigate(['admin-login'])
   }
-  
+
 }
 

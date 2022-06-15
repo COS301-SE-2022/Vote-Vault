@@ -38,6 +38,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
+    browserNoActivityTimeout: 400000,
     browsers: ['ChromeHeadless'],
     customLaunchers: {
       ChromeHeadlessCI: {
