@@ -85,6 +85,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/bevan-slabbert-5ba17a152/
 * ## Hugo Esterhuyse
+     ![hugo](https://user-images.githubusercontent.com/86471999/173826556-28df51b7-d662-4524-a1a9-dad6a2030b01.jpg)
      - **Bio:**
          Third year Computer Science student at the University of Pretoria.
      - **Info:**
