@@ -22,10 +22,6 @@ jobs:
 #         working-directory: ./Frontend/Voting App/VoteVault
 #         run: npm run lint
 
-      - name: "✅ Building"
-        working-directory: ./Frontend/Website/Vote-Vault-Website
-        run: npm run build
-
       - name: "✅ Run Unit Tests App"
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm test
