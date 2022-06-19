@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore } from '@angular/fire/firestore';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { getFirestore } from 'firebase/firestore';
 import { environment } from 'src/environments/environment';
 import { BallotPage } from './ballot.page';
 
