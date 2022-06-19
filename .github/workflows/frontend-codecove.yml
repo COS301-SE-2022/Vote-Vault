@@ -18,9 +18,9 @@ jobs:
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm install
 
-      - name: "🧶 Lint Code"
-        working-directory: ./Frontend/Voting App/VoteVault
-        run: npm run lint
+#       - name: "🧶 Lint Code"
+#         working-directory: ./Frontend/Voting App/VoteVault
+#         run: npm run lint
 
       - name: "✅ Building"
         working-directory: ./Frontend/Website/Vote-Vault-Website
