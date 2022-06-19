@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { provideFirebaseApp } from '@angular/fire/app';
-import { Firestore, getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { initializeApp } from 'firebase/app';
+import { provideFirebaseApp,initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 import { DataService } from './data.service';
