@@ -1,12 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth } from '@angular/fire/auth';
-import { provideFirestore } from '@angular/fire/firestore';
+import { provideFirebaseApp,initializeApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
 import { environment } from 'src/environments/environment';
 
 import { LoginPage } from './login.page';
@@ -15,9 +12,9 @@ describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
-  beforeAll(waitForAsync(() => {
+  beforeAll(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
-  }));
+  });
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

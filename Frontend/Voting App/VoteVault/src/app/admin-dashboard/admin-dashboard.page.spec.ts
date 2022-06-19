@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore } from '@angular/fire/firestore';
+import { provideFirebaseApp,initializeApp } from '@angular/fire/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
 import { environment } from 'src/environments/environment';
 
 import { AdminDashboardPage } from './admin-dashboard.page';
@@ -15,9 +13,9 @@ describe('AdminDashboardPage', () => {
 
 
 
-  beforeAll(waitForAsync(() => {
+  beforeAll(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
-  }));
+  });
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -42,7 +40,7 @@ describe('AdminDashboardPage', () => {
     console.log('ADMIN DASH');
   });
 
-  // it('should have an elections class member', () => {
-  //   expect(component.elections).toEqual(jasmine.any(Object));
-  // });
+  it('should have an elections class member', () => {
+    expect(component.elections).toEqual(jasmine.any(Object));
+  });
 });

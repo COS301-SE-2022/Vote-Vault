@@ -3,10 +3,8 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { Firestore } from 'firebase/firestore';
 
 import { AppComponent } from './app.component';
-import { DataService } from './data.service';
 
 describe('AppComponent', () => {
 
