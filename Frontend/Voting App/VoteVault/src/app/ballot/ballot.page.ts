@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, ToastController } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-ballot',
@@ -16,7 +17,7 @@ export class BallotPage implements OnInit {
   ballot3 : any
   slideIndex : number = 0
 
-  constructor(private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) { }
+  constructor(private location : Location, private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) { }
 
   ngOnInit() {
     this.options = this.dataService.electionOptions
@@ -59,7 +60,8 @@ export class BallotPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['admin-dashboard'])
+    this.location.back();
+    // this.router.navigate(['admin-dashboard'])
   }
 
   navigate(s) {

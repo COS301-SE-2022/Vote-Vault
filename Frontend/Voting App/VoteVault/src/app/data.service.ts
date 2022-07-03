@@ -72,13 +72,13 @@ export class DataService {
   }
 
   async mapAdminToElection(ref) {
-    // const id = ref.id
+    const id = ref.id
 
-    // const adminRef = doc(this.firestore, 'admins' , this.userEmail)
+    const adminRef = doc(this.firestore, 'admins' , this.userEmail)
 
-    // await updateDoc(adminRef, {
-    //   elections: arrayUnion(id)
-    // })
+    await updateDoc(adminRef, {
+      elections: arrayUnion(id)
+    })
   }
 
   clear() {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-generate-ballot',
@@ -28,7 +29,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ballotName2 = '';
   electionTitle = '';
 
-  constructor(private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
+  constructor(private location: Location, private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
     this.ballot1Options = [];
     this.ballot2Options = [];
     this.ballot3Options = [];
@@ -159,7 +160,8 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
   openCustom() {
     this.dataService.clear();
-    this.router.navigate(['admin-dashboard']);
+    this.location.back();
+    // this.router.navigate(['admin-dashboard']);
   }
 
   navigate(s) {
