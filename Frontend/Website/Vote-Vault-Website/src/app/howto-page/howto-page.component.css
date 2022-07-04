@@ -1,6 +1,6 @@
 .Title{
-  font-size: xx-large;
-  padding: 0.8rem;
+    font-size: xx-large;
+    padding: 0.8rem;
 }
 
 /* .Details {
@@ -9,45 +9,92 @@
 } */
 
 body {
-height: fit-content;
-margin-bottom: 6%;
+    height: fit-content;
+    margin-bottom: 6%;
 }
 
 #HowToReg {
-  top: 10%;
-  width: 100%;
-  height: auto;
-  padding: 1rem;
-  padding-bottom: 0rem;
-  margin-bottom: 3rem;
+    top: 10%;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    margin-bottom: 3rem;
 }
 
 #HowToVote {
-  width: 100%;
-  height: auto;
-  padding: 1rem;
-  top: 10%;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    top: 10%;
 }
 
 .flex-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 18px;
 }
 
 .how-to-register-image {
-  width: 90%;
+    width: 90%;
 }
 
 .how-to-vote-image {
-  width: 90%;
+    width: 90%;
 }
 
 #voteDiv {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 hr {
-  width: 80%;
-  margin-left: 10%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+@media only screen and (max-width: 600px)  {
+    
+     #HowToReg {
+        /* width: 100px;
+        height: 100px;
+        position: relative; */
+        display: flex;
+    }
+
+    /*
+    .how-to-register-text,
+    .how-to-register-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
+
+    .how-to-register-image {
+        z-index: 10;
+    }
+
+*/
+
+    #voteDiv {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    HowToVote,
+    .how-to-vote-image {
+        /*
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        */
+        display: flex;
+    } 
+
+    /* .how-to-vote-image {
+        z-index: 10;
+    }  */
 }
