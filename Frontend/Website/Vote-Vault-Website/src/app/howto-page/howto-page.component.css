@@ -59,17 +59,9 @@ hr {
         flex-direction: column;
     }
 
-
-
     .how-to-register-image {
         display: flex;
     } 
-
-    /* .how-to-register-image {
-        z-index: 10;
-    }
-
-*/
 
     #voteDiv {
         display: flex;
@@ -77,17 +69,6 @@ hr {
     }
     
     .how-to-vote-image {
-        /*
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        */
         display: flex;
     } 
-
-    /* .how-to-vote-image {
-        z-index: 10;
-    }  */
 }
