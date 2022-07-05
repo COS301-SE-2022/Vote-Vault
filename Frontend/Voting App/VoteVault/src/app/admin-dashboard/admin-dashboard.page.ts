@@ -17,7 +17,10 @@ export class AdminDashboardPage implements OnInit {
     this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
                       {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
                       {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
-   }
+   
+    this.dataService.fetchElections()
+    this.elections = this.dataService.elections
+  }
 
   ngOnInit() {
   }
