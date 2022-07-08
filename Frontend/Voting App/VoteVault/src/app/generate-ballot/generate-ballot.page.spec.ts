@@ -86,7 +86,7 @@ describe('GenerateBallotPage', () => {
   });
 
   it('should render Candidate List in ion-card', () => {
-    const fixture = TestBed.createComponent(GenerateBallotPage);
+    fixture = TestBed.createComponent(GenerateBallotPage);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('ion-card').textContent).toContain('Candidate Details');

@@ -12,9 +12,9 @@ describe('VoterDashboardPage', () => {
   let component: VoterDashboardPage;
   let fixture: ComponentFixture<VoterDashboardPage>;
 
-  beforeAll(waitForAsync(() => {
+  beforeAll(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
-  }));
+  });
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -40,7 +40,7 @@ describe('VoterDashboardPage', () => {
   console.log('VOTER DASH');
   });
 
-  // it('should have an elections class member', () => {
-  //   expect(component.elections).toEqual(jasmine.any(Object));
-  // });
+  it('should have an elections class member', () => {
+    expect(component.elections).toEqual(jasmine.any(Object));
+  });
 });
