@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, arrayUnion, collection, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, doc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 
 interface Ballot {
   name: string;
@@ -42,6 +42,15 @@ export class DataService {
     this.electionName = '';
   }
 
+  async fetchElections() {
+    this.elections = []
+    const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
+    querySnapshot.forEach((doc) =>  {
+      console.log(doc.data().election)
+      this.elections.push(doc.data().election)
+    })
+  }
+
   editElection(e) {
     console.log(e);
     this.ballot1.options = e.ballots[0].options;
@@ -64,21 +73,22 @@ export class DataService {
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.firestore, 'elections'), {
-      election
     });
 
     //Add to admin elections
-    this.mapAdminToElection(electionRef);
+    // this.mapAdminToElection(electionRef);
+
+    this.fetchElections()
   }
 
   async mapAdminToElection(ref) {
-    // const id = ref.id
+    const id = ref.id
 
-    // const adminRef = doc(this.firestore, 'admins' , this.userEmail)
+    const adminRef = doc(this.firestore, 'admins' , this.userEmail)
 
-    // await updateDoc(adminRef, {
-    //   elections: arrayUnion(id)
-    // })
+    await updateDoc(adminRef, {
+      elections: arrayUnion(id)
+    })
   }
 
   clear() {
