@@ -7,6 +7,14 @@ interface Ballot {
   options: any[];
 }
 
+interface Election {
+  electionName : string
+  id? : string
+  ballots : any[]
+  // adminEmail : string
+  users : any[]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -46,8 +54,14 @@ export class DataService {
     this.elections = []
     const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
     querySnapshot.forEach((doc) =>  {
-      console.log(doc.data().election)
-      this.elections.push(doc.data().election)
+      const e = {} as Election
+      // console.log(doc.data().election)
+      e.ballots = doc.data().election.ballots 
+      e.users   = doc.data().election.users
+      e.electionName = doc.data().election.electionName
+      e.id = doc.id
+      // console.log(doc.data().election)
+      this.elections.push(e)
     })
   }
 
@@ -73,6 +87,7 @@ export class DataService {
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.firestore, 'elections'), {
+      election
     });
 
     //Add to admin elections
