@@ -31,6 +31,7 @@ export class DataService {
   election: any;
   elections: any[];
   registeredUsers: any[];
+  adminState : string;
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -48,7 +49,12 @@ export class DataService {
     this.elections = [];
     this.registeredUsers = [];
     this.electionName = '';
+    this.adminState = '';
   }
+
+  setAdminState(s) {
+    this.adminState = s
+  } 
 
   async fetchElections() {
     this.elections = []
@@ -88,12 +94,13 @@ export class DataService {
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.firestore, 'elections'), {
       election
-    });
+    }).then(()  =>  {
+      this.fetchElections()
+    })
 
     //Add to admin elections
     // this.mapAdminToElection(electionRef);
 
-    this.fetchElections()
   }
 
   async mapAdminToElection(ref) {

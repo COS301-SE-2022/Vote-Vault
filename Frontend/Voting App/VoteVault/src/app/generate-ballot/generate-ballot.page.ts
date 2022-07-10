@@ -82,20 +82,26 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.toast_addUser();
   }
 
-  generate(): void {
-    this.dataService.saveElectionName(this.electionTitle);
-    this.presentLoading();
-    this.dataService.saveElection()
-    .then((res) => {
-      console.log(res);
-      this.loadingController.dismiss();
-    })
-    .catch((e) => {
-      console.error(e);
-      this.loadingController.dismiss();
-    });
-
-    this.router.navigate(['admin-dashboard']);
+  async generate() {
+    if(this.dataService.adminState === 'edit') {
+      
+    }
+    else if(this.dataService.adminState === 'generate') {
+      this.dataService.saveElectionName(this.electionTitle);
+      this.presentLoading();
+      await this.dataService.saveElection()
+      .then((res) => {
+        console.log(res);
+        this.loadingController.dismiss();
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+      });
+  
+      this.router.navigate(['admin-dashboard']);
+    }
+   
   }
 
   ionSlidesDidLoad(slides) {
