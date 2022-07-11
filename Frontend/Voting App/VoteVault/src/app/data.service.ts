@@ -32,6 +32,7 @@ export class DataService {
   elections: any[];
   registeredUsers: any[];
   adminState : string;
+  electionID : string
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -50,6 +51,7 @@ export class DataService {
     this.registeredUsers = [];
     this.electionName = '';
     this.adminState = '';
+    this.electionID = '';
   }
 
   setAdminState(s) {
@@ -80,6 +82,15 @@ export class DataService {
     this.ballot2.name    = e.ballots[1].name;
     this.ballot3.name    = e.ballots[2].name;
     this.electionName    = e.name;
+    this.electionID = e.id
+  }
+
+  async saveEdit() {
+    const electionRef = doc(this.firestore, 'elections', this.electionID)
+
+    await updateDoc(electionRef, {
+      active : false
+    })
   }
 
   async saveElection() {

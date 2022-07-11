@@ -83,12 +83,21 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   }
 
   async generate() {
+    this.dataService.saveElectionName(this.electionTitle);
+    this.presentLoading();
+
     if(this.dataService.adminState === 'edit') {
-      
+      await this.dataService.saveEdit()
+      .then((res) => {
+        console.log(res);
+        this.loadingController.dismiss();
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+      });
     }
     else if(this.dataService.adminState === 'generate') {
-      this.dataService.saveElectionName(this.electionTitle);
-      this.presentLoading();
       await this.dataService.saveElection()
       .then((res) => {
         console.log(res);
@@ -98,10 +107,8 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
         console.error(e);
         this.loadingController.dismiss();
       });
-  
-      this.router.navigate(['admin-dashboard']);
     }
-   
+    this.router.navigate(['admin-dashboard']);
   }
 
   ionSlidesDidLoad(slides) {
