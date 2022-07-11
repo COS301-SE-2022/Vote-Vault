@@ -50,6 +50,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+    "cordova-plugin-wkwebview-engine": "^1.2.2",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -63,13 +64,18 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "scandit-cordova-datacapture-barcode": "^6.13.1",
+    "scandit-cordova-datacapture-core": "^6.13.1",
     "ts-node": "~8.3.0",
     "typescript": "~4.4.4"
   },
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "blinkid-cordova": {}
+      "blinkid-cordova": {},
+      "cordova-plugin-wkwebview-engine": {},
+      "scandit-cordova-datacapture-core": {},
+      "scandit-cordova-datacapture-barcode": {}
     }
   }
 }

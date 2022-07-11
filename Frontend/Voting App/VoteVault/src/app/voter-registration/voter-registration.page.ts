@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonContent } from '@ionic/angular';
+import { ScannerServiceProvider } from 'src/providers/scanner-service';
 
 @Component({
   selector: 'app-voter-registration',
@@ -13,7 +15,7 @@ export class VoterRegistrationPage implements OnInit {
   voterNames: any[]
   voterSurnames: any[]
   voterIDs: any[]
-
+  licenseKey: string
   constructor(private router : Router) { }
 
   ngOnInit() {
