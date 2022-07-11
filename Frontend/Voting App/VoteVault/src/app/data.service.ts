@@ -63,10 +63,10 @@ export class DataService {
     const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
     querySnapshot.forEach((doc) =>  {
       const e = {} as Election
-      // console.log(doc.data().election)
-      e.ballots = doc.data().election.ballots 
-      e.users   = doc.data().election.users
-      e.electionName = doc.data().election.electionName
+      console.log(doc.data())
+      e.ballots = doc.data().ballots 
+      e.users   = doc.data().users
+      e.electionName = doc.data().electionName
       e.id = doc.id
       // console.log(doc.data().election)
       this.elections.push(e)
@@ -81,7 +81,7 @@ export class DataService {
     this.ballot1.name    = e.ballots[0].name;
     this.ballot2.name    = e.ballots[1].name;
     this.ballot3.name    = e.ballots[2].name;
-    this.electionName    = e.name;
+    this.electionName    = e.electionName;
     this.electionID = e.id
   }
 
@@ -89,22 +89,27 @@ export class DataService {
     const electionRef = doc(this.firestore, 'elections', this.electionID)
 
     await updateDoc(electionRef, {
-      active : false
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers
     })
   }
 
   async saveElection() {
     //Create election object and save to firestore
-    const election = {adminEmail : this.userEmail,
-                      ballots    : [this.ballot1, this.ballot2, this.ballot3],
-                      electionName : this.electionName,
-                      active : true,
-                      users  : this.registeredUsers
-                    };
+    // const election = {
+      
+    //                 };
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.firestore, 'elections'), {
-      election
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers
     }).then(()  =>  {
       this.fetchElections()
     })

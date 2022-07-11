@@ -42,7 +42,6 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.options = [];
     this.electionTitle = this.dataService.electionName;
     this.ballot1Options = this.dataService.ballot1.options;
-    console.log(this.dataService.ballot1.name);
     this.ballotName = this.dataService.ballot1.name;
     this.ballot2Options = this.dataService.ballot2.options;
     this.ballotName1 = this.dataService.ballot2.name;
