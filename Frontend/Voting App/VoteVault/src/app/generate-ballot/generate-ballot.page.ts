@@ -38,7 +38,17 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ngOnInit() {
   }
 
+
   ionViewWillEnter() {
+    this.populateBallots()
+  }
+
+  ngOnDestroy() {
+    this.dataService.clear();
+  }
+
+
+  populateBallots() {
     this.options = [];
     this.electionTitle = this.dataService.electionName;
     this.ballot1Options = this.dataService.ballot1.options;
@@ -48,11 +58,6 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.ballot3Options = this.dataService.ballot3.options;
     this.ballotName2 = this.dataService.ballot3.name;
   }
-
-  ngOnDestroy() {
-    this.dataService.clear();
-  }
-
 
   addOption(): void {
     const newCandidate = {name : this.name, surname : this.surname, id : this.idNum, isChecked : false};
@@ -87,9 +92,13 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
     if(this.dataService.adminState === 'edit') {
       await this.dataService.saveEdit()
-      .then((res) => {
+      .then(async (res) => {
         console.log(res);
-        this.loadingController.dismiss();
+        // this.dataService.clear()
+        // await this.dataService.fetchElections().then(() =>  {
+        //   this.loadingController.dismiss();
+        // })
+        this.loadingController.dismiss();        
       })
       .catch((e) => {
         console.error(e);
@@ -100,6 +109,8 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
       await this.dataService.saveElection()
       .then((res) => {
         console.log(res);
+        // this.dataService.clear()
+        // this.dataService.fetchElections()
         this.loadingController.dismiss();
       })
       .catch((e) => {
@@ -107,7 +118,9 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
         this.loadingController.dismiss();
       });
     }
+
     this.router.navigate(['admin-dashboard']);
+  
   }
 
   ionSlidesDidLoad(slides) {

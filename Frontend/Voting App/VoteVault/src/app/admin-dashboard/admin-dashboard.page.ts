@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, MenuController } from '@ionic/angular';
+import { ActionSheetController, MenuController, ViewWillEnter } from '@ionic/angular';
 import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
 
@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
   templateUrl: './admin-dashboard.page.html',
   styleUrls: ['./admin-dashboard.page.scss'],
 })
-export class AdminDashboardPage implements OnInit {
+export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   elections : any[]
 
@@ -18,11 +18,16 @@ export class AdminDashboardPage implements OnInit {
     //                   {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
     //                   {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
    
-    this.dataService.fetchElections()
-    this.elections = this.dataService.elections
+    // this.dataService.fetchElections()
+    // this.elections = this.dataService.elections
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.dataService.fetchElections()
+    this.elections = this.dataService.elections
   }
 
   openFirst() {
