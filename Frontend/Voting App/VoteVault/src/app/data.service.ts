@@ -63,7 +63,7 @@ export class DataService {
     const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
     querySnapshot.forEach((doc) =>  {
       const e = {} as Election
-      console.log(doc.data())
+      // console.log(doc.data())
       e.ballots = doc.data().ballots 
       e.users   = doc.data().users
       e.electionName = doc.data().electionName
@@ -110,16 +110,16 @@ export class DataService {
       electionName : this.electionName,
       active : true,
       users  : this.registeredUsers
-    }).then(()  =>  {
+    }).then((ref)  =>  {
       this.fetchElections()
+      
+      //Add to admin elections
+      this.mapAdminToElection(ref);
     })
-
-    //Add to admin elections
-    // this.mapAdminToElection(electionRef);
-
   }
 
   async mapAdminToElection(ref) {
+    console.log(ref.id)
     const id = ref.id
 
     const adminRef = doc(this.firestore, 'admins' , this.userEmail)
