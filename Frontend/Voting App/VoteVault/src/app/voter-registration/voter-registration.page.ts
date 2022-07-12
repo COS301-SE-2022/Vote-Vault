@@ -13,14 +13,14 @@ export class VoterRegistrationPage implements OnInit {
   name: string;
   surname: string;
   idNum: string;
-  voterNames: any[]
+  voterNames: any[];
   voterSurnames: any[];
   voterIDs: any[];
+  showSingleButton = true;
+  showSingleDoneButton = false;
   private barcodes: Barcode[] = [];
-  private continuousMode: boolean = false;
-  showSingleButton: boolean = true;
-  showSingleDoneButton: boolean = false;
-  constructor(private router : Router, public scanner: ScannerServiceProvider) { }
+  private continuousMode = false;
+  constructor(private router: Router, public scanner: ScannerServiceProvider) { }
 
   public startScanning() {
     this.showScanner();
@@ -32,7 +32,7 @@ export class VoterRegistrationPage implements OnInit {
 
   public startContinuousScanning() {
     this.continuousMode = true;
-    document.getElementById('scanner').style.bottom = "10%";
+    document.getElementById('scanner').style.bottom = '10%';
     this.startScanning();
   }
 
@@ -47,15 +47,15 @@ export class VoterRegistrationPage implements OnInit {
     this.hideScanner();
     this.scanner.pause();
     this.barcodes = [];
-    document.getElementById('result').innerHTML = "";
+    document.getElementById('result').innerHTML = '';
     this.showSingleButton = true;
     this.showSingleDoneButton = false;
   }
 
   public done() {
     this.barcodes = [];
-    document.getElementById('result').style.display = "none";
-    document.getElementById('result').innerHTML = "";
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('result').innerHTML = '';
     this.showSingleButton = true;
     this.showSingleDoneButton = false;
     this.continuousMode = false;
@@ -64,10 +64,10 @@ export class VoterRegistrationPage implements OnInit {
   public didScan(barcodeCapture: BarcodeCapture, session: BarcodeCaptureSession) {
     this.barcodes = session.newlyRecognizedBarcodes;
     this.hideScanner();
-    document.getElementById('result').style.display = "block";
+    document.getElementById('result').style.display = 'block';
     this.scanner.pause();
     this.showSingleDoneButton = true;
-    let scannedBarcode = "Scanned Code:<br><br>" + this.barcodes[0].symbology.toUpperCase() + ": " + this.barcodes[0].data;
+    const scannedBarcode = 'Scanned Code:<br><br>' + this.barcodes[0].symbology.toUpperCase() + ': ' + this.barcodes[0].data;
     document.getElementById('result').innerHTML = scannedBarcode;
   }
 
@@ -75,13 +75,13 @@ export class VoterRegistrationPage implements OnInit {
   }
 
   public showScanner() {
-    document.getElementById('scanner').style.display = "block";
-    document.getElementById('result').style.display = "none";
-    document.getElementById('result').innerHTML = "";
+    document.getElementById('scanner').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('result').innerHTML = '';
   }
 
   public hideScanner() {
-    document.getElementById('scanner').style.display = "none";
+    document.getElementById('scanner').style.display = 'none';
   }
 
   ngOnInit() {
@@ -90,40 +90,38 @@ export class VoterRegistrationPage implements OnInit {
     this.voterSurnames = [];
   }
 
-  registerVoter() : void {
-    const nVoter = {"name" : this.name, "surname" : this.surname, "id" : this.idNum, "isRegistered" : false}
-    
+  registerVoter(): void {
+    const nVoter = {name : this.name, surname : this.surname, id : this.idNum, isRegistered : false};
+
     if (nVoter.name === undefined || nVoter.surname === undefined || nVoter.id === undefined) {
-      alert("Please make sure all fields are filled in.")
-      return
+      alert('Please make sure all fields are filled in.');
+      return;
     }
 
     if (nVoter.id.length != 13) {
-      alert("Please enter an ID number with a length of 13.")
-      return
+      alert('Please enter an ID number with a length of 13.');
+      return;
     }
 
     if (!/^[0-9]+$/.test(nVoter.id)) {
-      alert("Please make sure the ID only exists of digits.")
-      return
+      alert('Please make sure the ID only exists of digits.');
+      return;
     }
 
-    const first = this.voterIDs.find((obj) => {
-      return obj === nVoter.id;
-    });
+    const first = this.voterIDs.find((obj) => obj === nVoter.id);
     if (first != null) {
-      alert("The entered ID is already registered with a voter.")
-      return
+      alert('The entered ID is already registered with a voter.');
+      return;
     }
-    this.voterNames.push(nVoter.name)
-    this.voterSurnames.push(nVoter.surname)
-    this.voterIDs.push(nVoter.id)
-    this.name = ""
-    this.surname = ""
-    this.idNum = ""
+    this.voterNames.push(nVoter.name);
+    this.voterSurnames.push(nVoter.surname);
+    this.voterIDs.push(nVoter.id);
+    this.name = '';
+    this.surname = '';
+    this.idNum = '';
   }
 
   openCustom() {
-    this.router.navigate(['admin-dashboard'])
+    this.router.navigate(['admin-dashboard']);
   }
 }
