@@ -98,7 +98,7 @@ export class VoterRegistrationPage implements OnInit {
       return;
     }
 
-    if (nVoter.id.length != 13) {
+    if (nVoter.id.length !== 13) {
       alert('Please enter an ID number with a length of 13.');
       return;
     }

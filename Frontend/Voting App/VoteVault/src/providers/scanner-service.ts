@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Injectable, NgZone } from '@angular/core';
 
 @Injectable()
@@ -48,13 +49,13 @@ export class ScannerServiceProvider {
     this.settings.codeDuplicateFilter = -1;
     this.barcodeCapture = SCANDIT
 .BarcodeCapture.forContext(this.context, this.settings);
-    this.barcodeCapture.applySettings(this.settings)
+    this.barcodeCapture.applySettings(this.settings);
     this.barcodeCapture.addListener({
       didScan: (barcodeCapture, session) => {
         if (this.delegate) {
           this.zone.run(() => {
             this.delegate.didScan(barcodeCapture, session);
-          })
+          });
         }
       },
     });
