@@ -3,25 +3,91 @@ import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 import { ScannerServiceProvider } from 'src/providers/scanner-service';
 
+
 @Component({
   selector: 'app-voter-registration',
   templateUrl: './voter-registration.page.html',
   styleUrls: ['./voter-registration.page.scss'],
 })
 export class VoterRegistrationPage implements OnInit {
-  name: string
-  surname: string
-  idNum: string
+  name: string;
+  surname: string;
+  idNum: string;
   voterNames: any[]
-  voterSurnames: any[]
-  voterIDs: any[]
-  licenseKey: string
-  constructor(private router : Router) { }
+  voterSurnames: any[];
+  voterIDs: any[];
+  private barcodes: Barcode[] = [];
+  private continuousMode: boolean = false;
+  showSingleButton: boolean = true;
+  showSingleDoneButton: boolean = false;
+  constructor(private router : Router, public scanner: ScannerServiceProvider) { }
+
+  public startScanning() {
+    this.showScanner();
+    this.showSingleButton = false;
+    this.showSingleDoneButton = false;
+    this.scanner.delegate = this;
+    this.scanner.start();
+  }
+
+  public startContinuousScanning() {
+    this.continuousMode = true;
+    document.getElementById('scanner').style.bottom = "10%";
+    this.startScanning();
+  }
+
+  public resumeScanning() {
+    this.scanner.resume();
+    this.showScanner();
+    this.showSingleButton = false;
+    this.showSingleDoneButton = false;
+  }
+
+  public doneSingle() {
+    this.hideScanner();
+    this.scanner.pause();
+    this.barcodes = [];
+    document.getElementById('result').innerHTML = "";
+    this.showSingleButton = true;
+    this.showSingleDoneButton = false;
+  }
+
+  public done() {
+    this.barcodes = [];
+    document.getElementById('result').style.display = "none";
+    document.getElementById('result').innerHTML = "";
+    this.showSingleButton = true;
+    this.showSingleDoneButton = false;
+    this.continuousMode = false;
+  }
+
+  public didScan(barcodeCapture: BarcodeCapture, session: BarcodeCaptureSession) {
+    this.barcodes = session.newlyRecognizedBarcodes;
+    this.hideScanner();
+    document.getElementById('result').style.display = "block";
+    this.scanner.pause();
+    this.showSingleDoneButton = true;
+    let scannedBarcode = "Scanned Code:<br><br>" + this.barcodes[0].symbology.toUpperCase() + ": " + this.barcodes[0].data;
+    document.getElementById('result').innerHTML = scannedBarcode;
+  }
+
+  public ionViewDidEnter(): void {
+  }
+
+  public showScanner() {
+    document.getElementById('scanner').style.display = "block";
+    document.getElementById('result').style.display = "none";
+    document.getElementById('result').innerHTML = "";
+  }
+
+  public hideScanner() {
+    document.getElementById('scanner').style.display = "none";
+  }
 
   ngOnInit() {
-    this.voterIDs = []
-    this.voterNames = []
-    this.voterSurnames = []
+    this.voterIDs = [];
+    this.voterNames = [];
+    this.voterSurnames = [];
   }
 
   registerVoter() : void {
