@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  name: string;
-  surname: string;
-  idNum: string;
-  voterNames: any[];
-  voterSurnames: any[];
-  voterIDs: any[];
-  constructor(private router: Router) { }
+  name: string
+  surname: string
+  idNum: string
+  voterNames: any[]
+  voterSurnames: any[]
+  voterIDs: any[]
+  constructor(private location : Location, private router : Router) { }
 
   ngOnInit() {
     this.voterIDs = [];
@@ -53,6 +53,7 @@ export class RegisterPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['admin-dashboard']);
+    this.location.back();
+    // this.router.navigate(['admin-dashboard'])
   }
 }

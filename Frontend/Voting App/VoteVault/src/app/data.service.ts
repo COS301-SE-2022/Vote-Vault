@@ -7,6 +7,14 @@ interface Ballot {
   options: any[];
 }
 
+interface Election {
+  electionName : string
+  id? : string
+  ballots : any[]
+  // adminEmail : string
+  users : any[]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +31,8 @@ export class DataService {
   election: any;
   elections: any[];
   registeredUsers: any[];
+  adminState : string;
+  electionID : string
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -40,14 +50,26 @@ export class DataService {
     this.elections = [];
     this.registeredUsers = [];
     this.electionName = '';
+    this.adminState = '';
+    this.electionID = '';
   }
+
+  setAdminState(s) {
+    this.adminState = s
+  } 
 
   async fetchElections() {
     this.elections = []
     const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
     querySnapshot.forEach((doc) =>  {
-      console.log(doc.data().election)
-      this.elections.push(doc.data().election)
+      const e = {} as Election
+      console.log(doc.data())
+      e.ballots = doc.data().ballots 
+      e.users   = doc.data().users
+      e.electionName = doc.data().electionName
+      e.id = doc.id
+      // console.log(doc.data().election)
+      this.elections.push(e)
     })
   }
 
@@ -59,26 +81,42 @@ export class DataService {
     this.ballot1.name    = e.ballots[0].name;
     this.ballot2.name    = e.ballots[1].name;
     this.ballot3.name    = e.ballots[2].name;
-    this.electionName    = e.name;
+    this.electionName    = e.electionName;
+    this.electionID = e.id
+  }
+
+  async saveEdit() {
+    const electionRef = doc(this.firestore, 'elections', this.electionID)
+
+    await updateDoc(electionRef, {
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers
+    })
   }
 
   async saveElection() {
     //Create election object and save to firestore
-    const election = {adminEmail : this.userEmail,
-                      ballots    : [this.ballot1, this.ballot2, this.ballot3],
-                      electionName : this.electionName,
-                      active : true,
-                      users  : this.registeredUsers
-                    };
+    // const election = {
+      
+    //                 };
 
     //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
     const electionRef = await addDoc(collection(this.firestore, 'elections'), {
-    });
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers
+    }).then(()  =>  {
+      this.fetchElections()
+    })
 
     //Add to admin elections
     // this.mapAdminToElection(electionRef);
 
-    this.fetchElections()
   }
 
   async mapAdminToElection(ref) {

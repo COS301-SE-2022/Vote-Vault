@@ -42,7 +42,6 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.options = [];
     this.electionTitle = this.dataService.electionName;
     this.ballot1Options = this.dataService.ballot1.options;
-    console.log(this.dataService.ballot1.name);
     this.ballotName = this.dataService.ballot1.name;
     this.ballot2Options = this.dataService.ballot2.options;
     this.ballotName1 = this.dataService.ballot2.name;
@@ -82,19 +81,32 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.toast_addUser();
   }
 
-  generate(): void {
+  async generate() {
     this.dataService.saveElectionName(this.electionTitle);
     this.presentLoading();
-    this.dataService.saveElection()
-    .then((res) => {
-      console.log(res);
-      this.loadingController.dismiss();
-    })
-    .catch((e) => {
-      console.error(e);
-      this.loadingController.dismiss();
-    });
 
+    if(this.dataService.adminState === 'edit') {
+      await this.dataService.saveEdit()
+      .then((res) => {
+        console.log(res);
+        this.loadingController.dismiss();
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+      });
+    }
+    else if(this.dataService.adminState === 'generate') {
+      await this.dataService.saveElection()
+      .then((res) => {
+        console.log(res);
+        this.loadingController.dismiss();
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+      });
+    }
     this.router.navigate(['admin-dashboard']);
   }
 
