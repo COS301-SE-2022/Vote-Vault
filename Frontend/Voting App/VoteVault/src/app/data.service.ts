@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, arrayUnion, collection, doc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 
 interface Ballot {
   name: string;
@@ -60,21 +60,43 @@ export class DataService {
 
   async fetchElections() {
     this.elections = []
-    const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
-    querySnapshot.forEach((doc) =>  {
-      const e = {} as Election
-      // console.log(doc.data())
-      e.ballots = doc.data().ballots 
-      e.users   = doc.data().users
-      e.electionName = doc.data().electionName
-      e.id = doc.id
-      // console.log(doc.data().election)
-      this.elections.push(e)
-    })
+    // const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
+    // querySnapshot.forEach((doc) =>  {
+    //   const e = {} as Election
+    //   // console.log(doc.data())
+    //   e.ballots = doc.data().ballots 
+    //   e.users   = doc.data().users
+    //   e.electionName = doc.data().electionName
+    //   e.id = doc.id
+    //   // console.log(doc.data().election)
+    //   this.elections.push(e)
+    // })
 
     //TODO: Fetch elections for signed in user
     const adminRef = doc(this.firestore, 'admins', this.userEmail)
+    const adminSnap = await getDoc(adminRef)
 
+    if (adminSnap.exists()) {
+      console.log("Document data:", adminSnap.data());
+      const election_id_array = adminSnap.data().elections
+
+      election_id_array.forEach(async (id)  =>  {
+        //Retrieve Election
+        const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
+        const e = {} as Election
+        // console.log(doc.data())
+        e.ballots = electionSnap.data().ballots 
+        e.users   = electionSnap.data().users
+        e.electionName = electionSnap.data().electionName
+        e.id = electionSnap.id
+        // console.log(doc.data().election)
+        this.elections.push(e)
+      })
+      
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
 
   }
 
