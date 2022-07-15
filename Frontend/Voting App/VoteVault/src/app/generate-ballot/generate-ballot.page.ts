@@ -94,32 +94,36 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
       await this.dataService.saveEdit()
       .then(async (res) => {
         console.log(res);
-        // this.dataService.clear()
+        this.dataService.clear()
         // await this.dataService.fetchElections().then(() =>  {
-        //   this.loadingController.dismiss();
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
         // })
-        this.loadingController.dismiss();        
       })
       .catch((e) => {
         console.error(e);
         this.loadingController.dismiss();
+        this.router.navigate(['admin-dashboard']);
       });
     }
     else if(this.dataService.adminState === 'generate') {
       await this.dataService.saveElection()
-      .then((res) => {
+      .then(async (res) => {
         console.log(res);
-        // this.dataService.clear()
-        // this.dataService.fetchElections()
-        this.loadingController.dismiss();
+        this.dataService.clear()
+        // await this.dataService.fetchElections().then(() =>  {
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        // })
       })
       .catch((e) => {
         console.error(e);
         this.loadingController.dismiss();
+        this.router.navigate(['admin-dashboard']);
       });
     }
 
-    this.router.navigate(['admin-dashboard']);
+    
   
   }
 

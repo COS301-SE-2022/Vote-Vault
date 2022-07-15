@@ -23,10 +23,11 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
   }
 
   ngOnInit() {
+    this.dataService.fetchElections()
+    this.elections = this.dataService.elections
   }
 
   ionViewWillEnter() {
-    this.dataService.fetchElections()
     this.elections = this.dataService.elections
   }
 

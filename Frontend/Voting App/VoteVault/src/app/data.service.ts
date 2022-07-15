@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import { AdminLoginPageRoutingModule } from './admin-login/admin-login-routing.module';
 
 interface Ballot {
   name: string;
@@ -60,18 +61,6 @@ export class DataService {
 
   async fetchElections() {
     this.elections = []
-    // const querySnapshot = await getDocs(collection(this.firestore, 'elections'))
-    // querySnapshot.forEach((doc) =>  {
-    //   const e = {} as Election
-    //   // console.log(doc.data())
-    //   e.ballots = doc.data().ballots 
-    //   e.users   = doc.data().users
-    //   e.electionName = doc.data().electionName
-    //   e.id = doc.id
-    //   // console.log(doc.data().election)
-    //   this.elections.push(e)
-    // })
-
     //TODO: Fetch elections for signed in user
     const adminRef = doc(this.firestore, 'admins', this.userEmail)
     const adminSnap = await getDoc(adminRef)
@@ -121,39 +110,40 @@ export class DataService {
       electionName : this.electionName,
       active : true,
       users  : this.registeredUsers
+    }).then(async ()  =>  {
+      await this.fetchElections()
     })
   }
 
   async saveElection() {
-    //Create election object and save to firestore
-    // const election = {
-      
-    //                 };
-
-    //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
-    const electionRef = await addDoc(collection(this.firestore, 'elections'), {
+   const electionRef = await addDoc(collection(this.firestore, 'elections'), {
       adminEmail : this.userEmail,
       ballots    : [this.ballot1, this.ballot2, this.ballot3],
       electionName : this.electionName,
       active : true,
       users  : this.registeredUsers
     }).then((ref)  =>  {
-      this.fetchElections()
-      
-      //Add to admin elections
       this.mapAdminToElection(ref);
+    }).then(async ()  =>  {
+      await this.fetchElections()
     })
   }
 
   async mapAdminToElection(ref) {
     console.log(ref.id)
     const id = ref.id
-
     const adminRef = doc(this.firestore, 'admins' , this.userEmail)
-
-    await updateDoc(adminRef, {
-      elections: arrayUnion(id)
-    })
+    const adminSnap = await getDoc(adminRef)
+    if(adminSnap.exists()) {
+      await updateDoc(adminRef, {
+        elections: arrayUnion(id)
+      })
+    }
+    else {
+      await setDoc(doc(this.firestore, "admins", this.userEmail), {
+        elections : [id]
+      });
+    }
   }
 
   clear() {
