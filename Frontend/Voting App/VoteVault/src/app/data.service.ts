@@ -71,6 +71,11 @@ export class DataService {
       // console.log(doc.data().election)
       this.elections.push(e)
     })
+
+    //TODO: Fetch elections for signed in user
+    const adminRef = doc(this.firestore, 'admins', this.userEmail)
+
+
   }
 
   editElection(e) {
