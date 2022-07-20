@@ -70,7 +70,8 @@ header {
 }
 
 a.active {
-  background-color: #fff;
+  background-color: #3c84cc;
+  color: #fff;
 }
 
 input[type=text] {
