@@ -70,7 +70,7 @@ header {
 }
 
 a.active {
-  background-color: aliceblue;
+  background-color: #fff;
 }
 
 input[type=text] {
