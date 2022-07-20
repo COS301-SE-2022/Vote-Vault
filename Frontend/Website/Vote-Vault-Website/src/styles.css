@@ -55,6 +55,10 @@ header {
   width: 100vw;
 }
 
+#logo {
+  height: 2rem;
+}
+
 .navbar1 a:hover {
   background-color: rgb(84, 123, 250);
   color: black;
@@ -84,8 +88,8 @@ input[type=text] {
   border-radius: 5px;
 }
 
-#logo {
+/* #logo {
   position: relative;
   top: 15%;
-  height: 70%;
-}
+  height: 10%;
+} */
