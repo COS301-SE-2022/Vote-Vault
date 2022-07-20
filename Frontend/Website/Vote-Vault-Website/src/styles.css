@@ -22,7 +22,7 @@ header {
   background-color: rgb(50, 87, 255);
   width: 100%;
   margin: 0px;
-  height: 100px;
+  height: 20%;
   border: 0px;
   text-align: center;
   position: relative;
@@ -51,7 +51,7 @@ header {
   position: sticky;
   top: 0%;
   z-index: 1;
-  display: flex;
+  display: table;
   width: 100vw;
 }
 
@@ -64,7 +64,7 @@ header {
   float: left;
   color: #000000;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   text-decoration: none;
   font-size: 17px;
 }
