@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background-color: rgb(50, 87, 255);
+  background-color: #fff;
   width: 100%;
   margin: 0px;
   height: 20%;
@@ -46,13 +46,17 @@ header {
 }
 
 .navbar1 {
-  background-color: rgb(112, 139, 255);
+  background-color: #3257ff;
   overflow: hidden;
   position: sticky;
   top: 0%;
   z-index: 1;
   display: table;
   width: 100vw;
+}
+
+#logo {
+  height: 2rem;
 }
 
 .navbar1 a:hover {
@@ -62,7 +66,7 @@ header {
 
 .navbar1 a {
   float: left;
-  color: #000000;
+  color: whitesmoke;
   text-align: center;
   padding: 0.875rem 1rem;
   text-decoration: none;
@@ -70,7 +74,8 @@ header {
 }
 
 a.active {
-  background-color: aliceblue;
+  background-color: #3c84cc;
+  color: #fff;
 }
 
 input[type=text] {
@@ -83,8 +88,8 @@ input[type=text] {
   border-radius: 5px;
 }
 
-#logo {
+/* #logo {
   position: relative;
   top: 15%;
-  height: 70%;
-}
+  height: 10%;
+} */
