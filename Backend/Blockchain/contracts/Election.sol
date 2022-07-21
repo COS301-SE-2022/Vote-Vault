@@ -21,12 +21,12 @@ pragma solidity^0.5.0;
     function countVotes() public view {
         uint count = 0;
 
-        for(uint i=0; i>0; i++){
-            for(uint j=0; j<=i; j++){
-                if(voteCount[i][j] > 0){
+        for(uint i=0; i>0; i++) {
+            for( uint j=0; j<=i; j++) {
+                if (voteCount[i][j] > 0) {
                     count++;
                 }
-                else{
+                else {
                     break;
                 }
             }
@@ -38,7 +38,6 @@ pragma solidity^0.5.0;
 
     function votePeriod() public view {
         uint days = (endDate - startDate) / 60 / 60 / 24;
-
         returns (uint days)
     }
 
