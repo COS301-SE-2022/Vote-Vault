@@ -13,4 +13,26 @@
         bool gender;    //true for Male, false for Female
         uint votes[3];  //stores indices
     }
+
+    function addVote(uint ballot, uint candidate) external {
+        voteCount[ballot][candidate] += 1;
+    }
+
+    function countVotes() public view {
+        uint count = 0;
+
+        for(uint i=0; i>0; i++){
+            for(uint j=0; j<=i; j++){
+                if(voteCount[i][j] > 0){
+                    count++;
+                }
+                else{
+                    break;
+                }
+            }
+        }
+
+        returns (uint count)
+
+    }
 }
