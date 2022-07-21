@@ -27,3 +27,46 @@ body > ion-card > ion-card-header > ion-card-title {
     --background : transparent;
     width: auto;
 }
+
+.button {
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    font-size: 22px;
+    transform: translateY(-50%);
+  }
+  
+  .button strong {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  
+  .button p {
+    font-size: 25px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+  }
+  
+  .button a {
+    text-decoration: none;
+  }
+  
+  #scanner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #result {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 28%;
+    font-size: 22px;
+  }

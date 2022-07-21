@@ -17,13 +17,13 @@ Welcome to the Vote-Vault!
 
 <div align="center">
 
-<a href="">[![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/COS301-SE-2022/Vote-Vault?color=Green&style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)</a>
-<a href="">[![GitHub open issues](https://img.shields.io/github/issues-raw/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)</a>
-<a href="">![Codecov branch](https://img.shields.io/codecov/c/gh/COS301-SE-2022/Vote-Vault/main?color=ff69b4&style=for-the-badge&token=13KLW5MK77)</a>
-<a href="">![GitHub commit activity](https://img.shields.io/github/commit-activity/w/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
-<a href="">![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)</a>
-<a href="">![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2FVoteVault.com)</a>
-
+[![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/COS301-SE-2022/Vote-Vault?color=Green&style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![GitHub open issues](https://img.shields.io/github/issues-raw/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/COS301-SE-2022/Vote-Vault/main?color=ff69b4&style=for-the-badge&token=13KLW5MK77)](https://app.codecov.io/gh/COS301-SE-2022/Vote-Vault)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![GitHub last commit](https://img.shields.io/github/last-commit/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https://vote-vault-iota.vercel.app)](https://github.com/COS301-SE-2022/Vote-Vault)
+[![Vercel](https://vercelbadge.vercel.app/api/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://vercel.com/ssdpressed/vote-vault)
 </div>
 
 # Demo Links
@@ -34,6 +34,7 @@ Demo 1
 Demo 2
 * [SSDpressed-Demo2](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
 * [SRS Documentation Demo2](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
+* [Architectural Requirements Document](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Architectural-Requirements-Document)
 # Commands
 * Useful commands:
 
@@ -70,6 +71,7 @@ Demo 2
  # Meet the Team
  
 * ## Bevan Slabbert
+     ![bevon](https://user-images.githubusercontent.com/86471999/173820687-010608e4-82ef-4d63-8731-a6cff7710dc9.jpg)  
      - **Bio:**
          Third year Computer Science student at the University of Pretoria.
      - **Info:**
@@ -83,6 +85,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/bevan-slabbert-5ba17a152/
 * ## Hugo Esterhuyse
+     ![hugo](https://user-images.githubusercontent.com/86471999/173826556-28df51b7-d662-4524-a1a9-dad6a2030b01.jpg)
      - **Bio:**
          Third year Computer Science student at the University of Pretoria.
      - **Info:**
@@ -110,6 +113,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/markus-van-tubbergh-63a635141/
 * ## Hanroe Geyser
+     ![hanroe](https://user-images.githubusercontent.com/86471999/173820704-a4e0b038-7438-40a6-b349-ae298755859f.jpg)
      - **Bio:**
          Third year BSc Computer Science student at the University of Pretoria.
      - **Info:**
@@ -124,6 +128,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/hanroe-geyser-197b1721b
 * ## Dhashin Reddy
+     ![dhashin2](https://user-images.githubusercontent.com/86471999/173822394-27762c27-6033-48c7-a5c1-42b11c18234a.png)
      - **Bio:**
          Third year Computer Science student at the University of Pretoria
      - **Info:**

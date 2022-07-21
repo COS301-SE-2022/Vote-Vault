@@ -7,7 +7,7 @@
 
   <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
     <ion-card-header>
-      <ion-card-title>{{e.name}}</ion-card-title>
+      <ion-card-title>{{e.electionName}}</ion-card-title>
       <br>
       <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
     </ion-card-header>

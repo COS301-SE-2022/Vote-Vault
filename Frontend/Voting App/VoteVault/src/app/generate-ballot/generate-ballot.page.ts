@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-generate-ballot',
@@ -13,106 +14,139 @@ import { ToastController } from '@ionic/angular';
 
 export class GenerateBallotPage implements OnInit, OnDestroy{
 
-  @ViewChild('slides' , {  static: true })  slides: IonSlides
-  slideIndex : number = 0
-  options : any[]
-  optionInput : string = ""
-  name : string = ""
-  surname : string = ""
-  idNum : string = ""
-  ballot1Options : any[]
-  ballot2Options : any[]
-  ballot3Options : any[]
-  ballotName : string = ""
-  ballotName1 : string = ""
-  ballotName2 : string = ""
-  electionTitle : string = ""
+  @ViewChild('slides' , {  static: true })  slides: IonSlides;
+  slideIndex = 0;
+  options: any[];
+  optionInput = '';
+  name = '';
+  surname = '';
+  idNum = '';
+  ballot1Options: any[];
+  ballot2Options: any[];
+  ballot3Options: any[];
+  ballotName = '';
+  ballotName1 = '';
+  ballotName2 = '';
+  electionTitle = '';
 
-  constructor(private loadingController : LoadingController, private menu : MenuController, private toastController: ToastController, private router : Router, private dataService : DataService) { }
+  constructor(private location: Location, private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
+    this.ballot1Options = [];
+    this.ballot2Options = [];
+    this.ballot3Options = [];
+   }
 
   ngOnInit() {
   }
 
+
   ionViewWillEnter() {
-    this.options = []
-    this.electionTitle = this.dataService.electionName
-    this.ballot1Options = this.dataService.ballot1.options
-    console.log(this.dataService.ballot1.name)
-    this.ballotName = this.dataService.ballot1.name
-    this.ballot2Options = this.dataService.ballot2.options
-    this.ballotName1 = this.dataService.ballot2.name
-    this.ballot3Options = this.dataService.ballot3.options
-    this.ballotName2 = this.dataService.ballot3.name
+    this.populateBallots()
   }
 
   ngOnDestroy() {
-    this.dataService.clear()
+    this.dataService.clear();
   }
-  
 
-  addOption() : void {
-    const newCandidate = {"name" : this.name, "surname" : this.surname, "id" : this.idNum, "isChecked" : false}
+
+  populateBallots() {
+    this.options = [];
+    this.electionTitle = this.dataService.electionName;
+    this.ballot1Options = this.dataService.ballot1.options;
+    this.ballotName = this.dataService.ballot1.name;
+    this.ballot2Options = this.dataService.ballot2.options;
+    this.ballotName1 = this.dataService.ballot2.name;
+    this.ballot3Options = this.dataService.ballot3.options;
+    this.ballotName2 = this.dataService.ballot3.name;
+  }
+
+  addOption(): void {
+    const newCandidate = {name : this.name, surname : this.surname, id : this.idNum, isChecked : false};
 
     //Add option to correct ballot
-    this.dataService.addOption(newCandidate, this.slideIndex)
+    this.dataService.addOption(newCandidate, this.slideIndex);
     switch(this.slideIndex) {
       case 0: {
-        this.ballot1Options = this.dataService.getOptions(this.slideIndex)
-        break
+        this.ballot1Options = this.dataService.getOptions(this.slideIndex);
+        break;
       }
       case 1: {
-        this.ballot2Options = this.dataService.getOptions(this.slideIndex)
-        break
+        this.ballot2Options = this.dataService.getOptions(this.slideIndex);
+        break;
       }
       case 2: {
-        this.ballot3Options = this.dataService.getOptions(this.slideIndex)
-        break
+        this.ballot3Options = this.dataService.getOptions(this.slideIndex);
+        break;
       }
     }
     // console.log(this.ballot1Options)
     // console.log(this.ballot2Options)
-    this.name = ""
-    this.surname = ""
-    this.idNum = ""
+    this.name = '';
+    this.surname = '';
+    this.idNum = '';
     this.toast_addUser();
   }
 
-  generate() : void {
-    this.dataService.saveElectionName(this.electionTitle)
-    this.presentLoading()
-    this.dataService.saveElection()
-    .then((res) => {
-      console.log(res)
-      this.loadingController.dismiss()
-    })
-    .catch((e) => {
-      console.error(e)
-      this.loadingController.dismiss()
-    })
+  async generate() {
+    this.dataService.saveElectionName(this.electionTitle);
+    this.presentLoading();
+
+    if(this.dataService.adminState === 'edit') {
+      await this.dataService.saveEdit()
+      .then(async (res) => {
+        console.log(res);
+        this.dataService.clear()
+        // await this.dataService.fetchElections().then(() =>  {
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        // })
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+        this.router.navigate(['admin-dashboard']);
+      });
+    }
+    else if(this.dataService.adminState === 'generate') {
+      await this.dataService.saveElection()
+      .then(async (res) => {
+        console.log(res);
+        this.dataService.clear()
+        // await this.dataService.fetchElections().then(() =>  {
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        // })
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+        this.router.navigate(['admin-dashboard']);
+      });
+    }
+
+    
   
-    this.router.navigate(['admin-dashboard'])
   }
 
   ionSlidesDidLoad(slides) {
-    slides.getActiveIndex().then((index : number) => {
-      this.slideIndex = index
+    slides.getActiveIndex().then((index: number) => {
+      this.slideIndex = index;
       // console.log(this.slideIndex)
-      this.options = this.dataService.getOptions(this.slideIndex)
+      this.options = this.dataService.getOptions(this.slideIndex);
     });
   }
 
-  saveBallotName() : void {
+  saveBallotName(): void {
     switch(this.slideIndex) {
       case 0:{
-        this.dataService.saveBallotName(this.ballotName, this.slideIndex)
+        this.dataService.saveBallotName(this.ballotName, this.slideIndex);
         break;
       }
       case 1:{
-        this.dataService.saveBallotName(this.ballotName1, this.slideIndex)
+        this.dataService.saveBallotName(this.ballotName1, this.slideIndex);
         break;
       }
       case 2:{
-        this.dataService.saveBallotName(this.ballotName2, this.slideIndex)
+        this.dataService.saveBallotName(this.ballotName2, this.slideIndex);
         break;
       }
     }
@@ -152,38 +186,39 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
   }
-  
+
   openCustom() {
-    this.dataService.clear()
-    this.router.navigate(['admin-dashboard'])
+    this.dataService.clear();
+    this.location.back();
+    // this.router.navigate(['admin-dashboard']);
   }
 
   navigate(s) {
-    this.router.navigate([s])
+    this.router.navigate([s]);
   }
 
   removeCandidate(c) {
     switch(this.slideIndex) {
       case 0: {
-        let i = this.ballot1Options.indexOf(c)
+        const i = this.ballot1Options.indexOf(c);
         if(i != -1){
-          this.dataService.removeOption(i, this.slideIndex)
+          this.dataService.removeOption(i, this.slideIndex);
         }
-        break
+        break;
       }
       case 1: {
-        let i = this.ballot2Options.indexOf(c)
+        const i = this.ballot2Options.indexOf(c);
         if(i != -1){
-          this.dataService.removeOption(i, this.slideIndex)
-        }       
-        break
+          this.dataService.removeOption(i, this.slideIndex);
+        }
+        break;
       }
       case 2: {
-        let i = this.ballot3Options.indexOf(c)
+        const i = this.ballot3Options.indexOf(c);
         if(i != -1){
-          this.dataService.removeOption(i, this.slideIndex)
+          this.dataService.removeOption(i, this.slideIndex);
         }
-        break
+        break;
       }
     }
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, MenuController } from '@ionic/angular';
+import { ActionSheetController, MenuController, ViewWillEnter } from '@ionic/angular';
 import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
 
@@ -9,17 +9,26 @@ import { DataService } from '../data.service';
   templateUrl: './admin-dashboard.page.html',
   styleUrls: ['./admin-dashboard.page.scss'],
 })
-export class AdminDashboardPage implements OnInit {
+export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   elections : any[]
 
   constructor(private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
-    this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
-                      {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
-                      {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
-   }
+    // this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
+    //                   {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+    //                   {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
+   
+    // this.dataService.fetchElections()
+    // this.elections = this.dataService.elections
+  }
 
   ngOnInit() {
+    this.dataService.fetchElections()
+    this.elections = this.dataService.elections
+  }
+
+  ionViewWillEnter() {
+    this.elections = this.dataService.elections
   }
 
   openFirst() {
@@ -49,6 +58,7 @@ export class AdminDashboardPage implements OnInit {
         icon: 'copy-outline',
         data: 10,
         handler: () => {
+          this.dataService.setAdminState('edit')
           this.navigate("generate-ballot")
         }
       }, {
@@ -56,6 +66,7 @@ export class AdminDashboardPage implements OnInit {
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
+          console.log('clicked')
           this.navigate("register")
         }
       }, {
@@ -98,6 +109,7 @@ export class AdminDashboardPage implements OnInit {
 
   createElection() {
     this.dataService.clear()
+    this.dataService.setAdminState('generate')
     this.router.navigate(['generate-ballot'])
   }
 }
