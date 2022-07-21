@@ -36,5 +36,11 @@ pragma solidity^0.5.0;
 
     }
 
+    function votePeriod() public view {
+        uint days = (endDate - startDate) / 60 / 60 / 24;
+
+        returns (uint days)
+    }
+
 }
 
