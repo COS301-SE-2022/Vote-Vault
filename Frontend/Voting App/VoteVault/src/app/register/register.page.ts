@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-register',
@@ -53,7 +54,8 @@ export class RegisterPage implements OnInit {
   }
 
   openCustom() {
-    //this.location.back();
-    this.router.navigate(['admin-dashboard']);
+    console.log('click')
+    this.location.back();
+    // this.router.navigate(['admin-dashboard']);
   }
 }

@@ -66,6 +66,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
+          console.log('clicked')
           this.navigate("register")
         }
       }, {
