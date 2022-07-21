@@ -1,14 +1,14 @@
 {
   "contractName": "Election",
   "abi": [],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820c9e10f2e518377433605a720c356b4b710f5006a651670d5601987d0ee63764e0029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820c9e10f2e518377433605a720c356b4b710f5006a651670d5601987d0ee63764e0029",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058202199cf4b9cd517b0e1e70328a57050bdf16f6b2c20cfaca988c12fee688e3e0c0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058202199cf4b9cd517b0e1e70328a57050bdf16f6b2c20cfaca988c12fee688e3e0c0029",
   "sourceMap": "28:28:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;28:28:0;;;;;;;",
   "deployedSourceMap": "28:28:0:-;;;;;",
   "source": " pragma solidity^0.5.0;\r\n\r\n contract Election{\r\n    \r\n }",
-  "sourcePath": "C:/Users/bevan/OneDrive/Documents/GitHub/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
+  "sourcePath": "C:/Users/mvant/Documents/GitHub/capstone/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
   "ast": {
-    "absolutePath": "/C/Users/bevan/OneDrive/Documents/GitHub/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
+    "absolutePath": "/C/Users/mvant/Documents/GitHub/capstone/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
     "exportedSymbols": {
       "Election": [
         2
@@ -48,7 +48,7 @@
     "src": "1:55:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/bevan/OneDrive/Documents/GitHub/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
+    "absolutePath": "/C/Users/mvant/Documents/GitHub/capstone/Vote-Vault/Backend/Blockchain/contracts/Election.sol",
     "exportedSymbols": {
       "Election": [
         2
@@ -93,7 +93,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2022-07-21T06:55:47.405Z",
+  "updatedAt": "2022-07-21T07:04:21.792Z",
   "devdoc": {
     "methods": {}
   },
