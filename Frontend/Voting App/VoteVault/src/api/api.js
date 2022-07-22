@@ -1,10 +1,10 @@
 // Library Imports
-const Web3 = require('web3');
-const EthereumTx = require('ethereumjs-tx').Transaction;
+// const Web3 = require('web3');
+// const EthereumTx = require('ethereumjs-tx').Transaction;
 
-function send() {
-const Web3 = require('web3');
-const EthereumTx = require('ethereumjs-tx').Transaction;
+function send(Web3) {
+// const Web3 = require('web3');
+// const EthereumTx = require('ethereumjs-tx').Transaction;
 
 // Connection Initialization
 const rpcURL = "http://127.0.0.1:7545";

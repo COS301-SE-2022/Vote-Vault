@@ -1,3 +1,4 @@
+function send() {
 // Library Imports
 const Web3 = require('web3');
 const EthereumTx = require('ethereumjs-tx').Transaction;
@@ -26,11 +27,10 @@ let parameter = {
     gasPrice: web3.utils.toHex(web3.utils.toWei('30', 'gwei'))
 }
 
-function send() {
-    // Function Call
-    deploy_contract.deploy(payload).send(parameter, (err, transactionHash) => {
-        console.log('Transaction Hash :', transactionHash);
-    }).on('confirmation', () => {}).then((newContractInstance) => {
-        console.log('Deployed Contract Address : ', newContractInstance.options.address);
-    })
+// Function Call
+deploy_contract.deploy(payload).send(parameter, (err, transactionHash) => {
+    console.log('Transaction Hash :', transactionHash);
+}).on('confirmation', () => {}).then((newContractInstance) => {
+    console.log('Deployed Contract Address : ', newContractInstance.options.address);
+})
 }
