@@ -8,6 +8,10 @@ pragma solidity^0.5.0;
     uint public endDate;
     bytes32 [] public voters;
 
+    constructor() public {
+        this.electionID = "fakeID";
+    }
+
     struct Vote {
         uint age;
         bool gender;    //true for Male, false for Female
