@@ -5,6 +5,11 @@ import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
 
+// import {Election} from '../../abi/abi'
+import Web3 from "web3"
+declare function test(): any;
+
+declare let window : any
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.page.html',
@@ -14,8 +19,12 @@ export class AdminLoginPage implements OnInit {
 
   email : string
   password : string
+  private web3 : any
 
-  constructor(private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { }
+  constructor(private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { 
+    // this.web3 = new Web3(Web3.givenProvider)
+    test();
+  }
 
   ngOnInit() {
   }

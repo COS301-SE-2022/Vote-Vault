@@ -32,7 +32,7 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [],
+            "scripts": ["src/api/api.js"],
             "preserveSymlinks": true ,
             "aot": false,
             "vendorChunk": true,
