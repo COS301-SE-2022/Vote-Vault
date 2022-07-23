@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterPage implements OnInit {
   voterNames: any[];
   voterSurnames: any[];
   voterIDs: any[];
-  constructor(private router: Router) { }
+  constructor(private location: Location, private router: Router) { }
 
   ngOnInit() {
     this.voterIDs = [];
@@ -53,6 +54,8 @@ export class RegisterPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['admin-dashboard']);
+    console.log('click')
+    this.location.back();
+    // this.router.navigate(['admin-dashboard']);
   }
 }

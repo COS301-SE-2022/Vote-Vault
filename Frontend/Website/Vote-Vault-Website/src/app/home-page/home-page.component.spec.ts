@@ -3,8 +3,9 @@ import { HomePageComponent } from './home-page.component';
 import { RouterTestingModule } from '@angular/router/testing'
 
 describe('HomePageComponent', () => {
-  let component : HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+  var component : HomePageComponent;
+  
+  var fixture : ComponentFixture<HomePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

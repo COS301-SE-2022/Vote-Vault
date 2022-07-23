@@ -1,7 +1,8 @@
 {
   "name": "VoteVault",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

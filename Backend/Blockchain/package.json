@@ -1,0 +1,32 @@
+{
+  "name": "eth-voting",
+  "version": "1.0.0",
+  "description": "Blockchain Voting system Powered By Ethereum",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && sexit 1"
+  },
+  "author": "SSDPressed",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "5.2.0",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^3.0.0",
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.19",
+    "truffle": "5.5.23",
+    "truffle-contract": "3.0.6"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.12",
+    "dotenv": "^16.0.1",
+    "ethereumjs-tx": "^2.1.2",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.7.4"
+  }
+}

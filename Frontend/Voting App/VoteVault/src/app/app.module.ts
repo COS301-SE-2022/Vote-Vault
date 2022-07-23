@@ -13,6 +13,7 @@ import { Firestore, FirestoreModule, getFirestore, provideFirestore } from '@ang
 import { environment } from 'src/environments/environment';
 import { DataService } from './data.service';
 import { RouterModule } from '@angular/router';
+import { ScannerServiceProvider } from 'src/providers/scanner-service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,7 @@ import { RouterModule } from '@angular/router';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth())],
-  providers: [ DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScannerServiceProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

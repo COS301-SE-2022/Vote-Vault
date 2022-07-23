@@ -29,11 +29,15 @@
     </ion-item>
 
     <ion-item  class="ion-align-items-center" color="light">
-      <ion-label position="floating">Scan ID:</ion-label>
-      <ion-button size="medium">
-        <ion-icon name="camera-outline"></ion-icon>
-      </ion-button>
+      <ion-label position="stacked">Scan ID:</ion-label>
+      <ion-input size="medium" type="file">
+      </ion-input>
     </ion-item>
+
+    <div id="result"></div>
+    <div id="scanner"></div>
+    <ion-button *ngIf="showSingleButton" class="button" mode="ios" (click)="startScanning()">Start Scanning</ion-button>
+    <ion-button *ngIf="showSingleDoneButton" class="button" mode="ios" (click)="doneSingle()">Done</ion-button>
 
     <ion-button class="ion-margin-top" (click) = "registerVoter()">
         Register Now
