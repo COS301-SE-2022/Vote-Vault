@@ -3,13 +3,13 @@ pragma solidity^0.5.0;
  contract Election {
     
     uint [3][] public voteCount;
-    uint public electionID;
+    string public electionID;
     uint public startDate;
     uint public endDate;
     bytes32 [] public voters;
 
-    constructor() public {
-        this.electionID = "fakeID";
+    constructor(string memory id) public {
+        electionID = id;
     }
 
     struct Vote {
@@ -20,6 +20,10 @@ pragma solidity^0.5.0;
 
     function addVote(uint ballot, uint candidate) external {
         voteCount[ballot][candidate] += 1;
+    }
+
+    function getId() public view returns (string memory){
+        return electionID;
     }
 
     // function countVotes() public view {

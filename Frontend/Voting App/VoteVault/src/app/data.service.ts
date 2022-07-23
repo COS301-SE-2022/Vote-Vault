@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import { AdminLoginPageRoutingModule } from './admin-login/admin-login-routing.module';
-import {ContractFactory, ethers} from 'ethers';
+import {ContractFactory, ethers, providers} from 'ethers';
+import { hrtime } from 'process';
 
 declare let window : any;
 
@@ -37,7 +38,11 @@ export class DataService {
   registeredUsers: any[];
   adminState : string;
   electionID : string
-
+  private contractAddress = '0x76180da9F62ccDe81C5092CACa5818835FaD6900'
+  private contractABI = '[{"constant":true,"inputs":[],"name":"startDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0x0b97bc86"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"voteCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xba329414"},{"constant":true,"inputs":[],"name":"endDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xc24a0f8b"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"voters","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xda58c7d9"},{"constant":true,"inputs":[],"name":"electionID","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xf8e78e9a"},{"constant":false,"inputs":[{"name":"ballot","type":"uint256"},{"name":"candidate","type":"uint256"}],"name":"addVote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function","signature":"0xfcca991b"}]'
+  private contractBytecode = '0x608060405234801561001057600080fd5b506102c0806100206000396000f3fe608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630b97bc861461007d578063ba329414146100a8578063c24a0f8b14610101578063da58c7d91461012c578063f8e78e9a1461017b578063fcca991b146101a6575b600080fd5b34801561008957600080fd5b506100926101eb565b6040518082815260200191505060405180910390f35b3480156100b457600080fd5b506100eb600480360360408110156100cb57600080fd5b8101908080359060200190929190803590602001909291905050506101f1565b6040518082815260200191505060405180910390f35b34801561010d57600080fd5b50610116610227565b6040518082815260200191505060405180910390f35b34801561013857600080fd5b506101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061022d565b6040518082815260200191505060405180910390f35b34801561018757600080fd5b50610190610250565b6040518082815260200191505060405180910390f35b3480156101b257600080fd5b506101e9600480360360408110156101c957600080fd5b810190808035906020019092919080359060200190929190505050610256565b005b60025481565b60008281548110151561020057fe5b90600052602060002090600302018160038110151561021b57fe5b01600091509150505481565b60035481565b60048181548110151561023c57fe5b906000526020600020016000915090505481565b60015481565b600160008381548110151561026757fe5b90600052602060002090600302018260038110151561028257fe5b0160008282540192505081905550505056fea165627a7a7230582035601f1a47684fd1fe0ea95361e35dffd208a094a3bbe97b772e35299ffda4910029'
+  private privateKey = '1bfdd10e791617c7e8e9c7d0a451b45f1fcf07c831504d8f2fa0727a2b166cd2'
+  
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
     this.ballot1 = {} as Ballot;
@@ -60,18 +65,39 @@ export class DataService {
   }
 
   async connect() {
-    const provider  = new ethers.providers.JsonRpcProvider('http:/\/127.0.0.1:7545')
-    const signer = provider.getSigner('0x3bAe5160f49A31f7123246346E445aa65bE0e41F')
-    const contractAddress = '0x76180da9F62ccDe81C5092CACa5818835FaD6900'
-    const contractABI = '[{"constant":true,"inputs":[],"name":"startDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0x0b97bc86"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"voteCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xba329414"},{"constant":true,"inputs":[],"name":"endDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xc24a0f8b"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"voters","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xda58c7d9"},{"constant":true,"inputs":[],"name":"electionID","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function","signature":"0xf8e78e9a"},{"constant":false,"inputs":[{"name":"ballot","type":"uint256"},{"name":"candidate","type":"uint256"}],"name":"addVote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function","signature":"0xfcca991b"}]'
-    const contractBytecode = '0x608060405234801561001057600080fd5b506102c0806100206000396000f3fe608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630b97bc861461007d578063ba329414146100a8578063c24a0f8b14610101578063da58c7d91461012c578063f8e78e9a1461017b578063fcca991b146101a6575b600080fd5b34801561008957600080fd5b506100926101eb565b6040518082815260200191505060405180910390f35b3480156100b457600080fd5b506100eb600480360360408110156100cb57600080fd5b8101908080359060200190929190803590602001909291905050506101f1565b6040518082815260200191505060405180910390f35b34801561010d57600080fd5b50610116610227565b6040518082815260200191505060405180910390f35b34801561013857600080fd5b506101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061022d565b6040518082815260200191505060405180910390f35b34801561018757600080fd5b50610190610250565b6040518082815260200191505060405180910390f35b3480156101b257600080fd5b506101e9600480360360408110156101c957600080fd5b810190808035906020019092919080359060200190929190505050610256565b005b60025481565b60008281548110151561020057fe5b90600052602060002090600302018160038110151561021b57fe5b01600091509150505481565b60035481565b60048181548110151561023c57fe5b906000526020600020016000915090505481565b60015481565b600160008381548110151561026757fe5b90600052602060002090600302018260038110151561028257fe5b0160008282540192505081905550505056fea165627a7a7230582035601f1a47684fd1fe0ea95361e35dffd208a094a3bbe97b772e35299ffda4910029'
-    const contract = new ethers.Contract(contractAddress, contractABI, provider)
+    // const infuraProvider = new ethers.providers.InfuraProvider('https://ropsten.infura.io/v3/0d3da94ec48e4067b87f4a8734912931', 3)
+
+    const localhostProvider  = new ethers.providers.JsonRpcProvider('http:/\/127.0.0.1:7545')
+    const wallet = new ethers.Wallet(this.privateKey, localhostProvider)
+
+    const signer = localhostProvider.getSigner('0x3bAe5160f49A31f7123246346E445aa65bE0e41F')
+    
+    // const contract = new ethers.Contract(this.contractAddress, this.contractABI, provider)
   
-    const contractFactory = new ContractFactory(contractABI, contractBytecode, signer)
+    const contractFactory = new ContractFactory(this.contractABI, this.contractBytecode, wallet)
 
-    const deployTx = contractFactory.getDeployTransaction()
+    // const deployTx = contractFactory.getDeployTransaction()
+    
+    const deployment = await contractFactory.deploy()
+    const contract = await deployment.deployed()
+    
+    console.log(await contract.electionID())
+    // const transaction = await contract.addVote(0,0, {gasPrice : 0.5, gasLimit : 20000})
+    // const getTransactionReceipt = await transaction.wait()
+    // console.log(getTransactionReceipt)
+    // console.log(contract.address)
+    // console.log(await contract.addVote(0,0, {gasLimit : 1000000}))
 
-    console.log(await contractFactory.deploy())
+      // const estimatedGas = await contract.estimateGas.approve('http:/\/127.0.0.1:7545', '1000000')
+    // const approveTxUnsigned = await contract.populateTransaction.approve('http:/\/127.0.0.1:7545', "1000000");
+    // approveTxUnsigned.chainId = 3
+    // approveTxUnsigned.gasLimit = estimatedGas
+    // approveTxUnsigned.gasPrice = await localhostProvider.getGasPrice();
+    // approveTxUnsigned.nonce = await localhostProvider.getTransactionCount('0x3bAe5160f49A31f7123246346E445aa65bE0e41F');
+
+    // const approveTxSigned = await signer.signTransaction(approveTxUnsigned)
+    // const submittedTx = await localhostProvider.sendTransaction(approveTxSigned);
+    // console.log(await submittedTx.wait())
   }
 
   setAdminState(s) {
