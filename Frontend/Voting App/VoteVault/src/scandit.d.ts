@@ -31,4 +31,4 @@ interface ScannerDelegate {
   didScan(barcodeCapture: BarcodeCapture, session: BarcodeCaptureSession);
 }
 
-declare let SCANDIT;
+declare let SCANDIT: any;
