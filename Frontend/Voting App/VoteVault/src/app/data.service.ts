@@ -3,6 +3,9 @@ import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import { AdminLoginPageRoutingModule } from './admin-login/admin-login-routing.module';
 import {ethers} from 'ethers';
+
+declare let window : any;
+
 interface Ballot {
   name: string;
   options: any[];
@@ -53,7 +56,16 @@ export class DataService {
     this.electionName = '';
     this.adminState = '';
     this.electionID = '';
-    // this.deploy()
+    this.connect()
+  }
+
+  async connect() {
+    const provider  = new ethers.providers.JsonRpcProvider('https://ropsten.infura.io/v3/0d3da94ec48e4067b87f4a8734912931')
+    // await provider.send('eth_requestAccounts', [])
+    const signer = provider.getSigner()
+    console.log(signer)
+
+    console.log(await provider.getBlockNumber())
   }
 
   setAdminState(s) {
