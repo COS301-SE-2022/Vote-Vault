@@ -8,8 +8,9 @@ pragma solidity^0.5.0;
     uint public endDate;
     bytes32 [] public voters;
 
-    constructor(string memory id) public {
+    constructor(string memory id, uint sd) public {
         electionID = id;
+        startDate = sd;
     }
 
     struct Vote {
