@@ -19,12 +19,16 @@ pragma solidity^0.5.0;
         uint [3] votes;  //stores indices
     }
 
-    function addVote(uint ballot, uint candidate) external {
+    function addVote(uint ballot, uint candidate) public {
         voteCount[ballot][candidate] += 1;
     }
 
     function getId() public view returns (string memory){
         return electionID;
+    }
+
+    function updateId(string memory id) public {
+        electionID = id;
     }
 
     // function countVotes() public view {
