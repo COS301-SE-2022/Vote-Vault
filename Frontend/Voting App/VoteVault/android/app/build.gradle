@@ -39,6 +39,11 @@ dependencies {
     implementation project(':capacitor-cordova-android-plugins')
 }
 
+configurations {
+    compile.exclude group: 'com.google.zxing'
+    compile.exclude group: 'com.journeyapps'
+}
+
 apply from: 'capacitor.build.gradle'
 
 try {
