@@ -4,10 +4,8 @@ import { Router } from '@angular/router';
 import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
-import Web3 from 'web3';
-// import {Election} from '../../abi/abi'
-declare function send(): any;
-declare function require(): any;
+import { ContractService } from '../services/contract.service';
+
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.page.html',
@@ -18,7 +16,7 @@ export class AdminLoginPage implements OnInit {
   email : string
   password : string
 
-  constructor(private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { 
+  constructor(private contractService : ContractService, private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController, private auth : Auth) { 
   }
 
   ngOnInit() {

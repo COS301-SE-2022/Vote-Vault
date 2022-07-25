@@ -62,7 +62,7 @@ export class DataService {
     this.electionName = '';
     this.adminState = '';
     this.electionID = '';
-    this.deployContract()
+    // this.deployContract()
   }
 
   async contractAddVote() {
@@ -186,18 +186,23 @@ export class DataService {
     })
   }
 
-  async saveElection() {
+  async saveElection(contractAddress) {
+    let electionId = ""
    const electionRef = await addDoc(collection(this.firestore, 'elections'), {
       adminEmail : this.userEmail,
       ballots    : [this.ballot1, this.ballot2, this.ballot3],
       electionName : this.electionName,
       active : true,
-      users  : this.registeredUsers
+      users  : this.registeredUsers,
+      address : contractAddress
     }).then((ref)  =>  {
       this.mapAdminToElection(ref);
+      electionId = ref.id
     }).then(async ()  =>  {
       await this.fetchElections()
     })
+
+    return electionId
   }
 
   async mapAdminToElection(ref) {

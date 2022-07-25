@@ -4,6 +4,7 @@ import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
 import { Location } from "@angular/common";
+import { ContractService } from '../services/contract.service';
 
 @Component({
   selector: 'app-generate-ballot',
@@ -29,7 +30,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ballotName2 = '';
   electionTitle = '';
 
-  constructor(private location: Location, private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
+  constructor(private contractService: ContractService, private location: Location, private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
     this.ballot1Options = [];
     this.ballot2Options = [];
     this.ballot3Options = [];
@@ -107,20 +108,28 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
       });
     }
     else if(this.dataService.adminState === 'generate') {
-      await this.dataService.saveElection()
+
+      //Deploy contract to blockchain with number of candidates and voters as parameters
+      await this.contractService.deploy()
       .then(async (res) => {
-        console.log(res);
-        this.dataService.clear()
-        // await this.dataService.fetchElections().then(() =>  {
+        const contractAddress = res
+        
+        //Add election to database and save address of contract
+        await this.dataService.saveElection(contractAddress)
+        .then(async (res) => {
+          this.dataService.clear()
+          // await this.dataService.fetchElections().then(() =>  {
           this.loadingController.dismiss();
           this.router.navigate(['admin-dashboard']);
-        // })
+          // })
+        })
+        .catch((e) => {
+          console.error(e);
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        });
       })
-      .catch((e) => {
-        console.error(e);
-        this.loadingController.dismiss();
-        this.router.navigate(['admin-dashboard']);
-      });
+      
     }
 
     
