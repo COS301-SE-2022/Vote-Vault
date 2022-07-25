@@ -41,8 +41,8 @@ export class DataService {
   
   private contractAddress = '0x76180da9F62ccDe81C5092CACa5818835FaD6900'
   private contractABI = '[{"constant":true,"inputs":[],"name":"startDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"name":"voteCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"endDate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"voters","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"electionID","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"id","type":"string"},{"name":"sd","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"constant":false,"inputs":[{"name":"ballot","type":"uint256"},{"name":"candidate","type":"uint256"}],"name":"addVote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getId","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]'
-  private contractBytecode = '0x608060405234801561001057600080fd5b506102c0806100206000396000f3fe608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630b97bc861461007d578063ba329414146100a8578063c24a0f8b14610101578063da58c7d91461012c578063f8e78e9a1461017b578063fcca991b146101a6575b600080fd5b34801561008957600080fd5b506100926101eb565b6040518082815260200191505060405180910390f35b3480156100b457600080fd5b506100eb600480360360408110156100cb57600080fd5b8101908080359060200190929190803590602001909291905050506101f1565b6040518082815260200191505060405180910390f35b34801561010d57600080fd5b50610116610227565b6040518082815260200191505060405180910390f35b34801561013857600080fd5b506101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061022d565b6040518082815260200191505060405180910390f35b34801561018757600080fd5b50610190610250565b6040518082815260200191505060405180910390f35b3480156101b257600080fd5b506101e9600480360360408110156101c957600080fd5b810190808035906020019092919080359060200190929190505050610256565b005b60025481565b60008281548110151561020057fe5b90600052602060002090600302018160038110151561021b57fe5b01600091509150505481565b60035481565b60048181548110151561023c57fe5b906000526020600020016000915090505481565b60015481565b600160008381548110151561026757fe5b90600052602060002090600302018260038110151561028257fe5b0160008282540192505081905550505056fea165627a7a7230582035601f1a47684fd1fe0ea95361e35dffd208a094a3bbe97b772e35299ffda4910029'
-  private privateKey = '1bfdd10e791617c7e8e9c7d0a451b45f1fcf07c831504d8f2fa0727a2b166cd2'
+  private contractBytecode = '0x608060405234801561001057600080fd5b506040516106663803806106668339810180604052604081101561003357600080fd5b81019080805164010000000081111561004b57600080fd5b8281019050602081018481111561006157600080fd5b815185600182028301116401000000008211171561007e57600080fd5b50509291906020018051906020019092919050505081600190805190602001906100a99291906100b8565b5080600281905550505061015d565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100f957805160ff1916838001178555610127565b82800160010185558215610127579182015b8281111561012657825182559160200191906001019061010b565b5b5090506101349190610138565b5090565b61015a91905b8082111561015657600081600090555060010161013e565b5090565b90565b6104fa8061016c6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630b97bc86146100885780635d1ca631146100b3578063ba32941414610143578063c24a0f8b1461019c578063da58c7d9146101c7578063f8e78e9a14610216578063fcca991b146102a6575b600080fd5b34801561009457600080fd5b5061009d6102eb565b6040518082815260200191505060405180910390f35b3480156100bf57600080fd5b506100c86102f1565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101085780820151818401526020810190506100ed565b50505050905090810190601f1680156101355780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561014f57600080fd5b506101866004803603604081101561016657600080fd5b810190808035906020019092919080359060200190929190505050610393565b6040518082815260200191505060405180910390f35b3480156101a857600080fd5b506101b16103c9565b6040518082815260200191505060405180910390f35b3480156101d357600080fd5b50610200600480360360208110156101ea57600080fd5b81019080803590602001909291905050506103cf565b6040518082815260200191505060405180910390f35b34801561022257600080fd5b5061022b6103f2565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561026b578082015181840152602081019050610250565b50505050905090810190601f1680156102985780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156102b257600080fd5b506102e9600480360360408110156102c957600080fd5b810190808035906020019092919080359060200190929190505050610490565b005b60025481565b606060018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103895780601f1061035e57610100808354040283529160200191610389565b820191906000526020600020905b81548152906001019060200180831161036c57829003601f168201915b5050505050905090565b6000828154811015156103a257fe5b9060005260206000209060030201816003811015156103bd57fe5b01600091509150505481565b60035481565b6004818154811015156103de57fe5b906000526020600020016000915090505481565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104885780601f1061045d57610100808354040283529160200191610488565b820191906000526020600020905b81548152906001019060200180831161046b57829003601f168201915b505050505081565b60016000838154811015156104a157fe5b9060005260206000209060030201826003811015156104bc57fe5b0160008282540192505081905550505056fea165627a7a72305820246c261950325e0fb7230a1c1caf78482bbb8b666d0953f83e1f5d9781f3c9060029'
+  private privateKey = '0x1bfdd10e791617c7e8e9c7d0a451b45f1fcf07c831504d8f2fa0727a2b166cd2'
   
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -68,7 +68,7 @@ export class DataService {
   async connect() {
     // const infuraProvider = new ethers.providers.InfuraProvider('https://ropsten.infura.io/v3/0d3da94ec48e4067b87f4a8734912931', 3)
 
-    const localhostProvider  = new ethers.providers.JsonRpcProvider('http:/\/127.0.0.1:7545')
+    // const localhostProvider  = new ethers.providers.JsonRpcProvider('http:/\/127.0.0.1:7545')
     const alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
 
     const signer = new ethers.Wallet(this.privateKey, alcProvider)
@@ -77,18 +77,24 @@ export class DataService {
     
     // const contract = new ethers.Contract(this.contractAddress, this.contractABI, provider)
   
+    // Set gas limit and gas price, using the default Ropsten provider
+  // const price = ethers.utils.formatUnits(await alcProvider.getGasPrice(), 'gwei')
+  // const options = {gasLimit: 100000, gasPrice: ethers.utils.parseUnits(price, 'gwei')}
+
     const contractFactory = new ContractFactory(this.contractABI, this.contractBytecode, signer)
 
     // const deployTx = contractFactory.getDeployTransaction()
  
-    const deployment = await contractFactory.deploy("NEW ID", 99)
+    const contract = await contractFactory.deploy("id", 99)
 
-    const contract = await deployment.deployed()
+    await contract.deployed()
     
-    const deployedContract = new ethers.Contract(contract.address, this.contractABI, signer)
-    console.log(contract.address)
-    const electionID = await deployedContract.electionID()
+    // const deployedContract = new ethers.Contract(contract.address, this.contractABI, signer)
+    // console.log(contract.address)
+    const electionID = await contract.electionID()
     console.log("ID : " + electionID)
+    const startDate = await contract.startDate()
+    console.log("StartDate : " + startDate)
     // await deployedContract.functions.startDate().then((res) =>  {
     //   console.log(res)
     // })
@@ -320,73 +326,73 @@ export class DataService {
     }
   }
 
-  async deploy() {
-    // const bytecode = compileContractWithParams()
-    const itx = new ethers.providers.InfuraProvider(
-      'ropsten',
-      '0d3da94ec48e4067b87f4a8734912931'
-    )
+//   async deploy() {
+//     // const bytecode = compileContractWithParams()
+//     const itx = new ethers.providers.InfuraProvider(
+//       'ropsten',
+//       '0d3da94ec48e4067b87f4a8734912931'
+//     )
 
-    const signer = new ethers.Wallet('1bfdd10e791617c7e8e9c7d0a451b45f1fcf07c831504d8f2fa0727a2b166cd2', itx)
+//     const signer = new ethers.Wallet('1bfdd10e791617c7e8e9c7d0a451b45f1fcf07c831504d8f2fa0727a2b166cd2', itx)
 
-    const tx = {
-      to: ethers.constants.AddressZero,
+//     const tx = {
+//       to: ethers.constants.AddressZero,
 
-      data: '0x', // + bytecode,
+//       data: '0x', // + bytecode,
 
-      gas: '1000000',
+//       gas: '1000000',
 
-      schedule: 'fast,'
-    }
+//       schedule: 'fast,'
+//     }
 
-    const relayTransactionHashToSign = ethers.utils.keccak256(
-      ethers.utils.defaultAbiCoder.encode(
-        ["address", "bytes", "uint", "uint", "string"],
-        [tx.to, tx.data, tx.gas, 3, tx.schedule]
-      )
-    );
+//     const relayTransactionHashToSign = ethers.utils.keccak256(
+//       ethers.utils.defaultAbiCoder.encode(
+//         ["address", "bytes", "uint", "uint", "string"],
+//         [tx.to, tx.data, tx.gas, 3, tx.schedule]
+//       )
+//     );
 
-    const signature = await signer.signMessage(
-      ethers.utils.arrayify(relayTransactionHashToSign)
-    );
+//     const signature = await signer.signMessage(
+//       ethers.utils.arrayify(relayTransactionHashToSign)
+//     );
 
-    const sentAtBlock = await itx.getBlockNumber();
+//     const sentAtBlock = await itx.getBlockNumber();
 
-    const { relayTransactionHash } = await itx.send("relay_sendTransaction", [
-      tx,
-      signature,
-    ]);
-    console.log(`ITX relay transaction hash: ${relayTransactionHash}`);
+//     const { relayTransactionHash } = await itx.send("relay_sendTransaction", [
+//       tx,
+//       signature,
+//     ]);
+//     console.log(`ITX relay transaction hash: ${relayTransactionHash}`);
 
-    console.log("Waiting to be mined...");
-  while (true) {
-    // fetches an object
-    // { receivedTime: string, broadcasts?: [{broadcastTime: string, ethTxHash: string, gasPrice: string}]}
-    const { broadcasts } = await itx.send("relay_getTransactionStatus", [
-      relayTransactionHash,
-    ]);
+//     console.log("Waiting to be mined...");
+//   while (true) {
+//     // fetches an object
+//     // { receivedTime: string, broadcasts?: [{broadcastTime: string, ethTxHash: string, gasPrice: string}]}
+//     const { broadcasts } = await itx.send("relay_getTransactionStatus", [
+//       relayTransactionHash,
+//     ]);
 
-    // check each of these hashes to see if their receipt exists and
-    // has confirmations
-    if (broadcasts) {
-      for (const broadcast of broadcasts) {
-        const { ethTxHash, gasPrice } = broadcast;
-        const receipt = await itx.getTransactionReceipt(ethTxHash);
-        // printBump(ethTxHash, gasPrice); // Print bump
+//     // check each of these hashes to see if their receipt exists and
+//     // has confirmations
+//     if (broadcasts) {
+//       for (const broadcast of broadcasts) {
+//         const { ethTxHash, gasPrice } = broadcast;
+//         const receipt = await itx.getTransactionReceipt(ethTxHash);
+//         // printBump(ethTxHash, gasPrice); // Print bump
 
-        if (receipt && receipt.confirmations && receipt.confirmations > 1) {
-          // The transaction is now on chain!
-          console.log(`Ethereum transaction hash: ${receipt.transactionHash}`);
-          console.log(`Sent at block ${sentAtBlock}`);
-          console.log(`Mined in block ${receipt.blockNumber}`);
-          console.log(`Total blocks ${receipt.blockNumber - sentAtBlock}`);
-          return;
-        }
-      }
-    }
-    await this.delay(1000);
-  }
-}
+//         if (receipt && receipt.confirmations && receipt.confirmations > 1) {
+//           // The transaction is now on chain!
+//           console.log(`Ethereum transaction hash: ${receipt.transactionHash}`);
+//           console.log(`Sent at block ${sentAtBlock}`);
+//           console.log(`Mined in block ${receipt.blockNumber}`);
+//           console.log(`Total blocks ${receipt.blockNumber - sentAtBlock}`);
+//           return;
+//         }
+//       }
+//     }
+//     await this.delay(1000);
+//   }
+// }
 
 
 delay(ms) {
