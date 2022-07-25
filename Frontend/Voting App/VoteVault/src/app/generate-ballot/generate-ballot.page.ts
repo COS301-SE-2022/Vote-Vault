@@ -118,10 +118,8 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
         await this.dataService.saveElection(contractAddress)
         .then(async (res) => {
           this.dataService.clear()
-          // await this.dataService.fetchElections().then(() =>  {
           this.loadingController.dismiss();
           this.router.navigate(['admin-dashboard']);
-          // })
         })
         .catch((e) => {
           console.error(e);
@@ -188,7 +186,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      duration: 2000
+      duration: 15000
     });
     await loading.present();
 
