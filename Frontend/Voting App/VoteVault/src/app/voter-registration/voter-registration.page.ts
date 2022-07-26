@@ -69,6 +69,16 @@ export class VoterRegistrationPage implements OnInit {
       this.name = splitted[1];
       this.gender = splitted[2];
       this.idNum = splitted[4]
+
+      const first = this.voterIDs.find((obj) => obj === this.idNum);
+      if (first != null) {
+        alert('The entered ID is already registered with a voter.');
+        return;
+      }
+      this.voterNames.push(this.name);
+      this.voterSurnames.push(this.surname);
+      this.voterIDs.push(this.idNum);
+
       document.getElementById("regnowbutton").style.display = "block";
     }).catch(err => {
       console.log('Error', err);
