@@ -70,9 +70,11 @@ export class VoterRegistrationPage implements OnInit {
       torchOn: false,
       prompt: 'Place a barcode inside the scan area',
       resultDisplayDuration: 500,
-      formats: 'EAN_13,EAN_8,QR_CODE,PDF_417 ',
+      formats: 'PDF_417 ',
       orientation: 'portrait',
     };
+
+    document.getElementById("everything").style.visibility = "false";
 
     this.barcodeScanner.scan(options).then(barcodeData => {
       console.log('Barcode data', barcodeData);
@@ -81,6 +83,8 @@ export class VoterRegistrationPage implements OnInit {
     }).catch(err => {
       console.log('Error', err);
     });
+
+    document.getElementById("everything").style.visibility = "true";
   }
 
 }
