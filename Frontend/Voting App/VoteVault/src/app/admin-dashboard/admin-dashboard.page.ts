@@ -56,7 +56,7 @@ export class AdminDashboardPage implements OnInit {
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
-          this.navigate("register")
+          this.navigate("voter-registration")
         }
       }, {
         text: 'Vote',
