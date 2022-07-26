@@ -6,9 +6,9 @@ pragma solidity^0.5.0;
     string public electionID;
     uint public startDate;
     uint public endDate;
-    bytes32 [] public voters;
+    string [] public voters;
 
-    constructor(string memory id, uint sd) public {
+    constructor(string memory id, uint sd, string [] memory voters, uint [] ballotLengths) public {
         electionID = id;
         startDate = sd;
     }
@@ -53,6 +53,8 @@ pragma solidity^0.5.0;
     //     uint days = (endDate - startDate) / 60 / 60 / 24;
     //     returns (uint days)
     // }
+
+
 
 }
 
