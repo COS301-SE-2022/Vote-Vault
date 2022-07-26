@@ -59,7 +59,7 @@ export class BallotPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['admin-dashboard'])
+    this.router.navigate(['voter-dashboard'])
   }
 
   navigate(s) {
