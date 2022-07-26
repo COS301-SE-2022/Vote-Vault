@@ -74,7 +74,7 @@ export class VoterRegistrationPage implements OnInit {
       prompt: 'Place a barcode inside the scan area',
       resultDisplayDuration: 500,
       formats: 'PDF_417',
-      orientation: 'portrait',
+      orientation: 'landscape',
     };
 
     this.barcodeScanner.scan(options).then(barcodeData => {
