@@ -14,7 +14,11 @@ pragma solidity^0.5.0;
 
 
         for (uint i=0; i<3; i++){
-            for(uint j=0; j< candidates.length; j++){
+            voteCount[i] = i;
+        }
+
+        for(uint i=0; i<3; i++){
+            for(uint j=0,;j< candidates.length; j++){
                 voteCount[i][j] = candidates[j];
             }
         }
