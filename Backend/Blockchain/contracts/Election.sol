@@ -8,15 +8,18 @@ pragma solidity^0.5.0;
     uint public endDate;
     string [] public voters;
 
-    constructor(string memory id, uint sd, string [] memory voters, uint [] ballotLengths) public {
+    constructor(string memory id, uint sd, string [] memory Voters, uint [] ballotLengths, uint [] candidates) public {
         electionID = id;
         startDate = sd;
 
+
         for (uint i=0; i<3; i++){
-            for(uint j=0; j< ballotLengths.length; j++){
-                voteCount[i][j] = ballotLengths[j];
+            for(uint j=0; j< candidates.length; j++){
+                voteCount[i][j] = candidates[j];
             }
         }
+
+        voters.length = Voters.length;
     }
 
     struct Vote {
