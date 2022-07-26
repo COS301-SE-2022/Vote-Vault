@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-voter-registration',
@@ -62,7 +63,7 @@ export class VoterRegistrationPage implements OnInit {
     this.router.navigate(['admin-dashboard']);
   }
 
-  scanBarcode() {
+  async scanBarcode() {
     const options: BarcodeScannerOptions = {
       preferFrontCamera: false,
       showFlipCameraButton: true,
@@ -74,7 +75,6 @@ export class VoterRegistrationPage implements OnInit {
       orientation: 'portrait',
     };
 
-    document.getElementById("everything").style.visibility = "false";
 
     this.barcodeScanner.scan(options).then(barcodeData => {
       console.log('Barcode data', barcodeData);
@@ -83,8 +83,6 @@ export class VoterRegistrationPage implements OnInit {
     }).catch(err => {
       console.log('Error', err);
     });
-
-    document.getElementById("everything").style.visibility = "true";
   }
 
 }
