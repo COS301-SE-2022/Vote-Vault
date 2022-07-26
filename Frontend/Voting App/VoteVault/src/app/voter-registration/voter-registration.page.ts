@@ -11,6 +11,7 @@ import { doc } from 'firebase/firestore';
 export class VoterRegistrationPage implements OnInit {
   name: string;
   surname: string;
+  gender: any;
   idNum: string;
   voterNames: any[];
   voterSurnames: any[];
@@ -61,6 +62,13 @@ export class VoterRegistrationPage implements OnInit {
 
     this.barcodeScanner.scan(options).then(barcodeData => {
       this.scannedData = barcodeData;
+      this.inputData = this.scannedData["text"];
+
+      var splitted = this.inputData.split("|");
+      this.surname = splitted[0];
+      this.name = splitted[1];
+      this.gender = splitted[2];
+      this.idNum = splitted[4]
       document.getElementById("regnowbutton").style.display = "block";
     }).catch(err => {
       console.log('Error', err);

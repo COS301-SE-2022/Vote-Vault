@@ -13,16 +13,26 @@
       </ion-card-title>
     </ion-card-header>
     <ion-button expand="full" color="dark" (click)="scanBarcode()">Scan ID</ion-button>
-    <!-- <ion-item  class="ion-align-items-center" color="light"> -->
-      <!-- <ion-button size="medium" (click) = "scanBarcode()"> -->
-        
-        <!-- <ion-icon name="camera-outline"></ion-icon> -->
-        <div *ngIf="scannedData">
-          <p>
-            Scanned Code Text : <b>{{ scannedData["text"] }}</b>
-          </p>
-        </div>
-    <!-- </ion-item> -->
+    <div *ngIf="name">
+      <p>
+        Name(s): <b>{{ name }}</b>
+      </p>
+    </div>
+    <div *ngIf="surname">
+      <p>
+        Surname: <b>{{ surname }}</b>
+      </p>
+    </div>
+    <div *ngIf="gender">
+      <p>
+        Gender: <b>{{ gender }}</b>
+      </p>
+    </div>
+    <div *ngIf="idNum">
+      <p>
+        ID Number: <b>{{ idNum }}</b>
+      </p>
+    </div>
     <ion-button id="regnowbutton" class="ion-margin-top" (click)="registerVoter()" style="display: none;">
         Register Now
     </ion-button>
