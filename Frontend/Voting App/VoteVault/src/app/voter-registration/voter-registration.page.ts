@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
-import { ToastController } from '@ionic/angular';
+import { BarcodeScanner,BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-voter-registration',
@@ -63,7 +62,10 @@ export class VoterRegistrationPage implements OnInit {
     this.router.navigate(['admin-dashboard']);
   }
 
-  async scanBarcode() {
+
+
+
+  scanBarcode() {
     const options: BarcodeScannerOptions = {
       preferFrontCamera: false,
       showFlipCameraButton: true,
@@ -71,10 +73,9 @@ export class VoterRegistrationPage implements OnInit {
       torchOn: false,
       prompt: 'Place a barcode inside the scan area',
       resultDisplayDuration: 500,
-      formats: 'PDF_417 ',
+      formats: 'PDF_417',
       orientation: 'portrait',
     };
-
 
     this.barcodeScanner.scan(options).then(barcodeData => {
       console.log('Barcode data', barcodeData);
@@ -84,5 +85,4 @@ export class VoterRegistrationPage implements OnInit {
       console.log('Error', err);
     });
   }
-
 }

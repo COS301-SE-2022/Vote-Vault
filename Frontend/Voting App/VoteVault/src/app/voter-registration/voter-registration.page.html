@@ -30,9 +30,17 @@
 
     <ion-item  class="ion-align-items-center" color="light">
       <ion-label position="floating">Scan ID:</ion-label>
-      <ion-button size="medium" (click) = "scanBarcode()">
-        <ion-icon name="camera-outline"></ion-icon>
-      </ion-button>
+      <!-- <ion-button size="medium" (click) = "scanBarcode()"> -->
+        <ion-button expand="full" color="success" (click)="scanBarcode()">Scan a Code</ion-button>
+        <!-- <ion-icon name="camera-outline"></ion-icon> -->
+        <div *ngIf="scannedData">
+          <p>
+            Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+          </p>
+          <p>
+            Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+          </p>
+        </div>
     </ion-item>
     <ion-button class="ion-margin-top" (click) = "registerVoter()">
         Register Now
