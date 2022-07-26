@@ -1,4 +1,4 @@
-<body id="everything">
+<body>
   <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
   <ion-header class="ion-margin-bottom">
     <ion-toolbar class="ion-text-center">
@@ -9,40 +9,21 @@
   <ion-card class="voter-Details ion-text-center ion-padding">
     <ion-card-header>
       <ion-card-title>
-        Enter Details
+        Scan ID Card
       </ion-card-title>
     </ion-card-header>
-
-    <ion-item color="light">
-      <ion-label position="floating">First Name:</ion-label>
-      <ion-input [(ngModel)] = "name" placeholder="Enter first name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">Last Name:</ion-label>
-      <ion-input [(ngModel)] = "surname" placeholder="Enter last name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">ID Number:</ion-label>
-      <ion-input [(ngModel)] = "idNum" placeholder="Enter ID number here"></ion-input>
-    </ion-item>
-
-    <ion-item  class="ion-align-items-center" color="light">
-      <ion-label position="floating">Scan ID:</ion-label>
+    <ion-button expand="full" color="dark" (click)="scanBarcode()">Scan ID</ion-button>
+    <!-- <ion-item  class="ion-align-items-center" color="light"> -->
       <!-- <ion-button size="medium" (click) = "scanBarcode()"> -->
-        <ion-button expand="full" color="success" (click)="scanBarcode()">Scan a Code</ion-button>
+        
         <!-- <ion-icon name="camera-outline"></ion-icon> -->
         <div *ngIf="scannedData">
           <p>
             Scanned Code Text : <b>{{ scannedData["text"] }}</b>
           </p>
-          <p>
-            Scanned Code Format : <b>{{ scannedData["format"] }}</b>
-          </p>
         </div>
-    </ion-item>
-    <ion-button class="ion-margin-top" (click) = "registerVoter()">
+    <!-- </ion-item> -->
+    <ion-button id="regnowbutton" class="ion-margin-top" (click)="registerVoter()" style="display: none;">
         Register Now
     </ion-button>
   </ion-card>
