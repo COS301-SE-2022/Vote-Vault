@@ -99,7 +99,7 @@ export class ResultsPageComponent implements OnInit {
       labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
       datasets: [
         {
-          backgroundColor: ['green','blue','red','yellow','purple','grey','black'],
+          backgroundColor: ['#fdc500 ','#fedc97','#ffc857  ','#fcbf49 ','#00509d ','#00296b ','#003f88 '],
           data: [this.results[0].bal3[0].res1, this.results[0].bal3[0].res2, this.results[0].bal3[0].res3, this.results[0].bal3[0].res4, this.results[0].bal3[0].res5, this.results[0].bal3[0].res6, this.results[0].bal3[0].res7]
         }
       ]
