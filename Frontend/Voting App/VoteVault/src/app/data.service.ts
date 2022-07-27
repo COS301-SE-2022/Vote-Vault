@@ -27,12 +27,13 @@ export class Voter {
   IDnum: String;
   Gender: String;
   Age : Number
-
+  Voted : boolean
   Voter(n, sn, id, g) {
     this.birthName = n;
     this.surname = sn;
     this.IDnum = id;
     this.Gender = g;
+    this.Voted = false;
   }
 }
 
