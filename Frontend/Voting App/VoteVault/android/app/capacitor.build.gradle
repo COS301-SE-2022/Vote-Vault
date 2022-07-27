@@ -13,16 +13,12 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
-<<<<<<< HEAD
+    implementation "com.android.support:support-v4:27.+"
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
 }
+apply from: "../../node_modules/phonegap-plugin-barcodescanner/src/android/barcodescanner.gradle"
 apply from: "../../node_modules/scandit-cordova-datacapture-barcode/src/android/build.gradle"
 apply from: "../../node_modules/scandit-cordova-datacapture-core/src/android/build.gradle"
-=======
-    implementation "com.android.support:support-v4:27.+"
-}
-apply from: "../../node_modules/phonegap-plugin-barcodescanner/src/android/barcodescanner.gradle"
->>>>>>> 51dcac3e631dc114fca065eb7a8bfa1a22e7df10
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
