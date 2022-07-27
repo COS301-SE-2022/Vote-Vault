@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScanner,BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { doc } from 'firebase/firestore';
 import { DataService, Voter } from '../data.service';
 import { ContractService } from '../services/contract.service';
@@ -24,7 +25,7 @@ export class VoterRegistrationPage implements OnInit {
   inputData: any;
   voter: Voter;
 
-  constructor(private contractService : ContractService, private router: Router, private barcodeScanner: BarcodeScanner, private dataservice: DataService) { }
+  constructor(private loadingController : LoadingController, private toastController : ToastController, private contractService : ContractService, private router: Router, private barcodeScanner: BarcodeScanner, private dataservice: DataService) { }
 
   ngOnInit() {
     this.voterIDs = [];
@@ -43,7 +44,7 @@ export class VoterRegistrationPage implements OnInit {
     // this.voterSurnames.push(nVoter.surname);
     // this.voterIDs.push(nVoter.id);
     // alert(this.voter)
-    
+    this.presentLoading()
     this.voter = new Voter()
     this.voter.birthName = "MEH"
     this.voter.surname = "MAW"
@@ -53,9 +54,17 @@ export class VoterRegistrationPage implements OnInit {
     console.log("ADDRESS " + this.dataservice.contractAddress)
     try {
       await this.dataservice.addvoter(this.voter)
-      .then(() =>  {
-        this.contractService.addVoter(this.dataservice.contractAddress, this.voter)
+      .then(async () =>  {
+        await this.contractService.addVoter(this.dataservice.contractAddress, this.voter)
+        .then(()  =>  {
+          // alert('Successfully registered!');
+          this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum)
+          this.loadingController.dismiss()
+          this.router.navigate(['admin-dashboard'])
+        })
       }).catch((error)  =>  {
+        this.presentToast('Error registering')
+        this.loadingController.dismiss()
         console.error(error)
       })
     } catch (err) {
@@ -65,7 +74,7 @@ export class VoterRegistrationPage implements OnInit {
     this.surname = '';
     this.idNum = '';
     this.gender = '';
-    alert('Successfully registered!');
+    
   }
 
   openCustom() {
@@ -108,5 +117,28 @@ export class VoterRegistrationPage implements OnInit {
     // }).catch(err => {
     //   console.log('Error', err);
     // });
+  }
+
+  async presentToast(message) {
+    const toast = await this.toastController.create({
+      duration: 800,
+      message: message,
+      color: 'light',
+      mode: 'ios'
+    });
+
+    await toast.present();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 30000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
   }
 }
