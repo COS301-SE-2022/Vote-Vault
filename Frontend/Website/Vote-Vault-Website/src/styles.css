@@ -31,7 +31,7 @@ header {
 }
 
 #ftrr {
-  background-color: rgb(50, 87, 255);
+  background-color: #0256E2;
   width: 100%;
   margin: 0px;
   height: 8%;
@@ -46,7 +46,7 @@ header {
 }
 
 .navbar1 {
-  background-color: #3257ff;
+  background-color: #0256E2;
   overflow: hidden;
   position: sticky;
   top: 0%;
@@ -74,8 +74,8 @@ header {
 }
 
 a.active {
-  background-color: #3c84cc;
-  color: #fff;
+  background-color: #FBFFF5;
+  color: #02224E;
 }
 
 input[type=text] {
