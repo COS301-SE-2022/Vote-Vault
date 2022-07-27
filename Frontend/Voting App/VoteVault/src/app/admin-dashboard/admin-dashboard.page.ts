@@ -71,13 +71,15 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
           console.log('clicked')
           this.navigate("voter-registration")
         }
-      }, {
-        text: 'Vote',
-        icon: 'checkmark-done-circle-outline',
-        handler: () => {
-          this.navigate("ballot")
-        }
-      }, {
+      },
+      // {
+      //   text: 'Vote',
+      //   icon: 'checkmark-done-circle-outline',
+      //   handler: () => {
+      //     this.navigate("ballot")
+      //   }
+      // },
+       {
         text: 'Cancel',
         icon: 'close',
         role: 'cancel',
