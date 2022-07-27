@@ -3,7 +3,6 @@ ion-card-title {
 }
 
 ion-card {
-    // background-color: var(--ion-color-tertiary-shade);
     margin-top: 30%;
 }
 
@@ -25,9 +24,8 @@ body > ion-card > ion-card-header > ion-card-title {
 }
 
 #menuButton {
-    --background : transparent;
-    width: auto;
+    // --background : transparent;
     left: 0;
-    top: 0;
+    top: -10px;
     position: absolute;
 }
