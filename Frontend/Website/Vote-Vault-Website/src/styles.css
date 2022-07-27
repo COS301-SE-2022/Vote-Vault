@@ -62,7 +62,9 @@ header {
 
 .navbar1 a:hover {
   /* background-color: rgb(84, 123, 250); */
-  color: black;
+  /* color: black; */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px;
 }
 
 .navbar1 a {
