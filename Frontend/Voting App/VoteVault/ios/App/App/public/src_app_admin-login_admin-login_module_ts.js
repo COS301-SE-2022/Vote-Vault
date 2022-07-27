@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_admin-login_admin-login_module_ts"],{
 
-/***/ 3764:
+/***/ 63764:
 /*!***********************************************************!*\
   !*** ./src/app/admin-login/admin-login-routing.module.ts ***!
   \***********************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminLoginPageRoutingModule": () => (/* binding */ AdminLoginPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _admin_login_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login.page */ 3296);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _admin_login_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login.page */ 13296);
 
 
 
@@ -38,7 +38,7 @@ AdminLoginPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)(
 
 /***/ }),
 
-/***/ 2806:
+/***/ 82806:
 /*!***************************************************!*\
   !*** ./src/app/admin-login/admin-login.module.ts ***!
   \***************************************************/
@@ -48,13 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminLoginPageModule": () => (/* binding */ AdminLoginPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _admin_login_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login-routing.module */ 3764);
-/* harmony import */ var _admin_login_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-login.page */ 3296);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _admin_login_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login-routing.module */ 63764);
+/* harmony import */ var _admin_login_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-login.page */ 13296);
 
 
 
@@ -80,7 +80,7 @@ AdminLoginPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 3296:
+/***/ 13296:
 /*!*************************************************!*\
   !*** ./src/app/admin-login/admin-login.page.ts ***!
   \*************************************************/
@@ -90,15 +90,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminLoginPage": () => (/* binding */ AdminLoginPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _admin_login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login.page.html?ngResource */ 6105);
-/* harmony import */ var _admin_login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-login.page.scss?ngResource */ 5826);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire/auth */ 1577);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _firebase_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @firebase/auth */ 931);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _admin_login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-login.page.html?ngResource */ 56105);
+/* harmony import */ var _admin_login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-login.page.scss?ngResource */ 55826);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/auth */ 61577);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _firebase_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @firebase/auth */ 70931);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _services_contract_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/contract.service */ 36569);
+
 
 
 
@@ -109,7 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AdminLoginPage = class AdminLoginPage {
-    constructor(dataService, router, loadingController, alertController, auth) {
+    constructor(contractService, dataService, router, loadingController, alertController, auth) {
+        this.contractService = contractService;
         this.dataService = dataService;
         this.router = router;
         this.loadingController = loadingController;
@@ -117,9 +120,10 @@ let AdminLoginPage = class AdminLoginPage {
         this.auth = auth;
     }
     ngOnInit() {
+        // send();
     }
     navigate() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             try {
                 this.presentLoading();
                 const user = yield (0,_firebase_auth__WEBPACK_IMPORTED_MODULE_2__.signInWithEmailAndPassword)(this.auth, this.email, this.password);
@@ -134,7 +138,7 @@ let AdminLoginPage = class AdminLoginPage {
         });
     }
     presentAlert(s) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.alertController.create({
                 message: s,
                 header: 'Invalid credentials',
@@ -144,7 +148,7 @@ let AdminLoginPage = class AdminLoginPage {
         });
     }
     presentLoading() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const loading = yield this.loadingController.create({
                 cssClass: 'my-custom-class',
                 message: 'Please wait...',
@@ -160,14 +164,15 @@ let AdminLoginPage = class AdminLoginPage {
     }
 };
 AdminLoginPage.ctorParameters = () => [
+    { type: _services_contract_service__WEBPACK_IMPORTED_MODULE_4__.ContractService },
     { type: _data_service__WEBPACK_IMPORTED_MODULE_3__.DataService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.LoadingController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.AlertController },
-    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_7__.Auth }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.LoadingController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.AlertController },
+    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__.Auth }
 ];
-AdminLoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+AdminLoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
         selector: 'app-admin-login',
         template: _admin_login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_admin_login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -178,7 +183,7 @@ AdminLoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 5826:
+/***/ 55826:
 /*!**************************************************************!*\
   !*** ./src/app/admin-login/admin-login.page.scss?ngResource ***!
   \**************************************************************/
@@ -188,7 +193,7 @@ module.exports = "ion-content {\n  height: 100vh;\n}\n\nion-card {\n  margin-top
 
 /***/ }),
 
-/***/ 6105:
+/***/ 56105:
 /*!**************************************************************!*\
   !*** ./src/app/admin-login/admin-login.page.html?ngResource ***!
   \**************************************************************/

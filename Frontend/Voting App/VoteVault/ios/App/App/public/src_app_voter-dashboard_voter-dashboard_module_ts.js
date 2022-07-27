@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_voter-dashboard_voter-dashboard_module_ts"],{
 
-/***/ 553:
+/***/ 60553:
 /*!*******************************************************************!*\
   !*** ./src/app/voter-dashboard/voter-dashboard-routing.module.ts ***!
   \*******************************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "VoterDashboardPageRoutingModule": () => (/* binding */ VoterDashboardPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page */ 6884);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page */ 46607);
 
 
 
@@ -38,7 +38,7 @@ VoterDashboardPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decora
 
 /***/ }),
 
-/***/ 3582:
+/***/ 93582:
 /*!***********************************************************!*\
   !*** ./src/app/voter-dashboard/voter-dashboard.module.ts ***!
   \***********************************************************/
@@ -48,13 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "VoterDashboardPageModule": () => (/* binding */ VoterDashboardPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _voter_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard-routing.module */ 553);
-/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page */ 6884);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _voter_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard-routing.module */ 60553);
+/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page */ 46607);
 
 
 
@@ -80,7 +80,7 @@ VoterDashboardPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 6884:
+/***/ 46607:
 /*!*********************************************************!*\
   !*** ./src/app/voter-dashboard/voter-dashboard.page.ts ***!
   \*********************************************************/
@@ -90,13 +90,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "VoterDashboardPage": () => (/* binding */ VoterDashboardPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page.html?ngResource */ 8243);
-/* harmony import */ var _voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page.scss?ngResource */ 6787);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page.html?ngResource */ 8623);
+/* harmony import */ var _voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page.scss?ngResource */ 66787);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
 
 
 
@@ -165,7 +165,7 @@ VoterDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 6787:
+/***/ 66787:
 /*!**********************************************************************!*\
   !*** ./src/app/voter-dashboard/voter-dashboard.page.scss?ngResource ***!
   \**********************************************************************/
@@ -175,7 +175,7 @@ module.exports = "#title {\n  font-size: 5vh;\n  margin: auto;\n  padding: 5vh;\
 
 /***/ }),
 
-/***/ 8243:
+/***/ 8623:
 /*!**********************************************************************!*\
   !*** ./src/app/voter-dashboard/voter-dashboard.page.html?ngResource ***!
   \**********************************************************************/

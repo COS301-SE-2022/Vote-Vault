@@ -1,51 +1,3 @@
-<<<<<<< HEAD
-<body>
-  <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> 
-  <ion-header class="ion-margin-bottom">
-    <ion-toolbar class="ion-text-center">
-      <ion-title id="page-heading">Voter Registration</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-card class="voter-Details ion-text-center ion-padding">
-    <ion-card-header>
-      <ion-card-title>
-        Enter Details
-      </ion-card-title>
-    </ion-card-header>
-
-    <ion-item color="light">
-      <ion-label position="floating">First Name:</ion-label>
-      <ion-input [(ngModel)] = "name" placeholder="Enter first name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">Last Name:</ion-label>
-      <ion-input [(ngModel)] = "surname" placeholder="Enter last name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">ID Number:</ion-label>
-      <ion-input [(ngModel)] = "idNum" placeholder="Enter ID number here"></ion-input>
-    </ion-item>
-
-    <ion-item  class="ion-align-items-center" color="light">
-      <ion-label position="stacked">Scan ID:</ion-label>
-      <ion-input size="medium" type="file">
-      </ion-input>
-    </ion-item>
-
-    <div id="result"></div>
-    <div id="scanner"></div>
-    <ion-button *ngIf="showSingleButton" class="button" mode="ios" (click)="startScanning()">Start Scanning</ion-button>
-    <ion-button *ngIf="showSingleDoneButton" class="button" mode="ios" (click)="doneSingle()">Done</ion-button>
-
-    <ion-button class="ion-margin-top" (click) = "registerVoter()">
-        Register Now
-    </ion-button>
-  </ion-card>
-</body>
-=======
 <body>
   <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
   <ion-header class="ion-margin-bottom">
@@ -86,4 +38,3 @@
     </ion-button>
   </ion-card>
 </body>
->>>>>>> 51dcac3e631dc114fca065eb7a8bfa1a22e7df10

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_admin-dashboard_admin-dashboard_module_ts"],{
 
-/***/ 249:
+/***/ 30249:
 /*!*******************************************************************!*\
   !*** ./src/app/admin-dashboard/admin-dashboard-routing.module.ts ***!
   \*******************************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminDashboardPageRoutingModule": () => (/* binding */ AdminDashboardPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _admin_dashboard_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard.page */ 437);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _admin_dashboard_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard.page */ 10437);
 
 
 
@@ -38,7 +38,7 @@ AdminDashboardPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decora
 
 /***/ }),
 
-/***/ 3870:
+/***/ 73870:
 /*!***********************************************************!*\
   !*** ./src/app/admin-dashboard/admin-dashboard.module.ts ***!
   \***********************************************************/
@@ -48,13 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminDashboardPageModule": () => (/* binding */ AdminDashboardPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _admin_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard-routing.module */ 249);
-/* harmony import */ var _admin_dashboard_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-dashboard.page */ 437);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _admin_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard-routing.module */ 30249);
+/* harmony import */ var _admin_dashboard_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-dashboard.page */ 10437);
 
 
 
@@ -80,7 +80,7 @@ AdminDashboardPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 437:
+/***/ 10437:
 /*!*********************************************************!*\
   !*** ./src/app/admin-dashboard/admin-dashboard.page.ts ***!
   \*********************************************************/
@@ -90,13 +90,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AdminDashboardPage": () => (/* binding */ AdminDashboardPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _admin_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard.page.html?ngResource */ 2962);
-/* harmony import */ var _admin_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-dashboard.page.scss?ngResource */ 5972);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _admin_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin-dashboard.page.html?ngResource */ 22962);
+/* harmony import */ var _admin_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin-dashboard.page.scss?ngResource */ 35972);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
 
 
 
@@ -106,15 +106,22 @@ __webpack_require__.r(__webpack_exports__);
 
 let AdminDashboardPage = class AdminDashboardPage {
     constructor(dataService, actionSheetController, router, menu) {
+        // this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
+        //                   {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
+        //                   {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
         this.dataService = dataService;
         this.actionSheetController = actionSheetController;
         this.router = router;
         this.menu = menu;
-        this.elections = [{ "id": 1, "name": "Provincial Election", "ballots": [{ "name": "Cool", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }, { "name": "", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }, { "name": "", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }] },
-            { "id": 86, "name": "National Election", "ballots": [{ "name": "", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }, { "name": "", "options": [] }, { "name": "", "options": [] }] },
-            { "id": 129, "name": "District Election", "ballots": [{ "name": "", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }, { "name": "", "options": [{ "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }, { "name": "John", "surname": "Smith" }] }, { "name": "", "options": [] }] }];
+        // this.dataService.fetchElections()
+        // this.elections = this.dataService.elections
     }
     ngOnInit() {
+        this.dataService.fetchElections();
+        this.elections = this.dataService.elections;
+    }
+    ionViewWillEnter() {
+        this.elections = this.dataService.elections;
     }
     openFirst() {
         this.menu.enable(true, 'first');
@@ -135,19 +142,23 @@ let AdminDashboardPage = class AdminDashboardPage {
             const actionSheet = yield this.actionSheetController.create({
                 header: e.electionName,
                 cssClass: 'my-custom-class',
-                buttons: [{
-                        text: 'Ballots',
-                        icon: 'copy-outline',
-                        data: 10,
-                        handler: () => {
-                            this.navigate("generate-ballot");
-                        }
-                    }, {
+                buttons: [
+                    //   {
+                    //   text: 'Ballots',
+                    //   icon: 'copy-outline',
+                    //   data: 10,
+                    //   handler: () => {
+                    //     this.dataService.setAdminState('edit')
+                    //     this.navigate("generate-ballot")
+                    //   }
+                    // }, 
+                    {
                         text: 'Register User',
                         icon: 'person-add-outline',
                         data: 'Data value',
                         handler: () => {
-                            this.navigate("register");
+                            console.log('clicked');
+                            this.navigate("voter-registration");
                         }
                     }, {
                         text: 'Vote',
@@ -174,7 +185,8 @@ let AdminDashboardPage = class AdminDashboardPage {
                         handler: () => {
                             console.log('Delete clicked');
                         }
-                    }]
+                    }
+                ]
             });
             yield actionSheet.present();
             const { role, data } = yield actionSheet.onDidDismiss();
@@ -187,6 +199,7 @@ let AdminDashboardPage = class AdminDashboardPage {
     }
     createElection() {
         this.dataService.clear();
+        this.dataService.setAdminState('generate');
         this.router.navigate(['generate-ballot']);
     }
 };
@@ -208,7 +221,7 @@ AdminDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 5972:
+/***/ 35972:
 /*!**********************************************************************!*\
   !*** ./src/app/admin-dashboard/admin-dashboard.page.scss?ngResource ***!
   \**********************************************************************/
@@ -218,13 +231,13 @@ module.exports = "ion-item ion-icon {\n  padding-right: 2vh;\n}\n\n#menuButton {
 
 /***/ }),
 
-/***/ 2962:
+/***/ 22962:
 /*!**********************************************************************!*\
   !*** ./src/app/admin-dashboard/admin-dashboard.page.html?ngResource ***!
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n</ion-header>\r\n\r\n\r\n<ion-content>\r\n  <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n\r\n  <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n    <ion-card-header>\r\n      <ion-card-title>{{e.name}}</ion-card-title>\r\n      <br>\r\n      <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n    </ion-card-header>\r\n  </ion-card>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n</ion-header>\r\n\r\n\r\n<ion-content>\r\n  <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n\r\n  <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n    <ion-card-header>\r\n      <ion-card-title>{{e.electionName}}</ion-card-title>\r\n      <br>\r\n      <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n    </ion-card-header>\r\n  </ion-card>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n";
 
 /***/ })
 

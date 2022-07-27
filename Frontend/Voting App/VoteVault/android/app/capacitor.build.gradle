@@ -13,10 +13,6 @@ dependencies {
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
-    implementation "com.squareup.okhttp3:okhttp:4.9.0"
-}
-apply from: "../../node_modules/scandit-cordova-datacapture-barcode/src/android/build.gradle"
-apply from: "../../node_modules/scandit-cordova-datacapture-core/src/android/build.gradle"
     implementation "com.android.support:support-v4:27.+"
 }
 apply from: "../../node_modules/phonegap-plugin-barcodescanner/src/android/barcodescanner.gradle"

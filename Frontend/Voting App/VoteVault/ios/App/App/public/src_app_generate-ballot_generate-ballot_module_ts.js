@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_generate-ballot_generate-ballot_module_ts"],{
 
-/***/ 9967:
+/***/ 99967:
 /*!*******************************************************************!*\
   !*** ./src/app/generate-ballot/generate-ballot-routing.module.ts ***!
   \*******************************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GenerateBallotPageRoutingModule": () => (/* binding */ GenerateBallotPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _generate_ballot_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot.page */ 3269);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _generate_ballot_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot.page */ 83269);
 
 
 
@@ -38,7 +38,7 @@ GenerateBallotPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decora
 
 /***/ }),
 
-/***/ 9344:
+/***/ 92846:
 /*!***********************************************************!*\
   !*** ./src/app/generate-ballot/generate-ballot.module.ts ***!
   \***********************************************************/
@@ -48,13 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GenerateBallotPageModule": () => (/* binding */ GenerateBallotPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _generate_ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot-routing.module */ 9967);
-/* harmony import */ var _generate_ballot_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./generate-ballot.page */ 3269);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _generate_ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot-routing.module */ 99967);
+/* harmony import */ var _generate_ballot_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./generate-ballot.page */ 83269);
 
 
 
@@ -80,7 +80,7 @@ GenerateBallotPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 3269:
+/***/ 83269:
 /*!*********************************************************!*\
   !*** ./src/app/generate-ballot/generate-ballot.page.ts ***!
   \*********************************************************/
@@ -90,13 +90,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GenerateBallotPage": () => (/* binding */ GenerateBallotPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _generate_ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot.page.html?ngResource */ 1644);
-/* harmony import */ var _generate_ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./generate-ballot.page.scss?ngResource */ 4183);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _generate_ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generate-ballot.page.html?ngResource */ 51644);
+/* harmony import */ var _generate_ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./generate-ballot.page.scss?ngResource */ 74183);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _services_contract_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contract.service */ 36569);
+
+
 
 
 
@@ -106,7 +110,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let GenerateBallotPage = class GenerateBallotPage {
-    constructor(loadingController, menu, toastController, router, dataService) {
+    constructor(contractService, location, loadingController, menu, toastController, router, dataService) {
+        this.contractService = contractService;
+        this.location = location;
         this.loadingController = loadingController;
         this.menu = menu;
         this.toastController = toastController;
@@ -128,18 +134,20 @@ let GenerateBallotPage = class GenerateBallotPage {
     ngOnInit() {
     }
     ionViewWillEnter() {
+        this.populateBallots();
+    }
+    ngOnDestroy() {
+        this.dataService.clear();
+    }
+    populateBallots() {
         this.options = [];
         this.electionTitle = this.dataService.electionName;
         this.ballot1Options = this.dataService.ballot1.options;
-        console.log(this.dataService.ballot1.name);
         this.ballotName = this.dataService.ballot1.name;
         this.ballot2Options = this.dataService.ballot2.options;
         this.ballotName1 = this.dataService.ballot2.name;
         this.ballot3Options = this.dataService.ballot3.options;
         this.ballotName2 = this.dataService.ballot3.name;
-    }
-    ngOnDestroy() {
-        this.dataService.clear();
     }
     addOption() {
         const newCandidate = { name: this.name, surname: this.surname, id: this.idNum, isChecked: false };
@@ -167,18 +175,45 @@ let GenerateBallotPage = class GenerateBallotPage {
         this.toast_addUser();
     }
     generate() {
-        this.dataService.saveElectionName(this.electionTitle);
-        this.presentLoading();
-        this.dataService.saveElection()
-            .then((res) => {
-            console.log(res);
-            this.loadingController.dismiss();
-        })
-            .catch((e) => {
-            console.error(e);
-            this.loadingController.dismiss();
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            this.dataService.saveElectionName(this.electionTitle);
+            this.presentLoading();
+            if (this.dataService.adminState === 'edit') {
+                yield this.dataService.saveEdit()
+                    .then((res) => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+                    console.log(res);
+                    this.dataService.clear();
+                    // await this.dataService.fetchElections().then(() =>  {
+                    this.loadingController.dismiss();
+                    this.router.navigate(['admin-dashboard']);
+                    // })
+                }))
+                    .catch((e) => {
+                    console.error(e);
+                    this.loadingController.dismiss();
+                    this.router.navigate(['admin-dashboard']);
+                });
+            }
+            else if (this.dataService.adminState === 'generate') {
+                //Deploy contract to blockchain with number of candidates and voters as parameters
+                yield this.contractService.deploy()
+                    .then((res) => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+                    const contractAddress = res;
+                    //Add election to database and save address of contract
+                    yield this.dataService.saveElection(contractAddress)
+                        .then((res) => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+                        this.dataService.clear();
+                        this.loadingController.dismiss();
+                        this.router.navigate(['admin-dashboard']);
+                    }))
+                        .catch((e) => {
+                        console.error(e);
+                        this.loadingController.dismiss();
+                        this.router.navigate(['admin-dashboard']);
+                    });
+                }));
+            }
         });
-        this.router.navigate(['admin-dashboard']);
     }
     ionSlidesDidLoad(slides) {
         slides.getActiveIndex().then((index) => {
@@ -205,7 +240,7 @@ let GenerateBallotPage = class GenerateBallotPage {
         this.toast_saveButton();
     }
     toast_saveButton() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastController.create({
                 duration: 800,
                 message: 'Ballot saved succesfully',
@@ -216,7 +251,7 @@ let GenerateBallotPage = class GenerateBallotPage {
         });
     }
     toast_addUser() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastController.create({
                 duration: 800,
                 message: 'User added successfully',
@@ -227,11 +262,11 @@ let GenerateBallotPage = class GenerateBallotPage {
         });
     }
     presentLoading() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             const loading = yield this.loadingController.create({
                 cssClass: 'my-custom-class',
                 message: 'Please wait...',
-                duration: 2000
+                duration: 30000
             });
             yield loading.present();
             const { role, data } = yield loading.onDidDismiss();
@@ -240,7 +275,8 @@ let GenerateBallotPage = class GenerateBallotPage {
     }
     openCustom() {
         this.dataService.clear();
-        this.router.navigate(['admin-dashboard']);
+        this.location.back();
+        // this.router.navigate(['admin-dashboard']);
     }
     navigate(s) {
         this.router.navigate([s]);
@@ -272,17 +308,19 @@ let GenerateBallotPage = class GenerateBallotPage {
     }
 };
 GenerateBallotPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.LoadingController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.MenuController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ToastController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _services_contract_service__WEBPACK_IMPORTED_MODULE_3__.ContractService },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__.Location },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.LoadingController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.MenuController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
     { type: _data_service__WEBPACK_IMPORTED_MODULE_2__.DataService }
 ];
 GenerateBallotPage.propDecorators = {
-    slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: ['slides', { static: true },] }]
+    slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ViewChild, args: ['slides', { static: true },] }]
 };
-GenerateBallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+GenerateBallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-generate-ballot',
         template: _generate_ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_generate_ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -293,7 +331,7 @@ GenerateBallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 4183:
+/***/ 74183:
 /*!**********************************************************************!*\
   !*** ./src/app/generate-ballot/generate-ballot.page.scss?ngResource ***!
   \**********************************************************************/
@@ -303,13 +341,13 @@ module.exports = "ion-content {\n  height: 100%;\n}\n\n#header {\n  font-size: 3
 
 /***/ }),
 
-/***/ 1644:
+/***/ 51644:
 /*!**********************************************************************!*\
   !*** ./src/app/generate-ballot/generate-ballot.page.html?ngResource ***!
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<!-- <ion-menu side=\"start\" menuId=\"custom\" contentId=\"main\" class=\"my-custom-menu\">\r\n  <ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n      <ion-title>Menu</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content>\r\n    <ion-list>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('admin-dashboard')\">\r\n        <ion-icon name=\"home-outline\"></ion-icon><ion-label>Dashboard</ion-label>\r\n      </ion-item>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('register')\">\r\n        <ion-icon name=\"people-outline\"></ion-icon><ion-label>Register Voters</ion-label>\r\n      </ion-item>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('ballot')\">\r\n        <ion-icon name=\"checkbox-outline\"></ion-icon>  <ion-label>Vote</ion-label>\r\n      </ion-item>\r\n    </ion-list>\r\n  </ion-content>\r\n</ion-menu>\r\n   -->\r\n<ion-content id=\"main\"> \r\n  <div id=\"titleInput\">\r\n    <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button>\r\n    <ion-item id=\"electionTitle\">\r\n      <ion-label position=\"floating\">Election Title</ion-label>\r\n      <ion-input [(ngModel)] = \"electionTitle\"></ion-input>   \r\n    </ion-item>\r\n  </div>\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input id=\"name\" [(ngModel)] = \"ballotName\"></ion-input>  \r\n        <!-- <ion-button id=\"ballotNameBtn\" slot=\"end\" (click)=\"saveBallotName()\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n      <ion-card>\r\n        Candidate Details\r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Name</ion-label>\r\n          <ion-input [(ngModel)] = \"name\"></ion-input>   \r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Surname</ion-label>\r\n          <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">ID Number</ion-label>\r\n          <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n        </ion-item>\r\n        <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n        </ion-card>\r\n      \r\n        <ion-card>\r\n        Candidate List\r\n          <ion-item *ngFor=\"let o of ballot1Options\">\r\n            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n          </ion-item>\r\n      \r\n      </ion-card>\r\n      <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input [(ngModel)] = \"ballotName1\"></ion-input>   \r\n        <!-- <ion-button (click)=\"saveBallotName()\" id=\"ballotNameBtn\" slot=\"end\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n      <ion-card>\r\n        Candidate Details\r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Name</ion-label>\r\n          <ion-input id=\"name\" [(ngModel)] = \"name\"></ion-input>   \r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Surname</ion-label>\r\n          <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">ID Number</ion-label>\r\n          <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n        </ion-item>\r\n        <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n        </ion-card>\r\n      \r\n        <ion-card>\r\n        Candidate List\r\n          <ion-item *ngFor=\"let o of ballot2Options\">\r\n            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n          </ion-item>\r\n      \r\n      </ion-card>\r\n      <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input [(ngModel)] = \"ballotName2\"></ion-input>   \r\n        <!-- <ion-button (click)=\"saveBallotName()\" id=\"ballotNameBtn\" slot=\"end\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n    <ion-card>\r\n      Candidate Details\r\n    <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">Name</ion-label>\r\n    <ion-input id=\"name\" [(ngModel)] = \"name\"></ion-input>   \r\n  </ion-item>\r\n\r\n  <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">Surname</ion-label>\r\n    <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">ID Number</ion-label>\r\n    <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n  </ion-item>\r\n  <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n  Candidate List\r\n    <ion-item *ngFor=\"let o of ballot3Options\">\r\n      <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n    </ion-item>\r\n\r\n  </ion-card>\r\n  <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n  <!-- <ion-button id=\"genBtn\" (click)=\"generate()\">Generate</ion-button> -->\r\n  </ion-slide>\r\n\r\n  <ion-slide id=\"finalSlide\">\r\n    You are about to generate the ballots.\r\n  <ion-button id=\"genBtn\" (click)=\"generate()\">Generate</ion-button>\r\n  </ion-slide>\r\n  </ion-slides>\r\n  \r\n\r\n</ion-content>\r\n";
+module.exports = "<!-- <ion-menu side=\"start\" menuId=\"custom\" contentId=\"main\" class=\"my-custom-menu\">\r\n  <ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n      <ion-title>Menu</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content>\r\n    <ion-list>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('admin-dashboard')\">\r\n        <ion-icon name=\"home-outline\"></ion-icon><ion-label>Dashboard</ion-label>\r\n      </ion-item>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('register')\">\r\n        <ion-icon name=\"people-outline\"></ion-icon><ion-label>Register Voters</ion-label>\r\n      </ion-item>\r\n      <ion-item lines=\"none\" detail=\"false\" (click)=\"navigate('ballot')\">\r\n        <ion-icon name=\"checkbox-outline\"></ion-icon>  <ion-label>Vote</ion-label>\r\n      </ion-item>\r\n    </ion-list>\r\n  </ion-content>\r\n</ion-menu>\r\n   -->\r\n<ion-content id=\"main\"> \r\n  <div id=\"titleInput\">\r\n    <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button>\r\n    <ion-item id=\"electionTitle\">\r\n      <ion-label position=\"floating\">Election Title</ion-label>\r\n      <ion-input [(ngModel)] = \"electionTitle\"></ion-input>   \r\n    </ion-item>\r\n  </div>\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input id=\"name\" [(ngModel)] = \"ballotName\"></ion-input>  \r\n        <!-- <ion-button id=\"ballotNameBtn\" slot=\"end\" (click)=\"saveBallotName()\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n      <ion-card>\r\n        Candidate Details\r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Name</ion-label>\r\n          <ion-input [(ngModel)] = \"name\"></ion-input>   \r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Surname</ion-label>\r\n          <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">ID Number</ion-label>\r\n          <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n        </ion-item>\r\n        <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n        </ion-card>\r\n      \r\n        <ion-card>\r\n        Candidate List\r\n          <ion-item *ngFor=\"let o of ballot1Options\">\r\n            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n          </ion-item>\r\n      \r\n      </ion-card>\r\n      <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input [(ngModel)] = \"ballotName1\"></ion-input>   \r\n        <!-- <ion-button (click)=\"saveBallotName()\" id=\"ballotNameBtn\" slot=\"end\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n      <ion-card>\r\n        Candidate Details\r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Name</ion-label>\r\n          <ion-input id=\"name\" [(ngModel)] = \"name\"></ion-input>   \r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">Surname</ion-label>\r\n          <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n        </ion-item>\r\n      \r\n        <ion-item id=\"addItem\">\r\n          <ion-label position=\"floating\">ID Number</ion-label>\r\n          <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n        </ion-item>\r\n        <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n        </ion-card>\r\n      \r\n        <ion-card>\r\n        Candidate List\r\n          <ion-item *ngFor=\"let o of ballot2Options\">\r\n            <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n          </ion-item>\r\n      \r\n      </ion-card>\r\n      <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-item id=\"pageName\">\r\n        <ion-label position=\"floating\">Ballot Name</ion-label>\r\n        <ion-input [(ngModel)] = \"ballotName2\"></ion-input>   \r\n        <!-- <ion-button (click)=\"saveBallotName()\" id=\"ballotNameBtn\" slot=\"end\">Confirm Name</ion-button>  -->\r\n      </ion-item>\r\n    <ion-card>\r\n      Candidate Details\r\n    <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">Name</ion-label>\r\n    <ion-input id=\"name\" [(ngModel)] = \"name\"></ion-input>   \r\n  </ion-item>\r\n\r\n  <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">Surname</ion-label>\r\n    <ion-input [(ngModel)] = \"surname\"></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item id=\"addItem\">\r\n    <ion-label position=\"floating\">ID Number</ion-label>\r\n    <ion-input [(ngModel)] = \"idNum\"></ion-input>\r\n  </ion-item>\r\n  <ion-button (click) = \"addOption()\" size=\"small\">Add</ion-button>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n  Candidate List\r\n    <ion-item *ngFor=\"let o of ballot3Options\">\r\n      <ion-label>{{o.name}} {{o.surname}}, {{o.id}}<ion-icon (click)=\"removeCandidate(o)\" class = \"itemIcon\" size = \"large\" name=\"close-circle-outline\" position=\"end\"></ion-icon></ion-label>\r\n    </ion-item>\r\n\r\n  </ion-card>\r\n  <ion-button id=\"ballotNameBtn\" (click)=\"saveBallotName()\">Save Ballot</ion-button>\r\n  <!-- <ion-button id=\"genBtn\" (click)=\"generate()\">Generate</ion-button> -->\r\n  </ion-slide>\r\n\r\n  <ion-slide id=\"finalSlide\">\r\n    You are about to save the ballots.\r\n  <ion-button id=\"genBtn\" (click)=\"generate()\">Save</ion-button>\r\n  </ion-slide>\r\n  </ion-slides>\r\n  \r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

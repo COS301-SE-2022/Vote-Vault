@@ -12,5 +12,7 @@
     s.xcconfig = {'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) COCOAPODS=1 WK_WEB_VIEW_ONLY=1' }
     s.dependency 'CapacitorCordova'
     s.swift_version  = '5.1'
+    s.dependency 'ScanditBarcodeCapture', '= 6.13.1'
+    s.dependency 'ScanditCaptureCore', '= 6.13.1'
     s.frameworks = 'AVFoundation', 'AudioToolbox'
   end

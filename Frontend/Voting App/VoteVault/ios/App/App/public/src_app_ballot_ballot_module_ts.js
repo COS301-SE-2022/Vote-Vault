@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_ballot_ballot_module_ts"],{
 
-/***/ 1856:
+/***/ 61856:
 /*!*************************************************!*\
   !*** ./src/app/ballot/ballot-routing.module.ts ***!
   \*************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotPageRoutingModule": () => (/* binding */ BallotPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _ballot_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot.page */ 1105);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ballot_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot.page */ 61105);
 
 
 
@@ -38,7 +38,7 @@ BallotPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 8068:
+/***/ 28068:
 /*!*****************************************!*\
   !*** ./src/app/ballot/ballot.module.ts ***!
   \*****************************************/
@@ -48,13 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotPageModule": () => (/* binding */ BallotPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot-routing.module */ 1856);
-/* harmony import */ var _ballot_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot.page */ 1105);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _ballot_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot-routing.module */ 61856);
+/* harmony import */ var _ballot_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot.page */ 61105);
 
 
 
@@ -80,7 +80,7 @@ BallotPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 1105:
+/***/ 61105:
 /*!***************************************!*\
   !*** ./src/app/ballot/ballot.page.ts ***!
   \***************************************/
@@ -90,13 +90,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BallotPage": () => (/* binding */ BallotPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot.page.html?ngResource */ 1269);
-/* harmony import */ var _ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot.page.scss?ngResource */ 9870);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballot.page.html?ngResource */ 31269);
+/* harmony import */ var _ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ballot.page.scss?ngResource */ 89870);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+
 
 
 
@@ -105,7 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BallotPage = class BallotPage {
-    constructor(menu, router, dataService, toastController) {
+    constructor(location, menu, router, dataService, toastController) {
+        this.location = location;
         this.menu = menu;
         this.router = router;
         this.dataService = dataService;
@@ -129,6 +132,7 @@ let BallotPage = class BallotPage {
     vote() {
         this.dataService.votes.push(this.selected);
         this.toast_vote();
+        this.location.back();
     }
     ionSlidesDidLoad(slides) {
         slides.getActiveIndex().then((index) => {
@@ -148,20 +152,21 @@ let BallotPage = class BallotPage {
         });
     }
     openCustom() {
-        this.router.navigate(['admin-dashboard']);
+        this.router.navigate(['voter-dashboard']);
     }
     navigate(s) {
         this.router.navigate([s]);
     }
 };
 BallotPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.MenuController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__.Location },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.MenuController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
     { type: _data_service__WEBPACK_IMPORTED_MODULE_2__.DataService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ToastController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController }
 ];
 BallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-ballot',
         template: _ballot_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_ballot_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -172,7 +177,7 @@ BallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 9870:
+/***/ 89870:
 /*!****************************************************!*\
   !*** ./src/app/ballot/ballot.page.scss?ngResource ***!
   \****************************************************/
@@ -182,7 +187,7 @@ module.exports = "ion-item {\n  --background: transparent !important;\n  --backg
 
 /***/ }),
 
-/***/ 1269:
+/***/ 31269:
 /*!****************************************************!*\
   !*** ./src/app/ballot/ballot.page.html?ngResource ***!
   \****************************************************/
