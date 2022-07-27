@@ -82,7 +82,7 @@ export class DataService {
     const deployment = await contractFactory.deploy("NEW ID")
     const contract = await deployment.deployed()
     
-    const deployedContract = new ethers.Contract('0x42d3F41cc686df9e7C40667b1D1299C9980B27A2', this.contractABI, signer)
+    const deployedContract = new ethers.Contract(contract.address, this.contractABI, signer)
     
     const electionID = await deployedContract.electionID()
 
