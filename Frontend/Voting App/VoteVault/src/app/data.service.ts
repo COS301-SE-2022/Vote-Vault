@@ -56,6 +56,7 @@ export class DataService {
   adminState : string;
   electionID : string
   voter: Voter;
+  voters: any[];
   contractAddress : string
   voterId : string
 
@@ -85,7 +86,7 @@ export class DataService {
 
   setAdminState(s) {
     this.adminState = s
-  } 
+  }
 
   async fetchElections() {
     this.elections = []
@@ -102,7 +103,7 @@ export class DataService {
         const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
         const e = {} as Election
         // console.log(doc.data())
-        e.ballots = electionSnap.data().ballots 
+        e.ballots = electionSnap.data().ballots
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
@@ -110,12 +111,19 @@ export class DataService {
         // console.log(doc.data().election)
         this.elections.push(e)
       })
-      
+
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
 
+  }
+
+  async checkVoters() {
+    const querySnapshot = await getDocs(collection(this.firestore, "voters"));
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data().voter.id);
+    });
   }
 
   editElection(e) {
