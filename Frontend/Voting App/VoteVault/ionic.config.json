@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "VoteVault",
   "integrations": {
@@ -7,13 +6,3 @@
   },
   "type": "angular"
 }
-=======
-{
-  "name": "VoteVault",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
-  "type": "angular"
-}
->>>>>>> 51dcac3e631dc114fca065eb7a8bfa1a22e7df10

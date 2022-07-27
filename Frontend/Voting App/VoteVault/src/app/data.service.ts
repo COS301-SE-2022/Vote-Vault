@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, arrayUnion, collection, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { VoterDashboardPage } from './voter-dashboard/voter-dashboard.page';
 
 interface Ballot {
@@ -39,6 +39,11 @@ export class DataService {
   elections: any[];
   registeredUsers: Voter[];
   voter: Voter;
+  adminState: string;
+  electionID: string;
+  privateKey: any;
+  contractABI: any;
+  contractBytecode: any;
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -197,7 +202,7 @@ export class DataService {
   async mapAdminToElection(ref) {
     // const id = ref.id
 
-    return electionId
+    return electionId;
   }
 
   async mapAdminToElection(ref) {
