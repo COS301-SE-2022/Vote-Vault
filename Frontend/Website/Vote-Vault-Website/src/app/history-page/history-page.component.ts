@@ -75,7 +75,7 @@ export class HistoryPageComponent implements OnInit {
       labels: [this.year[1].partyname.name1,this.year[1].partyname.name2,this.year[1].partyname.name3],
       datasets: [
         {
-          backgroundColor: ['blue','red','green'],
+          backgroundColor: ['#d62828','#f77f00','#fcbf49'],
           data: [this.year[1].results.party1, this.year[1].results.party2, this.year[1].results.party3]
         }
       ]
