@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  sans-serif, Arial, Helvetica;
 }
 
 footer {
@@ -53,6 +53,7 @@ header {
   z-index: 1;
   display: table;
   width: 100vw;
+  font-size: 1.5rem;
 }
 
 #logo {
