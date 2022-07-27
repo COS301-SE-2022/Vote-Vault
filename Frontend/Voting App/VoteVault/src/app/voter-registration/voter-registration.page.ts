@@ -131,6 +131,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScanner,BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 import { doc } from 'firebase/firestore';
+import { DataService, Voter } from '../data.service';
 
 @Component({
   selector: 'app-voter-registration',
@@ -149,8 +150,9 @@ export class VoterRegistrationPage implements OnInit {
   encodedData: '';
   encodeData: any;
   inputData: any;
+  voter: Voter;
 
-  constructor(private router: Router, private barcodeScanner: BarcodeScanner) { }
+  constructor(private router: Router, private barcodeScanner: BarcodeScanner, private dataservice: DataService) { }
 
   ngOnInit() {
     this.voterIDs = [];
@@ -168,9 +170,17 @@ export class VoterRegistrationPage implements OnInit {
     // this.voterNames.push(nVoter.name);
     // this.voterSurnames.push(nVoter.surname);
     // this.voterIDs.push(nVoter.id);
+    // alert(this.voter)
+    try {
+      this.dataservice.addvoter(this.voter);
+    } catch (err) {
+      alert(err);
+    }
     this.name = '';
     this.surname = '';
     this.idNum = '';
+    this.gender = '';
+    alert('Successfully registered!');
   }
 
   openCustom() {
@@ -199,16 +209,16 @@ export class VoterRegistrationPage implements OnInit {
       this.gender = splitted[2];
       this.idNum = splitted[4]
 
-      const first = this.voterIDs.find((obj) => obj === this.idNum);
-      if (first != null) {
-        alert('The entered ID is already registered with a voter.');
-        return;
-      }
-      this.voterNames.push(this.name);
-      this.voterSurnames.push(this.surname);
-      this.voterIDs.push(this.idNum);
+      this.voter = this.dataservice.createVoter(this.name, this.surname, this.idNum, this.gender);
+
+      // alert(this.voter.birthName)
 
       document.getElementById("regnowbutton").style.display = "block";
+
+      // this.voterNames.push(this.name);
+      // this.voterSurnames.push(this.surname);
+      // this.voterIDs.push(this.idNum);
+
     }).catch(err => {
       console.log('Error', err);
     });
