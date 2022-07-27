@@ -32,18 +32,7 @@ export class VoterRegistrationPage implements OnInit {
     this.voterSurnames = [];
   }
 
-  async registerVoter() {
-
-    // const first = this.voterIDs.find((obj) => obj === nVoter.id);
-    // if (first != null) {
-    //   alert('The entered ID is already registered with a voter.');
-    //   return;
-    // }
-    // this.voterNames.push(nVoter.name);
-    // this.voterSurnames.push(nVoter.surname);
-    // this.voterIDs.push(nVoter.id);
-    // alert(this.voter)
-    
+  async registerVoter() {    
     this.voter = new Voter()
     this.voter.birthName = "MEH"
     this.voter.surname = "MAW"
