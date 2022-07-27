@@ -75,7 +75,9 @@ export class BallotPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['voter-dashboard'])
+    this.location.back();
+
+    // this.router.navigate(['voter-dashboard'])
   }
 
   navigate(s) {
