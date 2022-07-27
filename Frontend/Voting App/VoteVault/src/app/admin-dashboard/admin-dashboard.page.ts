@@ -68,12 +68,8 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
-<<<<<<< HEAD
           console.log('clicked')
           this.navigate("register")
-=======
-          this.navigate("voter-registration")
->>>>>>> 51dcac3e631dc114fca065eb7a8bfa1a22e7df10
         }
       }, {
         text: 'Vote',
