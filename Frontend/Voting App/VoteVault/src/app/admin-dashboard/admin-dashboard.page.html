@@ -5,7 +5,7 @@
 <ion-content>
   <!-- <ion-title id = "title">Elections</ion-title> -->
 
-  <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
+  <ion-card (click)="electionClicked(e)" (click)="setIndex(i)" *ngFor="let e of elections; let i = index" id="election">
     <ion-card-header>
       <ion-card-title>{{e.electionName}}</ion-card-title>
       <br>

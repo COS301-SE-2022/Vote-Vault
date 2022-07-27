@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import { AdminLoginPageRoutingModule } from './admin-login/admin-login-routing.module';
 import {ContractFactory, ethers, providers} from 'ethers';
 import { hrtime } from 'process';
@@ -334,5 +334,9 @@ export class DataService {
         users: arrayUnion(voter)
       })
     }
+  }
+
+  async deleteElection(id) {
+    await deleteDoc(doc(this.firestore, "elections", id));
   }
 }
