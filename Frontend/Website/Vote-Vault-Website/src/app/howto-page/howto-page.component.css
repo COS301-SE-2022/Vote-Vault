@@ -43,6 +43,10 @@ body {
     width: 90%;
 }
 
+.how-to-register-image, .how-to-vote-image {
+    margin-top: 5%;
+}
+
 #voteDiv {
     margin-top: 3rem;
 }
