@@ -53,21 +53,23 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     const actionSheet = await this.actionSheetController.create({
       header: e.electionName,
       cssClass: 'my-custom-class',
-      buttons: [ {
-        text: 'Ballots',
-        icon: 'copy-outline',
-        data: 10,
-        handler: () => {
-          this.dataService.setAdminState('edit')
-          this.navigate("generate-ballot")
-        }
-      }, {
+      buttons: [ 
+      //   {
+      //   text: 'Ballots',
+      //   icon: 'copy-outline',
+      //   data: 10,
+      //   handler: () => {
+      //     this.dataService.setAdminState('edit')
+      //     this.navigate("generate-ballot")
+      //   }
+      // }, 
+      {
         text: 'Register User',
         icon: 'person-add-outline',
         data: 'Data value',
         handler: () => {
           console.log('clicked')
-          this.navigate("register")
+          this.navigate("voter-registration")
         }
       }, {
         text: 'Vote',

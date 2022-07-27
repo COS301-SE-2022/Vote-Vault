@@ -39,6 +39,7 @@ export class BallotPage implements OnInit {
   vote() : void {
     this.dataService.votes.push(this.selected)
     this.toast_vote()
+    this.location.back();
   }
 
   ionSlidesDidLoad(slides) {
@@ -60,8 +61,7 @@ export class BallotPage implements OnInit {
   }
 
   openCustom() {
-    this.location.back();
-    // this.router.navigate(['admin-dashboard'])
+    this.router.navigate(['voter-dashboard'])
   }
 
   navigate(s) {

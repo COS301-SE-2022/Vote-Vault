@@ -13,16 +13,16 @@ import { Firestore, FirestoreModule, getFirestore, provideFirestore } from '@ang
 import { environment } from 'src/environments/environment';
 import { DataService } from './data.service';
 import { RouterModule } from '@angular/router';
-import { ScannerServiceProvider } from 'src/providers/scanner-service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+  imports: [ BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth())],
-  providers: [ DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScannerServiceProvider],
+  providers: [ DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
