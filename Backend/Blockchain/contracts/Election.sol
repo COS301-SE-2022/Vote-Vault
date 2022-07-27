@@ -1,4 +1,4 @@
-pragma solidity^0.8.0;
+pragma solidity^0.5.0;
 
  contract Election {
     
@@ -15,7 +15,7 @@ pragma solidity^0.8.0;
     Vote [] private voters;
 
     //Voters id's
-    mapping (string => bool) public voted;
+    mapping (string => bool) private voted;
 
     struct Vote {
         uint age;
@@ -60,9 +60,9 @@ pragma solidity^0.8.0;
     }
 
     //Return vote results
-    function getResults() public view returns (uint [][] memory) {
-        return voteCount;
-    }
+    // function getResults() public view returns (uint [][] memory) {
+    //     return voteCount;
+    // }
 
     function getId() public view returns (string memory){
         return electionID;
@@ -73,18 +73,11 @@ pragma solidity^0.8.0;
     }
 
     // function countVotes() public view {
+    //     uint [] memory winners = new uint[](3);
+        
     //     uint count = 0;
 
-    //     for(uint i=0; i>0; i++) {
-    //         for( uint j=0; j<=i; j++) {
-    //             if (voteCount[i][j] > 0) {
-    //                 count++;
-    //             }
-    //             else {
-    //                 break;
-    //             }
-    //         }
-    //     }
+        
 
     //     returns (uint count)
 

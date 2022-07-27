@@ -108,9 +108,9 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
       });
     }
     else if(this.dataService.adminState === 'generate') {
-
+      const sizes = [this.ballot1Options.length, this.ballot2Options.length, this.ballot3Options.length]
       //Deploy contract to blockchain with number of candidates and voters as parameters
-      await this.contractService.deploy()
+      await this.contractService.deploy(this.dataService.electionName, 10, 20, sizes)
       .then(async (res) => {
         const contractAddress = res
         
