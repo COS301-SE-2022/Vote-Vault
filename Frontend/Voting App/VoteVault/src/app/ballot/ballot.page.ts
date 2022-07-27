@@ -39,6 +39,7 @@ export class BallotPage implements OnInit {
   vote() : void {
     this.dataService.votes.push(this.selected)
     this.toast_vote()
+    this.location.back();
   }
 
   ionSlidesDidLoad(slides) {
