@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  font-family:  sans-serif, Arial, Helvetica;
+  font-family:  sans-serif,Arial, Helvetica;
 }
 
 footer {
@@ -61,7 +61,7 @@ header {
 }
 
 .navbar1 a:hover {
-  background-color: rgb(84, 123, 250);
+  /* background-color: rgb(84, 123, 250); */
   color: black;
 }
 
