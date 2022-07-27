@@ -69,7 +69,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
         data: 'Data value',
         handler: () => {
           console.log('clicked')
-          this.navigate("register")
+          this.navigate("voter-registration")
         }
       }, {
         text: 'Vote',
