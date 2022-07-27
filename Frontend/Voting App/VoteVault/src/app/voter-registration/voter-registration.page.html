@@ -1,5 +1,5 @@
 <body>
-  <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> 
+  <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
   <ion-header class="ion-margin-bottom">
     <ion-toolbar class="ion-text-center">
       <ion-title id="page-heading">Voter Registration</ion-title>
@@ -9,33 +9,31 @@
   <ion-card class="voter-Details ion-text-center ion-padding">
     <ion-card-header>
       <ion-card-title>
-        Enter Details
+        Scan ID Card
       </ion-card-title>
     </ion-card-header>
-
-    <ion-item color="light">
-      <ion-label position="floating">First Name:</ion-label>
-      <ion-input [(ngModel)] = "name" placeholder="Enter first name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">Last Name:</ion-label>
-      <ion-input [(ngModel)] = "surname" placeholder="Enter last name here"></ion-input>
-    </ion-item>
-
-    <ion-item color="light">
-      <ion-label position="floating">ID Number:</ion-label>
-      <ion-input [(ngModel)] = "idNum" placeholder="Enter ID number here"></ion-input>
-    </ion-item>
-
-    <ion-item  class="ion-align-items-center" color="light">
-      <ion-label position="floating">Scan ID:</ion-label>
-      <ion-button size="medium">
-        <ion-icon name="camera-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-
-    <ion-button class="ion-margin-top" (click) = "registerVoter()">
+    <ion-button expand="full" color="dark" (click)="scanBarcode()">Scan ID</ion-button>
+    <div *ngIf="name">
+      <p>
+        Name(s): <b>{{ name }}</b>
+      </p>
+    </div>
+    <div *ngIf="surname">
+      <p>
+        Surname: <b>{{ surname }}</b>
+      </p>
+    </div>
+    <div *ngIf="gender">
+      <p>
+        Gender: <b>{{ gender }}</b>
+      </p>
+    </div>
+    <div *ngIf="idNum">
+      <p>
+        ID Number: <b>{{ idNum }}</b>
+      </p>
+    </div>
+    <ion-button id="regnowbutton" class="ion-margin-top" (click)="registerVoter()" style="display: none;">
         Register Now
     </ion-button>
   </ion-card>

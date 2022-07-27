@@ -1,11 +1,7 @@
-ion-content {
-    height: 100vh;
-}
-
 ion-card{
-    margin-top: 50%;
+    margin-top: 40%;
+    vertical-align: middle;
     padding: 5vh;
-    height: 40%;
 }
 
 ion-input {
@@ -15,9 +11,4 @@ ion-input {
 ion-button {
     width: 40%;
     margin-left: 30%;
-}
-
-.adminLogin{
-    position: absolute;
-    bottom: 4vh;
 }
