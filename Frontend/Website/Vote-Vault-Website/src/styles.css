@@ -76,6 +76,8 @@ header {
 a.active {
   background-color: #FBFFF5;
   color: #02224E;
+  height: 100%;
+  border-bottom: 6px solid #FBFFF5;
 }
 
 input[type=text] {
