@@ -1,10 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { VoterDashboardPage } from './voter-dashboard/voter-dashboard.page';
 
 interface Ballot {
   name: string;
   options: any[];
+}
+
+export class Voter {
+  birthName: String;
+  surname: String;
+  IDnum: Number;
+  Gender: String;
+
+  Voter(n, sn, id, g) {
+    this.birthName = n;
+    this.surname = sn;
+    this.IDnum = id;
+    this.Gender = g;
+  }
 }
 
 @Injectable({
@@ -22,7 +37,8 @@ export class DataService {
   userEmail: string;
   election: any;
   elections: any[];
-  registeredUsers: any[];
+  registeredUsers: Voter[];
+  voter: Voter;
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -38,7 +54,7 @@ export class DataService {
     this.votes = [];
     this.userEmail = '';
     this.elections = [];
-    this.registeredUsers = [];
+    this.registeredUsers = {} as Voter[];
     this.electionName = '';
   }
 
@@ -69,6 +85,18 @@ export class DataService {
 
     //Add to admin elections
     this.mapAdminToElection(electionRef);
+  }
+
+  async saveVoter(v: Voter) {
+    const voter = {
+                    name: v.birthName,
+                    surname: v.surname,
+                    gender: v.Gender,
+                    id: v.IDnum
+                  };
+    const electionRef = await addDoc(collection(this.firestore, 'voters'), {
+      voter
+    });
   }
 
   async mapAdminToElection(ref) {
@@ -189,6 +217,28 @@ export class DataService {
       case 2: {
         this.ballot3.name = name;
         break;
+      }
+    }
+  }
+
+  addvoter(nvoter: Voter) {
+    this.saveVoter(nvoter);
+  }
+
+  createVoter(name, surname, id, gender) {
+    this.voter = new Voter();
+    this.voter.Voter(name, surname, id, gender);
+    return this.voter;
+  }
+
+  findvoter(v: Voter) {
+    for (let index = 0; index < this.registeredUsers.length; index++) {
+      const element = this.registeredUsers[index];
+      if (element == v) {
+        return true;
+      }
+      if (index == this.registeredUsers.length-1 && element != v) {
+        return false;
       }
     }
   }
