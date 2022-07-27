@@ -18,13 +18,15 @@ interface Election {
   ballots : any[]
   // adminEmail : string
   users : any[]
+  contractAddress : string
 }
 
 export class Voter {
   birthName: String;
   surname: String;
-  IDnum: Number;
+  IDnum: String;
   Gender: String;
+  Age : Number
 
   Voter(n, sn, id, g) {
     this.birthName = n;
@@ -53,7 +55,9 @@ export class DataService {
   adminState : string;
   electionID : string
   voter: Voter;
-  
+  contractAddress : string
+  voterId : string
+
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
     this.ballot1 = {} as Ballot;
@@ -73,6 +77,8 @@ export class DataService {
     this.adminState = '';
     this.electionID = '';
     this.voter = null;
+    this.contractAddress = '';
+    this.voterId = '';
     // this.deployContract()
   }
 
@@ -99,6 +105,7 @@ export class DataService {
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
+        e.contractAddress = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
       })
@@ -120,6 +127,7 @@ export class DataService {
     this.ballot3.name    = e.ballots[2].name;
     this.electionName    = e.electionName;
     this.electionID = e.id
+    this.contractAddress = e.contractAddress
   }
 
   async saveEdit() {
@@ -284,8 +292,8 @@ export class DataService {
     }
   }
 
-  addvoter(nvoter: Voter) {
-    this.saveVoter(nvoter);
+  async addvoter(nvoter: Voter) {
+    await this.saveVoter(nvoter);
   }
 
   createVoter(name, surname, id, gender) {
@@ -316,5 +324,15 @@ export class DataService {
     const electionRef = await addDoc(collection(this.firestore, 'voters'), {
       voter
     });
+
+
+    //Save to elections collection
+    const elRef = doc(this.firestore, 'elections' , this.electionID)
+    const elSnap = await getDoc(elRef)
+    if(elSnap.exists()) {
+      await updateDoc(elRef, {
+        users: arrayUnion(voter)
+      })
+    }
   }
 }

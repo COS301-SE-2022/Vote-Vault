@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuController, ToastController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { Location } from "@angular/common";
+import { ContractService } from '../services/contract.service';
 
 @Component({
   selector: 'app-ballot',
@@ -16,8 +17,10 @@ export class BallotPage implements OnInit {
   ballot2 : any
   ballot3 : any
   slideIndex : number = 0
-
-  constructor(private location : Location, private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) { }
+  votes : any[]
+  constructor(private contractService : ContractService, private location : Location, private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) {
+    this.votes = []
+  }
 
   ngOnInit() {
     this.options = this.dataService.electionOptions
@@ -36,8 +39,19 @@ export class BallotPage implements OnInit {
 
   }
 
-  vote() : void {
+  async vote() {
     this.dataService.votes.push(this.selected)
+
+    //Deploy vote to blockchain
+    await this.contractService.addVote(this.dataService.contractAddress, this.votes)
+    .then(()  =>  {
+      this.toast_vote()
+      this.location.back();
+    })
+    .catch((error)  =>  {
+      console.error(error)
+    })
+
     this.toast_vote()
     this.location.back();
   }
@@ -66,6 +80,18 @@ export class BallotPage implements OnInit {
 
   navigate(s) {
     this.router.navigate([s])
+  }
+
+  ballot1Index(i) {
+    this.votes[0] = i
+  }
+
+  ballot2Index(i) {
+    this.votes[1] = i
+  }
+
+  ballot3Index(i) {
+    this.votes[2] = i
   }
 
 }
