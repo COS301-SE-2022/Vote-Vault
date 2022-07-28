@@ -118,6 +118,7 @@ export class DataService {
       const election_id_array = adminSnap.data().elections
 
       election_id_array.forEach(async (id)  =>  {
+        try{
         //Retrieve Election
         const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
         const e = {} as Election
@@ -129,7 +130,9 @@ export class DataService {
         e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
-        
+        } catch(e) {
+          console.error(e)
+        }
       })
 
     } else {
