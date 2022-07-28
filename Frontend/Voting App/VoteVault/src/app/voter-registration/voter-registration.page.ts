@@ -46,35 +46,36 @@ export class VoterRegistrationPage implements OnInit {
     // this.voterIDs.push(nVoter.id);
     // alert(this.voter)
     this.presentLoading()
-    this.voter = new Voter()
-    this.voter.birthName = "MEH"
-    this.voter.surname = "MAW"
-    this.voter.IDnum = '01010101010101'
-    this.voter.Age = 29
-    this.voter.Gender = 'M'
-    console.log("ADDRESS " + this.dataservice.contractAddress)
-    try {
-      await this.dataservice.addvoter(this.voter)
-      .then(async () =>  {
-        await this.contractService.addVoter(this.dataservice.contractAddress, this.voter)
-        .then(()  =>  {
-          // alert('Successfully registered!');
-          this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum)
+    if (await this.dataservice.checkVoters(this.idNum) == false) {
+      alert('Not registered!');
+      try {
+        await this.dataservice.addvoter(this.voter)
+        .then(async () =>  {
+          await this.contractService.addVoter(this.dataservice.contractAddress, this.voter)
+          .then(()  =>  {
+            // alert('Successfully registered!');
+            this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum)
+            this.loadingController.dismiss()
+            this.router.navigate(['admin-dashboard'])
+          })
+        }).catch((error)  =>  {
+          this.presentToast('Error registering')
           this.loadingController.dismiss()
-          this.router.navigate(['admin-dashboard'])
+          console.error(error)
         })
-      }).catch((error)  =>  {
-        this.presentToast('Error registering')
-        this.loadingController.dismiss()
-        console.error(error)
-      })
-    } catch (err) {
-      alert(err);
+      } catch (err) {
+        alert(err);
+      }
+    } else {
+      alert('Already registered voter!');
     }
+
     this.name = '';
     this.surname = '';
     this.idNum = '';
     this.gender = '';
+
+    document.getElementById("regnowbutton").style.display = "none";
 
   }
 
@@ -83,41 +84,35 @@ export class VoterRegistrationPage implements OnInit {
   }
 
   scanBarcode() {
-    this.registerVoter()
-    // const options: BarcodeScannerOptions = {
-    //   preferFrontCamera: false,
-    //   showFlipCameraButton: true,
-    //   showTorchButton: true,
-    //   torchOn: false,
-    //   prompt: 'Place a barcode inside the scan area',
-    //   resultDisplayDuration: 500,
-    //   formats: 'PDF_417',
-    //   orientation: 'landscape',
-    // };
+    const options: BarcodeScannerOptions = {
+      preferFrontCamera: false,
+      showFlipCameraButton: true,
+      showTorchButton: true,
+      torchOn: false,
+      prompt: 'Place a barcode inside the scan area',
+      resultDisplayDuration: 500,
+      formats: 'PDF_417',
+      orientation: 'landscape',
+    };
 
-    // this.barcodeScanner.scan(options).then(barcodeData => {
-    //   this.scannedData = barcodeData;
-    //   this.inputData = this.scannedData["text"];
+    this.barcodeScanner.scan(options).then(barcodeData => {
+      this.scannedData = barcodeData;
+      this.inputData = this.scannedData["text"];
 
-    //   var splitted = this.inputData.split("|");
-    //   this.surname = splitted[0];
-    //   this.name = splitted[1];
-    //   this.gender = splitted[2];
-    //   this.idNum = splitted[4]
+      var splitted = this.inputData.split("|");
+      this.surname = splitted[0];
+      this.name = splitted[1];
+      this.gender = splitted[2];
+      this.idNum = splitted[4]
 
-    //   this.voter = this.dataservice.createVoter(this.name, this.surname, this.idNum, this.gender);
+      this.voter = this.dataservice.createVoter(this.name, this.surname, this.idNum, this.gender);
 
-    //   // alert(this.voter.birthName)
+      // alert(this.voter.birthName)
 
-    //   document.getElementById("regnowbutton").style.display = "block";
-
-    //   // this.voterNames.push(this.name);
-    //   // this.voterSurnames.push(this.surname);
-    //   // this.voterIDs.push(this.idNum);
-
-    // }).catch(err => {
-    //   console.log('Error', err);
-    // });
+      document.getElementById("regnowbutton").style.display = "block";
+    }).catch(err => {
+      console.log('Error', err);
+    });
   }
 
   async presentToast(message) {
