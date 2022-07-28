@@ -41,7 +41,7 @@ export class VoterDashboardPage implements OnInit {
         text: 'Vote',
         icon: 'checkmark-done-circle-outline',
         handler: () => {
-          this.navigate('register');
+          this.navigate('ballot');
         }
       }, {
         text: 'Cancel',
