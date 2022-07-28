@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { FormsModule, NgModel } from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
@@ -19,9 +19,9 @@ import { AdminLoginPage } from './admin-login/admin-login.page';
 import { GenerateBallotPage } from './generate-ballot/generate-ballot.page';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, AdminLoginPage, GenerateBallotPage],
+  declarations: [AppComponent],
   entryComponents: [],
-  imports: [ NgModel, FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth())],

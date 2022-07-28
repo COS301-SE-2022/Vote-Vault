@@ -16,7 +16,7 @@ describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
 
     TestBed.configureTestingModule({
-      declarations: [AppComponent, LoginPage, AdminLoginPage, GenerateBallotPage],
+      declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [ FormsModule, provideFirestore(() => getFirestore()),
         RouterTestingModule.withRoutes([])],
