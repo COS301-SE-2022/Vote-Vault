@@ -99,6 +99,7 @@ Demo 2
      - **LinkedIn Profile:**
           https://www.linkedin.com/in/hugo-esterhuyse-00b475115/
 * ## Markus van Tubbergh
+     ![markus_pwerfection](https://user-images.githubusercontent.com/86471999/181428281-8ba73b96-e0d4-45d4-8491-a36326d0d95f.jpg)
      - **Bio:**
          - Third year student at University of Pretoria busy with my degree in Information and Knowledge Systems - Data Science
      - **Info:**
