@@ -13,4 +13,16 @@ describe('ContractService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should have a conttractABI class member', () => {
+    expect(service.contractABI).toEqual(jasmine.any(String));
+  });
+
+  it('should have a privateKey class member', () => {
+    expect(service.privateKey).toEqual(jasmine.any(String));
+  });
+
+  it('should have a contractBytecode class member', () => {
+    expect(service.contractBytecode).toEqual('');
+  });
 });
