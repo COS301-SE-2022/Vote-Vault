@@ -11,6 +11,10 @@ describe('RegisterPage', () => {
   let component: RegisterPage;
   let fixture: ComponentFixture<RegisterPage>;
 
+  beforeAll(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
+  });
+
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -29,4 +33,9 @@ describe('RegisterPage', () => {
     expect(component).toBeTruthy();
   console.log('REGISTER');
   });
+
+  it('should have custom timeout', () => {
+    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL);
+  });
+
 });
