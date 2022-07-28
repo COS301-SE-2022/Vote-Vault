@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { DataService } from '../data.service';
 
 import { ContractService } from './contract.service';
 
@@ -6,7 +7,11 @@ describe('ContractService', () => {
   let service: ContractService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [
+        DataService
+      ]
+    });
     service = TestBed.inject(ContractService);
   });
 
