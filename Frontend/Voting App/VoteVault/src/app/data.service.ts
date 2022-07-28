@@ -122,11 +122,12 @@ export class DataService {
   async checkVoters(idnum: String): Promise<Boolean> {
     let found: Boolean;
     found = false;
-    const registeredIDs = await getDocs(collection(this.firestore, "voters"));
+    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
+    const getrefID = await getDoc(registeredIDs);
     const idfound = {};
     try {
-      registeredIDs.forEach((doc) => {
-        if (idnum === doc.data().voter.id) {
+      for (let index = 0; index < getrefID.data().users.length; index++) {
+        if (idnum === getrefID.data().users[index].id) {
           found = true;
           throw idfound;
         }
@@ -134,7 +135,8 @@ export class DataService {
           alert('shouldnt reach this');
           throw idfound;
         }
-      });
+
+      }
     } catch (error) {
       return true;
     }
