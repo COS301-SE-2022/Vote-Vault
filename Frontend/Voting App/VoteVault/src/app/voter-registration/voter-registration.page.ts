@@ -141,4 +141,8 @@ export class VoterRegistrationPage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
   }
+
+  checkID() {
+    this.dataservice.checkVoters();
+  }
 }

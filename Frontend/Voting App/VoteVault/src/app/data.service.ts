@@ -119,10 +119,12 @@ export class DataService {
 
   }
 
-  async checkVoters() {
+  async checkVoters(idnum) {
     const querySnapshot = await getDocs(collection(this.firestore, "voters"));
     querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data().voter.id);
+      if (idnum == doc.data().voter.id) {
+        alert('ID already exists!');
+      }
     });
   }
 
