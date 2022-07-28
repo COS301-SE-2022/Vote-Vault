@@ -13,6 +13,7 @@ interface Ballot {
 }
 
 interface Election {
+  adminEmail? : string
   electionName : string
   id? : string
   ballots : any[]
@@ -20,6 +21,7 @@ interface Election {
   users : any[]
   voted : any[]
   address : string
+  active? : boolean
 }
 
 export class Voter {
@@ -136,7 +138,9 @@ export class DataService {
         } catch(e) {
           console.error(e)
         }
-      })
+      }).catch(e => {
+        console.error(e)
+      }) 
 
     } else {
       // doc.data() will be undefined in this case
@@ -210,8 +214,17 @@ export class DataService {
     }).then((ref)  =>  {
       this.mapAdminToElection(ref);
       electionId = ref.id
+      const e = {} as Election
+      e.adminEmail =  this.userEmail
+      e.ballots = [this.ballot1, this.ballot2, this.ballot3]
+      e.electionName = this.electionName
+      e.active = true
+      e.users = this.registeredUsers
+      e.address = contractAddress
+      e.voted = []
+      this.elections.push(e)
     }).then(async ()  =>  {
-      await this.fetchElections()
+      // await this.fetchElections()
     })
 
     return electionId

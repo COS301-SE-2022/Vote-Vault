@@ -23,9 +23,9 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
   }
 
   ionViewWillEnter() {
-    this.elections = []
-    this.dataService.clear()
-    this.elections = this.dataService.elections
+    // this.elections = []
+    // this.dataService.clear()
+    // this.elections = this.dataService.elections
   }
 
   openFirst() {
@@ -115,7 +115,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
   }
 
   createElection() {
-    this.dataService.clear()
+    // this.dataService.clear()
     this.dataService.setAdminState('generate')
     this.router.navigate(['generate-ballot'])
   }
