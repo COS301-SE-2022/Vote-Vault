@@ -74,6 +74,8 @@ export class VoterRegistrationPage implements OnInit {
     this.idNum = '';
     this.gender = '';
 
+    document.getElementById("regnowbutton").style.display = "none";
+
   }
 
   openCustom() {

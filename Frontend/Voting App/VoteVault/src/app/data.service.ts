@@ -133,11 +133,11 @@ export class DataService {
           throw idfound;
         }
         if (found == true) {
+          alert('shouldnt reach this');
           throw idfound;
         }
       });
     } catch (error) {
-      alert('shouldnt reach this');
       return true;
     }
 
