@@ -86,7 +86,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["18-28","29-38","39-48","49-58","59-68","69-78","79-88","89-98","99+"],
     datasets: [
       {
-        backgroundColor: ['blue','red','green','yellow','purple','grey','brown','teal','cyan'],
+        backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9','#284b63','#4f6d7a','#c0d6df','#365535','#3d6e71'],
         data: [60, 61, 59, 42, 55, 48, 43, 52, 5]
       }
     ]
