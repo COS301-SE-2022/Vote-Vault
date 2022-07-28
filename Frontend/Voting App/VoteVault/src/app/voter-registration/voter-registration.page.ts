@@ -12,15 +12,15 @@ import { ContractService } from '../services/contract.service';
   styleUrls: ['./voter-registration.page.scss'],
 })
 export class VoterRegistrationPage implements OnInit {
-  name: string;
-  surname: string;
+  name: string = '';
+  surname: string = '';
   gender: any;
-  idNum: string;
+  idNum: string = '';
   voterNames: any[];
   voterSurnames: any[];
   voterIDs: any[];
   scannedData: any;
-  encodedData: '';
+  encodedData: string = '';
   encodeData: any;
   inputData: any;
   voter: Voter;

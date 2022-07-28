@@ -18,6 +18,7 @@ interface Election {
   ballots : any[]
   // adminEmail : string
   users : any[]
+  voted : any[]
   address : string
 }
 
@@ -100,6 +101,7 @@ export class DataService {
       e.users   = doc.data().users
       e.electionName = doc.data().electionName
       e.id = doc.id
+      e.voted = doc.data().voted
       e.address = doc.data().address
       // console.log(doc.data().election)
       elections.push(e)
@@ -127,6 +129,7 @@ export class DataService {
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
+        e.voted = electionSnap.data().voted
         e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
@@ -202,7 +205,8 @@ export class DataService {
       electionName : this.electionName,
       active : true,
       users  : this.registeredUsers,
-      address : contractAddress
+      address : contractAddress,
+      voted : []
     }).then((ref)  =>  {
       this.mapAdminToElection(ref);
       electionId = ref.id
@@ -241,7 +245,7 @@ export class DataService {
     this.ballot3.options = [];
     this.ballot3.name = '';
     // this.votes = []
-    // this.elections = []
+    this.elections = []
     this.electionName = '';
   }
 

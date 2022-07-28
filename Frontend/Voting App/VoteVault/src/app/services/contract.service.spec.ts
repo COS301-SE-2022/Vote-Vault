@@ -31,6 +31,14 @@ describe('ContractService', () => {
   });
 
   it('should have a contractBytecode class member', () => {
-    expect(service.contractBytecode).toEqual('');
+    expect(service.contractBytecode).toEqual(jasmine.any(String));
+  });
+
+  it('should have an alcProvider class member', () => {
+    expect(service.alcProvider).toEqual(null);
+  });
+
+  it('should have a signer class member', () => {
+    expect(service.signer).toEqual(null);
   });
 });

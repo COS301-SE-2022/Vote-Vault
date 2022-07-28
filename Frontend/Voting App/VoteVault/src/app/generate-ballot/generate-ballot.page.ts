@@ -118,8 +118,11 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
         await this.dataService.saveElection(contractAddress)
         .then(async (res) => {
           this.dataService.clear()
-          this.loadingController.dismiss();
-          this.router.navigate(['admin-dashboard']);
+          await this.dataService.fetchElections().then(() =>  {
+            this.loadingController.dismiss();
+            this.router.navigate(['admin-dashboard']);
+          })
+          
         })
         .catch((e) => {
           console.error(e);
