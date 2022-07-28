@@ -18,14 +18,13 @@ export class ContractService {
   private signer = null
 
   constructor(private dataService : DataService) {
-    this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
-
-    this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
-
     this.contractABI = environment.contractABI
     this.contractBytecode = environment.contractBytecode
     this.privateKey = environment.privateKey
-    // this.deploy()
+
+    this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
+
+    this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
   }
 
   //Deploys contract to blockchain and returns ID
