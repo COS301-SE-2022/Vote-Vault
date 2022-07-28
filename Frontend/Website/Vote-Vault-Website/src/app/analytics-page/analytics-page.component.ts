@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-analytics-page',
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class AnalyticsPageComponent implements OnInit {
 
   votes : any[]
+  private maleCount;
+  private femaleCount;
 
-  constructor() {
+  constructor(private dataService : DataService) {
+    this.dataService.fetchAllElections();
+    let genderCountArray = [];
+    this.maleCount = genderCountArray[0]
+    this.femaleCount = genderCountArray[1]
     this.votes = [{"electionID" : 2, "candidateID" : ["3", "5", "5"], "gender" : "male", "age" : 25, "location" : "Cape Town"}]
   }
 
-  ngOnInit(): void {
-
+  async ngOnInit() {
+    
   }
 
   type = 'bar';
@@ -22,8 +29,9 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["Male", "Female"],
     datasets: [
       {
-        backgroundColor: ['blue','red'],
-        data: [59, 59]
+        backgroundColor: ['#b56576','#e56b6f'],
+        // TODO: read gender data from firebase
+        data: [this.maleCount, this.femaleCount]
       }
     ]
   };
@@ -54,7 +62,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
     datasets: [
       {
-        backgroundColor: ['blue','red','green','yellow','purple','grey','brown','teal','cyan'],
+        backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
         data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
       }
     ]
@@ -86,7 +94,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["18-28","29-38","39-48","49-58","59-68","69-78","79-88","89-98","99+"],
     datasets: [
       {
-        backgroundColor: ['blue','red','green','yellow','purple','grey','brown','teal','cyan'],
+        backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9','#284b63','#4f6d7a','#c0d6df','#365535','#3d6e71'],
         data: [60, 61, 59, 42, 55, 48, 43, 52, 5]
       }
     ]
@@ -113,10 +121,13 @@ export class AnalyticsPageComponent implements OnInit {
     maintainAspectRatio: false
   };
 
+
+
   div0:boolean=true;
   div1:boolean=false;
   div2:boolean=false;
   div3:boolean=false;
+
 
   showGenderInfo(){
       this.div0=false;

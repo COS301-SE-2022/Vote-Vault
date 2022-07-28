@@ -5,12 +5,19 @@
   </head>
   <body>
     <div class="navbar1">
+      <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
+
+    <div class="rest">
+
+
+      
+
 
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
         <div ngbDropdown class="d-inline-block">
@@ -21,21 +28,22 @@
             <button ngbDropdownItem (click)="showProvinceInfo()">Age Information</button>
           </div>
         </div>
-          </div>
+      </div>
 
-          <div *ngIf="div0">
-            <h1 style="text-align: center; font-size: 200%; margin-top: 2rem;">Use the dropdown to select a graph</h1>
-          </div>
+      <div *ngIf="div0">
+        <h1 style="text-align: center; font-size: 200%; margin-top: 2rem;">Use the dropdown to select a graph</h1>
+      </div>
 
-          <div *ngIf="div1">
-            <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
-          </div>
-          <div *ngIf="div2">
-            <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
-          </div>
-          <div *ngIf="div3">
-            <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
-          </div>
+      <div *ngIf="div1">
+        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+      </div>
+      <div *ngIf="div2">
+        <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
+      </div>
+      <div *ngIf="div3">
+        <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
+      </div>
+    </div>  
 
   </body>
 
