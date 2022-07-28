@@ -26,7 +26,6 @@
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.5.0",
     "@capacitor/haptics": "1.1.4",
-    "@capacitor/ios": "^3.6.0",
     "@capacitor/keyboard": "1.2.2",
     "@capacitor/status-bar": "1.0.8",
     "@ionic-native/barcode-scanner": "^5.36.0",

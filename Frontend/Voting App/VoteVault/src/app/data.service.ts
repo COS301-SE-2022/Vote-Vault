@@ -119,13 +119,31 @@ export class DataService {
 
   }
 
-  async checkVoters(idnum) {
-    const querySnapshot = await getDocs(collection(this.firestore, "voters"));
-    querySnapshot.forEach((doc) => {
-      if (idnum == doc.data().voter.id) {
-        alert('ID already exists!');
-      }
-    });
+  async checkVoters(idnum: String): Promise<Boolean> {
+    let found: Boolean;
+    found = false;
+    const registeredIDs = await getDocs(collection(this.firestore, "voters"));
+    const idfound = {};
+    try {
+      registeredIDs.forEach((doc) => {
+        alert(idnum + ' == ' + doc.data().voter.id);
+        if (idnum === doc.data().voter.id) {
+          alert(idnum + ' == ' + doc.data().voter.id + 'found');
+          found = true;
+          throw idfound;
+        }
+        if (found == true) {
+          throw idfound;
+        }
+      });
+    } catch (error) {
+      alert('shouldnt reach this');
+      return true;
+    }
+
+    if (found == false) {
+      return false;
+    }
   }
 
   editElection(e) {
