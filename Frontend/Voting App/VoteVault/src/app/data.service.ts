@@ -126,9 +126,7 @@ export class DataService {
     const idfound = {};
     try {
       registeredIDs.forEach((doc) => {
-        alert(idnum + ' == ' + doc.data().voter.id);
         if (idnum === doc.data().voter.id) {
-          alert(idnum + ' == ' + doc.data().voter.id + 'found');
           found = true;
           throw idfound;
         }
