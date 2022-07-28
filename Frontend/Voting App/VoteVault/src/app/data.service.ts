@@ -94,7 +94,15 @@ export class DataService {
 
     let elections = []
     electionsSnap.forEach(doc =>  {
-      elections.push(doc.data())
+      const e = {} as Election
+      // console.log(doc.data())
+      e.ballots = doc.data().ballots 
+      e.users   = doc.data().users
+      e.electionName = doc.data().electionName
+      e.id = doc.id
+      e.address = doc.data().address
+      // console.log(doc.data().election)
+      elections.push(e)
     })
     return elections
   }
