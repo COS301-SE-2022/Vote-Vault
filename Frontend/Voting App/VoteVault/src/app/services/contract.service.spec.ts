@@ -10,6 +10,9 @@ describe('ContractService', () => {
     TestBed.configureTestingModule({
       imports: [
         DataService
+      ],
+      providers :[
+        DataService
       ]
     });
     service = TestBed.inject(ContractService);
