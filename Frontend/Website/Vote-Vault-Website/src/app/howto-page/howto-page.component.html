@@ -12,54 +12,58 @@
       <a class="active" [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
-    <div id="regDiv" class="flex-container">
-      <div id="HowToReg">
-        <div class="Title">How To Register:</div>
-        <div class="Details">
-          To register for an upcoming election you can do one of
-          following two things:<br><br>
-          1. Go to your local voting station and let a voting official
-          register you.<br>
-          2. Register yourself through the VoteVault app.<br><br>
-          To register yourself you need to download the VoteVault app
-          and enter your name, surname and ID number. You will also need to
-          scan the barcode on the back of your ID. After the scan is complete
-          you can press the "Register Now" button.<br><br>
 
-          The system will check to see if the information you entered is
-          correct and whether you are already registered. If the information
-          is correct a message will pop up saying you have successfully been registered.
-          <br><br>Now you just need to wait for the election day and go vote.
+    <div class="rest">
+
+      <div id="regDiv" class="flex-container">
+        <div id="HowToReg">
+          <div class="Title">How To Register:</div>
+          <div class="Details">
+            To register for an upcoming election you can do one of
+            following two things:<br><br>
+            1. Go to your local voting station and let a voting official
+            register you.<br>
+            2. Register yourself through the VoteVault app.<br><br>
+            To register yourself you need to download the VoteVault app
+            and enter your name, surname and ID number. You will also need to
+            scan the barcode on the back of your ID. After the scan is complete
+            you can press the "Register Now" button.<br><br>
+
+            The system will check to see if the information you entered is
+            correct and whether you are already registered. If the information
+            is correct a message will pop up saying you have successfully been registered.
+            <br><br>Now you just need to wait for the election day and go vote.
+          </div>
         </div>
+          <img src="../../assets/images/howto-register.png" class="how-to-register-content how-to-register-image">
       </div>
-        <img src="../../assets/images/howto-register.png" class="how-to-register-content how-to-register-image">
-    </div>
 
-    <hr>
+      <hr>
 
-    <div class="flex-container" id="voteDiv">
-      <div id="HowToVote">
-        <div class="Title">How To Vote:</div>
-        <div class="Details">
-          When the day of the election has arrived you can either go
-          to your local voting station or you can vote remotely from
-          the VoteVault App.<br><br>
+      <div class="flex-container" id="voteDiv">
+        <div id="HowToVote">
+          <div class="Title">How To Vote:</div>
+          <div class="Details">
+            When the day of the election has arrived you can either go
+            to your local voting station or you can vote remotely from
+            the VoteVault App.<br><br>
 
-          To vote remotely you first need to have registered for the election
-          as specified above. After you have registered the app will prompt you
-          to enter your ID again, after which you will be taken to the voting
-          page.<br><br>
-          On the voting page you will be shown the first ballot of the election.
-          Select the candidate you wish to vote for. If there are more than one
-          ballots you will be taken to the next ballot where you will need to
-          select the next candidate you wish to vote for.<br><br>
+            To vote remotely you first need to have registered for the election
+            as specified above. After you have registered the app will prompt you
+            to enter your ID again, after which you will be taken to the voting
+            page.<br><br>
+            On the voting page you will be shown the first ballot of the election.
+            Select the candidate you wish to vote for. If there are more than one
+            ballots you will be taken to the next ballot where you will need to
+            select the next candidate you wish to vote for.<br><br>
 
-          After the last ballot you will get a prompt to submit your votes.
-          After you press the button your votes will be cast and you will NOT be
-          able to vote for the current election again.
-        </div>
-      </div>  
-      <img src="../../assets/images/ballot.png" class="how-to-vote-image">
+            After the last ballot you will get a prompt to submit your votes.
+            After you press the button your votes will be cast and you will NOT be
+            able to vote for the current election again.
+          </div>
+        </div>  
+        <img src="../../assets/images/ballot.png" class="how-to-vote-image">
+      </div>
     </div>
   </body>
 </html>
