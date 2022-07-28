@@ -18,7 +18,7 @@ interface Election {
   ballots : any[]
   // adminEmail : string
   users : any[]
-  contractAddress : string
+  address : string
 }
 
 export class Voter {
@@ -88,6 +88,17 @@ export class DataService {
     this.adminState = s
   }
 
+  async fetchAllElections() : Promise<any[]> {
+    const colRef = collection(this.firestore, 'elections')
+    const electionsSnap = await getDocs(colRef)
+
+    let elections = []
+    electionsSnap.forEach(doc =>  {
+      elections.push(doc.data())
+    })
+    return elections
+  }
+
   async fetchElections() {
     this.elections = []
     //TODO: Fetch elections for signed in user
@@ -107,9 +118,10 @@ export class DataService {
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
-        e.contractAddress = electionSnap.data().address
+        e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
+        
       })
 
     } else {
@@ -156,7 +168,7 @@ export class DataService {
     this.ballot3.name    = e.ballots[2].name;
     this.electionName    = e.electionName;
     this.electionID = e.id
-    this.contractAddress = e.contractAddress
+    this.contractAddress = e.address
   }
 
   async saveEdit() {
