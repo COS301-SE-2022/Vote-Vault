@@ -35,6 +35,13 @@ Demo 2
 * [SSDpressed-Demo2](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
 * [SRS Documentation Demo2](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
 * [Architectural Requirements Document](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Architectural-Requirements-Document)
+
+Demo 3
+* [User Manual](https://github.com/COS301-SE-2022/Vote-Vault/wiki/User-Manual)
+* [Technical Installation Manual](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Technical-Installation-Manual)
+* [Coding Standards/Quality Document](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Coding-Standards-Document)
+* [SRS Documentation Demo3](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Document-D3)
+
 # Commands
 * Useful commands:
 
