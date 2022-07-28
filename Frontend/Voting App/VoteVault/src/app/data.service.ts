@@ -368,7 +368,8 @@ export class DataService {
                     name: v.birthName,
                     surname: v.surname,
                     gender: v.Gender,
-                    id: v.IDnum
+                    id: v.IDnum,
+                    voted: v.Voted
                   };
     const electionRef = await addDoc(collection(this.firestore, 'voters'), {
       voter
