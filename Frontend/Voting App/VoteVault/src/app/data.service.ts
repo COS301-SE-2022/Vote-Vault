@@ -96,7 +96,7 @@ export class DataService {
     electionsSnap.forEach(doc =>  {
       const e = {} as Election
       // console.log(doc.data())
-      e.ballots = doc.data().ballots 
+      e.ballots = doc.data().ballots
       e.users   = doc.data().users
       e.electionName = doc.data().electionName
       e.id = doc.id
@@ -110,7 +110,7 @@ export class DataService {
   async fetchElections() {
     this.elections = []
     //TODO: Fetch elections for signed in user
-    const adminRef = doc(this.firestore, 'admins', this.userEmail)
+    const adminRef = doc(this.firestore, 'admins', 'ssdpressed@gmail.com')
     const adminSnap = await getDoc(adminRef)
 
     if (adminSnap.exists()) {
@@ -129,7 +129,7 @@ export class DataService {
         e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
-        
+
       })
 
     } else {
