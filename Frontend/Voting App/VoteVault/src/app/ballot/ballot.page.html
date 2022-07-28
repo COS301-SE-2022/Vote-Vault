@@ -25,44 +25,44 @@
     <ion-slide>
       <ion-card>
         {{ballot1.name}}
-          <ion-item *ngFor="let o of ballot1.options" (click)="selectCandidate(o)">
+          <ion-item *ngFor="let o of ballot1.options; let b1 = index" (click)="selectCandidate(o)" (click)="ballot1Index(b1)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
           </ion-item>
-    
+
       </ion-card>
     </ion-slide>
 
     <ion-slide>
       <ion-card>
         {{ballot2.name}}
-          <ion-item *ngFor="let o of ballot2.options" (click)="selectCandidate(o)">
+          <ion-item *ngFor="let o of ballot2.options; let b2 = index" (click)="ballot2Index(b2)" (click)="selectCandidate(o)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
           </ion-item>
-    
+
       </ion-card>
     </ion-slide>
 
     <ion-slide>
       <ion-card>
         {{ballot3.name}}
-          <ion-item *ngFor="let o of ballot3.options" (click)="selectCandidate(o)">
+          <ion-item *ngFor="let o of ballot3.options; let b3 = index" (click)="ballot2Index(b3)" (click)="selectCandidate(o)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
           </ion-item>
-    
+
       </ion-card>
     </ion-slide>
-    
+
     <ion-slide>
         You are about to submit your votes.
       <ion-button id="vote" (click)="vote()">
         Submit Votes
       </ion-button>
     </ion-slide>
-   
+
   </ion-slides>
 
-  
+
 </ion-content>

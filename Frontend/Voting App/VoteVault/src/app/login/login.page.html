@@ -1,18 +1,11 @@
 <ion-content>
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
-      <br>
-      <br>
-      <ion-card-subtitle>ID</ion-card-subtitle>
-      <ion-input [(ngModel)]="email"></ion-input>
-      <br>
-      <ion-card-subtitle>Password</ion-card-subtitle>
-      <ion-input [(ngModel)]="password"></ion-input>
+    <ion-card-header id="title">
+      <ion-card-title >Welcome To VoteVault</ion-card-title>
     </ion-card-header>
+
+    <ion-button size = "medium" (click)="navigate()">View Elections</ion-button>
+    <br>
+    <ion-button (click)="adminLogin()" class="adminLogin" color="transparent">Admin Login</ion-button>
   </ion-card>
-  <ion-button size = "medium" (click)="navigate()">Login</ion-button>
-  <br>
-  <br>
-  <ion-button (click)="adminLogin()" class="adminLogin" color="transparent">Admin Login</ion-button>
 </ion-content>

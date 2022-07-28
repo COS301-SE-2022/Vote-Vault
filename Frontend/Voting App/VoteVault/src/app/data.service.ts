@@ -1,10 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
-import { addDoc, arrayUnion, collection, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import { AdminLoginPageRoutingModule } from './admin-login/admin-login-routing.module';
+import {ContractFactory, ethers, providers} from 'ethers';
+import { hrtime } from 'process';
+
+declare let window : any;
 
 interface Ballot {
   name: string;
   options: any[];
+}
+
+interface Election {
+  electionName : string
+  id? : string
+  ballots : any[]
+  // adminEmail : string
+  users : any[]
+  contractAddress : string
+}
+
+export class Voter {
+  birthName: String;
+  surname: String;
+  IDnum: String;
+  Gender: String;
+  Age : Number
+  Voted : boolean
+  Voter(n, sn, id, g) {
+    this.birthName = n;
+    this.surname = sn;
+    this.IDnum = id;
+    this.Gender = g;
+    this.Voted = false;
+  }
 }
 
 @Injectable({
@@ -23,6 +53,11 @@ export class DataService {
   election: any;
   elections: any[];
   registeredUsers: any[];
+  adminState : string;
+  electionID : string
+  voter: Voter;
+  contractAddress : string
+  voterId : string
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -40,6 +75,47 @@ export class DataService {
     this.elections = [];
     this.registeredUsers = [];
     this.electionName = '';
+    this.adminState = '';
+    this.electionID = '';
+    this.voter = null;
+    this.contractAddress = '';
+    this.voterId = '';
+    // this.deployContract()
+  }
+
+  setAdminState(s) {
+    this.adminState = s
+  } 
+
+  async fetchElections() {
+    this.elections = []
+    //TODO: Fetch elections for signed in user
+    const adminRef = doc(this.firestore, 'admins', this.userEmail)
+    const adminSnap = await getDoc(adminRef)
+
+    if (adminSnap.exists()) {
+      console.log("Document data:", adminSnap.data());
+      const election_id_array = adminSnap.data().elections
+
+      election_id_array.forEach(async (id)  =>  {
+        //Retrieve Election
+        const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
+        const e = {} as Election
+        // console.log(doc.data())
+        e.ballots = electionSnap.data().ballots 
+        e.users   = electionSnap.data().users
+        e.electionName = electionSnap.data().electionName
+        e.id = electionSnap.id
+        e.contractAddress = electionSnap.data().address
+        // console.log(doc.data().election)
+        this.elections.push(e)
+      })
+      
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+
   }
 
   editElection(e) {
@@ -50,35 +126,59 @@ export class DataService {
     this.ballot1.name    = e.ballots[0].name;
     this.ballot2.name    = e.ballots[1].name;
     this.ballot3.name    = e.ballots[2].name;
-    this.electionName    = e.name;
+    this.electionName    = e.electionName;
+    this.electionID = e.id
+    this.contractAddress = e.contractAddress
   }
 
-  async saveElection() {
-    //Create election object and save to firestore
-    const election = {adminEmail : this.userEmail,
-                      ballots    : [this.ballot1, this.ballot2, this.ballot3],
-                      electionName : this.electionName,
-                      active : true,
-                      users  : this.registeredUsers
-                    };
+  async saveEdit() {
+    const electionRef = doc(this.firestore, 'elections', this.electionID)
 
-    //Attributes : this.userEmail, electiontitle, ballotOptions, ballotNames
-    const electionRef = await addDoc(collection(this.firestore, 'elections'), {
-      election
-    });
+    await updateDoc(electionRef, {
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers
+    }).then(async ()  =>  {
+      await this.fetchElections()
+    })
+  }
 
-    //Add to admin elections
-    this.mapAdminToElection(electionRef);
+  async saveElection(contractAddress) {
+    let electionId = ""
+   const electionRef = await addDoc(collection(this.firestore, 'elections'), {
+      adminEmail : this.userEmail,
+      ballots    : [this.ballot1, this.ballot2, this.ballot3],
+      electionName : this.electionName,
+      active : true,
+      users  : this.registeredUsers,
+      address : contractAddress
+    }).then((ref)  =>  {
+      this.mapAdminToElection(ref);
+      electionId = ref.id
+    }).then(async ()  =>  {
+      await this.fetchElections()
+    })
+
+    return electionId
   }
 
   async mapAdminToElection(ref) {
-    // const id = ref.id
-
-    // const adminRef = doc(this.firestore, 'admins' , this.userEmail)
-
-    // await updateDoc(adminRef, {
-    //   elections: arrayUnion(id)
-    // })
+    console.log(ref.id)
+    const id = ref.id
+    const adminRef = doc(this.firestore, 'admins' , this.userEmail)
+    const adminSnap = await getDoc(adminRef)
+    if(adminSnap.exists()) {
+      await updateDoc(adminRef, {
+        elections: arrayUnion(id)
+      })
+    }
+    else {
+      await setDoc(doc(this.firestore, "admins", this.userEmail), {
+        elections : [id]
+      });
+    }
   }
 
   clear() {
@@ -191,5 +291,53 @@ export class DataService {
         break;
       }
     }
+  }
+
+  async addvoter(nvoter: Voter) {
+    await this.saveVoter(nvoter);
+  }
+
+  createVoter(name, surname, id, gender) {
+    this.voter = new Voter();
+    this.voter.Voter(name, surname, id, gender);
+    return this.voter;
+  }
+
+  findvoter(v: Voter) {
+    for (let index = 0; index < this.registeredUsers.length; index++) {
+      const element = this.registeredUsers[index];
+      if (element == v) {
+        return true;
+      }
+      if (index == this.registeredUsers.length-1 && element != v) {
+        return false;
+      }
+    }
+  }
+
+  async saveVoter(v: Voter) {
+    const voter = {
+                    name: v.birthName,
+                    surname: v.surname,
+                    gender: v.Gender,
+                    id: v.IDnum
+                  };
+    const electionRef = await addDoc(collection(this.firestore, 'voters'), {
+      voter
+    });
+
+
+    //Save to elections collection
+    const elRef = doc(this.firestore, 'elections' , this.electionID)
+    const elSnap = await getDoc(elRef)
+    if(elSnap.exists()) {
+      await updateDoc(elRef, {
+        users: arrayUnion(voter)
+      })
+    }
+  }
+
+  async deleteElection(id) {
+    await deleteDoc(doc(this.firestore, "elections", id));
   }
 }
