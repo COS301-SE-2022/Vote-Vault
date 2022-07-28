@@ -54,7 +54,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
     datasets: [
       {
-        backgroundColor: ['blue','red','green','yellow','purple','grey','brown','teal','cyan'],
+        backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
         data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
       }
     ]
