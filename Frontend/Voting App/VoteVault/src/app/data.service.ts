@@ -18,7 +18,7 @@ interface Election {
   ballots : any[]
   // adminEmail : string
   users : any[]
-  contractAddress : string
+  address : string
 }
 
 export class Voter {
@@ -56,6 +56,7 @@ export class DataService {
   adminState : string;
   electionID : string
   voter: Voter;
+  voters: any[];
   contractAddress : string
   voterId : string
 
@@ -85,7 +86,26 @@ export class DataService {
 
   setAdminState(s) {
     this.adminState = s
-  } 
+  }
+
+  async fetchAllElections() : Promise<any[]> {
+    const colRef = collection(this.firestore, 'elections')
+    const electionsSnap = await getDocs(colRef)
+
+    let elections = []
+    electionsSnap.forEach(doc =>  {
+      const e = {} as Election
+      // console.log(doc.data())
+      e.ballots = doc.data().ballots 
+      e.users   = doc.data().users
+      e.electionName = doc.data().electionName
+      e.id = doc.id
+      e.address = doc.data().address
+      // console.log(doc.data().election)
+      elections.push(e)
+    })
+    return elections
+  }
 
   async fetchElections() {
     this.elections = []
@@ -102,20 +122,46 @@ export class DataService {
         const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
         const e = {} as Election
         // console.log(doc.data())
-        e.ballots = electionSnap.data().ballots 
+        e.ballots = electionSnap.data().ballots
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
-        e.contractAddress = electionSnap.data().address
+        e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
+        
       })
-      
+
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
 
+  }
+
+  async checkVoters(idnum: String): Promise<Boolean> {
+    let found: Boolean;
+    found = false;
+    const registeredIDs = await getDocs(collection(this.firestore, "voters"));
+    const idfound = {};
+    try {
+      registeredIDs.forEach((doc) => {
+        if (idnum === doc.data().voter.id) {
+          found = true;
+          throw idfound;
+        }
+        if (found == true) {
+          alert('shouldnt reach this');
+          throw idfound;
+        }
+      });
+    } catch (error) {
+      return true;
+    }
+
+    if (found == false) {
+      return false;
+    }
   }
 
   editElection(e) {
@@ -128,7 +174,7 @@ export class DataService {
     this.ballot3.name    = e.ballots[2].name;
     this.electionName    = e.electionName;
     this.electionID = e.id
-    this.contractAddress = e.contractAddress
+    this.contractAddress = e.address
   }
 
   async saveEdit() {
