@@ -6,6 +6,8 @@ import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc
   providedIn: 'root'
 })
 
+
+
 interface Election {
   electionName : string
   id? : number
@@ -16,20 +18,38 @@ interface Election {
 }
 
 export class DataService  {
+    private election;
+    private maleCount = 0;
+    private femaleCount = 0;
+    private genderCounts = [];
+    public elections = []
+    constructor(private firestore : Firestore) { }
 
-  public elections = []
-  constructor(private firestore : Firestore) { }
+    
 
-  
+    async fetchAllElections() {
+        const colRef = collection(this.firestore, 'elections')
+        const electionsSnap = await getDocs(colRef)
 
-  async fetchAllElections() {
-    const colRef = collection(this.firestore, 'elections')
-    const electionsSnap = await getDocs(colRef)
+        electionsSnap.forEach(doc =>  {
+        // console.log(doc.data().election)
+        this.elections.push(doc.data())
+        })
+        // return elections
 
-    electionsSnap.forEach(doc =>  {
-      // console.log(doc.data().election)
-      this.elections.push(doc.data())
-    })
-    // return elections
-  }
+    }
+    
+    setElection(e) {
+        this.election = e;
+    }
+
+    getGenderData() {
+        this.election.users.forEach(voter => {
+            if (voter.gender == 'M') this.maleCount++;
+            else this.femaleCount++;
+            return this.genderCounts[this.maleCount, this.femaleCount];
+        });
+
+        
+    }
 }
