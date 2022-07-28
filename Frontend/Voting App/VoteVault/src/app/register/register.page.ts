@@ -68,6 +68,13 @@ export class RegisterPage implements OnInit {
       }
     } else {
       alert('Already registered voter!');
+      if (await this.dataservice.checkVoted(this.voter) == false) {
+        alert('Already voted!');
+        this.router.navigate(['voter-dashboard']);
+      } else {
+        await this.dataservice.vote(this.voter);
+        this.router.navigate(['ballot']);
+      }
     }
 
     this.name = '';
@@ -80,6 +87,7 @@ export class RegisterPage implements OnInit {
   }
 
   openCustom() {
+    alert('here');
     this.router.navigate(['voter-dashboard']);
   }
 
