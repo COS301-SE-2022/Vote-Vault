@@ -5,7 +5,7 @@
 }
 
 ion-card{
-    margin-top: 50%;
+    margin-top: 15%;
     padding: 4vh;
     height: 40%;
 }
@@ -15,11 +15,22 @@ ion-input {
 }
 
 ion-button {
-    margin-left: 20%;
+    // margin-left: 20%;
+    height: 40%;
+    font-size: 2em;
     margin-top: 10%;
 }
 
 .adminLogin{
-    font-size: smaller;
-    margin-left: 30%;
+    font-size: 1.4em;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#header {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    padding-top: 10%;
+    font-size: 3em;
 }

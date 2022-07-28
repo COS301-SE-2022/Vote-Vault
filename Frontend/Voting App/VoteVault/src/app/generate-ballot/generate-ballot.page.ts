@@ -117,9 +117,12 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
         //Add election to database and save address of contract
         await this.dataService.saveElection(contractAddress)
         .then(async (res) => {
-          this.dataService.clear()
-          this.loadingController.dismiss();
-          this.router.navigate(['admin-dashboard']);
+          // this.dataService.clear()
+          // await this.dataService.fetchElections().then(() =>  {
+            this.loadingController.dismiss();
+            this.router.navigate(['admin-dashboard']);
+          // })
+          
         })
         .catch((e) => {
           console.error(e);
@@ -196,7 +199,9 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
   openCustom() {
     this.dataService.clear();
+    // this.dataService.fetchElections()
     this.location.back();
+  
     // this.router.navigate(['admin-dashboard']);
   }
 

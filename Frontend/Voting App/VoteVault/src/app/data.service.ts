@@ -13,12 +13,15 @@ interface Ballot {
 }
 
 interface Election {
+  adminEmail? : string
   electionName : string
   id? : string
   ballots : any[]
   // adminEmail : string
   users : any[]
+  voted : any[]
   address : string
+  active? : boolean
 }
 
 export class Voter {
@@ -100,6 +103,7 @@ export class DataService {
       e.users   = doc.data().users
       e.electionName = doc.data().electionName
       e.id = doc.id
+      e.voted = doc.data().voted
       e.address = doc.data().address
       // console.log(doc.data().election)
       elections.push(e)
@@ -118,6 +122,7 @@ export class DataService {
       const election_id_array = adminSnap.data().elections
 
       election_id_array.forEach(async (id)  =>  {
+        try{
         //Retrieve Election
         const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
         const e = {} as Election
@@ -126,10 +131,15 @@ export class DataService {
         e.users   = electionSnap.data().users
         e.electionName = electionSnap.data().electionName
         e.id = electionSnap.id
+        e.voted = electionSnap.data().voted
         e.address = electionSnap.data().address
         // console.log(doc.data().election)
         this.elections.push(e)
-
+        } catch(e) {
+          console.error(e)
+        }
+      }).catch(e => {
+        console.error(e)
       })
 
     } else {
@@ -201,12 +211,23 @@ export class DataService {
       electionName : this.electionName,
       active : true,
       users  : this.registeredUsers,
-      address : contractAddress
+      address : contractAddress,
+      voted : []
     }).then((ref)  =>  {
       this.mapAdminToElection(ref);
       electionId = ref.id
+      const e = {} as Election
+      e.adminEmail =  this.userEmail
+      e.ballots = [this.ballot1, this.ballot2, this.ballot3]
+      e.electionName = this.electionName
+      e.active = true
+      e.users = this.registeredUsers
+      e.address = contractAddress
+      e.voted = []
+      e.id = ref.id
+      this.elections.push(e)
     }).then(async ()  =>  {
-      await this.fetchElections()
+      // await this.fetchElections()
     })
 
     return electionId

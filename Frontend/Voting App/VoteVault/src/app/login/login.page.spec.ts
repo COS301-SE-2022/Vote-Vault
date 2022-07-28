@@ -34,4 +34,9 @@ describe('LoginPage', () => {
     expect(component).toBeTruthy();
     console.log('LOGIN');
   });
+
+  it('should have custom timeout', () => {
+    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL);
+  });
+
 });

@@ -83,7 +83,6 @@ export class RegisterPage implements OnInit {
     this.gender = '';
 
     document.getElementById("regnowbutton").style.display = "none";
-
   }
 
   openCustom() {

@@ -1,4 +1,6 @@
 <ion-content id="main">
+  <h1 id="header">Elections</h1>
+
     <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
       <ion-card-header>
         <ion-card-title>{{e.electionName}}</ion-card-title>
