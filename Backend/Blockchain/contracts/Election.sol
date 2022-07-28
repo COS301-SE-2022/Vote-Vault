@@ -3,7 +3,10 @@ pragma solidity^0.5.0;
  contract Election {
     
     //Votes in matrix mapped to ballots
-    uint [][] public voteCount;
+    // uint [][] public voteCount;
+    uint [] public votes_one;
+    uint [] public votes_two;
+    uint [] public votes_three;
 
     //ID of election on firestore
     string public electionID;
@@ -28,12 +31,31 @@ pragma solidity^0.5.0;
         startDate = sd;
         endDate = ed;
 
-        //Map matrix
-        voteCount = new uint[][](3);
+        votes_one = new uint[](numCandidates[0]);
+        votes_two = new uint[](numCandidates[1]);
+        votes_three = new uint[](numCandidates[2]);
 
-        for (uint i=0; i<3; i++){
-            voteCount[i] = new uint[](numCandidates[i]);
+        for(uint i = 0; i < numCandidates[0]; i++) {
+            votes_one[i] = 0;
         }
+
+        for(uint i = 0; i < numCandidates[1]; i++) {
+            votes_two[i] = 0;
+        }
+
+        for(uint i = 0; i < numCandidates[2]; i++) {
+            votes_three[i] = 0;
+        }
+        //Map matrix
+        // voteCount = new uint[][](3);
+
+        // for (uint i=0; i<3; i++){
+        //     voteCount[i] = new uint[](numCandidates[i]);
+        // }
+
+        // for(uint i = 0; i < 3; i++) {
+        //     for(uint j = 0; j < voteCount[i].length)
+        // }
     }
 
     //Register user for election
@@ -45,15 +67,17 @@ pragma solidity^0.5.0;
 
     //Vote indices for the 3 ballots
     function addVote(string memory id, uint [] memory votes) public {
-        require(
-            !voted[id],
-            "Already voted"
-        );
+        // require(
+        //     !voted[id],
+        //     "Already voted"
+        // );
 
         //Add votes to indices
-        for(uint i = 0; i < 3; i++) {
-            voteCount[i][votes[i]] += 1;
-        }
+        votes_one[votes[0]] = votes_one[votes[0]]+1;
+
+        votes_one[votes[1]] = votes_one[votes[1]]+1;
+
+        votes_one[votes[2]] = votes_one[votes[2]]+1;
 
         //Set voted to true
         voted[id] = true;

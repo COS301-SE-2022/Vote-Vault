@@ -31,6 +31,7 @@ export class VoterRegistrationPage implements OnInit {
     this.voterIDs = [];
     this.voterNames = [];
     this.voterSurnames = [];
+    // console.log(this.dataservice.contractAddress)
   }
 
   async registerVoter() {
