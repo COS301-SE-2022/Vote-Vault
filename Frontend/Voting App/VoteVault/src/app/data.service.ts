@@ -222,6 +222,7 @@ export class DataService {
       e.users = this.registeredUsers
       e.address = contractAddress
       e.voted = []
+      e.id = ref.id
       this.elections.push(e)
     }).then(async ()  =>  {
       // await this.fetchElections()
@@ -258,7 +259,7 @@ export class DataService {
     this.ballot3.options = [];
     this.ballot3.name = '';
     // this.votes = []
-    this.elections = []
+    // this.elections = []
     this.electionName = '';
   }
 

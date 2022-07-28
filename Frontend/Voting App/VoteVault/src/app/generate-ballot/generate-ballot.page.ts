@@ -198,7 +198,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   }
 
   openCustom() {
-    // this.dataService.clear();
+    this.dataService.clear();
     // this.dataService.fetchElections()
     this.location.back();
   
