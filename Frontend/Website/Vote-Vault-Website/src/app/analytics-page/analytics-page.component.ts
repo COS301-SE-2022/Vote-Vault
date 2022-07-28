@@ -22,7 +22,7 @@ export class AnalyticsPageComponent implements OnInit {
     labels: ["Male", "Female"],
     datasets: [
       {
-        backgroundColor: ['blue','red'],
+        backgroundColor: ['#b56576','#e56b6f'],
         data: [59, 59]
       }
     ]
