@@ -45,6 +45,7 @@ body {
 
 .how-to-register-image, .how-to-vote-image {
     margin-top: 5%;
+    border-radius: 3%;
 }
 
 #voteDiv {
