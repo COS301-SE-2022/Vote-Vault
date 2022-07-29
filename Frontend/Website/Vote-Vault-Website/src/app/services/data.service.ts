@@ -3,8 +3,6 @@ import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 
 
-
-
 interface Election {
   electionName : string
   id? : number
@@ -15,8 +13,10 @@ interface Election {
 }
 
 @Injectable({
-  providedIn: 'root'
-})
+    providedIn: 'root'
+  })
+
+
 export class DataService  {
     private election;
     private maleCount = 0;
@@ -49,6 +49,7 @@ export class DataService  {
             else this.femaleCount++;
             return this.genderCounts[this.maleCount, this.femaleCount];
         });
+
 
 
     }

@@ -31,7 +31,7 @@ export class AnalyticsPageComponent implements OnInit {
       {
         backgroundColor: ['#b56576','#e56b6f'],
         // TODO: read gender data from firebase
-        data: [43, 57]
+        data: [59, 41]
       }
     ]
   };
