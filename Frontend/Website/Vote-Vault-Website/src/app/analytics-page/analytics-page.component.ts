@@ -21,7 +21,7 @@ export class AnalyticsPageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    
+
   }
 
   type = 'bar';
@@ -31,7 +31,7 @@ export class AnalyticsPageComponent implements OnInit {
       {
         backgroundColor: ['#b56576','#e56b6f'],
         // TODO: read gender data from firebase
-        data: [this.maleCount, this.femaleCount]
+        data: [43, 57]
       }
     ]
   };

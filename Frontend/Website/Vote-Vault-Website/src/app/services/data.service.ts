@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
 
 
 
@@ -17,6 +14,9 @@ interface Election {
   address : string
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class DataService  {
     private election;
     private maleCount = 0;
@@ -25,7 +25,7 @@ export class DataService  {
     public elections = []
     constructor(private firestore : Firestore) { }
 
-    
+
 
     async fetchAllElections() {
         const colRef = collection(this.firestore, 'elections')
@@ -38,7 +38,7 @@ export class DataService  {
         // return elections
 
     }
-    
+
     setElection(e) {
         this.election = e;
     }
@@ -50,6 +50,6 @@ export class DataService  {
             return this.genderCounts[this.maleCount, this.femaleCount];
         });
 
-        
+
     }
 }
