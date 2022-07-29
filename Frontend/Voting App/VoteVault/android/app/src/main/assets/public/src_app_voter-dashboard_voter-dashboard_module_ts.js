@@ -1,0 +1,189 @@
+"use strict";
+(self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_voter-dashboard_voter-dashboard_module_ts"],{
+
+/***/ 553:
+/*!*******************************************************************!*\
+  !*** ./src/app/voter-dashboard/voter-dashboard-routing.module.ts ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterDashboardPageRoutingModule": () => (/* binding */ VoterDashboardPageRoutingModule)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page */ 6884);
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_0__.VoterDashboardPage
+    }
+];
+let VoterDashboardPageRoutingModule = class VoterDashboardPageRoutingModule {
+};
+VoterDashboardPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgModule)({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule],
+    })
+], VoterDashboardPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ 3582:
+/*!***********************************************************!*\
+  !*** ./src/app/voter-dashboard/voter-dashboard.module.ts ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterDashboardPageModule": () => (/* binding */ VoterDashboardPageModule)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _voter_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard-routing.module */ 553);
+/* harmony import */ var _voter_dashboard_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page */ 6884);
+
+
+
+
+
+
+
+let VoterDashboardPageModule = class VoterDashboardPageModule {
+};
+VoterDashboardPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
+            _voter_dashboard_routing_module__WEBPACK_IMPORTED_MODULE_0__.VoterDashboardPageRoutingModule
+        ],
+        declarations: [_voter_dashboard_page__WEBPACK_IMPORTED_MODULE_1__.VoterDashboardPage]
+    })
+], VoterDashboardPageModule);
+
+
+
+/***/ }),
+
+/***/ 6884:
+/*!*********************************************************!*\
+  !*** ./src/app/voter-dashboard/voter-dashboard.page.ts ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VoterDashboardPage": () => (/* binding */ VoterDashboardPage)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page.html?ngResource */ 8243);
+/* harmony import */ var _voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page.scss?ngResource */ 6787);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
+
+
+
+
+
+
+
+let VoterDashboardPage = class VoterDashboardPage {
+    constructor(dataService, router, actionSheetController) {
+        this.dataService = dataService;
+        this.router = router;
+        this.actionSheetController = actionSheetController;
+        this.elections = [{ id: 1, name: 'Provincial Election', ballots: [{ name: 'Cool', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }] },
+            { id: 86, name: 'National Election', ballots: [{ name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [] }, { name: '', options: [] }] },
+            { id: 129, name: 'District Election', ballots: [{ name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [] }] }];
+    }
+    ngOnInit() {
+    }
+    electionClicked(e) {
+        this.dataService.editElection(e);
+        this.presentActionSheet(e);
+    }
+    navigate(s) {
+        this.router.navigate([s]);
+    }
+    presentActionSheet(e) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            const actionSheet = yield this.actionSheetController.create({
+                header: e.electionName,
+                cssClass: 'my-custom-class',
+                buttons: [{
+                        text: 'Vote',
+                        icon: 'checkmark-done-circle-outline',
+                        handler: () => {
+                            this.navigate('ballot');
+                        }
+                    }, {
+                        text: 'Cancel',
+                        icon: 'close',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    }]
+            });
+            yield actionSheet.present();
+            const { role, data } = yield actionSheet.onDidDismiss();
+            console.log('onDidDismiss resolved with role and data', role, data);
+        });
+    }
+};
+VoterDashboardPage.ctorParameters = () => [
+    { type: _data_service__WEBPACK_IMPORTED_MODULE_2__.DataService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ActionSheetController }
+];
+VoterDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+        selector: 'app-voter-dashboard',
+        template: _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], VoterDashboardPage);
+
+
+
+/***/ }),
+
+/***/ 6787:
+/*!**********************************************************************!*\
+  !*** ./src/app/voter-dashboard/voter-dashboard.page.scss?ngResource ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+module.exports = "#title {\n  font-size: 5vh;\n  margin: auto;\n  padding: 5vh;\n  padding-left: 2vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZvdGVyLWRhc2hib2FyZC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcdm90ZXItZGFzaGJvYXJkXFx2b3Rlci1kYXNoYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUNDSiIsImZpbGUiOiJ2b3Rlci1kYXNoYm9hcmQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3RpdGxlIHtcclxuICAgIGZvbnQtc2l6ZTogNXZoO1xyXG4gICAgbWFyZ2luIDogYXV0bztcclxuICAgIHBhZGRpbmc6IDV2aDtcclxuICAgIHBhZGRpbmctbGVmdDogMnZoO1xyXG59IiwiI3RpdGxlIHtcbiAgZm9udC1zaXplOiA1dmg7XG4gIG1hcmdpbjogYXV0bztcbiAgcGFkZGluZzogNXZoO1xuICBwYWRkaW5nLWxlZnQ6IDJ2aDtcbn0iXX0= */";
+
+/***/ }),
+
+/***/ 8243:
+/*!**********************************************************************!*\
+  !*** ./src/app/voter-dashboard/voter-dashboard.page.html?ngResource ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+module.exports = "<ion-header>\r\n\r\n</ion-header>\r\n\r\n<ion-content id=\"main\">\r\n    <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n    <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title>{{e.name}}</ion-card-title>\r\n        <br>\r\n        <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n      </ion-card-header>\r\n    </ion-card>\r\n    <!-- <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n      <ion-fab-button>\r\n        <ion-icon name=\"add\"></ion-icon>\r\n      </ion-fab-button>\r\n    </ion-fab> -->\r\n  </ion-content>\r\n";
+
+/***/ })
+
+}]);
+//# sourceMappingURL=src_app_voter-dashboard_voter-dashboard_module_ts.js.map
