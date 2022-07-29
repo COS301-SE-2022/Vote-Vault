@@ -119,4 +119,9 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     this.dataService.setAdminState('generate')
     this.router.navigate(['generate-ballot'])
   }
+
+  signOut() {
+    this.dataService.userEmail = ''
+    this.router.navigate(['admin-login'])
+  }
 }
