@@ -31,8 +31,8 @@ import { RouterModule } from '@angular/router';
     ChartModule,
     NgbModule,
     RouterModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth())
   ],
   providers: [],
