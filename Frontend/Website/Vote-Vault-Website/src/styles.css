@@ -11,6 +11,7 @@ footer {
 }
 
 body {
+  background-color: #e9e3e3; 
   border: 0px;
   padding: 0px;
   margin: 0px;
@@ -19,7 +20,7 @@ body {
 }
 
 header {
-  background-color: #fff;
+  background-color: #e9e3e3;
   width: 100%;
   margin: 0px;
   height: 20%;
@@ -31,7 +32,7 @@ header {
 }
 
 #ftrr {
-  background-color: rgb(50, 87, 255);
+  background-color: #f4717f;
   width: 100%;
   margin: 0px;
   height: 8%;
@@ -46,7 +47,7 @@ header {
 }
 
 .navbar1 {
-  background-color: #3257ff;
+  background-color: #544e50;
   overflow: hidden;
   position: sticky;
   top: 0%;
