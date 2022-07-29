@@ -21,7 +21,7 @@
    -->
 <ion-content id="main"> 
   <div id="titleInput">
-    <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+    <ion-button color = "primary" id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
     <ion-item id="electionTitle">
       <ion-label position="floating">Election Title</ion-label>
       <ion-input [(ngModel)] = "electionTitle"></ion-input>   
@@ -135,8 +135,8 @@
   </ion-slide>
 
   <ion-slide id="finalSlide">
-    You are about to generate the ballots.
-  <ion-button id="genBtn" (click)="generate()">Generate</ion-button>
+    You are about to save the ballots.
+  <ion-button id="genBtn" (click)="generate()">Save</ion-button>
   </ion-slide>
   </ion-slides>
   

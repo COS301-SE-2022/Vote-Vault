@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { signInWithEmailAndPassword, signOut } from '@firebase/auth';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { ContractService } from '../services/contract.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,9 +16,11 @@ export class AdminLoginPage implements OnInit {
   email : string
   password : string
 
-  constructor(private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController,private auth : Auth) { }
+  constructor(private contractService : ContractService, private dataService : DataService, private router : Router, private loadingController : LoadingController, private alertController : AlertController, private auth : Auth) { 
+  }
 
   ngOnInit() {
+    // send();
   }
 
   async navigate() {

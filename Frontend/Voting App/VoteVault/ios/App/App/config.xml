@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <access origin="*" />
+  
+  <feature name="BarcodeScanner">
+    <param name="ios-package" value="CDVBarcodeScanner"/>
+  </feature>
+
+  <feature name="ScanditBarcodeCapture">
+    <param name="ios-package" value="ScanditBarcodeCapture"/>
+    <param name="onload" value="true"/>
+  </feature>
+
+  <feature name="ScanditCaptureCore">
+    <param name="ios-package" value="ScanditCaptureCore"/>
+    <param name="onload" value="true"/>
+  </feature>
+
+  
+</widget>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
 html {
   font-family: Arial, Helvetica, sans-serif;
@@ -94,3 +95,121 @@ input[type=text] {
   top: 15%;
   height: 10%;
 } */
+=======
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-family:  sans-serif,Arial, Helvetica;
+}
+
+footer {
+  background-color: rgb(58, 103, 228);
+  padding-top: 1%;
+  text-align: center;
+  color: white;
+}
+
+body {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.rest {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+  
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+header {
+  background-color: #fff;
+  width: 100%;
+  margin: 0px;
+  height: 20%;
+  border: 0px;
+  text-align: center;
+  position: relative;
+  color: black;
+  border-top: 100px;
+}
+
+#ftrr {
+  background-color: #0256E2;
+  width: 100%;
+  margin: 0px;
+  height: 8%;
+  border: 0px;
+  text-align: center;
+  color: black;
+  position: sticky;
+  border-top: 100px;
+  padding: 10px;
+  text-align: center;
+  color: #FBFFF5;
+}
+
+.navbar1 {
+  background-color: #0256E2;
+  overflow: hidden;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+  display: table;
+  width: 100vw;
+  font-size: 1.5rem;
+}
+
+#logo {
+  height: 2rem;
+}
+
+.navbar1 a:hover {
+  /* background-color: rgb(84, 123, 250); */
+  /* color: black; */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px;
+}
+
+.navbar1 a {
+  float: left;
+  color: whitesmoke;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+a.active {
+  background-color: #FBFFF5;
+  color: #02224E;
+  height: 100%;
+  border-bottom: 6px solid #FBFFF5;
+}
+
+input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 22px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+/* #logo {
+  position: relative;
+  top: 15%;
+  height: 10%;
+} */
+>>>>>>> 3c6af76d00a2d8efd4ed6c71a6f24af195e69d00
