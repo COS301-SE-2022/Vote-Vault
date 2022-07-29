@@ -99,7 +99,7 @@ export class DataService {
     electionsSnap.forEach(doc =>  {
       const e = {} as Election
       // console.log(doc.data())
-      e.ballots = doc.data().ballots 
+      e.ballots = doc.data().ballots
       e.users   = doc.data().users
       e.electionName = doc.data().electionName
       e.id = doc.id
@@ -114,7 +114,7 @@ export class DataService {
   async fetchElections() {
     this.elections = []
     //TODO: Fetch elections for signed in user
-    const adminRef = doc(this.firestore, 'admins', this.userEmail)
+    const adminRef = doc(this.firestore, 'admins', 'ssdpressed@gmail.com')
     const adminSnap = await getDoc(adminRef)
 
     if (adminSnap.exists()) {
@@ -140,7 +140,7 @@ export class DataService {
         }
       }).catch(e => {
         console.error(e)
-      }) 
+      })
 
     } else {
       // doc.data() will be undefined in this case
@@ -152,11 +152,12 @@ export class DataService {
   async checkVoters(idnum: String): Promise<Boolean> {
     let found: Boolean;
     found = false;
-    const registeredIDs = await getDocs(collection(this.firestore, "voters"));
+    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
+    const getrefID = await getDoc(registeredIDs);
     const idfound = {};
     try {
-      registeredIDs.forEach((doc) => {
-        if (idnum === doc.data().voter.id) {
+      for (let index = 0; index < getrefID.data().users.length; index++) {
+        if (idnum === getrefID.data().users[index].id) {
           found = true;
           throw idfound;
         }
@@ -164,7 +165,8 @@ export class DataService {
           alert('shouldnt reach this');
           throw idfound;
         }
-      });
+
+      }
     } catch (error) {
       return true;
     }
@@ -370,24 +372,13 @@ export class DataService {
     return this.voter;
   }
 
-  findvoter(v: Voter) {
-    for (let index = 0; index < this.registeredUsers.length; index++) {
-      const element = this.registeredUsers[index];
-      if (element == v) {
-        return true;
-      }
-      if (index == this.registeredUsers.length-1 && element != v) {
-        return false;
-      }
-    }
-  }
-
   async saveVoter(v: Voter) {
     const voter = {
                     name: v.birthName,
                     surname: v.surname,
                     gender: v.Gender,
-                    id: v.IDnum
+                    id: v.IDnum,
+                    voted: v.Voted
                   };
     const electionRef = await addDoc(collection(this.firestore, 'voters'), {
       voter
@@ -406,5 +397,78 @@ export class DataService {
 
   async deleteElection(id) {
     await deleteDoc(doc(this.firestore, "elections", id));
+  }
+
+  async setVote(v: Voter) {
+    let found: Boolean;
+    found = false;
+    let i: number;
+    i = -1;
+    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
+    const getrefID = await getDoc(registeredIDs);
+    const idfound = {};
+    try {
+      for (let index = 0; index < getrefID.data().users.length; index++) {
+        if (v.IDnum === getrefID.data().users[index].id) {
+          found = true;
+          v.Voted = true;
+          getrefID.data().users[index].voted = true;
+          i = index;
+          throw idfound;
+        }
+        if (found == true) {
+          alert('shouldnt reach this');
+          throw idfound;
+        }
+
+      }
+    } catch (error) {
+
+    }
+
+
+  }
+
+  async checkVoted(v: Voter) {
+    let found: Boolean;
+    found = false;
+    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
+    const getrefID = await getDoc(registeredIDs);
+    const idfound = {};
+    try {
+      for (let index = 0; index < getrefID.data().users.length; index++) {
+        if (v.IDnum === getrefID.data().voted[index].id) {
+          found = true;
+          throw idfound;
+        }
+        if (found == true) {
+          alert('shouldnt reach this');
+          throw idfound;
+        }
+      }
+    } catch (error) {
+      return true;
+    }
+
+    return false;
+  }
+
+  async vote(v: Voter) {
+    const voter = {
+      name: v.birthName,
+      surname: v.surname,
+      gender: v.Gender,
+      id: v.IDnum,
+      voted: true
+    };
+
+//Save to elections collection under voted
+    const elRef = doc(this.firestore, 'elections' , this.electionID)
+    const elSnap = await getDoc(elRef)
+    if(elSnap.exists()) {
+      await updateDoc(elRef, {
+      voted: arrayUnion(voter)
+    })
+    }
   }
 }

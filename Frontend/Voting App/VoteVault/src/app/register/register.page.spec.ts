@@ -23,6 +23,7 @@ describe('RegisterPage', () => {
       imports: [BarcodeScanner, IonicModule.forRoot(), RouterTestingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore())],
+      providers: [BarcodeScanner]
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegisterPage);

@@ -5,24 +5,28 @@
   </head>
   <!-- <body> -->
     <div class="navbar1">
+      <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a [routerLink]="['/history']" routerLinkActive="active">History</a>
     </div>
-    <div id="b1">
-      <div id="info1"><h2>Election Name - Ballot 1</h2></div>
-      <chart class="ch" [type]="type" [data]="data" [options]="options"></chart>
-    </div>
-    <div id="b2">
-      <div id="info3"><h2>Election Name - Ballot 2</h2></div>
-      <chart class="ch" [type]="type1" [data]="data1" [options]="options1"></chart>
-    </div>
-    <div id="b3">
-      <div id="info5"><h2>Election Name - Ballot 3</h2></div>
-      <chart class="ch" [type]="type2" [data]="data2" [options]="options2"></chart>
-    </div>
+
+    <div class="rest">
+      <div id="b1">
+        <div id="info1"><h2>Election Name - Ballot 1</h2></div>
+        <chart class="ch" [type]="type" [data]="data" [options]="options"></chart>
+      </div>
+      <div id="b2">
+        <div id="info3"><h2>Election Name - Ballot 2</h2></div>
+        <chart class="ch" [type]="type1" [data]="data1" [options]="options1"></chart>
+      </div>
+      <div id="b3">
+        <div id="info5"><h2>Election Name - Ballot 3</h2></div>
+        <chart class="ch" [type]="type2" [data]="data2" [options]="options2"></chart>
+      </div>
+    </div>  
   <!-- </body> -->
 
 </html>
