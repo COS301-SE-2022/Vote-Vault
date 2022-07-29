@@ -1,19 +1,9 @@
-<ion-header>
-
-</ion-header>
-
 <ion-content id="main">
-    <!-- <ion-title id = "title">Elections</ion-title> -->
+  <h1 id="header">Elections</h1>
     <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
       <ion-card-header>
-        <ion-card-title>{{e.name}}</ion-card-title>
+        <ion-card-title>{{e.electionName}}</ion-card-title>
         <br>
-        <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
       </ion-card-header>
     </ion-card>
-    <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab> -->
   </ion-content>

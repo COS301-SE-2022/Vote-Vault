@@ -29,4 +29,24 @@ describe('VoterRegistrationPage', () => {
     expect(component).toBeTruthy();
   console.log('VOTER REGESTRATION');
   });
+
+  it('should have a name class member', () => {
+    expect(component.name).toEqual(jasmine.any(String));
+  });
+
+  it('should have a surname class member', () => {
+    expect(component.surname).toEqual(jasmine.any(String));
+  });
+
+  it('should have an idNum class member', () => {
+    expect(component.idNum).toEqual(jasmine.any(String));
+  });
+
+  it('should have an encodeData class member', () => {
+    expect(component.encodeData).toEqual(jasmine.any(String));
+  });
+  
+  it('should have an encodedData class member', () => {
+    expect(component.encodedData).toEqual(jasmine.any(String));
+  });
 });

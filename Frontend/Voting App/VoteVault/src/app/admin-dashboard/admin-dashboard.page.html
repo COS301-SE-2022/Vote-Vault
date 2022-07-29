@@ -4,10 +4,10 @@
 
 <ion-content>
   <!-- <ion-title id = "title">Elections</ion-title> -->
-
-  <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
+  <h1 id="header">Elections</h1>
+  <ion-card (click)="electionClicked(e)" (click)="setIndex(i)" *ngFor="let e of elections; let i = index" id="election">
     <ion-card-header>
-      <ion-card-title>{{e.name}}</ion-card-title>
+      <ion-card-title>{{e.electionName}}</ion-card-title>
       <br>
       <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
     </ion-card-header>
@@ -15,6 +15,11 @@
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

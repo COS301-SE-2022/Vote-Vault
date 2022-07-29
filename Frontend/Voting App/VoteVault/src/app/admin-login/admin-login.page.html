@@ -1,22 +1,20 @@
-<ion-header>
-
-</ion-header>
-
 <ion-content>
+  <h1 id="header">Admin Login</h1>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
+      <!-- <ion-card-title>Login</ion-card-title> -->
       <br>
       <br>
       <ion-card-subtitle>Email</ion-card-subtitle>
-      <ion-input [(ngModel)]="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
       <br>
       <ion-card-subtitle>Password</ion-card-subtitle>
       <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-card-header>
+
+    <ion-button expand="full" (click)="navigate()">Login</ion-button>
+    <br>
+    <br>
+    <ion-button (click)="userLogin()" class="userLogin" color="transparent">User View</ion-button>
   </ion-card>
-  <ion-button size = "medium" (click)="navigate()">Login</ion-button>
-  <br>
-  <br>
-  <ion-button (click)="userLogin()" class="adminLogin" color="transparent">User Login</ion-button>
 </ion-content>
