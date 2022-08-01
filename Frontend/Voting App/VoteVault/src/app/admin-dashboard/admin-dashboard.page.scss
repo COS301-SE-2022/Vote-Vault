@@ -2,6 +2,8 @@ ion-card {
     ion-icon{
         padding-right : 1vw;
     }
+    padding: 5vw;
+    margin-bottom: 3vh;
 }
 
 #menuButton { 
@@ -11,15 +13,18 @@ ion-card {
 ion-card-title {
     color: black;
     font-size: 1.5em;
-    margin-left: 5px;
+    margin-left: 5vw;
+    padding-bottom: 1vw;
 }
 
 ion-card-subtitle{
-    margin-left: 5px;
+    margin-left: 5vw;
+    padding-bottom: 5vw;
 }
 
 ion-chip{
     --background: var(--ion-color-primary);
     color: white;
     margin-right: 5px;
+    margin-left: 2vw;
 }

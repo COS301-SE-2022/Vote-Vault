@@ -125,7 +125,7 @@ let VoterRegistrationPage = class VoterRegistrationPage {
         this.voterIDs = [];
         this.voterNames = [];
         this.voterSurnames = [];
-        // console.log(this.dataservice.contractAddress)
+        // console.log(this.dataservice.electionName)
     }
     registerVoter() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {

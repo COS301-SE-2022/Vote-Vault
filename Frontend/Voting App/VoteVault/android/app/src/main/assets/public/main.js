@@ -37,7 +37,7 @@ const routes = [
     },
     {
         path: 'ballot',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_contract_service_ts"), __webpack_require__.e("src_app_ballot_ballot_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./ballot/ballot.module */ 28068)).then(m => m.BallotPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_contract_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_ballot_ballot_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./ballot/ballot.module */ 28068)).then(m => m.BallotPageModule)
     },
     {
         path: 'generate-ballot',
@@ -49,11 +49,11 @@ const routes = [
     },
     {
         path: 'admin-dashboard',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_admin-dashboard_admin-dashboard_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./admin-dashboard/admin-dashboard.module */ 73870)).then(m => m.AdminDashboardPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_admin-dashboard_admin-dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./admin-dashboard/admin-dashboard.module */ 73870)).then(m => m.AdminDashboardPageModule)
     },
     {
         path: 'voter-dashboard',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_voter-dashboard_voter-dashboard_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./voter-dashboard/voter-dashboard.module */ 93582)).then(m => m.VoterDashboardPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_voter-dashboard_voter-dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./voter-dashboard/voter-dashboard.module */ 93582)).then(m => m.VoterDashboardPageModule)
     },
     {
         path: 'voter-registration',
@@ -130,10 +130,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/auth */ 61577);
@@ -162,14 +162,11 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
-        imports: [_ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule.forRoot({
-                scrollPadding: false,
-                scrollAssist: false
-            }), _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
+        imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormsModule, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
             (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_10__.provideFirebaseApp)(() => (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_10__.initializeApp)(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.firebase)),
             (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__.provideFirestore)(() => (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__.getFirestore)()),
             (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__.provideAuth)(() => (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__.getAuth)())],
-        providers: [_ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner, _data_service__WEBPACK_IMPORTED_MODULE_3__.DataService, { provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicRouteStrategy }, _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner],
+        providers: [_ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner, _data_service__WEBPACK_IMPORTED_MODULE_3__.DataService, { provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy }, _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);

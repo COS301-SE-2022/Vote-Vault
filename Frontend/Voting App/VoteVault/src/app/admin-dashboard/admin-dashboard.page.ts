@@ -24,7 +24,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   ionViewWillEnter() {
     // this.elections = []
-    // this.dataService.clear()
+    this.dataService.clear()
     // this.elections = this.dataService.elections
   }
 
@@ -44,65 +44,6 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   navigate(s) {
     this.router.navigate([s])
-  }
-
-  async presentActionSheet(e : any) {
-    const actionSheet = await this.actionSheetController.create({
-      header: e.electionName,
-      cssClass: 'my-custom-class',
-      buttons: [ 
-      //   {
-      //   text: 'Ballots',
-      //   icon: 'copy-outline',
-      //   data: 10,
-      //   handler: () => {
-      //     this.dataService.setAdminState('edit')
-      //     this.navigate("generate-ballot")
-      //   }
-      // }, 
-      {
-        text: 'Register User',
-        icon: 'person-add-outline',
-        data: 'Data value',
-        handler: () => {
-          console.log('clicked')
-          this.navigate("voter-registration")
-        }
-      },
-      // {
-      //   text: 'Vote',
-      //   icon: 'checkmark-done-circle-outline',
-      //   handler: () => {
-      //     this.navigate("ballot")
-      //   }
-      // },
-       {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Close Election',
-        role: 'destructive',
-        icon: 'close',
-        id: 'delete-button',
-        data: {
-          type: 'delete'
-        },
-        handler: () => {
-          this.elections.splice(this.index,1)
-          this.dataService.deleteElection(this.dataService.electionID)
-          console.log('Delete clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
-
-    const { role, data } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role and data', role, data);
   }
 
   registerUser(e) {

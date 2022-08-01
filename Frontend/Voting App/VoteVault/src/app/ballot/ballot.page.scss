@@ -2,6 +2,7 @@ ion-item {
     --background: transparent !important;
     --background-color: transparent;
     width: 90%;
+    font-size: 1em;
 }
 
 ion-label {
@@ -10,24 +11,36 @@ ion-label {
 }
 
 ion-card { 
-    padding-top: 10vh;
+    padding-top: 5vh;
     padding-bottom: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 35vh;
     width: 90%;
+}
+
+ion-card-title{
+    color: var(--ion-color-primary);
+    font-size: 1.2em;
 }
 
 ion-slides {
     height: 60%;
+    width: 100%;
+    left:0;
+    position: absolute;
+    bottom: 0;
 }
 
 #vote {
     width: 80%;
     position: fixed;
-    bottom: 4vh;
+    bottom: 30vh;
 }
 
-#menuButton { 
-    --background : transparent;
+p {
+    width: 80%;
+    text-align: center;
+    position: fixed;
+    bottom: 40vh;
 }
 
 #header {
@@ -35,7 +48,8 @@ ion-slides {
     width: 80%;
     margin-left: 10%;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
     padding-top: 5%;
     color: white;
+    font-weight: bold;
 }
