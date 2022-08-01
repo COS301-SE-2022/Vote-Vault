@@ -98,6 +98,9 @@ export class DataService {
   async fetchAllElections() {
     this.maleCount = 0;
     this.femaleCount = 0;
+    for (let index = 0; index < this.agesArray.length; index++) {
+      this.agesArray[index] = 0;
+    }
     const colRef = collection(this.firestore, 'elections')
     const electionsSnap = await getDocs(colRef)
 
@@ -119,45 +122,49 @@ export class DataService {
 
         // Getting the age from the doc.id, by NOT calculating the current date correctly
         // TODO: calculate the current date correctly
-        this.yearBornFromID = 2000 + parseInt(e.id.slice(2)); // I know this is sloppy
-        
+        this.yearBornFromID = 2000 + parseInt(element.id.substring(0,2)); // I know this is sloppy
+
         // sloppy switch statement inbound :(
-        const aproxAge = 2022 - this.yearBornFromID; 
+        const aproxAge = 2022 - this.yearBornFromID;
+
+        console.log(aproxAge);
+
+
         switch (true) {
-          case (aproxAge > 99): {
-            this.agesArray[8]++; 
+          case (aproxAge > 99 && aproxAge < 105): {
+            this.agesArray[8]++;
             break;
           }
           case (aproxAge > 89): {
-            this.agesArray[7]++; 
+            this.agesArray[7]++;
             break;
           }
           case (aproxAge > 79): {
-            this.agesArray[6]++; 
+            this.agesArray[6]++;
             break;
           }
           case (aproxAge > 69): {
-            this.agesArray[5]++; 
+            this.agesArray[5]++;
             break;
           }
           case (aproxAge > 59): {
-            this.agesArray[4]++; 
+            this.agesArray[4]++;
             break;
           }
           case (aproxAge > 49): {
-            this.agesArray[3]++; 
+            this.agesArray[3]++;
             break;
           }
           case (aproxAge > 39): {
-            this.agesArray[2]++; 
+            this.agesArray[2]++;
             break;
           }
           case (aproxAge > 29): {
-            this.agesArray[1]++; 
+            this.agesArray[1]++;
             break;
           }
-          case (aproxAge > 99): {
-            this.agesArray[0]++; 
+          case (aproxAge > 18): {
+            this.agesArray[0]++;
             break;
           }
         }
@@ -167,6 +174,8 @@ export class DataService {
     })
 
     console.log(this.maleCount);
+    console.log(this.agesArray);
+
 
     return this.maleCount;
   }
