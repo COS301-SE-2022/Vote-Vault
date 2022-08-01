@@ -61,6 +61,8 @@ export class DataService {
   voterId : string
   maleCount: number;
   femaleCount: number;
+  agesArray: any[];
+  yearBornFromID: number;
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -85,6 +87,7 @@ export class DataService {
     this.voterId = '';
     this.maleCount = 0;
     this.femaleCount = 0;
+    this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     // this.deployContract()
   }
 
@@ -113,6 +116,51 @@ export class DataService {
       e.users.forEach(element => {
         if (element.gender === "M") this.maleCount++;
         if (element.gender === "F") this.femaleCount++;
+
+        // Getting the age from the doc.id, by NOT calculating the current date correctly
+        // TODO: calculate the current date correctly
+        this.yearBornFromID = 2000 + parseInt(e.id.slice(2)); // I know this is sloppy
+        
+        // sloppy switch statement inbound :(
+        const aproxAge = 2022 - this.yearBornFromID; 
+        switch (true) {
+          case (aproxAge > 99): {
+            this.agesArray[8]++; 
+            break;
+          }
+          case (aproxAge > 89): {
+            this.agesArray[7]++; 
+            break;
+          }
+          case (aproxAge > 79): {
+            this.agesArray[6]++; 
+            break;
+          }
+          case (aproxAge > 69): {
+            this.agesArray[5]++; 
+            break;
+          }
+          case (aproxAge > 59): {
+            this.agesArray[4]++; 
+            break;
+          }
+          case (aproxAge > 49): {
+            this.agesArray[3]++; 
+            break;
+          }
+          case (aproxAge > 39): {
+            this.agesArray[2]++; 
+            break;
+          }
+          case (aproxAge > 29): {
+            this.agesArray[1]++; 
+            break;
+          }
+          case (aproxAge > 99): {
+            this.agesArray[0]++; 
+            break;
+          }
+        }
       });
 
       elections.push(e)
