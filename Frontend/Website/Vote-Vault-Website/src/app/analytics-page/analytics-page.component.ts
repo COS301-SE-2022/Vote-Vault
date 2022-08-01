@@ -6,14 +6,16 @@ import { DataService } from '../services/data.service';
   templateUrl: './analytics-page.component.html',
   styleUrls: ['./analytics-page.component.css']
 })
+
 export class AnalyticsPageComponent implements OnInit {
 
   votes : any[]
   private maleCount;
   private femaleCount;
+  elections: Promise<any[]>;
 
   constructor(private dataService : DataService) {
-    this.dataService.fetchAllElections();
+    // this.elections = this.dataService.fetchAllElections(); //this.dataService.fetchAllElections();
     let genderCountArray = [];
     this.maleCount = genderCountArray[0]
     this.femaleCount = genderCountArray[1]
@@ -21,6 +23,18 @@ export class AnalyticsPageComponent implements OnInit {
   }
 
   async ngOnInit() {
+    const elec = this.dataService.elections;
+
+    // elec.forEach(voter => {
+    //   voter.users.forEach(element => {
+    //     if (element.gender == 'M') {
+    //       this.maleCount++
+    //       console.log(this.maleCount);
+    //     };
+    //     if (element.gender == 'F') this.femaleCount++;
+    //   });
+    // });
+    this.dataService.getMaleCount();
 
   }
 
@@ -31,7 +45,7 @@ export class AnalyticsPageComponent implements OnInit {
       {
         backgroundColor: ['#b56576','#e56b6f'],
         // TODO: read gender data from firebase
-        data: [59, 41]
+        data: [21, 89]
       }
     ]
   };

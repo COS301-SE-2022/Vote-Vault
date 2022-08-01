@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 import { AnalyticsPageComponent } from './analytics-page.component';
 
@@ -8,7 +11,11 @@ describe('AnalyticsPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnalyticsPageComponent ]
+      declarations: [ AnalyticsPageComponent ],
+      imports: [
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore())
+      ]
     })
     .compileComponents();
   });
