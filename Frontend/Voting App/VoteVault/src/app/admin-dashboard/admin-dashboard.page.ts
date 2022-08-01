@@ -105,7 +105,8 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     console.log('onDidDismiss resolved with role and data', role, data);
   }
 
-  registerUser() {
+  registerUser(e) {
+    this.electionClicked(e)
     this.navigate("voter-registration")
   }
 

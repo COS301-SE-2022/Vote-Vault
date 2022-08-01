@@ -5,7 +5,7 @@
     <ion-card-header>
       <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
       <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
-      <ion-chip (click)="registerUser()">
+      <ion-chip (click)="registerUser(e)">
         <ion-label><ion-icon name="person-add-outline"></ion-icon>Register User</ion-label>
       </ion-chip>
       <ion-chip (click)="presentDeleteAlert()">
@@ -13,14 +13,23 @@
       </ion-chip>
     </ion-card-header>
   </ion-card>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="menu"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="primary" (click)="signOut()"><ion-icon name="log-out-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button color="primary" (click)="createElection()"><ion-icon name="add"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button (click)="signOut()">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>
