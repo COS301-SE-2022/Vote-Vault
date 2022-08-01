@@ -81,7 +81,7 @@ export class AnalyticsPageComponent implements OnInit {
     datasets: [
       {
         backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9','#284b63','#4f6d7a','#c0d6df','#365535','#3d6e71'],
-        data: [60, 61, 59, 42, 55, 48, 43, 52, 5]
+        data: [this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]]
       }
     ]
   };
