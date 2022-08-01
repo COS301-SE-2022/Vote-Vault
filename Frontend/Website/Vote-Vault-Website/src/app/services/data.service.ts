@@ -59,6 +59,8 @@ export class DataService {
   voters: any[];
   contractAddress : string
   voterId : string
+  maleCount: number;
+  femaleCount: number;
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -81,6 +83,8 @@ export class DataService {
     this.voter = null;
     this.contractAddress = '';
     this.voterId = '';
+    this.maleCount = 0;
+    this.femaleCount = 0;
     // this.deployContract()
   }
 
@@ -88,7 +92,9 @@ export class DataService {
     this.adminState = s
   }
 
-  async fetchAllElections() : Promise<any[]> {
+  async fetchAllElections() {
+    this.maleCount = 0;
+    this.femaleCount = 0;
     const colRef = collection(this.firestore, 'elections')
     const electionsSnap = await getDocs(colRef)
 
@@ -103,9 +109,18 @@ export class DataService {
       e.voted = doc.data()['voted']
       e.address = doc.data()['address']
       // console.log(doc.data().election)
+
+      e.users.forEach(element => {
+        if (element.gender === "M") this.maleCount++;
+        if (element.gender === "F") this.femaleCount++;
+      });
+
       elections.push(e)
     })
-    return elections
+
+    console.log(this.maleCount);
+
+    return this.maleCount;
   }
 
   async fetchElections() {

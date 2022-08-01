@@ -10,20 +10,23 @@ import { DataService } from '../services/data.service';
 export class AnalyticsPageComponent implements OnInit {
 
   votes : any[]
-  private maleCount;
+  private maleCount: number;
   private femaleCount;
   elections: Promise<any[]>;
+  data;
+  type;
+  options;
+
 
   constructor(private dataService : DataService) {
-    // this.elections = this.dataService.fetchAllElections(); //this.dataService.fetchAllElections();
+
     let genderCountArray = [];
-    this.maleCount = genderCountArray[0]
+    this.maleCount = 0;
     this.femaleCount = genderCountArray[1]
     this.votes = [{"electionID" : 2, "candidateID" : ["3", "5", "5"], "gender" : "male", "age" : 25, "location" : "Cape Town"}]
   }
 
   async ngOnInit() {
-    const elec = this.dataService.elections;
 
     // elec.forEach(voter => {
     //   voter.users.forEach(element => {
@@ -38,38 +41,7 @@ export class AnalyticsPageComponent implements OnInit {
 
   }
 
-  type = 'bar';
-  data = {
-    labels: ["Male", "Female"],
-    datasets: [
-      {
-        backgroundColor: ['#b56576','#e56b6f'],
-        // TODO: read gender data from firebase
-        data: [21, 89]
-      }
-    ]
-  };
-  options = {
-    legend:{
-      display: false
-    },
-    title:{
-      display: true,
-      text:"Gender Distribution"
-    },
-    scales : {
-      yAxes: [{
-         ticks: {
-            steps : 10,
-            stepValue : 10,
-            max : 100,
-            min: 0
-          }
-      }]
-    },
-    responsive: true,
-    maintainAspectRatio: false
-  };
+
 
   type1 = 'bar';
   data1 = {
@@ -143,11 +115,49 @@ export class AnalyticsPageComponent implements OnInit {
   div3:boolean=false;
 
 
-  showGenderInfo(){
+  async showGenderInfo(){
       this.div0=false;
       this.div1=true;
       this.div2=false;
-      this.div3=false
+      this.div3=false;
+
+      await this.dataService.fetchAllElections();
+      console.log("Shw gender: "+this.dataService.maleCount);
+      console.log("Shw gender: "+this.dataService.femaleCount);
+
+      this.type = 'bar';
+  this.data = {
+    labels: ["Male", "Female"],
+    datasets: [
+      {
+        backgroundColor: ['#b56576','#e56b6f'],
+        // TODO: read gender data from firebase
+        data: [this.dataService.maleCount, this.dataService.femaleCount]
+      }
+    ]
+  };
+  this.options = {
+    legend:{
+      display: false
+    },
+    title:{
+      display: true,
+      text:"Gender Distribution"
+    },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 20,
+            min: 0
+          }
+      }]
+    },
+    responsive: true,
+    maintainAspectRatio: false
+  };
+
   }
 
   showAgeInfo(){
