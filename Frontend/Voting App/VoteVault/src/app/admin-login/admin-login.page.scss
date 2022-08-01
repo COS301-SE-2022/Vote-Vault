@@ -8,9 +8,12 @@ ion-input {
     --background: var(--ion-color-light-tint);
 }
 
-ion-button {
-    width: 40%;
-    margin-left: 30%;
+h5 {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+    color: white;
+    text-align: center;
 }
 
 #header {
@@ -19,4 +22,46 @@ ion-button {
     text-align: center;
     padding-top: 10%;
     font-size: 3em;
+}
+
+p {
+    font-size: 1em;
+    position: absolute;
+    bottom: 17%;
+    width: 30%;
+    margin-left : 35%;
+    text-align: center;
+    color: var(--ion-color-fade);
+}
+
+#view-elections{
+    font-size: 1em;
+    position: absolute;
+    bottom: 10%;
+    width: 30%;
+    margin-left : 35%;
+    text-align: center;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+}
+
+ion-button {
+    font-size: 1em;
+    position: absolute;
+    bottom: 24%;
+    width: 30%;
+    margin-left : 35%;
+    --border-radius: 25px;
+}
+
+ion-input{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+    border-radius: 25px;
+}
+
+#email {
+    
+    
 }

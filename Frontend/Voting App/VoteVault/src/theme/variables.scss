@@ -4,8 +4,9 @@
 /** Ionic CSS Variables **/
 :root {
 
+  --ion-color-fade: #D9D9D9;
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #FE5D5D;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -84,7 +85,7 @@
    */
 
   body {
-    --ion-color-primary: #F4717F;
+    --ion-color-primary: #FE5D5D;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255,255,255;

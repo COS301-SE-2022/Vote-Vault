@@ -1,20 +1,10 @@
 <ion-content>
-  <h1 id="header">Admin Login</h1>
-  <ion-card>
-    <ion-card-header>
-      <!-- <ion-card-title>Login</ion-card-title> -->
-      <br>
-      <br>
-      <ion-card-subtitle>Email</ion-card-subtitle>
-      <ion-input type="email" [(ngModel)]="email"></ion-input>
-      <br>
-      <ion-card-subtitle>Password</ion-card-subtitle>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
-    </ion-card-header>
-
-    <ion-button expand="full" (click)="navigate()">Login</ion-button>
-    <br>
-    <br>
-    <ion-button (click)="userLogin()" class="userLogin" color="transparent">User View</ion-button>
-  </ion-card>
+  <app-circle></app-circle>
+  <app-landing-header></app-landing-header>
+  <h5>Admin Login</h5>
+  <ion-input id="email" type="email" [(ngModel)]="email"></ion-input>
+  <ion-input id="password" type="password" [(ngModel)]="password"></ion-input>
+  <ion-button (click)="navigate()">Login</ion-button>
+  <p>Not an admin?</p>
+  <p id="view-elections" (click)="userLogin()">View Elections</p>
 </ion-content>
