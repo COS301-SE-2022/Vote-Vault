@@ -1,6 +1,6 @@
 ion-card {
     ion-icon{
-        padding-right : 2vh;
+        padding-right : 1vw;
     }
 }
 
@@ -11,6 +11,11 @@ ion-card {
 ion-card-title {
     color: black;
     font-size: 1.5em;
+    margin-left: 5px;
+}
+
+ion-card-subtitle{
+    margin-left: 5px;
 }
 
 ion-chip{

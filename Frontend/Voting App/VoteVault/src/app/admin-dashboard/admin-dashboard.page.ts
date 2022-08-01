@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, MenuController, ViewWillEnter } from '@ionic/angular';
+import { ActionSheetController, AlertController, MenuController, ViewWillEnter } from '@ionic/angular';
 import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
 
@@ -13,7 +13,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   elections : any[]
   index : number
-  constructor(private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
+  constructor(private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
     this.dataService.fetchElections()
     this.elections = this.dataService.elections
   }
@@ -105,13 +105,23 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     console.log('onDidDismiss resolved with role and data', role, data);
   }
 
+  registerUser() {
+    this.navigate("voter-registration")
+  }
+
+  deleteElection() {
+    this.elections.splice(this.index,1)
+    this.dataService.deleteElection(this.dataService.electionID)
+    console.log('Delete clicked');
+  }
+
   setIndex(i) {
     this.index = i
   }
 
   electionClicked(e : any) {
     this.dataService.editElection(e)
-    this.presentActionSheet(e)
+    // this.presentActionSheet(e)
   }
 
   createElection() {
@@ -123,5 +133,27 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
   signOut() {
     this.dataService.userEmail = ''
     this.router.navigate(['admin-login'])
+  }
+
+  async presentDeleteAlert() {
+    const alert = await this.alertController.create({
+      header: 'Close election?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {}
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {this.deleteElection()}
+        }
+      ]
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
   }
 }

@@ -5,11 +5,11 @@
     <ion-card-header>
       <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
       <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
-      <ion-chip>
-        <ion-label>Register User</ion-label>
+      <ion-chip (click)="registerUser()">
+        <ion-label><ion-icon name="person-add-outline"></ion-icon>Register User</ion-label>
       </ion-chip>
-      <ion-chip>
-        <ion-label>Close</ion-label>
+      <ion-chip (click)="presentDeleteAlert()">
+        <ion-label><ion-icon name="person-add-outline"></ion-icon>Close</ion-label>
       </ion-chip>
     </ion-card-header>
   </ion-card>
