@@ -106,22 +106,19 @@ __webpack_require__.r(__webpack_exports__);
 
 let AdminDashboardPage = class AdminDashboardPage {
     constructor(dataService, actionSheetController, router, menu) {
-        // this.elections = [{"id" : 1, "name" : "Provincial Election", "ballots" : [{"name" : "Cool", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]}]},
-        //                   {"id" : 86, "name" : "National Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []},{"name" : "", "options" : []}]},
-        //                   {"id" : 129, "name" : "District Election", "ballots" : [{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : [{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"},{"name" : "John", "surname" : "Smith"}]},{"name" : "", "options" : []}]}]
         this.dataService = dataService;
         this.actionSheetController = actionSheetController;
         this.router = router;
         this.menu = menu;
-        // this.dataService.fetchElections()
-        // this.elections = this.dataService.elections
-    }
-    ngOnInit() {
         this.dataService.fetchElections();
         this.elections = this.dataService.elections;
     }
+    ngOnInit() {
+    }
     ionViewWillEnter() {
-        this.elections = this.dataService.elections;
+        // this.elections = []
+        // this.dataService.clear()
+        // this.elections = this.dataService.elections
     }
     openFirst() {
         this.menu.enable(true, 'first');
@@ -160,13 +157,15 @@ let AdminDashboardPage = class AdminDashboardPage {
                             console.log('clicked');
                             this.navigate("voter-registration");
                         }
-                    }, {
-                        text: 'Vote',
-                        icon: 'checkmark-done-circle-outline',
-                        handler: () => {
-                            this.navigate("ballot");
-                        }
-                    }, {
+                    },
+                    // {
+                    //   text: 'Vote',
+                    //   icon: 'checkmark-done-circle-outline',
+                    //   handler: () => {
+                    //     this.navigate("ballot")
+                    //   }
+                    // },
+                    {
                         text: 'Cancel',
                         icon: 'close',
                         role: 'cancel',
@@ -183,6 +182,8 @@ let AdminDashboardPage = class AdminDashboardPage {
                             type: 'delete'
                         },
                         handler: () => {
+                            this.elections.splice(this.index, 1);
+                            this.dataService.deleteElection(this.dataService.electionID);
                             console.log('Delete clicked');
                         }
                     }
@@ -193,14 +194,21 @@ let AdminDashboardPage = class AdminDashboardPage {
             console.log('onDidDismiss resolved with role and data', role, data);
         });
     }
+    setIndex(i) {
+        this.index = i;
+    }
     electionClicked(e) {
         this.dataService.editElection(e);
         this.presentActionSheet(e);
     }
     createElection() {
-        this.dataService.clear();
+        // this.dataService.clear()
         this.dataService.setAdminState('generate');
         this.router.navigate(['generate-ballot']);
+    }
+    signOut() {
+        this.dataService.userEmail = '';
+        this.router.navigate(['admin-login']);
     }
 };
 AdminDashboardPage.ctorParameters = () => [
@@ -227,7 +235,7 @@ AdminDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-item ion-icon {\n  padding-right: 2vh;\n}\n\n#menuButton {\n  --background: transparent;\n}\n\n#title {\n  font-size: 5vh;\n  margin: auto;\n  padding: 5vh;\n  padding-left: 2vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLWRhc2hib2FyZC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcYWRtaW4tZGFzaGJvYXJkXFxhZG1pbi1kYXNoYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksa0JBQUE7QUNBUjs7QURHQTtFQUNJLHlCQUFBO0FDQUo7O0FER0E7RUFDSSxjQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0FKIiwiZmlsZSI6ImFkbWluLWRhc2hib2FyZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taXRlbSB7XHJcbiAgICBpb24taWNvbntcclxuICAgICAgICBwYWRkaW5nLXJpZ2h0IDogMnZoO1xyXG4gICAgfVxyXG59XHJcbiNtZW51QnV0dG9uIHsgXHJcbiAgICAtLWJhY2tncm91bmQgOiB0cmFuc3BhcmVudDtcclxufVxyXG5cclxuI3RpdGxlIHtcclxuICAgIGZvbnQtc2l6ZTogNXZoO1xyXG4gICAgbWFyZ2luIDogYXV0bztcclxuICAgIHBhZGRpbmc6IDV2aDtcclxuICAgIHBhZGRpbmctbGVmdDogMnZoO1xyXG59IiwiaW9uLWl0ZW0gaW9uLWljb24ge1xuICBwYWRkaW5nLXJpZ2h0OiAydmg7XG59XG5cbiNtZW51QnV0dG9uIHtcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbn1cblxuI3RpdGxlIHtcbiAgZm9udC1zaXplOiA1dmg7XG4gIG1hcmdpbjogYXV0bztcbiAgcGFkZGluZzogNXZoO1xuICBwYWRkaW5nLWxlZnQ6IDJ2aDtcbn0iXX0= */";
+module.exports = "ion-item ion-icon {\n  padding-right: 2vh;\n}\n\n#menuButton {\n  --background: transparent;\n}\n\nion-card-title {\n  color: black;\n}\n\n#header {\n  width: 80%;\n  margin-left: 10%;\n  text-align: center;\n  padding-top: 10%;\n  font-size: 3em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkbWluLWRhc2hib2FyZC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcYWRtaW4tZGFzaGJvYXJkXFxhZG1pbi1kYXNoYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksa0JBQUE7QUNBUjs7QURHQTtFQUNJLHlCQUFBO0FDQUo7O0FER0E7RUFDSSxZQUFBO0FDQUo7O0FER0E7RUFDSSxVQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ0FKIiwiZmlsZSI6ImFkbWluLWRhc2hib2FyZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taXRlbSB7XHJcbiAgICBpb24taWNvbntcclxuICAgICAgICBwYWRkaW5nLXJpZ2h0IDogMnZoO1xyXG4gICAgfVxyXG59XHJcbiNtZW51QnV0dG9uIHsgXHJcbiAgICAtLWJhY2tncm91bmQgOiB0cmFuc3BhcmVudDtcclxufVxyXG5cclxuaW9uLWNhcmQtdGl0bGUge1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4jaGVhZGVyIHtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZy10b3A6IDEwJTtcclxuICAgIGZvbnQtc2l6ZTogM2VtO1xyXG59IiwiaW9uLWl0ZW0gaW9uLWljb24ge1xuICBwYWRkaW5nLXJpZ2h0OiAydmg7XG59XG5cbiNtZW51QnV0dG9uIHtcbiAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbn1cblxuaW9uLWNhcmQtdGl0bGUge1xuICBjb2xvcjogYmxhY2s7XG59XG5cbiNoZWFkZXIge1xuICB3aWR0aDogODAlO1xuICBtYXJnaW4tbGVmdDogMTAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBhZGRpbmctdG9wOiAxMCU7XG4gIGZvbnQtc2l6ZTogM2VtO1xufSJdfQ== */";
 
 /***/ }),
 
@@ -237,7 +245,7 @@ module.exports = "ion-item ion-icon {\n  padding-right: 2vh;\n}\n\n#menuButton {
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n</ion-header>\r\n\r\n\r\n<ion-content>\r\n  <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n\r\n  <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n    <ion-card-header>\r\n      <ion-card-title>{{e.electionName}}</ion-card-title>\r\n      <br>\r\n      <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n    </ion-card-header>\r\n  </ion-card>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n";
+module.exports = "<ion-header>\r\n</ion-header>\r\n\r\n\r\n<ion-content>\r\n  <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n  <h1 id=\"header\">Elections</h1>\r\n  <ion-card (click)=\"electionClicked(e)\" (click)=\"setIndex(i)\" *ngFor=\"let e of elections; let i = index\" id=\"election\">\r\n    <ion-card-header>\r\n      <ion-card-title>{{e.electionName}}</ion-card-title>\r\n      <br>\r\n      <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n    </ion-card-header>\r\n  </ion-card>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button (click)=\"signOut()\">\r\n      <ion-icon name=\"chevron-back-outline\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n</ion-content>\r\n";
 
 /***/ })
 

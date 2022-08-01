@@ -2,8 +2,12 @@
   <app-circle></app-circle>
   <app-landing-header></app-landing-header>
   <h5>Admin Login</h5>
-  <ion-input id="email" type="email" [(ngModel)]="email"></ion-input>
-  <ion-input id="password" type="password" [(ngModel)]="password"></ion-input>
+  <div id="inputs">
+    <ion-label>Email</ion-label>
+    <input id="email" type="email" [(ngModel)]="email">
+    <ion-label>Password</ion-label>
+    <input id="password" type="password" [(ngModel)]="password">
+  </div>
   <ion-button (click)="navigate()">Login</ion-button>
   <p>Not an admin?</p>
   <p id="view-elections" (click)="userLogin()">View Elections</p>

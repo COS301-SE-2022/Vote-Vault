@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_register_register_module_ts"],{
 
-/***/ 3963:
+/***/ 23963:
 /*!*****************************************************!*\
   !*** ./src/app/register/register-routing.module.ts ***!
   \*****************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPageRoutingModule": () => (/* binding */ RegisterPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page */ 8135);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page */ 98135);
 
 
 
@@ -38,7 +38,7 @@ RegisterPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 8723:
+/***/ 18723:
 /*!*********************************************!*\
   !*** ./src/app/register/register.module.ts ***!
   \*********************************************/
@@ -48,14 +48,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPageModule": () => (/* binding */ RegisterPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register-routing.module */ 3963);
-/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page */ 8135);
-/* harmony import */ var _angular_router_testing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router/testing */ 9504);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register-routing.module */ 23963);
+/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page */ 98135);
+/* harmony import */ var _angular_router_testing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router/testing */ 69504);
 
 
 
@@ -83,7 +83,7 @@ RegisterPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 8135:
+/***/ 98135:
 /*!*******************************************!*\
   !*** ./src/app/register/register.page.ts ***!
   \*******************************************/
@@ -93,15 +93,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPage": () => (/* binding */ RegisterPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _register_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page.html?ngResource */ 4754);
-/* harmony import */ var _register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page.scss?ngResource */ 6219);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _register_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page.html?ngResource */ 84754);
+/* harmony import */ var _register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page.scss?ngResource */ 36219);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 1502);
-/* harmony import */ var _services_contract_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contract.service */ 6569);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _services_contract_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contract.service */ 36569);
 /* harmony import */ var _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/barcode-scanner/ngx */ 5684);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
 
 
 
@@ -162,14 +162,6 @@ let RegisterPage = class RegisterPage {
             }
             else {
                 alert('Already registered voter!');
-                if ((yield this.dataservice.checkVoted(this.voter)) == false) {
-                    alert('Already voted!');
-                    this.router.navigate(['voter-dashboard']);
-                }
-                else {
-                    yield this.dataservice.vote(this.voter);
-                    this.router.navigate(['ballot']);
-                }
             }
             this.name = '';
             this.surname = '';
@@ -179,7 +171,6 @@ let RegisterPage = class RegisterPage {
         });
     }
     openCustom() {
-        alert('here');
         this.router.navigate(['voter-dashboard']);
     }
     scanBarcode() {
@@ -252,7 +243,7 @@ RegisterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 6219:
+/***/ 36219:
 /*!********************************************************!*\
   !*** ./src/app/register/register.page.scss?ngResource ***!
   \********************************************************/
@@ -262,7 +253,7 @@ module.exports = "ion-card-title {\n  text-decoration: underline;\n}\n\nion-card
 
 /***/ }),
 
-/***/ 4754:
+/***/ 84754:
 /*!********************************************************!*\
   !*** ./src/app/register/register.page.html?ngResource ***!
   \********************************************************/
@@ -272,7 +263,7 @@ module.exports = "<ion-content>\r\n  <!-- <ion-header class=\"ion-margin-bottom\
 
 /***/ }),
 
-/***/ 446:
+/***/ 70446:
 /*!***********************************************************!*\
   !*** ./node_modules/@angular/common/fesm2015/testing.mjs ***!
   \***********************************************************/
@@ -286,8 +277,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SpyLocation": () => (/* binding */ SpyLocation)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 2218);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 92218);
 /**
  * @license Angular v13.2.7
  * (c) 2010-2022 Google LLC. https://angular.io/
@@ -1029,7 +1020,7 @@ function scheduleMicroTask(cb) {
 
 /***/ }),
 
-/***/ 9504:
+/***/ 69504:
 /*!***********************************************************!*\
   !*** ./node_modules/@angular/router/fesm2015/testing.mjs ***!
   \***********************************************************/
@@ -1040,10 +1031,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "RouterTestingModule": () => (/* binding */ RouterTestingModule),
 /* harmony export */   "setupTestingRouter": () => (/* binding */ setupTestingRouter)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_common_testing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/testing */ 446);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_common_testing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/testing */ 70446);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ 52816);
 /**
  * @license Angular v13.2.7
  * (c) 2010-2022 Google LLC. https://angular.io/
