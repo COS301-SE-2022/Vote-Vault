@@ -189,7 +189,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      duration: 30000
+      duration: 60000
     });
     await loading.present();
 

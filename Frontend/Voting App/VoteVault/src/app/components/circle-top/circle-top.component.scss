@@ -1,0 +1,11 @@
+.circle {
+    z-index: -10;
+    height: 200vw;
+    width: 200vw;
+    top: -170vw;
+    left: -50vw;
+    background-color: var(--ion-color-primary);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+}

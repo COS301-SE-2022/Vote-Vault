@@ -1,9 +1,6 @@
-<body>
-  <ion-header class="ion-margin-bottom">
-    <ion-toolbar class="ion-text-center">
-      <ion-title id="page-heading"><ion-button color="dark" id="menuButton" (click)="openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>Voter Registration</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <app-circle-top></app-circle-top>
+  <h1 id="header">Register User</h1>
 
   <ion-card class="voter-Details ion-text-center ion-padding">
     <ion-card-header>
@@ -11,7 +8,7 @@
         Scan ID Card
       </ion-card-title>
     </ion-card-header>
-    <ion-button expand="full" color="dark" (click)="scanBarcode()">Scan ID</ion-button>
+    <ion-button color="primary" (click)="scanBarcode()">Scan ID</ion-button>
     <div *ngIf="name">
       <p>
         Name(s): <b>{{ name }}</b>
@@ -36,4 +33,4 @@
         Register Now
     </ion-button>
   </ion-card>
-</body>
+</ion-content>
