@@ -31,10 +31,6 @@ describe('AdminDashboardPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should have custom timeout', () => {
-    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL); //prints 999999
-  });
-
   it('should create', () => {
     expect(component).toBeTruthy();
     console.log('ADMIN DASH');

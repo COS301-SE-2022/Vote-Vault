@@ -20,9 +20,10 @@ describe('RegisterPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterPage ],
-      imports: [BarcodeScanner, IonicModule.forRoot(), RouterTestingModule,
+      imports: [IonicModule.forRoot(), RouterTestingModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore())],
+      providers: [BarcodeScanner]
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegisterPage);
