@@ -25,6 +25,11 @@ jobs:
       - name: "✅ Run Unit Tests App"
         working-directory: ./Frontend/Voting App/VoteVault
         run: npm test
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   Website:
     runs-on: ubuntu-latest
@@ -49,3 +54,9 @@ jobs:
       - name: "✅ Building"
         working-directory: ./Frontend/Website/Vote-Vault-Website
         run: npm run build
+
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
