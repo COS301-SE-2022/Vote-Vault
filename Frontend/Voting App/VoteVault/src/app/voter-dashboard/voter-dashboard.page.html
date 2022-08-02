@@ -1,9 +1,23 @@
 <ion-content id="main">
-  <h1 id="header">Elections</h1>
-    <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
+  <app-circle-top></app-circle-top>
+  <app-elections-header></app-elections-header>
+    <!-- <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
       <ion-card-header>
         <ion-card-title>{{e.electionName}}</ion-card-title>
         <br>
+      </ion-card-header>
+    </ion-card> -->
+
+    <ion-card (click)="electionClicked(e)" *ngFor="let e of elections; let i = index" id="election">
+      <ion-card-header>
+        <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
+        <!-- <ion-card-subtitle>#{{e.id}}</ion-card-subtitle> -->
+        <!-- <ion-chip (click)="registerUser(e)">
+          <ion-label><ion-icon name="person-add-outline"></ion-icon>Register User</ion-label>
+        </ion-chip> -->
+        <ion-chip (click)="vote(e)">
+          <ion-label><ion-icon name="checkbox-outline"></ion-icon>Vote</ion-label>
+        </ion-chip>
       </ion-card-header>
     </ion-card>
   </ion-content>

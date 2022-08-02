@@ -136,10 +136,8 @@ export class DataService {
         // console.log(doc.data().election)
         this.elections.push(e)
         } catch(e) {
-          console.error(e)
+          //console.error(e)
         }
-      }).catch(e => {
-        console.error(e)
       })
 
     } else {

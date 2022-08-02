@@ -10,3 +10,25 @@ ion-card-title {
     font-size: 3em;
     padding-bottom: 10%;
 }
+
+ion-card {
+    padding: 5vw;
+    margin-bottom: 3vh;
+}
+
+ion-card-title {
+    color: black;
+    font-size: 1.5em;
+    margin-left: 5px;
+    padding-bottom: 5vw;
+}
+
+ion-chip{
+    --background: var(--ion-color-primary);
+    color: white;
+    margin-right: 5px;
+}
+
+ion-icon{
+    padding-right : 1vw;
+}

@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { CircleComponent } from '../components/circle/circle/circle.component';
+import { LandingHeaderComponent } from '../components/landing-header/landing-header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,    
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage, CircleComponent, LandingHeaderComponent]
 })
 export class LoginPageModule {}
