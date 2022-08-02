@@ -1,6 +1,76 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
+/***/ 56300:
+/*!**************************************************************!*\
+  !*** ./src/app/components/circle/circle/circle.component.ts ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CircleComponent": () => (/* binding */ CircleComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _circle_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./circle.component.html?ngResource */ 69833);
+/* harmony import */ var _circle_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./circle.component.scss?ngResource */ 71937);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+let CircleComponent = class CircleComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+CircleComponent.ctorParameters = () => [];
+CircleComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-circle',
+        template: _circle_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_circle_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], CircleComponent);
+
+
+
+/***/ }),
+
+/***/ 38265:
+/*!***********************************************************************!*\
+  !*** ./src/app/components/landing-header/landing-header.component.ts ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LandingHeaderComponent": () => (/* binding */ LandingHeaderComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _landing_header_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./landing-header.component.html?ngResource */ 10312);
+/* harmony import */ var _landing_header_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./landing-header.component.scss?ngResource */ 94409);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+let LandingHeaderComponent = class LandingHeaderComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+LandingHeaderComponent.ctorParameters = () => [];
+LandingHeaderComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-landing-header',
+        template: _landing_header_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_landing_header_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], LandingHeaderComponent);
+
+
+
+/***/ }),
+
 /***/ 46491:
 /*!*********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/button-active-70de495b.js ***!
@@ -217,7 +287,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 59158);
 
 
@@ -227,7 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -276,7 +346,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -510,7 +580,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "p": () => (/* binding */ printIonContentErrorMsg),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 59158);
 /* harmony import */ var _index_9ac92660_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-9ac92660.js */ 2141);
 
@@ -547,7 +617,7 @@ const isIonContent = el => el && el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();
@@ -1161,7 +1231,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h": () => (/* binding */ hostContext),
 /* harmony export */   "o": () => (/* binding */ openURL)
 /* harmony export */ });
-/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 
 
 /*!
@@ -1200,7 +1270,7 @@ const getClassMap = classes => {
 const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
 const openURL = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
+  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
     if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
       const router = document.querySelector('ion-router');
 
@@ -1222,6 +1292,46 @@ const openURL = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ 71937:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/circle/circle/circle.component.scss?ngResource ***!
+  \***************************************************************************/
+/***/ ((module) => {
+
+module.exports = ".circle {\n  z-index: -10;\n  height: 900px;\n  width: 900px;\n  top: -450px;\n  background-color: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNpcmNsZS5jb21wb25lbnQuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxWb3RpbmclMjBBcHBcXFZvdGVWYXVsdFxcc3JjXFxhcHBcXGNvbXBvbmVudHNcXGNpcmNsZVxcY2lyY2xlXFxjaXJjbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsMENBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7QUNDSiIsImZpbGUiOiJjaXJjbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2lyY2xlIHtcclxuICAgIHotaW5kZXg6IC0xMDtcclxuICAgIGhlaWdodDogOTAwcHg7XHJcbiAgICB3aWR0aDogOTAwcHg7XHJcbiAgICB0b3A6IC00NTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufSIsIi5jaXJjbGUge1xuICB6LWluZGV4OiAtMTA7XG4gIGhlaWdodDogOTAwcHg7XG4gIHdpZHRoOiA5MDBweDtcbiAgdG9wOiAtNDUwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn0iXX0= */";
+
+/***/ }),
+
+/***/ 94409:
+/*!************************************************************************************!*\
+  !*** ./src/app/components/landing-header/landing-header.component.scss?ngResource ***!
+  \************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "h1 {\n  color: white;\n  font-size: 3em;\n  font-weight: bold;\n  width: 70%;\n  margin-left: 15%;\n  margin-top: 20%;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxhbmRpbmctaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwiLi5cXC4uXFwuLlxcLi5cXC4uXFwuLlxcVm90aW5nJTIwQXBwXFxWb3RlVmF1bHRcXHNyY1xcYXBwXFxjb21wb25lbnRzXFxsYW5kaW5nLWhlYWRlclxcbGFuZGluZy1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsY0FBQTtFQUVBLGlCQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FDQUoiLCJmaWxlIjoibGFuZGluZy1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMSB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBmb250LXNpemU6IDNlbTtcclxuICAgIC8vIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgd2lkdGg6IDcwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNSU7XHJcbiAgICBtYXJnaW4tdG9wOiAyMCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iLCJoMSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAzZW07XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICB3aWR0aDogNzAlO1xuICBtYXJnaW4tbGVmdDogMTUlO1xuICBtYXJnaW4tdG9wOiAyMCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */";
+
+/***/ }),
+
+/***/ 69833:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/circle/circle/circle.component.html?ngResource ***!
+  \***************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<span class=\"circle\"></span>";
+
+/***/ }),
+
+/***/ 10312:
+/*!************************************************************************************!*\
+  !*** ./src/app/components/landing-header/landing-header.component.html?ngResource ***!
+  \************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<h1 id=\"header\">Vote Vault</h1>";
 
 /***/ })
 

@@ -44,10 +44,6 @@ describe('VoterRegistrationPage', () => {
     expect(component.idNum).toEqual(jasmine.any(String));
   });
 
-  it('should have an encodeData class member', () => {
-    expect(component.encodeData).toEqual(jasmine.any(String));
-  });
-  
   it('should have an encodedData class member', () => {
     expect(component.encodedData).toEqual(jasmine.any(String));
   });

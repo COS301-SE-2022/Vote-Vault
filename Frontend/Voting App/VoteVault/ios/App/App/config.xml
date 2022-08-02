@@ -6,15 +6,5 @@
     <param name="ios-package" value="CDVBarcodeScanner"/>
   </feature>
 
-  <feature name="ScanditBarcodeCapture">
-    <param name="ios-package" value="ScanditBarcodeCapture"/>
-    <param name="onload" value="true"/>
-  </feature>
-
-  <feature name="ScanditCaptureCore">
-    <param name="ios-package" value="ScanditCaptureCore"/>
-    <param name="onload" value="true"/>
-  </feature>
-
   
 </widget>

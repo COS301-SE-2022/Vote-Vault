@@ -1,0 +1,10 @@
+.circle {
+    z-index: -10;
+    height: 900px;
+    width: 900px;
+    top: -450px;
+    background-color: var(--ion-color-primary);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+}
