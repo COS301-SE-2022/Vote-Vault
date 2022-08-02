@@ -1,4 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 import { DataService } from '../data.service';
 
 import { ContractService } from './contract.service';
@@ -9,7 +12,8 @@ describe('ContractService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        DataService
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore())
       ],
       providers :[
         DataService
@@ -35,10 +39,10 @@ describe('ContractService', () => {
   });
 
   it('should have an alcProvider class member', () => {
-    expect(service.alcProvider).toEqual(null);
+    expect(service.alcProvider).toBeDefined();
   });
 
   it('should have a signer class member', () => {
-    expect(service.signer).toEqual(null);
+    expect(service.signer).toBeDefined();
   });
 });
