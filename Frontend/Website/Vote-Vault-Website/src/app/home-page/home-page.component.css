@@ -1,11 +1,12 @@
 
 body {
-  height: 100%;
+  height: fit-content;
 }
 
 #div-1{
   width: 100%;
   display: table;
+  align-content: center;
 }
 
 #welcome{
@@ -15,6 +16,9 @@ body {
   padding-right: 2.5rem;
   display: flex;
   flex-direction: column;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 #linkImage{
