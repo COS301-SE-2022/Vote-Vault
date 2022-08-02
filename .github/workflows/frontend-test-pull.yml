@@ -1,4 +1,4 @@
-name: Frontend-CODECOV
+name: Frontend-Pull_Request
 
 on: [pull_request]
 
