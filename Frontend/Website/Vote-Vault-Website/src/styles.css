@@ -107,6 +107,7 @@ footer {
   padding-top: 1%;
   text-align: center;
   color: white;
+  position: sticky;
 }
 
 body {
