@@ -62,7 +62,7 @@ header {
 }
 
 .navbar1 a:hover {
-  background-color: rgb(84, 123, 250);
+  background-color: /*rgb(84, 123, 250)*/ #f4717f;
   color: black;
 }
 
@@ -145,7 +145,7 @@ header {
 }
 
 #ftrr {
-  background-color: #0256E2;
+  background-color: #544e50;
   width: 100%;
   margin: 0px;
   height: 8%;
@@ -160,7 +160,7 @@ header {
 }
 
 .navbar1 {
-  background-color: #0256E2;
+  background-color: /*#0256E2*/ #544e50;
   overflow: hidden;
   position: sticky;
   top: 0%;
