@@ -44,8 +44,8 @@ describe('AnalyticsPageComponent', () => {
 
     expect(component.div0).toBe(false);
     expect(component.div1).toBe(false);
-    expect(component.div2).toBe(true);
-    expect(component.div3).toBe(false);
+    expect(component.div2).toBe(false);
+    expect(component.div3).toBe(true);
   });
 
   it('should display provincial dist', () => {
@@ -53,8 +53,8 @@ describe('AnalyticsPageComponent', () => {
 
     expect(component.div0).toBe(false);
     expect(component.div1).toBe(false);
-    expect(component.div2).toBe(false);
-    expect(component.div3).toBe(true);
+    expect(component.div2).toBe(true);
+    expect(component.div3).toBe(false);
   });
 });
 
