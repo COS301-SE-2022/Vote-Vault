@@ -19,7 +19,8 @@ body {
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
+  color: #dad8d9; 
 }
 
 #linkImage{
@@ -30,5 +31,19 @@ body {
 
 .banner{
   width : 100vw;
-  height: 100vh;
+  height: 25rem;
+  position: absolute;
+  z-index: -1;
+}
+
+#banner-text2{
+  text-align: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: #dad8d9; 
 }
