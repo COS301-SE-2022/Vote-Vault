@@ -25,13 +25,10 @@ body {
 
 #linkImage{
   width: 18.75rem;
-  align-self:center;
+  align-self: center;
   margin-bottom: 3.125rem;
   margin-top: 1.5rem;
-  margin-left: 38%;
-  margin-right: 38%;
 }
-
 .banner{
   width : 100vw;
   height: 25rem;
@@ -73,4 +70,10 @@ body {
   float: right;
   margin-right: 15%;
   margin-top: 5%;
+}
+
+#appDown{
+  align-content: center;
+  display :flex;
+  flex-direction: column;
 }
