@@ -47,3 +47,15 @@ body {
   margin-right: 15%;
   color: #dad8d9; 
 }
+
+#context{
+  text-align: left;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  
+  margin-right: 15%;
+  margin-top: 5%;
+}
