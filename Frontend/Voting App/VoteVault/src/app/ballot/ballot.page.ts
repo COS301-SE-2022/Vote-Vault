@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuController, ToastController } from '@ionic/angular';
+import { LoadingController, MenuController, ToastController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { Location } from "@angular/common";
 import { ContractService } from '../services/contract.service';
@@ -18,7 +18,7 @@ export class BallotPage implements OnInit {
   ballot3 : any
   slideIndex : number = 0
   votes : any[]
-  constructor(private contractService : ContractService, private location : Location, private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) {
+  constructor(private loadingController : LoadingController, private contractService : ContractService, private location : Location, private menu : MenuController, private router : Router, private dataService : DataService, private toastController: ToastController) {
     this.votes = []
   }
 
@@ -29,6 +29,8 @@ export class BallotPage implements OnInit {
     this.ballot2 = this.dataService.getBallot(1)
     this.ballot3 = this.dataService.getBallot(2)
     this.selected = {}
+
+    console.log(this.dataService.contractAddress)
   }
 
   selectCandidate(o) : void {
@@ -40,33 +42,34 @@ export class BallotPage implements OnInit {
   }
 
   async vote() {
+    this.presentLoading()
     this.dataService.votes.push(this.selected)
 
     //Deploy vote to blockchain
     await this.contractService.addVote(this.dataService.contractAddress, this.votes)
     .then(()  =>  {
-      this.toast_vote()
+      this.loadingController.dismiss()
+      this.toast_vote('You voted!')
       this.location.back();
     })
     .catch((error)  =>  {
+      this.toast_vote('Error recording vote')
+      this.loadingController.dismiss()
       console.error(error)
     })
-
-    this.toast_vote()
-    this.location.back();
   }
 
   ionSlidesDidLoad(slides) {
     slides.getActiveIndex().then((index : number) => {
       this.slideIndex = index
-      console.log(this.slideIndex)
+      // console.log(this.slideIndex)
     });
   }
 
-  async toast_vote() {
+  async toast_vote(message) {
     const toast = await this.toastController.create({
       duration: 800,
-      message: 'Vote recorded',
+      message: message,
       color: 'light',
       mode: 'ios'
     });
@@ -75,7 +78,9 @@ export class BallotPage implements OnInit {
   }
 
   openCustom() {
-    this.router.navigate(['voter-dashboard'])
+    this.location.back();
+
+    // this.router.navigate(['voter-dashboard'])
   }
 
   navigate(s) {
@@ -92,6 +97,18 @@ export class BallotPage implements OnInit {
 
   ballot3Index(i) {
     this.votes[2] = i
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 30000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
   }
 
 }

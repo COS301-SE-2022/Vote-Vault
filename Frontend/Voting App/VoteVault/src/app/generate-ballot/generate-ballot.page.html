@@ -1,31 +1,10 @@
-<!-- <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item lines="none" detail="false" (click)="navigate('admin-dashboard')">
-        <ion-icon name="home-outline"></ion-icon><ion-label>Dashboard</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('register')">
-        <ion-icon name="people-outline"></ion-icon><ion-label>Register Voters</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('ballot')">
-        <ion-icon name="checkbox-outline"></ion-icon>  <ion-label>Vote</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-   -->
 <ion-content id="main"> 
   <div id="titleInput">
-    <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
-    <ion-item id="electionTitle">
-      <ion-label position="floating">Election Title</ion-label>
-      <ion-input [(ngModel)] = "electionTitle"></ion-input>   
-    </ion-item>
+    <ion-button color = "primary" id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
+    <div id="title-div">
+      <ion-label>Election Title</ion-label>
+      <input id="electionTitle" [(ngModel)] = "electionTitle">   
+    </div>
   </div>
   <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
     <ion-slide>

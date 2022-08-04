@@ -1,11 +1,18 @@
 <ion-content>
-  <ion-card>
-    <ion-card-header id="title">
-      <ion-card-title >Welcome To VoteVault</ion-card-title>
-    </ion-card-header>
-    
+  <!-- <span class="circle"></span> -->
+  <app-circle></app-circle>
+  <app-landing-header></app-landing-header>
+  <!-- <ion-card>
+    <ion-card-header id="title"> -->
+      <!-- <ion-card-title ></ion-card-title> -->
+    <!-- </ion-card-header>
+
     <ion-button size = "medium" (click)="navigate()">View Elections</ion-button>
     <br>
     <ion-button (click)="adminLogin()" class="adminLogin" color="transparent">Admin Login</ion-button>
-  </ion-card>
+  </ion-card> -->
+  <h5>View Elections</h5>
+  <ion-button (click)="navigate()">View Elections</ion-button>
+  <p>or</p>
+  <p id="adminLogin" (click)="adminLogin()">Admin Login</p>
 </ion-content>

@@ -1,19 +1,23 @@
-<ion-header>
-
-</ion-header>
-
 <ion-content id="main">
-    <!-- <ion-title id = "title">Elections</ion-title> -->
-    <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
+  <app-circle-top></app-circle-top>
+  <app-elections-header></app-elections-header>
+    <!-- <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
       <ion-card-header>
-        <ion-card-title>{{e.name}}</ion-card-title>
+        <ion-card-title>{{e.electionName}}</ion-card-title>
         <br>
-        <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card> -->
+
+    <ion-card (click)="electionClicked(e)" *ngFor="let e of elections; let i = index" id="election">
+      <ion-card-header>
+        <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
+        <!-- <ion-card-subtitle>#{{e.id}}</ion-card-subtitle> -->
+        <!-- <ion-chip (click)="registerUser(e)">
+          <ion-label><ion-icon name="person-add-outline"></ion-icon>Register User</ion-label>
+        </ion-chip> -->
+        <ion-chip (click)="vote(e)">
+          <ion-label><ion-icon name="checkbox-outline"></ion-icon>Vote</ion-label>
+        </ion-chip>
       </ion-card-header>
     </ion-card>
-    <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createElection()">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab> -->
   </ion-content>

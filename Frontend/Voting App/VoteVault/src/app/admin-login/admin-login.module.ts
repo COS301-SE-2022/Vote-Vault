@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { AdminLoginPageRoutingModule } from './admin-login-routing.module';
 
 import { AdminLoginPage } from './admin-login.page';
+import { CircleComponent } from '../components/circle/circle/circle.component';
+import { LandingHeaderComponent } from '../components/landing-header/landing-header.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { AdminLoginPage } from './admin-login.page';
     IonicModule,
     AdminLoginPageRoutingModule
   ],
-  declarations: [AdminLoginPage]
+  declarations: [AdminLoginPage, CircleComponent, LandingHeaderComponent]
 })
 export class AdminLoginPageModule {}

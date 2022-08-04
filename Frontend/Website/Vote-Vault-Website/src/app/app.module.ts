@@ -10,6 +10,11 @@ import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ChartModule } from 'angular2-chartjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HistoryPageComponent } from './history-page/history-page.component';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { Firestore, FirestoreModule, getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { HistoryPageComponent } from './history-page/history-page.component';
     BrowserModule,
     AppRoutingModule,
     ChartModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

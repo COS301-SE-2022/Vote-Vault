@@ -11,6 +11,10 @@ describe('BallotPage', () => {
   let component: BallotPage;
   let fixture: ComponentFixture<BallotPage>;
 
+  beforeAll(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
+  });
+
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -50,5 +54,8 @@ describe('BallotPage', () => {
     expect(component.selected).toEqual(jasmine.any(Object));
   });
 
+  it('should have custom timeout', () => {
+    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL); //prints 999999
+  });
 
 });
