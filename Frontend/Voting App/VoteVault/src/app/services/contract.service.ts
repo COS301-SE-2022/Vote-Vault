@@ -71,6 +71,15 @@ export class ContractService {
     }
   }
 
+  async getVotes(contractAddress) {
+    console.log(contractAddress)
+    const contract = new ethers.Contract(contractAddress, this.contractABI, this.alcProvider)
+
+    console.log("GETTING VOTES...")
+    var result = await contract.getVotes1()
+    console.log(result[2].toNumber())
+  }
+
   // async 
 
 

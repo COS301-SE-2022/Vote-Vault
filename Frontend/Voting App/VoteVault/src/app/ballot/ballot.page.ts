@@ -31,6 +31,7 @@ export class BallotPage implements OnInit {
     this.selected = [-1,-1,-1]
 
     console.log(this.dataService.contractAddress)
+    this.contractService.getVotes(this.dataService.contractAddress)
   }
 
   selectCandidate(o) : void {
@@ -54,9 +55,12 @@ export class BallotPage implements OnInit {
     console.log(this.votes)
     //Deploy vote to blockchain
     await this.contractService.addVote(this.dataService.contractAddress, this.votes)
-    .then(()  =>  {
+    .then(async ()  =>  {
       this.loadingController.dismiss()
       this.toast_vote('You voted!')
+      await this.contractService.getVotes(this.dataService.contractAddress).then((res) =>  {
+        console.log(res)
+      })
       this.location.back();
     })
     .catch((error)  =>  {

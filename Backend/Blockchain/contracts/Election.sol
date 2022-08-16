@@ -58,6 +58,10 @@ pragma solidity^0.5.0;
         // }
     }
 
+    function getVotes1() public view returns( uint [] memory){
+        return votes_one;
+    }
+
     //Register user for election
     function registerUser(string memory id, uint age, string memory gender) public{
         voted[id] = false;
@@ -75,9 +79,9 @@ pragma solidity^0.5.0;
         //Add votes to indices
         votes_one[votes[0]] = votes_one[votes[0]]+1;
 
-        votes_one[votes[1]] = votes_one[votes[1]]+1;
+        votes_two[votes[1]] = votes_two[votes[1]]+1;
 
-        votes_one[votes[2]] = votes_one[votes[2]]+1;
+        votes_three[votes[2]] = votes_three[votes[2]]+1;
 
         //Set voted to true
         voted[id] = true;
