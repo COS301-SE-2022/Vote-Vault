@@ -11,7 +11,7 @@ import { ContractService } from '../services/contract.service';
   styleUrls: ['./ballot.page.scss'],
 })
 export class BallotPage implements OnInit {
-  selected : any
+  selected : any[]
   options : any[]
   ballot1 : any
   ballot2 : any
@@ -28,23 +28,30 @@ export class BallotPage implements OnInit {
     console.log(this.ballot1)
     this.ballot2 = this.dataService.getBallot(1)
     this.ballot3 = this.dataService.getBallot(2)
-    this.selected = {}
+    this.selected = [-1,-1,-1]
 
     console.log(this.dataService.contractAddress)
   }
 
   selectCandidate(o) : void {
-    if(this.selected != null)
-      this.selected.isChecked = false
-    this.selected = o
-    this.selected.isChecked = true
+    console.log(this.ballot1)
+    if(this.selected[this.slideIndex] != -1) {
+      this.selected[this.slideIndex].isChecked = false
+      this.selected[this.slideIndex] = o
+      this.selected[this.slideIndex].isChecked = true
+    }
+    else {
+      this.selected[this.slideIndex] = o
+      this.selected[this.slideIndex].isChecked = true
+    }
+
 
   }
 
   async vote() {
     this.presentLoading()
     this.dataService.votes.push(this.selected)
-
+    console.log(this.votes)
     //Deploy vote to blockchain
     await this.contractService.addVote(this.dataService.contractAddress, this.votes)
     .then(()  =>  {
