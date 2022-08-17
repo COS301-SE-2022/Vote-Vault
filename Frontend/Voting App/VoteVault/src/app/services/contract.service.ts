@@ -75,21 +75,21 @@ export class ContractService {
     console.log(contractAddress)
     const contract = new ethers.Contract(contractAddress, this.contractABI, this.alcProvider)
 
-    console.log("GETTING VOTES...")
-    var result = await contract.getVotes1()
-    console.log(result[0].toNumber())
-    console.log(result[1].toNumber())
-    console.log(result[2].toNumber())
+    // console.log("GETTING VOTES...")
+    // var result = await contract.getVotes1()
+    // console.log(result[0].toNumber())
+    // console.log(result[1].toNumber())
+    // console.log(result[2].toNumber())
 
-    var result1 = await contract.getVotes2()
-    console.log(result1[0].toNumber())
-    console.log(result1[1].toNumber())
-    console.log(result1[2].toNumber())
+    // var result1 = await contract.getVotes2()
+    // console.log(result1[0].toNumber())
+    // console.log(result1[1].toNumber())
+    // console.log(result1[2].toNumber())
 
-    var result2 = await contract.getVotes3()
-    console.log(result2[0].toNumber())
-    console.log(result2[1].toNumber())
-    console.log(result2[2].toNumber())
+    // var result2 = await contract.getVotes3()
+    // console.log(result2[0].toNumber())
+    // console.log(result2[1].toNumber())
+    // console.log(result2[2].toNumber())
   }
 
   // async 
