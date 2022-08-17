@@ -62,6 +62,14 @@ pragma solidity^0.5.0;
         return votes_one;
     }
 
+    function getVotes2() public view returns( uint [] memory){
+        return votes_two;
+    }
+
+    function getVotes3() public view returns( uint [] memory){
+        return votes_three;
+    }
+
     //Register user for election
     function registerUser(string memory id, uint age, string memory gender) public{
         voted[id] = false;
@@ -71,10 +79,10 @@ pragma solidity^0.5.0;
 
     //Vote indices for the 3 ballots
     function addVote(string memory id, uint [] memory votes) public {
-        // require(
-        //     !voted[id],
-        //     "Already voted"
-        // );
+        require(
+            !voted[id],
+            "Already voted"
+        );
 
         //Add votes to indices
         votes_one[votes[0]] = votes_one[votes[0]]+1;

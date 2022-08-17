@@ -59,7 +59,6 @@ export class BallotPage implements OnInit {
       this.loadingController.dismiss()
       this.toast_vote('You voted!')
       await this.contractService.getVotes(this.dataService.contractAddress).then((res) =>  {
-        console.log(res)
       })
       this.location.back();
     })
