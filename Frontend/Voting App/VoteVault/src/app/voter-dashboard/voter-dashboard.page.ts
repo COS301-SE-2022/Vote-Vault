@@ -35,7 +35,7 @@ export class VoterDashboardPage implements OnInit {
 
   vote(e) {
     this.electionClicked(e)
-    this.navigate('ballot')
+    this.navigate('register')
   }
 
   // async presentActionSheet(e: any) {
