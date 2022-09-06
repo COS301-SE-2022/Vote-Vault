@@ -140,6 +140,7 @@ let VoterRegistrationPage = class VoterRegistrationPage {
             // this.voterSurnames.push(nVoter.surname);
             // this.voterIDs.push(nVoter.id);
             // alert(this.voter)
+            //testing webhook
             this.presentLoading();
             if ((yield this.dataservice.checkVoters(this.idNum)) == false) {
                 alert('Not registered!');
