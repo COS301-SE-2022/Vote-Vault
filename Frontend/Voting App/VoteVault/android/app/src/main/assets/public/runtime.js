@@ -14,17 +14,25 @@
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
+<<<<<<< HEAD
 /******/ 			id: moduleId,
 /******/ 			loaded: false,
+=======
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+>>>>>>> c4ad9ad31cd3649b22144515159bfd985305d1ad
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
+<<<<<<< HEAD
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
 /******/ 	
+=======
+>>>>>>> c4ad9ad31cd3649b22144515159bfd985305d1ad
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
@@ -33,11 +41,14 @@
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/amd options */
 /******/ 	(() => {
 /******/ 		__webpack_require__.amdO = {};
 /******/ 	})();
 /******/ 	
+=======
+>>>>>>> c4ad9ad31cd3649b22144515159bfd985305d1ad
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
 /******/ 		var deferred = [];
@@ -217,6 +228,7 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -226,6 +238,8 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
+=======
+>>>>>>> c4ad9ad31cd3649b22144515159bfd985305d1ad
 /******/ 	/* webpack/runtime/trusted types policy */
 /******/ 	(() => {
 /******/ 		var policy;

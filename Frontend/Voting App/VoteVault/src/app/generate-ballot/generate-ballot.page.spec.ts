@@ -10,6 +10,10 @@ describe('GenerateBallotPage', () => {
   let component: GenerateBallotPage;
   let fixture: ComponentFixture<GenerateBallotPage>;
 
+  beforeAll(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
+  });
+
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -90,5 +94,9 @@ describe('GenerateBallotPage', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('ion-card').textContent).toContain('Candidate Details');
+  });
+
+  it('should have custom timeout', () => {
+    console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL); //prints 999999
   });
 });

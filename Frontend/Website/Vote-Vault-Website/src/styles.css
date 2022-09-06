@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  sans-serif,Arial, Helvetica;
 }
 
 footer {
@@ -18,11 +18,27 @@ body {
   width: 100vw;
 }
 
+.rest {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+  
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
 header {
-  background-color: rgb(50, 87, 255);
+  background-color: #fff;
   width: 100%;
   margin: 0px;
-  height: 100px;
+  height: 20%;
   border: 0px;
   text-align: center;
   position: relative;
@@ -31,7 +47,7 @@ header {
 }
 
 #ftrr {
-  background-color: rgb(50, 87, 255);
+  background-color: #0256E2;
   width: 100%;
   margin: 0px;
   height: 8%;
@@ -42,33 +58,45 @@ header {
   border-top: 100px;
   padding: 10px;
   text-align: center;
-  color: white;
+  color: #FBFFF5;
 }
 
 .navbar1 {
-  background-color: rgb(112, 139, 255);
+  background-color: #0256E2;
   overflow: hidden;
   position: sticky;
   top: 0%;
   z-index: 1;
+  display: table;
+  width: 100vw;
+  font-size: 1.5rem;
+}
+
+#logo {
+  height: 2rem;
 }
 
 .navbar1 a:hover {
-  background-color: rgb(84, 123, 250);
-  color: black;
+  /* background-color: rgb(84, 123, 250); */
+  /* color: black; */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px;
 }
 
 .navbar1 a {
   float: left;
-  color: #000000;
+  color: whitesmoke;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   text-decoration: none;
   font-size: 17px;
 }
 
 a.active {
-  background-color: aliceblue;
+  background-color: #FBFFF5;
+  color: #02224E;
+  height: 100%;
+  border-bottom: 6px solid #FBFFF5;
 }
 
 input[type=text] {
@@ -81,8 +109,8 @@ input[type=text] {
   border-radius: 5px;
 }
 
-#logo {
+/* #logo {
   position: relative;
   top: 15%;
-  height: 70%;
-}
+  height: 10%;
+} */

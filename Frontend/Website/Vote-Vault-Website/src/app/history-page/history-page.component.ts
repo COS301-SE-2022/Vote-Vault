@@ -38,7 +38,7 @@ export class HistoryPageComponent implements OnInit {
       labels: [this.year[0].partyname.name1,this.year[0].partyname.name2,this.year[0].partyname.name3],
       datasets: [
         {
-          backgroundColor: ['blue','red','green'],
+          backgroundColor: ['#b56576','#e56b6f','#eaac8b'],
           data: [this.year[0].results.party1, this.year[0].results.party2, this.year[0].results.party3]
         }
       ]
@@ -75,7 +75,7 @@ export class HistoryPageComponent implements OnInit {
       labels: [this.year[1].partyname.name1,this.year[1].partyname.name2,this.year[1].partyname.name3],
       datasets: [
         {
-          backgroundColor: ['blue','red','green'],
+          backgroundColor: ['#d62828','#f77f00','#fcbf49'],
           data: [this.year[1].results.party1, this.year[1].results.party2, this.year[1].results.party3]
         }
       ]
@@ -112,7 +112,7 @@ export class HistoryPageComponent implements OnInit {
       labels: [this.year[2].partyname.name1,this.year[2].partyname.name2,this.year[2].partyname.name3],
       datasets: [
         {
-          backgroundColor: ['blue','red','green'],
+          backgroundColor: ['#35353','#d9d9d9','#284b63'],
           data: [this.year[2].results.party1, this.year[2].results.party2, this.year[2].results.party3]
         }
       ]

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { IonSlides, LoadingController, MenuController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
+import { Location } from "@angular/common";
+import { ContractService } from '../services/contract.service';
 
 @Component({
   selector: 'app-generate-ballot',
@@ -28,7 +30,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ballotName2 = '';
   electionTitle = '';
 
-  constructor(private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
+  constructor(private contractService: ContractService, private location: Location, private loadingController: LoadingController, private menu: MenuController, private toastController: ToastController, private router: Router, private dataService: DataService) {
     this.ballot1Options = [];
     this.ballot2Options = [];
     this.ballot3Options = [];
@@ -37,22 +39,26 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
   ngOnInit() {
   }
 
+
   ionViewWillEnter() {
-    this.options = [];
-    this.electionTitle = this.dataService.electionName;
-    this.ballot1Options = this.dataService.ballot1.options;
-    console.log(this.dataService.ballot1.name);
-    this.ballotName = this.dataService.ballot1.name;
-    this.ballot2Options = this.dataService.ballot2.options;
-    this.ballotName1 = this.dataService.ballot2.name;
-    this.ballot3Options = this.dataService.ballot3.options;
-    this.ballotName2 = this.dataService.ballot3.name;
+    this.populateBallots()
   }
 
   ngOnDestroy() {
     this.dataService.clear();
   }
 
+
+  populateBallots() {
+    this.options = [];
+    this.electionTitle = this.dataService.electionName;
+    this.ballot1Options = this.dataService.ballot1.options;
+    this.ballotName = this.dataService.ballot1.name;
+    this.ballot2Options = this.dataService.ballot2.options;
+    this.ballotName1 = this.dataService.ballot2.name;
+    this.ballot3Options = this.dataService.ballot3.options;
+    this.ballotName2 = this.dataService.ballot3.name;
+  }
 
   addOption(): void {
     const newCandidate = {name : this.name, surname : this.surname, id : this.idNum, isChecked : false};
@@ -81,20 +87,54 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     this.toast_addUser();
   }
 
-  generate(): void {
+  async generate() {
     this.dataService.saveElectionName(this.electionTitle);
     this.presentLoading();
-    this.dataService.saveElection()
-    .then((res) => {
-      console.log(res);
-      this.loadingController.dismiss();
-    })
-    .catch((e) => {
-      console.error(e);
-      this.loadingController.dismiss();
-    });
 
-    this.router.navigate(['admin-dashboard']);
+    if(this.dataService.adminState === 'edit') {
+      await this.dataService.saveEdit()
+      .then(async (res) => {
+        console.log(res);
+        this.dataService.clear()
+        // await this.dataService.fetchElections().then(() =>  {
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        // })
+      })
+      .catch((e) => {
+        console.error(e);
+        this.loadingController.dismiss();
+        this.router.navigate(['admin-dashboard']);
+      });
+    }
+    else if(this.dataService.adminState === 'generate') {
+      const sizes = [this.ballot1Options.length, this.ballot2Options.length, this.ballot3Options.length]
+      //Deploy contract to blockchain with number of candidates and voters as parameters
+      await this.contractService.deploy(this.dataService.electionName, 10, 20, sizes)
+      .then(async (res) => {
+        const contractAddress = res
+        
+        //Add election to database and save address of contract
+        await this.dataService.saveElection(contractAddress)
+        .then(async (res) => {
+          // this.dataService.clear()
+          // await this.dataService.fetchElections().then(() =>  {
+            this.loadingController.dismiss();
+            this.router.navigate(['admin-dashboard']);
+          // })
+          
+        })
+        .catch((e) => {
+          console.error(e);
+          this.loadingController.dismiss();
+          this.router.navigate(['admin-dashboard']);
+        });
+      })
+      
+    }
+
+    
+  
   }
 
   ionSlidesDidLoad(slides) {
@@ -149,7 +189,7 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      duration: 2000
+      duration: 30000
     });
     await loading.present();
 
@@ -159,7 +199,10 @@ export class GenerateBallotPage implements OnInit, OnDestroy{
 
   openCustom() {
     this.dataService.clear();
-    this.router.navigate(['admin-dashboard']);
+    // this.dataService.fetchElections()
+    this.location.back();
+  
+    // this.router.navigate(['admin-dashboard']);
   }
 
   navigate(s) {

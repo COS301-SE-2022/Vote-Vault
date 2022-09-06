@@ -3,7 +3,7 @@ ion-card-title {
 }
 
 ion-card {
-    background-color: var(--ion-color-tertiary-shade);
+    margin-top: 30%;
 }
 
 .voter-Details {
@@ -23,7 +23,9 @@ body > ion-card > ion-card-header > ion-card-title {
     }
 }
 
-#menuButton { 
-    --background : transparent;
-    width: auto;
+#menuButton {
+    // --background : transparent;
+    left: 0;
+    top: -10px;
+    position: absolute;
 }

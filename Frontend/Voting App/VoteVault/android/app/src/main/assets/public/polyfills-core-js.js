@@ -1,6 +1,10 @@
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["polyfills-core-js"],{
 
+<<<<<<< HEAD
 /***/ 67320:
+=======
+/***/ 7320:
+>>>>>>> c4ad9ad31cd3649b22144515159bfd985305d1ad
 /*!****************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/polyfills/core-js.js ***!
   \****************************************************************/
