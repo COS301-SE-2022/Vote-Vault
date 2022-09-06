@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import {ContractFactory, ethers, providers} from 'ethers';
+import { environment } from 'src/environments/environment';
 
 declare let window : any;
 
@@ -64,6 +66,13 @@ export class DataService {
   agesArray: any[];
   yearBornFromID: number;
 
+  //Contract variables
+  contractABI = ''
+  contractBytecode = ''
+  privateKey = ''
+  alcProvider = null
+  signer = null
+
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
     this.ballot1 = {} as Ballot;
@@ -88,7 +97,16 @@ export class DataService {
     this.maleCount = 0;
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    // this.deployContract()
+
+
+    //Contract 
+    this.contractABI = environment.contractABI
+    this.contractBytecode = environment.contractBytecode
+    this.privateKey = environment.privateKey
+
+    this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
+
+    this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
   }
 
   setAdminState(s) {
