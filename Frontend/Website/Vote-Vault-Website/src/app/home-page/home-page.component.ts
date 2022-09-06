@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   constructor(private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dataService.getElectionResults('0xf14d272fb7b95afD1076Eb34f682c9EaF2C556F6')
+    this.dataService.getElectionResults('0xb557a3673Bc1144f277196aB3b6fBAb47B55467c')
   }
 
 }
