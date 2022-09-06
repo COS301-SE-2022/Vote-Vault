@@ -113,6 +113,10 @@ export class DataService {
     this.adminState = s
   }
 
+  getElectionResults(contractAddress:  string) {
+    
+  }
+
   async fetchAllElections() {
     this.maleCount = 0;
     this.femaleCount = 0;
