@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["src_app_register_register_module_ts"],{
 
-/***/ 3963:
+/***/ 23963:
 /*!*****************************************************!*\
   !*** ./src/app/register/register-routing.module.ts ***!
   \*****************************************************/
@@ -11,10 +11,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPageRoutingModule": () => (/* binding */ RegisterPageRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page */ 8135);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page */ 98135);
 
 
 
@@ -38,7 +38,7 @@ RegisterPageRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 8723:
+/***/ 18723:
 /*!*********************************************!*\
   !*** ./src/app/register/register.module.ts ***!
   \*********************************************/
@@ -48,14 +48,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPageModule": () => (/* binding */ RegisterPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 3819);
-/* harmony import */ var _register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register-routing.module */ 3963);
-/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page */ 8135);
-/* harmony import */ var _angular_router_testing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router/testing */ 9504);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _register_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register-routing.module */ 23963);
+/* harmony import */ var _register_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page */ 98135);
+/* harmony import */ var _angular_router_testing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router/testing */ 69504);
 
 
 
@@ -83,7 +83,7 @@ RegisterPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 8135:
+/***/ 98135:
 /*!*******************************************!*\
   !*** ./src/app/register/register.page.ts ***!
   \*******************************************/
@@ -93,12 +93,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterPage": () => (/* binding */ RegisterPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4929);
-/* harmony import */ var _register_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page.html?ngResource */ 4754);
-/* harmony import */ var _register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page.scss?ngResource */ 6219);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 2816);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6362);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _register_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.page.html?ngResource */ 84754);
+/* harmony import */ var _register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register.page.scss?ngResource */ 36219);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _services_contract_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contract.service */ 36569);
+/* harmony import */ var _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/barcode-scanner/ngx */ 5684);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+
+
+
 
 
 
@@ -106,53 +112,136 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RegisterPage = class RegisterPage {
-    constructor(location, router) {
-        this.location = location;
+    constructor(loadingController, toastController, contractService, router, barcodeScanner, dataservice) {
+        this.loadingController = loadingController;
+        this.toastController = toastController;
+        this.contractService = contractService;
         this.router = router;
+        this.barcodeScanner = barcodeScanner;
+        this.dataservice = dataservice;
     }
     ngOnInit() {
         this.voterIDs = [];
         this.voterNames = [];
         this.voterSurnames = [];
+        // console.log(this.dataservice.contractAddress)
     }
     registerVoter() {
-        const nVoter = { name: this.name, surname: this.surname, id: this.idNum, isRegistered: false };
-        if (nVoter.name === undefined || nVoter.surname === undefined || nVoter.id === undefined) {
-            alert('Please make sure all fields are filled in.');
-            return;
-        }
-        if (nVoter.id.length !== 13) {
-            alert('Please enter an ID number with a length of 13.');
-            return;
-        }
-        if (!/^[0-9]+$/.test(nVoter.id)) {
-            alert('Please make sure the ID only exists of digits.');
-            return;
-        }
-        const first = this.voterIDs.find((obj) => obj === nVoter.id);
-        if (first != null) {
-            alert('The entered ID is already registered with a voter.');
-            return;
-        }
-        this.voterNames.push(nVoter.name);
-        this.voterSurnames.push(nVoter.surname);
-        this.voterIDs.push(nVoter.id);
-        this.name = '';
-        this.surname = '';
-        this.idNum = '';
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            // const first = this.voterIDs.find((obj) => obj === nVoter.id);
+            // if (first != null) {
+            //   alert('The entered ID is already registered with a voter.');
+            //   return;
+            // }
+            // this.voterNames.push(nVoter.name);
+            // this.voterSurnames.push(nVoter.surname);
+            // this.voterIDs.push(nVoter.id);
+            // alert(this.voter)
+            this.presentLoading();
+            if ((yield this.dataservice.checkVoters(this.idNum)) == false) {
+                alert('Not registered!');
+                try {
+                    yield this.dataservice.addvoter(this.voter)
+                        .then(() => (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+                        yield this.contractService.addVoter(this.dataservice.contractAddress, this.voter)
+                            .then(() => {
+                            // alert('Successfully registered!');
+                            this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum);
+                            this.loadingController.dismiss();
+                            this.router.navigate(['admin-dashboard']);
+                        });
+                    })).catch((error) => {
+                        this.presentToast('Error registering');
+                        this.loadingController.dismiss();
+                        console.error(error);
+                    });
+                }
+                catch (err) {
+                    alert(err);
+                }
+            }
+            else {
+                alert('Already registered voter!');
+                if ((yield this.dataservice.checkVoted(this.voter)) == false) {
+                    alert('Already voted!');
+                    this.router.navigate(['voter-dashboard']);
+                }
+                else {
+                    yield this.dataservice.vote(this.voter);
+                    this.router.navigate(['ballot']);
+                }
+            }
+            this.name = '';
+            this.surname = '';
+            this.idNum = '';
+            this.gender = '';
+            document.getElementById("regnowbutton").style.display = "none";
+        });
     }
     openCustom() {
-        console.log('click');
-        this.location.back();
-        // this.router.navigate(['admin-dashboard']);
+        alert('here');
+        this.router.navigate(['voter-dashboard']);
+    }
+    scanBarcode() {
+        const options = {
+            preferFrontCamera: false,
+            showFlipCameraButton: true,
+            showTorchButton: true,
+            torchOn: false,
+            prompt: 'Place a barcode inside the scan area',
+            resultDisplayDuration: 500,
+            formats: 'PDF_417',
+            orientation: 'landscape',
+        };
+        this.barcodeScanner.scan(options).then(barcodeData => {
+            this.scannedData = barcodeData;
+            this.inputData = this.scannedData["text"];
+            var splitted = this.inputData.split("|");
+            this.surname = splitted[0];
+            this.name = splitted[1];
+            this.gender = splitted[2];
+            this.idNum = splitted[4];
+            this.voter = this.dataservice.createVoter(this.name, this.surname, this.idNum, this.gender);
+            // alert(this.voter.birthName)
+            document.getElementById("regnowbutton").style.display = "block";
+        }).catch(err => {
+            console.log('Error', err);
+        });
+    }
+    presentToast(message) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                duration: 800,
+                message: message,
+                color: 'light',
+                mode: 'ios'
+            });
+            yield toast.present();
+        });
+    }
+    presentLoading() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            const loading = yield this.loadingController.create({
+                cssClass: 'my-custom-class',
+                message: 'Please wait...',
+                duration: 30000
+            });
+            yield loading.present();
+            const { role, data } = yield loading.onDidDismiss();
+            console.log('Loading dismissed!');
+        });
     }
 };
 RegisterPage.ctorParameters = () => [
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__.Location },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.LoadingController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController },
+    { type: _services_contract_service__WEBPACK_IMPORTED_MODULE_3__.ContractService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
+    { type: _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner },
+    { type: _data_service__WEBPACK_IMPORTED_MODULE_2__.DataService }
 ];
-RegisterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+RegisterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-register',
         template: _register_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_register_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -163,27 +252,27 @@ RegisterPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 6219:
+/***/ 36219:
 /*!********************************************************!*\
   !*** ./src/app/register/register.page.scss?ngResource ***!
   \********************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-card-title {\n  text-decoration: underline;\n}\n\nion-card {\n  background-color: var(--ion-color-tertiary-shade);\n}\n\n.voter-Details {\n  width: 50%;\n  left: 25%;\n}\n\nbody > ion-card > ion-card-header > ion-card-title {\n  color: white;\n  font-size: 150%;\n}\n\n@media (max-width: 992px) {\n  .voter-Details {\n    width: auto;\n    left: auto;\n  }\n}\n\n#menuButton {\n  --background: transparent;\n  width: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlZ2lzdGVyLnBhZ2Uuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcVm90aW5nJTIwQXBwXFxWb3RlVmF1bHRcXHNyY1xcYXBwXFxyZWdpc3RlclxccmVnaXN0ZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksMEJBQUE7QUNDSjs7QURFQTtFQUNJLGlEQUFBO0FDQ0o7O0FERUE7RUFDSSxVQUFBO0VBQ0EsU0FBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtFQUNBLGVBQUE7QUNDSjs7QURFQTtFQUNJO0lBQ0ksV0FBQTtJQUNBLFVBQUE7RUNDTjtBQUNGOztBREVBO0VBQ0kseUJBQUE7RUFDQSxXQUFBO0FDQUoiLCJmaWxlIjoicmVnaXN0ZXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNhcmQtdGl0bGUge1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbn1cclxuXHJcbmlvbi1jYXJkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWlvbi1jb2xvci10ZXJ0aWFyeS1zaGFkZSk7XHJcbn1cclxuXHJcbi52b3Rlci1EZXRhaWxzIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBsZWZ0OiAyNSU7XHJcbn1cclxuXHJcbmJvZHkgPiBpb24tY2FyZCA+IGlvbi1jYXJkLWhlYWRlciA+IGlvbi1jYXJkLXRpdGxlIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMTUwJTtcclxufVxyXG5cclxuQG1lZGlhKG1heC13aWR0aDogOTkycHgpIHtcclxuICAgIC52b3Rlci1EZXRhaWxzIHtcclxuICAgICAgICB3aWR0aDogYXV0bztcclxuICAgICAgICBsZWZ0OiBhdXRvO1xyXG4gICAgfVxyXG59XHJcblxyXG4jbWVudUJ1dHRvbiB7IFxyXG4gICAgLS1iYWNrZ3JvdW5kIDogdHJhbnNwYXJlbnQ7XHJcbiAgICB3aWR0aDogYXV0bztcclxufSIsImlvbi1jYXJkLXRpdGxlIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG59XG5cbmlvbi1jYXJkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0taW9uLWNvbG9yLXRlcnRpYXJ5LXNoYWRlKTtcbn1cblxuLnZvdGVyLURldGFpbHMge1xuICB3aWR0aDogNTAlO1xuICBsZWZ0OiAyNSU7XG59XG5cbmJvZHkgPiBpb24tY2FyZCA+IGlvbi1jYXJkLWhlYWRlciA+IGlvbi1jYXJkLXRpdGxlIHtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDE1MCU7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA5OTJweCkge1xuICAudm90ZXItRGV0YWlscyB7XG4gICAgd2lkdGg6IGF1dG87XG4gICAgbGVmdDogYXV0bztcbiAgfVxufVxuI21lbnVCdXR0b24ge1xuICAtLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICB3aWR0aDogYXV0bztcbn0iXX0= */";
+module.exports = "ion-card-title {\n  text-decoration: underline;\n}\n\nion-card {\n  margin-top: 30%;\n}\n\n.voter-Details {\n  width: 50%;\n  left: 25%;\n}\n\nbody > ion-card > ion-card-header > ion-card-title {\n  color: white;\n  font-size: 150%;\n}\n\n@media (max-width: 992px) {\n  .voter-Details {\n    width: auto;\n    left: auto;\n  }\n}\n\n#menuButton {\n  left: 0;\n  top: -10px;\n  position: absolute;\n}\n\n#header {\n  width: 80%;\n  margin-left: 10%;\n  text-align: center;\n  padding-top: 10%;\n  font-size: 3em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlZ2lzdGVyLnBhZ2Uuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcVm90aW5nJTIwQXBwXFxWb3RlVmF1bHRcXHNyY1xcYXBwXFxyZWdpc3RlclxccmVnaXN0ZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksMEJBQUE7QUNDSjs7QURFQTtFQUNJLGVBQUE7QUNDSjs7QURFQTtFQUNJLFVBQUE7RUFDQSxTQUFBO0FDQ0o7O0FERUE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ0NKOztBREVBO0VBQ0k7SUFDSSxXQUFBO0lBQ0EsVUFBQTtFQ0NOO0FBQ0Y7O0FERUE7RUFFSSxPQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0FDREo7O0FESUE7RUFDSSxVQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ0RKIiwiZmlsZSI6InJlZ2lzdGVyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jYXJkLXRpdGxlIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xyXG59XHJcblxyXG5pb24tY2FyZCB7XHJcbiAgICBtYXJnaW4tdG9wOiAzMCU7XHJcbn1cclxuXHJcbi52b3Rlci1EZXRhaWxzIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBsZWZ0OiAyNSU7XHJcbn1cclxuXHJcbmJvZHkgPiBpb24tY2FyZCA+IGlvbi1jYXJkLWhlYWRlciA+IGlvbi1jYXJkLXRpdGxlIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMTUwJTtcclxufVxyXG5cclxuQG1lZGlhKG1heC13aWR0aDogOTkycHgpIHtcclxuICAgIC52b3Rlci1EZXRhaWxzIHtcclxuICAgICAgICB3aWR0aDogYXV0bztcclxuICAgICAgICBsZWZ0OiBhdXRvO1xyXG4gICAgfVxyXG59XHJcblxyXG4jbWVudUJ1dHRvbiB7XHJcbiAgICAvLyAtLWJhY2tncm91bmQgOiB0cmFuc3BhcmVudDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB0b3A6IC0xMHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG59XHJcblxyXG4jaGVhZGVyIHtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZy10b3A6IDEwJTtcclxuICAgIGZvbnQtc2l6ZTogM2VtO1xyXG59IiwiaW9uLWNhcmQtdGl0bGUge1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn1cblxuaW9uLWNhcmQge1xuICBtYXJnaW4tdG9wOiAzMCU7XG59XG5cbi52b3Rlci1EZXRhaWxzIHtcbiAgd2lkdGg6IDUwJTtcbiAgbGVmdDogMjUlO1xufVxuXG5ib2R5ID4gaW9uLWNhcmQgPiBpb24tY2FyZC1oZWFkZXIgPiBpb24tY2FyZC10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxNTAlO1xufVxuXG5AbWVkaWEgKG1heC13aWR0aDogOTkycHgpIHtcbiAgLnZvdGVyLURldGFpbHMge1xuICAgIHdpZHRoOiBhdXRvO1xuICAgIGxlZnQ6IGF1dG87XG4gIH1cbn1cbiNtZW51QnV0dG9uIHtcbiAgbGVmdDogMDtcbiAgdG9wOiAtMTBweDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xufVxuXG4jaGVhZGVyIHtcbiAgd2lkdGg6IDgwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nLXRvcDogMTAlO1xuICBmb250LXNpemU6IDNlbTtcbn0iXX0= */";
 
 /***/ }),
 
-/***/ 4754:
+/***/ 84754:
 /*!********************************************************!*\
   !*** ./src/app/register/register.page.html?ngResource ***!
   \********************************************************/
 /***/ ((module) => {
 
-module.exports = "<body>\r\n  <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button> \r\n  <!-- <ion-header class=\"ion-margin-bottom\">\r\n    <ion-toolbar class=\"ion-text-center\">\r\n      <ion-title id=\"page-heading\">Voter Registration</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header> -->\r\n\r\n  <ion-card class=\"voter-Details ion-text-center ion-padding\">\r\n    <ion-card-header>\r\n      <ion-card-title>\r\n        Voter Details\r\n      </ion-card-title>\r\n    </ion-card-header>\r\n\r\n    <ion-item color=\"light\">\r\n      <ion-label position=\"floating\">First Name:</ion-label>\r\n      <ion-input [(ngModel)] = \"name\" placeholder=\"Enter first name here\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-item color=\"light\">\r\n      <ion-label position=\"floating\">Last Name:</ion-label>\r\n      <ion-input [(ngModel)] = \"surname\" placeholder=\"Enter last name here\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-item color=\"light\">\r\n      <ion-label position=\"floating\">ID Number:</ion-label>\r\n      <ion-input [(ngModel)] = \"idNum\" placeholder=\"Enter ID number here\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-item  class=\"ion-align-items-center\" color=\"light\">\r\n      <ion-label position=\"floating\">Scan ID:</ion-label>\r\n      <ion-button size=\"medium\">\r\n        <ion-icon name=\"camera-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ion-button class=\"ion-margin-top\" (click) = \"registerVoter()\">\r\n        Register Voter\r\n    </ion-button>\r\n  </ion-card>\r\n</body>";
+module.exports = "<ion-content>\r\n  <!-- <ion-header class=\"ion-margin-bottom\">\r\n    <ion-toolbar class=\"ion-text-center\">\r\n      <ion-title id=\"page-heading\"><ion-button color=\"dark\" id=\"menuButton\" (click)=\"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button>Voter Registration</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header> -->\r\n  <h1 id=\"header\">Register Voter</h1>\r\n\r\n  <ion-card class=\"voter-Details ion-text-center ion-padding\">\r\n    <ion-card-header>\r\n      <ion-card-title>\r\n        Scan ID Card\r\n      </ion-card-title>\r\n    </ion-card-header>\r\n    <ion-button expand=\"full\" color=\"dark\" (click)=\"scanBarcode()\">Scan ID</ion-button>\r\n    <div *ngIf=\"name\">\r\n      <p>\r\n        Name(s): <b>{{ name }}</b>\r\n      </p>\r\n    </div>\r\n    <div *ngIf=\"surname\">\r\n      <p>\r\n        Surname: <b>{{ surname }}</b>\r\n      </p>\r\n    </div>\r\n    <div *ngIf=\"gender\">\r\n      <p>\r\n        Gender: <b>{{ gender }}</b>\r\n      </p>\r\n    </div>\r\n    <div *ngIf=\"idNum\">\r\n      <p>\r\n        ID Number: <b>{{ idNum }}</b>\r\n      </p>\r\n    </div>\r\n    <ion-button id=\"regnowbutton\" class=\"ion-margin-top\" (click)=\"registerVoter()\" style=\"display: none;\">\r\n        Register Now\r\n    </ion-button>\r\n  </ion-card>\r\n</ion-content>\r\n";
 
 /***/ }),
 
-/***/ 446:
+/***/ 70446:
 /*!***********************************************************!*\
   !*** ./node_modules/@angular/common/fesm2015/testing.mjs ***!
   \***********************************************************/
@@ -197,8 +286,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SpyLocation": () => (/* binding */ SpyLocation)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 2218);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 92218);
 /**
  * @license Angular v13.2.7
  * (c) 2010-2022 Google LLC. https://angular.io/
@@ -940,7 +1029,7 @@ function scheduleMicroTask(cb) {
 
 /***/ }),
 
-/***/ 9504:
+/***/ 69504:
 /*!***********************************************************!*\
   !*** ./node_modules/@angular/router/fesm2015/testing.mjs ***!
   \***********************************************************/
@@ -951,10 +1040,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "RouterTestingModule": () => (/* binding */ RouterTestingModule),
 /* harmony export */   "setupTestingRouter": () => (/* binding */ setupTestingRouter)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6362);
-/* harmony import */ var _angular_common_testing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/testing */ 446);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_common_testing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/testing */ 70446);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ 2816);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ 52816);
 /**
  * @license Angular v13.2.7
  * (c) 2010-2022 Google LLC. https://angular.io/

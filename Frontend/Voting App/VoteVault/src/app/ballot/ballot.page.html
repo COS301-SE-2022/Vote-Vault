@@ -1,32 +1,11 @@
-<!-- <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item lines="none" detail="false" (click)="navigate('admin-dashboard')">
-        <ion-icon name="home-outline"></ion-icon><ion-label>Dashboard</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('generate-ballot')">
-        <ion-icon name="copy-outline"></ion-icon><ion-label>Generate Ballots</ion-label>
-      </ion-item>
-      <ion-item lines="none" detail="false" (click)="navigate('register')">
-        <ion-icon name="people-outline"></ion-icon><ion-label>Register Voters</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu> -->
-
 <ion-content id = "main">
   <h1 id="header">Vote</h1>
-
+  <app-circle-top></app-circle-top>
   <!-- <ion-button id = "menuButton" (click) = "openCustom()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
   <ion-slides #slides pager="true" mode="ios" (ionSlideDidChange)="ionSlidesDidLoad(slides)">
     <ion-slide>
       <ion-card>
-        {{ballot1.name}}
+        <ion-card-title>{{ballot1.name}}</ion-card-title>
           <ion-item *ngFor="let o of ballot1.options; let b1 = index" (click)="selectCandidate(o)" (click)="ballot1Index(b1)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
@@ -37,7 +16,7 @@
 
     <ion-slide>
       <ion-card>
-        {{ballot2.name}}
+        <ion-card-title>{{ballot2.name}}</ion-card-title>
           <ion-item *ngFor="let o of ballot2.options; let b2 = index" (click)="ballot2Index(b2)" (click)="selectCandidate(o)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
@@ -48,8 +27,8 @@
 
     <ion-slide>
       <ion-card>
-        {{ballot3.name}}
-          <ion-item *ngFor="let o of ballot3.options; let b3 = index" (click)="ballot2Index(b3)" (click)="selectCandidate(o)">
+        <ion-card-title>{{ballot3.name}}</ion-card-title>
+          <ion-item *ngFor="let o of ballot3.options; let b3 = index" (click)="ballot3Index(b3)" (click)="selectCandidate(o)">
             <ion-label>{{o.surname}}, {{o.name}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="o.isChecked"></ion-checkbox>
           </ion-item>
@@ -58,7 +37,7 @@
     </ion-slide>
 
     <ion-slide>
-        You are about to submit your votes.
+      <p>You are about to submit your votes.</p>
       <ion-button id="vote" (click)="vote()">
         Submit Votes
       </ion-button>

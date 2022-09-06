@@ -1,3 +1,103 @@
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  background-color: rgb(58, 103, 228);
+  padding-top: 1%;
+  text-align: center;
+  color: white;
+  position: sticky;
+}
+
+body {
+  background-color: #e9e3e3; 
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  background-color: #e9e3e3;
+  width: 100%;
+  margin: 0px;
+  height: 20%;
+  border: 0px;
+  text-align: center;
+  position: relative;
+  color: black;
+  border-top: 100px;
+}
+
+#ftrr {
+  background-color: #f4717f;
+  width: 100%;
+  margin: 0px;
+  height: 8%;
+  border: 0px;
+  text-align: center;
+  color: black;
+  position: sticky;
+  border-top: 100px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.navbar1 {
+  background-color: #544e50;
+  overflow: hidden;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+  display: table;
+  width: 100vw;
+  
+}
+
+#logo {
+  height: 2rem;
+}
+
+.navbar1 a:hover {
+  background-color: /*rgb(84, 123, 250)*/ #f4717f;
+  color: black;
+}
+
+.navbar1 a {
+  float: left;
+  color: whitesmoke;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+a.active {
+  background-color: #3c84cc;
+  color: #fff;
+}
+
+input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 22px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+/* #logo {
+  position: relative;
+  top: 15%;
+  height: 10%;
+} */
+
 /* You can add global styles to this file, and also import other style files */
 html {
   font-family:  sans-serif,Arial, Helvetica;
@@ -8,6 +108,7 @@ footer {
   padding-top: 1%;
   text-align: center;
   color: white;
+  position: sticky;
 }
 
 body {
@@ -19,7 +120,7 @@ body {
 }
 
 .rest {
-  animation: fadeInAnimation ease 0.5s;
+  animation: fadeInAnimation ease 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -47,7 +148,7 @@ header {
 }
 
 #ftrr {
-  background-color: #0256E2;
+  background-color: #544e50;
   width: 100%;
   margin: 0px;
   height: 8%;
@@ -62,7 +163,7 @@ header {
 }
 
 .navbar1 {
-  background-color: #0256E2;
+  background-color: /*#0256E2*/ #544e50;
   overflow: hidden;
   position: sticky;
   top: 0%;
@@ -114,3 +215,4 @@ input[type=text] {
   top: 15%;
   height: 10%;
 } */
+

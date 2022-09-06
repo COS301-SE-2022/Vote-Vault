@@ -9,5 +9,4 @@ xmlns:amazon="http://schemas.amazon.com/apk/res/android">
 <uses-permission android:name="android.permission.CAMERA"/>
 <uses-permission android:name="android.permission.FLASHLIGHT"/>
 <uses-feature android:name="android.hardware.camera" android:required="true"/>
-<uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

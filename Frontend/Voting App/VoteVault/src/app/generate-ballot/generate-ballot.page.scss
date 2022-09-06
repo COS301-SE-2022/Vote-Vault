@@ -78,3 +78,30 @@ ion-label {
     right: 0;
     bottom: 1vh;
 }
+
+ion-label{
+    font-weight: bold;
+    margin-left: 7vw;
+}
+
+#title-div{
+    padding-top: 10px;
+}
+
+input{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: none;
+    font-size: 0.8em;
+    height: 2.5em;
+    border: none;
+    width: 90%;
+    margin-left: 5vw;
+    margin-bottom: 10%;
+    border-radius: 25px;
+    margin-top: 5px;
+    background-color: var(--ion-color-fade);
+    padding-left: 5%;
+}
+#electionTitle{
+    margin-right: 5vw;
+}

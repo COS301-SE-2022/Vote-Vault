@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BallotPageRoutingModule } from './ballot-routing.module';
 
 import { BallotPage } from './ballot.page';
+import { CircleTopComponent } from '../components/circle-top/circle-top.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { BallotPage } from './ballot.page';
     IonicModule,
     BallotPageRoutingModule
   ],
-  declarations: [BallotPage]
+  declarations: [BallotPage, CircleTopComponent]
 })
 export class BallotPageModule {}

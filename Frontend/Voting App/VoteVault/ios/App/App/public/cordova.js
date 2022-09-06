@@ -1116,7 +1116,7 @@
     ) {
       var success = status === 0 || status === 1;
       var args = convertMessageToArgsNativeToJs(message);
-      Promise.resolve().then(function () {
+      setTimeout(function () {
         cordova.callbackFromNative(
           callbackId,
           success,
@@ -1124,7 +1124,7 @@
           args,
           keepCallback,
         ); // eslint-disable-line
-      });
+      }, 0);
     };
 
     // for backwards compatibility

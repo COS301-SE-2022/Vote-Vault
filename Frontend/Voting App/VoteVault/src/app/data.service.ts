@@ -136,10 +136,8 @@ export class DataService {
         // console.log(doc.data().election)
         this.elections.push(e)
         } catch(e) {
-          console.error(e)
+          //console.error(e)
         }
-      }).catch(e => {
-        console.error(e)
       })
 
     } else {
@@ -396,7 +394,19 @@ export class DataService {
   }
 
   async deleteElection(id) {
-    await deleteDoc(doc(this.firestore, "elections", id));
+    const elRef = doc(this.firestore, "elections", id)
+    const elSnap = await getDoc(elRef)
+    if(elSnap.exists()) {
+      await addDoc(collection(this.firestore, "closed_elections"), {
+        active: false,
+        address : elSnap.data().address,
+        adminEmail : elSnap.data().adminEmail,
+        ballots : elSnap.data().ballots,
+        users : elSnap.data().users
+      }).then(async ()  =>  {
+        await deleteDoc(doc(this.firestore, "elections", id));
+      })
+    }
   }
 
   async setVote(v: Voter) {

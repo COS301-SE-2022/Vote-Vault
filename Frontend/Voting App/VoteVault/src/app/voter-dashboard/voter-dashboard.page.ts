@@ -26,39 +26,40 @@ export class VoterDashboardPage implements OnInit {
 
   electionClicked(e: any) {
     this.dataService.editElection(e);
-    this.presentActionSheet(e);
+    // this.presentActionSheet(e);
   }
 
   navigate(s: string) {
     this.router.navigate([s]);
   }
 
-  async presentActionSheet(e: any) {
-    const actionSheet = await this.actionSheetController.create({
-      header: e.electionName,
-      cssClass: 'my-custom-class',
-      buttons: [ {
-        text: 'Vote',
-        icon: 'checkmark-done-circle-outline',
-        handler: () => {
-          this.navigate('ballot');
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
-
-    const { role, data } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role and data', role, data);
+  vote(e) {
+    this.electionClicked(e)
+    this.navigate('register')
   }
 
-  signOut() {
-    this.router.navigate(['login'])
-  }
+  // async presentActionSheet(e: any) {
+  //   const actionSheet = await this.actionSheetController.create({
+  //     header: e.electionName,
+  //     cssClass: 'my-custom-class',
+  //     buttons: [ {
+  //       text: 'Vote',
+  //       icon: 'checkmark-done-circle-outline',
+  //       handler: () => {
+  //         this.navigate('ballot');
+  //       }
+  //     }, {
+  //       text: 'Cancel',
+  //       icon: 'close',
+  //       role: 'cancel',
+  //       handler: () => {
+  //         console.log('Cancel clicked');
+  //       }
+  //     }]
+  //   });
+  //   await actionSheet.present();
+
+  //   const { role, data } = await actionSheet.onDidDismiss();
+  //   console.log('onDidDismiss resolved with role and data', role, data);
+  // }
 }

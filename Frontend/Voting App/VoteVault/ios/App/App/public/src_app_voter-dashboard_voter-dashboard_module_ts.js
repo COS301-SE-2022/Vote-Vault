@@ -109,11 +109,16 @@ let VoterDashboardPage = class VoterDashboardPage {
         this.dataService = dataService;
         this.router = router;
         this.actionSheetController = actionSheetController;
-        this.elections = [{ id: 1, name: 'Provincial Election', ballots: [{ name: 'Cool', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }] },
-            { id: 86, name: 'National Election', ballots: [{ name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [] }, { name: '', options: [] }] },
-            { id: 129, name: 'District Election', ballots: [{ name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [{ name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }, { name: 'John', surname: 'Smith' }] }, { name: '', options: [] }] }];
+        // this.elections = [{id : 1, name : 'Provincial Election', ballots : [{name : 'Cool', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]}]},
+        //                   {id : 86, name : 'National Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []},{name : '', options : []}]},
+        //                   {id : 129, name : 'District Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []}]}];
+        this.elections = [];
     }
     ngOnInit() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            this.elections = yield this.dataService.fetchAllElections();
+            console.log(this.elections);
+        });
     }
     electionClicked(e) {
         this.dataService.editElection(e);
@@ -171,7 +176,7 @@ VoterDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "#title {\n  font-size: 5vh;\n  margin: auto;\n  padding: 5vh;\n  padding-left: 2vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZvdGVyLWRhc2hib2FyZC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcdm90ZXItZGFzaGJvYXJkXFx2b3Rlci1kYXNoYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUNDSiIsImZpbGUiOiJ2b3Rlci1kYXNoYm9hcmQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3RpdGxlIHtcclxuICAgIGZvbnQtc2l6ZTogNXZoO1xyXG4gICAgbWFyZ2luIDogYXV0bztcclxuICAgIHBhZGRpbmc6IDV2aDtcclxuICAgIHBhZGRpbmctbGVmdDogMnZoO1xyXG59IiwiI3RpdGxlIHtcbiAgZm9udC1zaXplOiA1dmg7XG4gIG1hcmdpbjogYXV0bztcbiAgcGFkZGluZzogNXZoO1xuICBwYWRkaW5nLWxlZnQ6IDJ2aDtcbn0iXX0= */";
+module.exports = "ion-card-title {\n  color: gray;\n}\n\n#header {\n  width: 80%;\n  margin-left: 10%;\n  text-align: center;\n  padding-top: 10%;\n  font-size: 3em;\n  padding-bottom: 10%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZvdGVyLWRhc2hib2FyZC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcdm90ZXItZGFzaGJvYXJkXFx2b3Rlci1kYXNoYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtBQ0NKOztBREVBO0VBQ0ksVUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxtQkFBQTtBQ0NKIiwiZmlsZSI6InZvdGVyLWRhc2hib2FyZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY2FyZC10aXRsZSB7XHJcbiAgICBjb2xvcjogZ3JheTtcclxufVxyXG5cclxuI2hlYWRlciB7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmctdG9wOiAxMCU7XHJcbiAgICBmb250LXNpemU6IDNlbTtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxMCU7XHJcbn0iLCJpb24tY2FyZC10aXRsZSB7XG4gIGNvbG9yOiBncmF5O1xufVxuXG4jaGVhZGVyIHtcbiAgd2lkdGg6IDgwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nLXRvcDogMTAlO1xuICBmb250LXNpemU6IDNlbTtcbiAgcGFkZGluZy1ib3R0b206IDEwJTtcbn0iXX0= */";
 
 /***/ }),
 
@@ -181,7 +186,7 @@ module.exports = "#title {\n  font-size: 5vh;\n  margin: auto;\n  padding: 5vh;\
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n\r\n</ion-header>\r\n\r\n<ion-content id=\"main\">\r\n    <!-- <ion-title id = \"title\">Elections</ion-title> -->\r\n    <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title>{{e.name}}</ion-card-title>\r\n        <br>\r\n        <ion-card-subtitle>#{{e.id}}</ion-card-subtitle>\r\n      </ion-card-header>\r\n    </ion-card>\r\n    <!-- <ion-fab vertical=\"bottom\" horizontal=\"end\" slot=\"fixed\" (click)=\"createElection()\">\r\n      <ion-fab-button>\r\n        <ion-icon name=\"add\"></ion-icon>\r\n      </ion-fab-button>\r\n    </ion-fab> -->\r\n  </ion-content>\r\n";
+module.exports = "<ion-content id=\"main\">\r\n  <h1 id=\"header\">Elections</h1>\r\n    <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title>{{e.electionName}}</ion-card-title>\r\n        <br>\r\n      </ion-card-header>\r\n    </ion-card>\r\n  </ion-content>\r\n";
 
 /***/ })
 
