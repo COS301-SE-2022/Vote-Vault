@@ -115,6 +115,24 @@ export class DataService {
     return max
   }
 
+  async fetchPastElections() : Promise<Election[]> {
+    const colRef = collection(this.firestore, 'deleted_elections')
+    const electionsSnap = await getDocs(colRef)
+
+    let pastElections = []
+    electionsSnap.forEach((doc)  =>  {
+      const e = {} as Election
+      e.ballots = doc.data().ballots
+      e.address = doc.data().address
+      e.electionName = doc.data().electionName
+      e.users = doc.data().users
+
+      pastElections.push(e)
+    })
+
+    return pastElections
+  }
+
   async fetchAllElections() {
     this.maleCount = 0;
     this.femaleCount = 0;
