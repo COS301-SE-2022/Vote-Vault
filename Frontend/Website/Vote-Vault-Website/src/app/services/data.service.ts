@@ -58,6 +58,7 @@ export class DataService {
   privateKey = ''
   alcProvider = null
   signer = null
+  pastElections : Election[] = []
 
   constructor(private firestore: Firestore) {
    
@@ -129,7 +130,7 @@ export class DataService {
 
       pastElections.push(e)
     })
-
+    this.pastElections = pastElections
     return pastElections
   }
 
