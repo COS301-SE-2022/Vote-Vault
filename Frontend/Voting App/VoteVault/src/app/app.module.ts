@@ -25,7 +25,7 @@ import { GenerateBallotPage } from './generate-ballot/generate-ballot.page';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth())],
-  providers: [ FingerprintAIO,BarcodeScanner, DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [ FingerprintAIO, BarcodeScanner, DataService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
