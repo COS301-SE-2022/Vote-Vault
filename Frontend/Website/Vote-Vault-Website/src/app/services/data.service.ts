@@ -100,6 +100,15 @@ export class DataService {
     console.log(result2[2].toNumber())
   }
 
+  findWinnerIndex(voterArray : number[]) : number {
+    let max = 0
+    for(let i = 0; i < voterArray.length; i++) {
+      if(voterArray[i] > max)
+        max = i
+    }
+    return max
+  }
+
   async fetchAllElections() {
     this.maleCount = 0;
     this.femaleCount = 0;
