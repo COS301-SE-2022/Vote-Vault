@@ -58,11 +58,17 @@ export class DataService {
   voter: Voter;
   voters: any[];
   contractAddress : string
+
   voterId : string
   maleCount: number;
   femaleCount: number;
   agesArray: any[];
   yearBornFromID: number;
+  contractABI = ''
+  contractBytecode = ''
+  privateKey = ''
+  alcProvider = null
+  signer = null
 
   constructor(private firestore: Firestore) {
     this.electionOptions = [];
@@ -178,6 +184,10 @@ export class DataService {
 
 
     return this.maleCount;
+  }
+
+  getElectionResults(contractAddress : string) {
+
   }
 
   async fetchElections() {
