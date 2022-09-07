@@ -34,6 +34,7 @@
     "@ionic/angular": "^6.0.0",
     "cordova-plugin-fullscreen": "^1.3.0",
     "ethereumjs-tx": "^2.1.2",
+    "ionic": "^5.4.16",
     "karma-firefox-launcher": "^2.1.2",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.6.0",
