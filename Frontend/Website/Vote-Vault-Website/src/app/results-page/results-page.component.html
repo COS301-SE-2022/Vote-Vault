@@ -20,6 +20,16 @@
         <h6>View the live and secured results of the current election</h6>
       </div>
 
+      <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Select Election</button>
+          <div ngbDropdownMenu aria-labelledby="demographicsDropdown">
+            <button *ngFor="let e in elections" ngbDropdownItem>{{e.name}}</button>
+            
+          </div>
+        </div>
+      </div>
+
       <div id="b1">
         <div id="info1"><h2>Election Name - Ballot 1</h2></div>
         <chart class="ch" [type]="type" [data]="data" [options]="options"></chart>
