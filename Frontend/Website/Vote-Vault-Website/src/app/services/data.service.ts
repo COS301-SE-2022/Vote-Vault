@@ -220,40 +220,24 @@ export class DataService {
   }
 
   async fetchElections() {
-    this.elections = []
-    //TODO: Fetch elections for signed in user
-    const adminRef = doc(this.firestore, 'admins', 'ssdpressed@gmail.com')
-    const adminSnap = await getDoc(adminRef)
-
-    if (adminSnap.exists()) {
-      console.log("Document data:", adminSnap.data());
-      const election_id_array = adminSnap.data()['elections']
-
-      election_id_array.forEach(async (id)  =>  {
-        try{
-        //Retrieve Election
-        const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
+      const colRef = collection(this.firestore, 'elections')
+      const electionsSnap = await getDocs(colRef)
+  
+      let elections = []
+      electionsSnap.forEach(doc =>  {
         const e = {} as Election
         // console.log(doc.data())
-        e.ballots = electionSnap.data()['ballots']
-        e.users   = electionSnap.data()['users']
-        e.electionName = electionSnap.data()['electionName']
-        e.id = electionSnap.id
-        e.voted = electionSnap.data()['voted']
-        e.address = electionSnap.data()['address']
-        // console.log(doc.data().election)
-        this.elections.push(e)
-        } catch(e) {
-          console.error(e)
-        }
-      }).catch(e => {
-        console.error(e)
+        e.ballots = doc.data().ballots
+        e.users   = doc.data().users
+        e.electionName = doc.data().electionName
+        e.id = doc.id
+        e.voted = doc.data().voted
+        e.address = doc.data().address
+        console.log(doc.data())
+        elections.push(e)
       })
-
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
+      this.elections = elections
+      return elections
 
   }
 

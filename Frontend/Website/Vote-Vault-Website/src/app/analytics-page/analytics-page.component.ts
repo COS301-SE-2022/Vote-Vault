@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resolveCname } from 'dns';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AnalyticsPageComponent implements OnInit {
   votes : any[]
   private maleCount: number;
   private femaleCount;
-  elections: Promise<any[]>;
+  elections: any[];
   data;
   type;
   options;
@@ -40,8 +41,11 @@ export class AnalyticsPageComponent implements OnInit {
     //     if (element.gender == 'F') this.femaleCount++;
     //   });
     // });
-    this.dataService.getMaleCount();
-
+    // this.dataService.getMaleCount();
+   await this.dataService.fetchElections().then((res)  =>  {
+    this.elections = res
+    console.log(this.elections)
+   })
   }
 
 
