@@ -97,3 +97,21 @@ body {
     margin-left: 25%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  #context {
+    width: 100%;
+    padding-right: 0;
+    margin-left: 10%;
+  }
+
+  #context > h3 {
+    margin: 0;
+  }
+
+  #context > div > p {
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+  }
+}
