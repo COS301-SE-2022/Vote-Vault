@@ -61,7 +61,7 @@ header {
 
 .navbar1 a:hover {
   background-color: /*rgb(84, 123, 250)*/ #f4717f;
-  color: black;
+  color: white;
 }
 
 .navbar1 a {
@@ -147,8 +147,8 @@ header {
 .navbar1 a:hover {
   /* background-color: rgb(84, 123, 250); */
   /* color: black; */
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px;
+  -webkit-text-fill-color: white;
+  /* -webkit-text-stroke: 0.3px; */
 }
 
 .navbar1 a {
