@@ -4,12 +4,20 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
+#ftrr {
+  background-color: #f4717f;
+  /* background-color: rgb(58, 103, 228); */
+  width: 100%;
+  margin: 0px;
+  height: 8%;
+  border: 0px;
+  text-align: center;
+  color: black;
+  position: sticky;
+  border-top: 100px;
+  padding: 10px;
   text-align: center;
   color: white;
-  /* position: sticky; */
   margin-bottom: 0;
 }
 
@@ -34,21 +42,7 @@ header {
   border-top: 100px;
 }
 
-#ftrr {
-  background-color: #f4717f;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  /* position: sticky; */
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  margin-bottom: 0;
-}
+
 
 .navbar1 {
   background-color: #544e50;
@@ -94,23 +88,9 @@ input[type=text] {
   border-radius: 5px;
 }
 
-/* #logo {
-  position: relative;
-  top: 15%;
-  height: 10%;
-} */
-
 /* You can add global styles to this file, and also import other style files */
 html {
   font-family:  sans-serif,Arial, Helvetica;
-}
-
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
-  text-align: center;
-  color: white;
-  position: sticky;
 }
 
 body {
