@@ -20,7 +20,7 @@ export class AnalyticsPageComponent implements OnInit {
   data2;
   type2;
   options2;
-
+  selectedElection : any
 
   constructor(private dataService : DataService) {
 
@@ -186,6 +186,10 @@ export class AnalyticsPageComponent implements OnInit {
       this.div2=true;
       this.div1=false;
       this.div3=false
+  }
+
+  selectElection(e : any) {
+    this.selectedElection = e
   }
 
 }
