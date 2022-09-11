@@ -23,6 +23,7 @@ export class ResultsPageComponent implements OnInit {
   options1 : any;
   options2 : any;
   elections : any[];
+  selectedElection : any;
 
   constructor(private dataService : DataService) {
     this.names = [{name1 : "party1", name2: "party2", name3: "party3", name4: "party4", name5: "party5", name6: "party6", name7: "party7"}];
@@ -131,4 +132,8 @@ export class ResultsPageComponent implements OnInit {
       maintainAspectRatio: false
     }
   };
+
+  selectElection(e : any) : void {
+    this.selectedElection = e
+  }
 }

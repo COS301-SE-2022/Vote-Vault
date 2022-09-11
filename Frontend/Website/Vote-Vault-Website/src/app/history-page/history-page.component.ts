@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-history-page',
@@ -14,8 +15,9 @@ export class HistoryPageComponent implements OnInit {
   data : any;
   options : any;
   currentYear : any;
-
-  constructor() {
+  previousElections : any[];
+  
+  constructor(private dataService : DataService) {
     this.names = [{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"}];
     this.votes = [{party1: 20, party2: 98, party3: 93},{party1: 56, party2: 10, party3: 45},{party1: 89, party2: 23, party3: 12}]
     this.year = [{year: 2021, partyname: this.names[0], results: this.votes[0]},{year: 2020, partyname: this.names[1], results: this.votes[1]},{year: 2019, partyname: this.names[2], results: this.votes[2]}];
@@ -23,7 +25,7 @@ export class HistoryPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // this.previousElections = this.dataService.ge
   }
 
   div0:boolean=true;
