@@ -9,7 +9,8 @@ footer {
   padding-top: 1%;
   text-align: center;
   color: white;
-  position: sticky;
+  /* position: sticky; */
+  margin-bottom: 0;
 }
 
 body {
@@ -41,11 +42,12 @@ header {
   border: 0px;
   text-align: center;
   color: black;
-  position: sticky;
+  /* position: sticky; */
   border-top: 100px;
   padding: 10px;
   text-align: center;
   color: white;
+  margin-bottom: 0;
 }
 
 .navbar1 {
@@ -145,21 +147,6 @@ header {
   position: relative;
   color: black;
   border-top: 100px;
-}
-
-#ftrr {
-  background-color: #544e50;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  position: sticky;
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: #FBFFF5;
 }
 
 .navbar1 {
