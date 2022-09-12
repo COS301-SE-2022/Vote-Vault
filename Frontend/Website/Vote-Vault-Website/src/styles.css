@@ -1,15 +1,22 @@
-
-/* You can add global styles to this file, and also import other style files */
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
+#ftrr {
+  background-color: #f4717f;
+  /* background-color: rgb(58, 103, 228); */
+  width: 100%;
+  margin: 0px;
+  height: 8%;
+  border: 0px;
+  text-align: center;
+  color: black;
+  position: sticky;
+  border-top: 100px;
+  padding: 10px;
   text-align: center;
   color: white;
-  position: sticky;
+  margin-bottom: 0;
 }
 
 body {
@@ -33,30 +40,15 @@ header {
   border-top: 100px;
 }
 
-#ftrr {
-  background-color: #f4717f;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  position: sticky;
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
 .navbar1 {
-  background-color: #544e50;
+  background-color: /*#0256E2*/ #544e50;
   overflow: hidden;
   position: sticky;
   top: 0%;
   z-index: 1;
   display: table;
   width: 100vw;
-  
+  font-size: 1.5rem;
 }
 
 #logo {
@@ -65,7 +57,8 @@ header {
 
 .navbar1 a:hover {
   background-color: /*rgb(84, 123, 250)*/ #f4717f;
-  color: black;
+  margin: 0;
+  color: white;
 }
 
 .navbar1 a {
@@ -75,11 +68,14 @@ header {
   padding: 0.875rem 1rem;
   text-decoration: none;
   font-size: 17px;
+  height: 3.8rem;
 }
 
 a.active {
-  background-color: #3c84cc;
-  color: #fff;
+  background-color: #FBFFF5;
+  color: #02224E;
+  height: 100%;
+  border-bottom: 6px solid #FBFFF5;
 }
 
 input[type=text] {
@@ -92,23 +88,9 @@ input[type=text] {
   border-radius: 5px;
 }
 
-/* #logo {
-  position: relative;
-  top: 15%;
-  height: 10%;
-} */
-
 /* You can add global styles to this file, and also import other style files */
 html {
   font-family:  sans-serif,Arial, Helvetica;
-}
-
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
-  text-align: center;
-  color: white;
-  position: sticky;
 }
 
 body {
@@ -135,43 +117,8 @@ body {
    }
 }
 
-header {
-  background-color: #fff;
-  width: 100%;
-  margin: 0px;
-  height: 20%;
-  border: 0px;
-  text-align: center;
-  position: relative;
-  color: black;
-  border-top: 100px;
-}
 
-#ftrr {
-  background-color: #544e50;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  position: sticky;
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: #FBFFF5;
-}
 
-.navbar1 {
-  background-color: /*#0256E2*/ #544e50;
-  overflow: hidden;
-  position: sticky;
-  top: 0%;
-  z-index: 1;
-  display: table;
-  width: 100vw;
-  font-size: 1.5rem;
-}
 
 #logo {
   height: 2rem;
@@ -180,25 +127,10 @@ header {
 .navbar1 a:hover {
   /* background-color: rgb(84, 123, 250); */
   /* color: black; */
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px;
+  -webkit-text-fill-color: white;
+  /* -webkit-text-stroke: 0.3px; */
 }
 
-.navbar1 a {
-  float: left;
-  color: whitesmoke;
-  text-align: center;
-  padding: 0.875rem 1rem;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-a.active {
-  background-color: #FBFFF5;
-  color: #02224E;
-  height: 100%;
-  border-bottom: 6px solid #FBFFF5;
-}
 
 input[type=text] {
   float: right;

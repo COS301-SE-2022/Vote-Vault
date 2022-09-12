@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
+import {ContractFactory, ethers, providers} from 'ethers';
+import { environment } from 'src/environments/environment.prod';
+
 
 declare let window : any;
 
@@ -43,62 +46,93 @@ export class Voter {
 
 export class DataService {
 
-  electionOptions: any[];
-  electionName: string;
-  ballot1: Ballot;
-  ballot2: Ballot;
-  ballot3: Ballot;
-  votes: any[];
-  userEmail: string;
-  election: any;
-  elections: any[];
-  registeredUsers: any[];
-  adminState : string;
   electionID : string
-  voter: Voter;
-  voters: any[];
-  contractAddress : string
-
   voterId : string
   maleCount: number;
   femaleCount: number;
   agesArray: any[];
   yearBornFromID: number;
+  elections : Election[];
+  //Contract variables
   contractABI = ''
   contractBytecode = ''
   privateKey = ''
   alcProvider = null
   signer = null
+  pastElections : Election[] = []
 
   constructor(private firestore: Firestore) {
-    this.electionOptions = [];
-    this.ballot1 = {} as Ballot;
-    this.ballot2 = {} as Ballot;
-    this.ballot3 = {} as Ballot;
-    this.ballot1.options = [];
-    this.ballot1.name = '';
-    this.ballot2.options = [];
-    this.ballot2.name = '';
-    this.ballot3.options = [];
-    this.ballot3.name = '';
-    this.votes = [];
-    this.userEmail = '';
-    this.elections = [];
-    this.registeredUsers = [];
-    this.electionName = '';
-    this.adminState = '';
-    this.electionID = '';
-    this.voter = null;
-    this.contractAddress = '';
+
     this.voterId = '';
     this.maleCount = 0;
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    // this.deployContract()
+    this.elections = [];
+
+    //Contract
+    this.contractABI = environment.contractABI
+    this.contractBytecode = environment.contractBytecode
+    this.privateKey = environment.privateKey
+
+    this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
+
+    this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
+
+
   }
 
-  setAdminState(s) {
-    this.adminState = s
+
+  async getElectionResults(contractAddress:  string) : Promise<number[]>{
+    let votes = []
+    const contract = new ethers.Contract(contractAddress, this.contractABI, this.alcProvider)
+
+    console.log("GETTING VOTES...")
+    var result = await contract.getVotes1()
+    votes.push(result)
+    console.log(result[0].toNumber())
+    console.log(result[1].toNumber())
+    console.log(result[2].toNumber())
+
+    var result1 = await contract.getVotes2()
+    votes.push(result1)
+    console.log(result1[0].toNumber())
+    console.log(result1[1].toNumber())
+    console.log(result1[2].toNumber())
+
+    var result2 = await contract.getVotes3()
+    votes.push(result2)
+    console.log(result2[0].toNumber())
+    console.log(result2[1].toNumber())
+    console.log(result2[2].toNumber())
+
+    return votes
+  }
+
+  findWinnerIndex(voterArray : number[]) : number {
+    let max = 0
+    for(let i = 0; i < voterArray.length; i++) {
+      if(voterArray[i] > max)
+        max = i
+    }
+    return max
+  }
+
+  async fetchPastElections() : Promise<Election[]> {
+    const colRef = collection(this.firestore, 'deleted_elections')
+    const electionsSnap = await getDocs(colRef)
+
+    let pastElections = []
+    electionsSnap.forEach((doc)  =>  {
+      const e = {} as Election
+      e.ballots = doc.data().ballots
+      e.address = doc.data().address
+      e.electionName = doc.data().electionName
+      e.users = doc.data().users
+
+      pastElections.push(e)
+    })
+    this.pastElections = pastElections
+    return pastElections
   }
 
   async fetchAllElections() {
@@ -186,274 +220,30 @@ export class DataService {
     return this.maleCount;
   }
 
-  getElectionResults(contractAddress : string) {
-
-  }
-
   async fetchElections() {
-    this.elections = []
-    //TODO: Fetch elections for signed in user
-    const adminRef = doc(this.firestore, 'admins', 'ssdpressed@gmail.com')
-    const adminSnap = await getDoc(adminRef)
+      const colRef = collection(this.firestore, 'elections')
+      const electionsSnap = await getDocs(colRef)
 
-    if (adminSnap.exists()) {
-      console.log("Document data:", adminSnap.data());
-      const election_id_array = adminSnap.data()['elections']
-
-      election_id_array.forEach(async (id)  =>  {
-        try{
-        //Retrieve Election
-        const electionSnap = await getDoc(doc(this.firestore, 'elections', id))
+      let elections = []
+      electionsSnap.forEach(doc =>  {
         const e = {} as Election
         // console.log(doc.data())
-        e.ballots = electionSnap.data()['ballots']
-        e.users   = electionSnap.data()['users']
-        e.electionName = electionSnap.data()['electionName']
-        e.id = electionSnap.id
-        e.voted = electionSnap.data()['voted']
-        e.address = electionSnap.data()['address']
-        // console.log(doc.data().election)
-        this.elections.push(e)
-        } catch(e) {
-          console.error(e)
-        }
-      }).catch(e => {
-        console.error(e)
+        e.ballots = doc.data().ballots
+        e.users   = doc.data().users
+        e.electionName = doc.data().electionName
+        e.id = doc.id
+        e.voted = doc.data().voted
+        e.address = doc.data().address
+        console.log(doc.data())
+        elections.push(e)
       })
-
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
+      this.elections = elections
+      return elections
 
   }
 
 
-  editElection(e) {
-    console.log(e);
-    this.ballot1.options = e.ballots[0].options;
-    this.ballot2.options = e.ballots[1].options;
-    this.ballot3.options = e.ballots[2].options;
-    this.ballot1.name    = e.ballots[0].name;
-    this.ballot2.name    = e.ballots[1].name;
-    this.ballot3.name    = e.ballots[2].name;
-    this.electionName    = e.electionName;
-    this.electionID = e.id
-    this.contractAddress = e.address
-  }
 
-  async saveEdit() {
-    const electionRef = doc(this.firestore, 'elections', this.electionID)
-
-    await updateDoc(electionRef, {
-      adminEmail : this.userEmail,
-      ballots    : [this.ballot1, this.ballot2, this.ballot3],
-      electionName : this.electionName,
-      active : true,
-      users  : this.registeredUsers
-    }).then(async ()  =>  {
-      await this.fetchElections()
-    })
-  }
-
-  async saveElection(contractAddress) {
-    let electionId = ""
-   const electionRef = await addDoc(collection(this.firestore, 'elections'), {
-      adminEmail : this.userEmail,
-      ballots    : [this.ballot1, this.ballot2, this.ballot3],
-      electionName : this.electionName,
-      active : true,
-      users  : this.registeredUsers,
-      address : contractAddress,
-      voted : []
-    }).then((ref)  =>  {
-      this.mapAdminToElection(ref);
-      electionId = ref.id
-      const e = {} as Election
-      e.adminEmail =  this.userEmail
-      e.ballots = [this.ballot1, this.ballot2, this.ballot3]
-      e.electionName = this.electionName
-      e.active = true
-      e.users = this.registeredUsers
-      e.address = contractAddress
-      e.voted = []
-      e.id = ref.id
-      this.elections.push(e)
-    }).then(async ()  =>  {
-      // await this.fetchElections()
-    })
-
-    return electionId
-  }
-
-  async mapAdminToElection(ref) {
-    console.log(ref.id)
-    const id = ref.id
-    const adminRef = doc(this.firestore, 'admins' , this.userEmail)
-    const adminSnap = await getDoc(adminRef)
-    if(adminSnap.exists()) {
-      await updateDoc(adminRef, {
-        elections: arrayUnion(id)
-      })
-    }
-    else {
-      await setDoc(doc(this.firestore, "admins", this.userEmail), {
-        elections : [id]
-      });
-    }
-  }
-
-  clear() {
-    this.ballot1 = {} as Ballot;
-    this.ballot2 = {} as Ballot;
-    this.ballot3 = {} as Ballot;
-    this.ballot1.options = [];
-    this.ballot1.name = '';
-    this.ballot2.options = [];
-    this.ballot2.name = '';
-    this.ballot3.options = [];
-    this.ballot3.name = '';
-    // this.votes = []
-    // this.elections = []
-    this.electionName = '';
-  }
-
-  setUserEmail(s) {
-    this.userEmail = s;
-  }
-
-  saveElectionName(s) {
-    this.electionName = s;
-  }
-
-  addOption(o, i) {
-    switch(i) {
-      case 0:{
-        this.ballot1.options.push(o);
-        break;
-      }
-      case 1: {
-        this.ballot2.options.push(o);
-        break;
-      }
-      case 2: {
-        this.ballot3.options.push(o);
-        break;
-      }
-    }
-    console.log(this.ballot1);
-  }
-
-  removeOption(index, i) {
-    switch(i) {
-      case 0:{
-        if(index != -1)
-          {this.ballot1.options.splice(index,1);};
-        break;
-      }
-      case 1: {
-        if(index != -1)
-          {this.ballot2.options.splice(index,1);};
-        break;
-      }
-      case 2: {
-        if(index != -1)
-          {this.ballot3.options.splice(index,1);};
-        break;
-      }
-    }
-  }
-
-  async addvoter(nvoter: Voter) {
-    await this.saveVoter(nvoter);
-  }
-
-  createVoter(name, surname, id, gender) {
-    this.voter = new Voter();
-    this.voter.Voter(name, surname, id, gender);
-    return this.voter;
-  }
-
-  async saveVoter(v: Voter) {
-    const voter = {
-                    name: v.birthName,
-                    surname: v.surname,
-                    gender: v.Gender,
-                    id: v.IDnum,
-                    voted: v.Voted
-                  };
-    const electionRef = await addDoc(collection(this.firestore, 'voters'), {
-      voter
-    });
-
-
-    //Save to elections collection
-    const elRef = doc(this.firestore, 'elections' , this.electionID)
-    const elSnap = await getDoc(elRef)
-    if(elSnap.exists()) {
-      await updateDoc(elRef, {
-        users: arrayUnion(voter)
-      })
-    }
-  }
-
-  async deleteElection(id) {
-    await deleteDoc(doc(this.firestore, "elections", id));
-  }
-
-  async setVote(v: Voter) {
-    let found: Boolean;
-    found = false;
-    let i: number;
-    i = -1;
-    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
-    const getrefID = await getDoc(registeredIDs);
-    const idfound = {};
-    try {
-      for (let index = 0; index < getrefID.data()['users'].length; index++) {
-        if (v.IDnum === getrefID.data()['users'][index].id) {
-          found = true;
-          v.Voted = true;
-          getrefID.data()['users'][index].voted = true;
-          i = index;
-          throw idfound;
-        }
-        if (found == true) {
-          alert('shouldnt reach this');
-          throw idfound;
-        }
-
-      }
-    } catch (error) {
-
-    }
-
-
-  }
-
-  async checkVoted(v: Voter) {
-    let found: Boolean;
-    found = false;
-    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
-    const getrefID = await getDoc(registeredIDs);
-    const idfound = {};
-    try {
-      for (let index = 0; index < getrefID.data()['users'].length; index++) {
-        if (v.IDnum === getrefID.data()['voted'][index].id) {
-          found = true;
-          throw idfound;
-        }
-        if (found == true) {
-          alert('shouldnt reach this');
-          throw idfound;
-        }
-      }
-    } catch (error) {
-      return true;
-    }
-
-    return false;
-  }
 
   async getMaleCount() {
     let found: Boolean;
@@ -483,22 +273,4 @@ export class DataService {
     return false;
   }
 
-  async vote(v: Voter) {
-    const voter = {
-      name: v.birthName,
-      surname: v.surname,
-      gender: v.Gender,
-      id: v.IDnum,
-      voted: true
-    };
-
-//Save to elections collection under voted
-    const elRef = doc(this.firestore, 'elections' , this.electionID)
-    const elSnap = await getDoc(elRef)
-    if(elSnap.exists()) {
-      await updateDoc(elRef, {
-      voted: arrayUnion(voter)
-    })
-    }
-  }
 }

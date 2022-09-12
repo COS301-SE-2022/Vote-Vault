@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-results-page',
@@ -21,7 +22,10 @@ export class ResultsPageComponent implements OnInit {
   options : any;
   options1 : any;
   options2 : any;
-  constructor() {
+  elections : any[];
+  selectedElection : any;
+
+  constructor(private dataService : DataService) {
     this.names = [{name1 : "party1", name2: "party2", name3: "party3", name4: "party4", name5: "party5", name6: "party6", name7: "party7"}];
     this.ballot1 = [{res1: 12, res2: 34, res3: 3, res4: 90, res5: 50, res6: 78, res7: 64}];
     this.ballot2 = [{res1: 54, res2: 4, res3: 24, res4: 28, res5: 51, res6: 32, res7: 84}];
@@ -29,7 +33,9 @@ export class ResultsPageComponent implements OnInit {
     this.results = [{nameslist: this.names, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+
+    this.elections = await this.dataService.fetchElections();
     this.type = 'bar';
     this.data = {
       labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
@@ -126,4 +132,8 @@ export class ResultsPageComponent implements OnInit {
       maintainAspectRatio: false
     }
   };
+
+  selectElection(e : any) : void {
+    this.selectedElection = e
+  }
 }
