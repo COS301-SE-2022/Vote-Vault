@@ -15,14 +15,22 @@
 
     <div class="rest">
       
-      <img src="assets/images/analytics-banner.jpg" class="banner" style="width:100%">
+      <div>
+        <img src="assets/images/analytics-banner.jpg" class="banner" style="width:100%">
+
+        <div class="col text-center" style="margin-top:2rem; margin-bottom: 2rem;">
+          <h2>Current Election Analytics</h2>
+          <h6>Here you can view live demographics affected by the current elections as a whole</h6>
+        </div>
+      </div>
+      <!-- <img src="assets/images/analytics-banner.jpg" class="banner" style="width:100%">
 
       <div class="col text-center" style="margin-top:2rem; margin-bottom: 4rem;">
         <h2>Current Election Analytics</h2>
         <h6>Here you can view live demographics affected by the current elections as a whole</h6>
-      </div>
+      </div> -->
 
-      <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
+      <div class="col text-center" style="margin-top: 2rem; margin-bottom: 3rem;">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Select Election</button>
           <div ngbDropdownMenu aria-labelledby="demographicsDropdown">
@@ -30,6 +38,20 @@
             
           </div>
         </div>
+      </div>
+
+      <div *ngIf="div0">
+        <h1 style="text-align: center; font-size: 200%; margin-top: 1rem;">Use the dropdown below to select a graph</h1>
+      </div>
+
+      <div *ngIf="div1">
+        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+      </div>
+      <div *ngIf="div2">
+        <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
+      </div>
+      <div *ngIf="div3">
+        <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
       </div>
 
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
@@ -43,20 +65,11 @@
         </div>
       </div>
 
-      <div *ngIf="div0">
-        <h1 style="text-align: center; font-size: 200%; margin-top: 1rem;">Use the dropdown above to select a graph</h1>
-      </div>
-
-      <div *ngIf="div1">
-        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
-      </div>
-      <div *ngIf="div2">
-        <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
-      </div>
-      <div *ngIf="div3">
-        <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
-      </div>
     </div>
+
+    <br/>
+    <br/>
+    <br/>
 
   </body>
 
