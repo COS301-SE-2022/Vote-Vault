@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import {ContractFactory, ethers, providers} from 'ethers';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
+
 
 declare let window : any;
 
@@ -61,14 +62,14 @@ export class DataService {
   pastElections : Election[] = []
 
   constructor(private firestore: Firestore) {
-   
+
     this.voterId = '';
     this.maleCount = 0;
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.elections = [];
 
-    //Contract 
+    //Contract
     this.contractABI = environment.contractABI
     this.contractBytecode = environment.contractBytecode
     this.privateKey = environment.privateKey
@@ -222,7 +223,7 @@ export class DataService {
   async fetchElections() {
       const colRef = collection(this.firestore, 'elections')
       const electionsSnap = await getDocs(colRef)
-  
+
       let elections = []
       electionsSnap.forEach(doc =>  {
         const e = {} as Election
