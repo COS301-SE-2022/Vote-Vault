@@ -44,16 +44,6 @@
         <h1 style="text-align: center; font-size: 200%; margin-top: 1rem;">Use the dropdown below to select a graph</h1>
       </div>
 
-      <div *ngIf="div1">
-        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
-      </div>
-      <div *ngIf="div2">
-        <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
-      </div>
-      <div *ngIf="div3">
-        <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
-      </div>
-
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">View Demographics</button>
@@ -64,6 +54,18 @@
           </div>
         </div>
       </div>
+
+      <div *ngIf="div1">
+        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+      </div>
+      <div *ngIf="div2">
+        <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
+      </div>
+      <div *ngIf="div3">
+        <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
+      </div>
+
+      
 
     </div>
 
