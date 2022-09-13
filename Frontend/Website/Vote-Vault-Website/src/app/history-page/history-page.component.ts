@@ -38,7 +38,7 @@ export class HistoryPageComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.previousElections = await this.dataService.fetchPastElections();
-    console.log(this.previousElections[1].electionName);
+    console.log(this.previousElections);
   }
 
   div0:boolean=true;
