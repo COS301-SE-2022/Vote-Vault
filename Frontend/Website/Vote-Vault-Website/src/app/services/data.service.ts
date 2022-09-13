@@ -239,36 +239,5 @@ export class DataService {
       })
       this.elections = elections
       return elections
-
   }
-
-
-
-
-  async getMaleCount() {
-    let found: Boolean;
-    found = false;
-    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
-    const getrefID = await getDoc(registeredIDs);
-    const idfound = {};
-    console.log(getrefID.data());
-
-    try {
-      for (let index = 0; index < getrefID.data()['users'].length; index++) {
-        if ("0101235094081" === getrefID.data()['voted'][index].id) {
-          found = true;
-          throw idfound;
-        }
-        if (found == true) {
-          alert('shouldnt reach this');
-          throw idfound;
-        }
-      }
-    } catch (error) {
-      return true;
-    }
-
-    return false;
-  }
-
 }
