@@ -24,7 +24,7 @@
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-primary" id="electionhistoryButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Select Election</button>
           <div ngbDropdownMenu aria-labelledby="electionhistoryDropdown">
-            <button ngbDropdownItem *ngFor="let e of previousElections">{{e.address}}</button>
+            <button ngbDropdownItem *ngFor="let e of previousElections">{{e.electionName}</button>
           </div>
         </div>
       </div>
