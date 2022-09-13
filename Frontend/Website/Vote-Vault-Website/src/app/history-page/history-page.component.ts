@@ -27,7 +27,7 @@ export class HistoryPageComponent implements OnInit {
   data : any;
   options : any;
   currentYear : any;
-  previousElections : Promise<Election[]>;
+  previousElections : any[];
 
   constructor(private dataService : DataService) {
     this.names = [{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"}];
@@ -36,9 +36,9 @@ export class HistoryPageComponent implements OnInit {
     this.currentYear = 0;
   }
 
-  ngOnInit(): void {
-    this.previousElections = this.dataService.fetchPastElections();
-    console.log(this.previousElections);
+  async ngOnInit(): Promise<void> {
+    this.previousElections = await this.dataService.fetchPastElections();
+    console.log(this.previousElections[1].electionName);
   }
 
   div0:boolean=true;
