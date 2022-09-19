@@ -149,9 +149,10 @@ export class ResultsPageComponent implements OnInit {
     }
   };
 
-  selectElection(e : any) : void {
+  async selectElection(e : any) : Promise<void> {
+    let numbers = [];
     this.selectedElection = e
-    console.log(this.selectedElection.adminEmail);
-
+    numbers = await this.dataService.getElectionResults(this.selectedElection.address);
+    
   }
 }
