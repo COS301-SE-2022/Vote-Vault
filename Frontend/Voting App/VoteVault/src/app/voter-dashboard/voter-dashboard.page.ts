@@ -20,9 +20,9 @@ export class VoterDashboardPage implements OnInit {
   }
 
   async ngOnInit() {
-    this.presentLoading()
+    // this.presentLoading()
     this.elections = await this.dataService.fetchAllElections()
-    this.loadingController.dismiss()
+    // this.loadingController.dismiss()
     console.log(this.elections)
   }
 
