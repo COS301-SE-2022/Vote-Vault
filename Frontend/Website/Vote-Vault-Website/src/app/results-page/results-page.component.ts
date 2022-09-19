@@ -26,7 +26,7 @@ export class ResultsPageComponent implements OnInit {
   selectedElection : any;
 
   constructor(private dataService : DataService) {
-    this.names = [{name1 : "party1", name2: "party2", name3: "party3", name4: "party4", name5: "party5", name6: "party6", name7: "party7"}];
+    this.names = ["party1","party2","party3","party4","party5","party6", "party7"];
     this.ballot1 = [{res1: 12, res2: 34, res3: 3, res4: 90, res5: 50, res6: 78, res7: 64}];
     this.ballot2 = [{res1: 54, res2: 4, res3: 24, res4: 28, res5: 51, res6: 32, res7: 84}];
     this.ballot3 = [{res1: 23, res2: 47, res3: 31, res4: 10, res5: 20, res6: 98, res7: 44}];
@@ -38,7 +38,7 @@ export class ResultsPageComponent implements OnInit {
     this.elections = await this.dataService.fetchElections();
     this.type = 'bar';
     this.data = {
-      labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
+      labels: this.names,
       datasets: [
         {
           backgroundColor: ['#a69cac ','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031'],
@@ -70,7 +70,7 @@ export class ResultsPageComponent implements OnInit {
 
     this.type1 = 'bar';
     this.data1 = {
-      labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
+      labels: this.names,
       datasets: [
         {
           backgroundColor: ['#353535','#3c6e71 ','#b5fff8','#d9d9d9 ','#284b63','#4f6d7a ','#c0d6df '],
@@ -102,7 +102,8 @@ export class ResultsPageComponent implements OnInit {
 
     this.type2 = 'bar';
     this.data2 = {
-      labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
+      //labels: [this.results[0].nameslist[0].name1 , this.results[0].nameslist[0].name2, this.results[0].nameslist[0].name3, this.results[0].nameslist[0].name4, this.results[0].nameslist[0].name5, this.results[0].nameslist[0].name6, this.results[0].nameslist[0].name7],
+      labels: this.names,
       datasets: [
         {
           backgroundColor: ['#fdc500 ','#fedc97','#ffc857  ','#fcbf49 ','#00509d ','#00296b ','#003f88 '],
