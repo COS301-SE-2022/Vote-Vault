@@ -78,7 +78,6 @@ export class DataService {
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
 
-
   }
 
 
