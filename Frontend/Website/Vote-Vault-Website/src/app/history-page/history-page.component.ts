@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
+interface Election {
+  adminEmail? : string
+  electionName : string
+  id? : string
+  ballots : any[]
+  // adminEmail : string
+  users : any[]
+  voted : any[]
+  address : string
+  active? : boolean
+}
 @Component({
   selector: 'app-history-page',
   templateUrl: './history-page.component.html',
   styleUrls: ['./history-page.component.css']
 })
+
 export class HistoryPageComponent implements OnInit {
 
   votes : any[];
@@ -16,7 +28,7 @@ export class HistoryPageComponent implements OnInit {
   options : any;
   currentYear : any;
   previousElections : any[];
-  
+
   constructor(private dataService : DataService) {
     this.names = [{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"}];
     this.votes = [{party1: 20, party2: 98, party3: 93},{party1: 56, party2: 10, party3: 45},{party1: 89, party2: 23, party3: 12}]
@@ -24,8 +36,9 @@ export class HistoryPageComponent implements OnInit {
     this.currentYear = 0;
   }
 
-  ngOnInit(): void {
-    // this.previousElections = this.dataService.ge
+  async ngOnInit(): Promise<void> {
+    this.previousElections = await this.dataService.fetchPastElections();
+    console.log(this.previousElections);
   }
 
   div0:boolean=true;
