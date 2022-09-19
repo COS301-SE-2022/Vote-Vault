@@ -57,7 +57,7 @@ const routes = [
     },
     {
         path: 'voter-registration',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_contract_service_ts"), __webpack_require__.e("src_app_voter-registration_voter-registration_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./voter-registration/voter-registration.module */ 55729)).then(m => m.VoterRegistrationPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_contract_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_voter-registration_voter-registration_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./voter-registration/voter-registration.module */ 55729)).then(m => m.VoterRegistrationPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -256,7 +256,7 @@ let DataService = class DataService {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             this.elections = [];
             //TODO: Fetch elections for signed in user
-            const adminRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'admins', this.userEmail);
+            const adminRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'admins', 'ssdpressed@gmail.com');
             const adminSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(adminRef);
             if (adminSnap.exists()) {
                 console.log("Document data:", adminSnap.data());
@@ -277,11 +277,9 @@ let DataService = class DataService {
                         this.elections.push(e);
                     }
                     catch (e) {
-                        console.error(e);
+                        //console.error(e)
                     }
-                })).catch(e => {
-                    console.error(e);
-                });
+                }));
             }
             else {
                 // doc.data() will be undefined in this case
@@ -293,11 +291,12 @@ let DataService = class DataService {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             let found;
             found = false;
-            const registeredIDs = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDocs)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.collection)(this.firestore, "voters"));
+            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
             const idfound = {};
             try {
-                registeredIDs.forEach((doc) => {
-                    if (idnum === doc.data().voter.id) {
+                for (let index = 0; index < getrefID.data().users.length; index++) {
+                    if (idnum === getrefID.data().users[index].id) {
                         found = true;
                         throw idfound;
                     }
@@ -305,7 +304,7 @@ let DataService = class DataService {
                         alert('shouldnt reach this');
                         throw idfound;
                     }
-                });
+                }
             }
             catch (error) {
                 return true;
@@ -509,24 +508,14 @@ let DataService = class DataService {
         this.voter.Voter(name, surname, id, gender);
         return this.voter;
     }
-    findvoter(v) {
-        for (let index = 0; index < this.registeredUsers.length; index++) {
-            const element = this.registeredUsers[index];
-            if (element == v) {
-                return true;
-            }
-            if (index == this.registeredUsers.length - 1 && element != v) {
-                return false;
-            }
-        }
-    }
     saveVoter(v) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             const voter = {
                 name: v.birthName,
                 surname: v.surname,
                 gender: v.Gender,
-                id: v.IDnum
+                id: v.IDnum,
+                voted: v.Voted
             };
             const electionRef = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.addDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.collection)(this.firestore, 'voters'), {
                 voter
@@ -544,6 +533,78 @@ let DataService = class DataService {
     deleteElection(id) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.deleteDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, "elections", id));
+        });
+    }
+    setVote(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            let found;
+            found = false;
+            let i;
+            i = -1;
+            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
+            const idfound = {};
+            try {
+                for (let index = 0; index < getrefID.data().users.length; index++) {
+                    if (v.IDnum === getrefID.data().users[index].id) {
+                        found = true;
+                        v.Voted = true;
+                        getrefID.data().users[index].voted = true;
+                        i = index;
+                        throw idfound;
+                    }
+                    if (found == true) {
+                        alert('shouldnt reach this');
+                        throw idfound;
+                    }
+                }
+            }
+            catch (error) {
+            }
+        });
+    }
+    checkVoted(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            let found;
+            found = false;
+            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
+            const idfound = {};
+            try {
+                for (let index = 0; index < getrefID.data().users.length; index++) {
+                    if (v.IDnum === getrefID.data().voted[index].id) {
+                        found = true;
+                        throw idfound;
+                    }
+                    if (found == true) {
+                        alert('shouldnt reach this');
+                        throw idfound;
+                    }
+                }
+            }
+            catch (error) {
+                return true;
+            }
+            return false;
+        });
+    }
+    vote(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const voter = {
+                name: v.birthName,
+                surname: v.surname,
+                gender: v.Gender,
+                id: v.IDnum,
+                voted: true
+            };
+            //Save to elections collection under voted
+            const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
+            if (elSnap.exists()) {
+                yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, {
+                    voted: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.arrayUnion)(voter)
+                });
+            }
         });
     }
 };

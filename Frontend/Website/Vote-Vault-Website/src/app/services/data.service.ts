@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import {ContractFactory, ethers, providers} from 'ethers';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
+
 
 declare let window : any;
 
@@ -67,14 +68,14 @@ export class DataService {
   pastElections : Election[] = []
 
   constructor(private firestore: Firestore) {
-   
+
     this.voterId = '';
     this.maleCount = 0;
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.elections = [];
 
-    //Contract 
+    //Contract
     this.contractABI = environment.contractABI
     this.contractBytecode = environment.contractBytecode
     this.privateKey = environment.privateKey
@@ -82,7 +83,6 @@ export class DataService {
     this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
-
 
   }
 
@@ -123,7 +123,7 @@ export class DataService {
   }
 
   async fetchPastElections() : Promise<Election[]> {
-    const colRef = collection(this.firestore, 'deleted_elections')
+    const colRef = collection(this.firestore, 'closed_elections')
     const electionsSnap = await getDocs(colRef)
 
     let pastElections = []
@@ -228,7 +228,7 @@ export class DataService {
   async fetchElections() {
       const colRef = collection(this.firestore, 'elections')
       const electionsSnap = await getDocs(colRef)
-  
+
       let elections = []
       electionsSnap.forEach(doc =>  {
         const e = {} as Election
@@ -244,38 +244,5 @@ export class DataService {
       })
       this.elections = elections
       return elections
-
   }
-
-
-
-
-  async getMaleCount() {
-    let found: Boolean;
-    found = false;
-    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
-    const getrefID = await getDoc(registeredIDs);
-    const idfound = {};
-    console.log(getrefID.data());
-
-    try {
-      for (let index = 0; index < getrefID.data()['users'].length; index++) {
-        console.log("jj");
-
-        if ("0101235094081" === getrefID.data()['voted'][index].id) {
-          found = true;
-          throw idfound;
-        }
-        if (found == true) {
-          alert('shouldnt reach this');
-          throw idfound;
-        }
-      }
-    } catch (error) {
-      return true;
-    }
-
-    return false;
-  }
-
 }

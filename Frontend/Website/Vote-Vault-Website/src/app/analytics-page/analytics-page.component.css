@@ -8,7 +8,16 @@ td{
 }
 
 body {
-  height:100%;
+  height:fit-content;
+}
+
+#welcome{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 17%;
+  color: #e9e3e3; 
 }
 
 
