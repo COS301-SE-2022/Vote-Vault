@@ -6,6 +6,12 @@ import { environment } from 'src/environments/environment';
 
 declare let window : any;
 
+interface Party {
+  name : string;
+  ageVotes : any[];
+  genderVotes : any[];
+}
+
 interface Ballot {
   name: string;
   options: any[];
