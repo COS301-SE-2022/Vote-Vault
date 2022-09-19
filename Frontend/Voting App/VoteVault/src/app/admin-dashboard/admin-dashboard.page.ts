@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, AlertController, MenuController, ViewWillEnter } from '@ionic/angular';
+import { ActionSheetController, AlertController, LoadingController, MenuController, ViewWillEnter } from '@ionic/angular';
 import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
 
@@ -13,13 +13,16 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
 
   elections : any[]
   index : number
-  constructor(private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
-    this.dataService.fetchElections()
-    this.elections = this.dataService.elections
+  constructor(private loadingController : LoadingController, private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
+    
   }
 
-  ngOnInit() {
-    
+  async ngOnInit() {
+    this.presentLoading()
+    await this.dataService.fetchElections().then(() =>  {
+      this.elections = this.dataService.elections
+      this.loadingController.dismiss()
+    })
   }
 
   ionViewWillEnter() {
@@ -97,5 +100,17 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     await alert.present();
 
     const { role } = await alert.onDidDismiss();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 30000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
   }
 }
