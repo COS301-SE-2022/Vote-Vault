@@ -40,12 +40,12 @@ export class ResultsPageComponent implements OnInit {
   selectedElection : Election;
 
   constructor(private dataService : DataService) {
-    this.names1 = ["party1","party2","party3","party4","party5","party6", "party7"];
-    this.names2 = ["party1","party2","party3","party4","party5","party6"];
-    this.names3 = ["party1","party2"];
-    this.ballot1 = [12, 34, 3, 90, 50, 78, 64];
-    this.ballot2 = [54, 4, 24, 28, 51, 32];
-    this.ballot3 = [23, 47];
+    this.names1 = [];
+    this.names2 = [];
+    this.names3 = [];
+    this.ballot1 = [];
+    this.ballot2 = [];
+    this.ballot3 = [];
     this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
   }
 
@@ -154,6 +154,119 @@ export class ResultsPageComponent implements OnInit {
     this.selectedElection = e
     numbers = await this.dataService.getElectionResults(this.selectedElection.address);
     console.log(parseInt(numbers[0][0]._hex));
-    this.ballot1 = [12, 34, 100, 90, 50, 78, 64];
+
+
+    for (let i = 0; i < numbers[0].length; i++) {
+      this.ballot1[i] = parseInt(numbers[0][i]);
+    }
+
+    for (let i = 0; i < numbers[0].length; i++) {
+      this.ballot2[i] = parseInt(numbers[1][i]);
+    }
+
+    for (let i = 0; i < numbers[0].length; i++) {
+      this.ballot3[i] = parseInt(numbers[2][i]);
+    }
+
+    this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
+
+    console.log(this.ballot1);
+
+    this.type = 'bar';
+    this.data = {
+      labels: this.results[0].nameslistballot1,
+      datasets: [
+        {
+          backgroundColor: ['#a69cac ','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031'],
+          data: this.results[0].bal1
+        }
+      ]
+    };
+    this.options = {
+      legend:{
+        display: false
+      },
+      title:{
+        display: true,
+        text:"Election Results"
+      },
+      scales : {
+        yAxes: [{
+          ticks: {
+              steps : 10,
+              stepValue : 10,
+              max : 100,
+              min: 0
+            }
+        }]
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    };
+
+    this.type1 = 'bar';
+    this.data1 = {
+      labels: this.results[0].nameslistballot2,
+      datasets: [
+        {
+          backgroundColor: ['#353535','#3c6e71 ','#b5fff8','#d9d9d9 ','#284b63','#4f6d7a ','#c0d6df '],
+          data: this.results[0].bal2
+        }
+      ]
+    };
+    this.options1 = {
+      legend:{
+        display: false
+      },
+      title:{
+        display: true,
+        text:"Election Results"
+      },
+      scales : {
+        yAxes: [{
+          ticks: {
+              steps : 10,
+              stepValue : 10,
+              max : 100,
+              min: 0
+            }
+        }]
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    };
+
+    this.type2 = 'bar';
+    this.data2 = {
+      labels: this.results[0].nameslistballot3,
+      datasets: [
+        {
+          backgroundColor: ['#fdc500 ','#fedc97','#ffc857  ','#fcbf49 ','#00509d ','#00296b ','#003f88 '],
+          data: this.results[0].bal3
+        }
+      ]
+    };
+    this.options2 = {
+      legend:{
+        display: false
+      },
+      title:{
+        display: true,
+        text:"Election Results"
+      },
+      scales : {
+        yAxes: [{
+          ticks: {
+              steps : 10,
+              stepValue : 10,
+              max : 100,
+              min: 0
+            }
+        }]
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+
   }
 }
