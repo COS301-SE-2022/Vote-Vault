@@ -2,16 +2,11 @@ import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import {ContractFactory, ethers, providers} from 'ethers';
-import { environment } from 'src/environments/environment.prod';
-
+import { environment } from 'src/environments/environment';
 
 declare let window : any;
 
-interface Party {
-  name : string;
-  ageVotes : any[];
-  genderVotes : any[];
-}
+
 
 interface Ballot {
   name: string;
@@ -67,15 +62,32 @@ export class DataService {
   signer = null
   pastElections : Election[] = []
 
-  constructor(private firestore: Firestore) {
+  // declaration of arrays for each major political party - predictions for national elections
+  ageBasedANC : any[9];
+  ageBasedDA : any[9];
+  ageBasedEFF : any[9];
+  ageBasedVFP : any[9];
 
+  genderBasedANC : any[2];
+  genderBasedDA : any[2];
+  genderBasedEFF : any[2];
+  genderBasedVFP : any[2];
+
+  // ageReults is a matrix first containing the parties and then containing the age groups, in the order:
+  // ANC, DA, EFF, VFP
+  // 18, 25, 30, etc
+  ageResults : any[4][9];
+  genderResults : any[4][2];
+
+  constructor(private firestore: Firestore) {
+   
     this.voterId = '';
     this.maleCount = 0;
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.elections = [];
 
-    //Contract
+    //Contract 
     this.contractABI = environment.contractABI
     this.contractBytecode = environment.contractBytecode
     this.privateKey = environment.privateKey
@@ -83,6 +95,33 @@ export class DataService {
     this.alcProvider = new ethers.providers.AlchemyProvider("goerli", "OvCjMEF-_qv95PPGX2i14JE1A-3nSIl8")
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
+
+    // TODO: populate probability arrays with mock values
+  }
+
+  calculateProbabilities() {
+    // TODO: get values from blockchain that states how many voters registered for each age group and how many of them have voted already
+    // currently using mock data
+    let votersRemaining18 = 9000;
+    let votersRemaining25 = 9000;
+    let votersRemaining30 = 9000;
+    let votersRemaining40 = 9000;
+    let votersRemaining50 = 9000;
+    let votersRemaining60 = 9000;
+    let votersRemaining70 = 9000;
+    let votersRemaining80 = 9000;
+    let votersRemaining90 = 9000;
+
+    // Formula for ANC, since ANC is the first row according to how the matrix was set up
+    this.ageResults[0][0] = this.ageBasedANC[0] * votersRemaining18;
+    this.ageResults[0][1] = this.ageBasedANC[0] * votersRemaining25;
+    this.ageResults[0][2] = this.ageBasedANC[0] * votersRemaining30;
+    this.ageResults[0][3] = this.ageBasedANC[0] * votersRemaining40;
+    this.ageResults[0][4] = this.ageBasedANC[0] * votersRemaining50;
+    this.ageResults[0][5] = this.ageBasedANC[0] * votersRemaining60;
+    this.ageResults[0][6] = this.ageBasedANC[0] * votersRemaining70;
+    this.ageResults[0][7] = this.ageBasedANC[0] * votersRemaining80;
+    this.ageResults[0][8] = this.ageBasedANC[0] * votersRemaining90;
 
   }
 
@@ -123,7 +162,7 @@ export class DataService {
   }
 
   async fetchPastElections() : Promise<Election[]> {
-    const colRef = collection(this.firestore, 'closed_elections')
+    const colRef = collection(this.firestore, 'deleted_elections')
     const electionsSnap = await getDocs(colRef)
 
     let pastElections = []
@@ -225,10 +264,10 @@ export class DataService {
     return this.maleCount;
   }
 
-  async fetchElections() : Promise<any[]>{
+  async fetchElections() {
       const colRef = collection(this.firestore, 'elections')
       const electionsSnap = await getDocs(colRef)
-
+  
       let elections = []
       electionsSnap.forEach(doc =>  {
         const e = {} as Election
@@ -244,9 +283,38 @@ export class DataService {
       })
       this.elections = elections
       return elections
+
   }
 
-  // getPredictions(voteMatrix : number[]) : number[] {
-    
-  // }
+
+
+
+  async getMaleCount() {
+    let found: Boolean;
+    found = false;
+    const registeredIDs = doc(this.firestore, 'elections' , this.electionID);
+    const getrefID = await getDoc(registeredIDs);
+    const idfound = {};
+    console.log(getrefID.data());
+
+    try {
+      for (let index = 0; index < getrefID.data()['users'].length; index++) {
+        console.log("jj");
+
+        if ("0101235094081" === getrefID.data()['voted'][index].id) {
+          found = true;
+          throw idfound;
+        }
+        if (found == true) {
+          alert('shouldnt reach this');
+          throw idfound;
+        }
+      }
+    } catch (error) {
+      return true;
+    }
+
+    return false;
+  }
+
 }
