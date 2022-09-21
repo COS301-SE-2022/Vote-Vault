@@ -48,13 +48,9 @@ export class ResultsPageComponent implements OnInit {
 
   constructor(private dataService : DataService) {
     this.selectedElection = null;
-    setTimeout(function(){
-      if (this.selectedElection == null) {
-        // do nothing
-      } else {
-        this.selectElection(this.selectedElection);
-      }
-    },10000);
+
+
+
     this.names1 = [];
     this.names2 = [];
     this.names3 = [];
@@ -65,6 +61,13 @@ export class ResultsPageComponent implements OnInit {
   }
 
   async ngOnInit() {
+    setInterval(async ()=> {
+      if (this.selectedElection == null) {
+        console.log("dd");
+      } else {
+        await this.selectElection(this.selectedElection);
+      }
+    }, 10000);
 
     this.elections = await this.dataService.fetchElections();
 
