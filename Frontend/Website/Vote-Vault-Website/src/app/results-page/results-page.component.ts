@@ -19,7 +19,7 @@ interface Election {
   styleUrls: ['./results-page.component.css']
 })
 export class ResultsPageComponent implements OnInit {
-
+  shouldLoad : boolean = false;
   names1 : any[];
   names2 : any[];
   names3 : any[];
@@ -77,12 +77,16 @@ export class ResultsPageComponent implements OnInit {
   };
 
   async selectElection(e : any) : Promise<void> {
+    this.shouldLoad = true;
     let numbers = [];
     this.selectedElection = e
 
     // Gets the selected election results from the blockchain
     this.electionName = this.selectedElection.electionName;
-    numbers = await this.dataService.getElectionResults(this.selectedElection.address);
+   await this.dataService.getElectionResults(this.selectedElection.address).then((value)  =>  {
+      this.shouldLoad = false;
+      numbers = value
+    });
 
     // Populates the results array with all the needed data to display in the results page
     for (let i = 0; i < numbers[0].length; i++) {
@@ -153,7 +157,9 @@ export class ResultsPageComponent implements OnInit {
 
       if (parseInt(numbers[2][i]) > B3) {
         B3 = parseInt(numbers[2][i]);
-        B3Winner = this.selectedElection.ballots[2].options[i].name;
+        B3Winner = this.selectedElection.ballots[2].options[i].name.then(() =>  {
+          this.shouldLoad = false;
+        });
       }
     }
 
