@@ -38,20 +38,130 @@ export class ResultsPageComponent implements OnInit {
   options2 : any;
   elections : Election[];
   selectedElection : Election;
+  ballotName1 : any;
+  ballotName2 : any;
+  ballotName3 : any;
+  electionName : any;
+  winner1 : any;
+  winner2 : any;
+  winner3 : any;
 
   constructor(private dataService : DataService) {
-    this.names1 = ["party1","party2","party3","party4","party5","party6", "party7"];
-    this.names2 = ["party1","party2","party3","party4","party5","party6"];
-    this.names3 = ["party1","party2"];
-    this.ballot1 = [12, 34, 3, 90, 50, 78, 64];
-    this.ballot2 = [54, 4, 24, 28, 51, 32];
-    this.ballot3 = [23, 47];
+    this.selectedElection = null;
+
+
+
+    this.names1 = [];
+    this.names2 = [];
+    this.names3 = [];
+    this.ballot1 = [];
+    this.ballot2 = [];
+    this.ballot3 = [];
     this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
   }
 
   async ngOnInit() {
+    setInterval(async ()=> {
+      if (this.selectedElection == null) {
+        console.log("dd");
+      } else {
+        await this.selectElection(this.selectedElection);
+      }
+    }, 10000);
 
     this.elections = await this.dataService.fetchElections();
+
+    document.getElementById("info1").hidden = true;
+    document.getElementById("info3").hidden = true;
+    document.getElementById("info5").hidden = true;
+  };
+
+  async selectElection(e : any) : Promise<void> {
+    let numbers = [];
+    this.selectedElection = e
+
+    // Gets the selected election results from the blockchain
+    this.electionName = this.selectedElection.electionName;
+    numbers = await this.dataService.getElectionResults(this.selectedElection.address);
+
+    // Populates the results array with all the needed data to display in the results page
+    for (let i = 0; i < numbers[0].length; i++) {
+      this.ballot1[i] = parseInt(numbers[0][i]);
+    }
+
+    for (let i = 0; i < numbers[1].length; i++) {
+      this.ballot2[i] = parseInt(numbers[1][i]);
+    }
+
+    for (let i = 0; i < numbers[2].length; i++) {
+      this.ballot3[i] = parseInt(numbers[2][i]);
+    }
+
+    for (let i = 0; i < this.selectedElection.ballots[0].options.length; i++) {
+      this.names1[i] = this.selectedElection.ballots[0].options[i].name;
+    }
+    this.ballotName1 = this.selectedElection.ballots[0].name;
+
+    for (let i = 0; i < this.selectedElection.ballots[1].options.length; i++) {
+      this.names2[i] = this.selectedElection.ballots[1].options[i].name;
+    }
+    this.ballotName2 = this.selectedElection.ballots[1].name;
+
+    for (let i = 0; i < this.selectedElection.ballots[2].options.length; i++) {
+      this.names3[i] = this.selectedElection.ballots[2].options[i].name;
+    }
+    this.ballotName3 = this.selectedElection.ballots[2].name;
+
+    this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
+
+    document.getElementById("info1").hidden = false;
+    document.getElementById("info3").hidden = false;
+    document.getElementById("info5").hidden = false;
+
+    let B1 = parseInt(numbers[0][0]);
+    let B2 = parseInt(numbers[1][0]);
+    let B3 = parseInt(numbers[2][0]);
+
+    let B1Max = 0;
+    let B2Max = 0;
+    let B3Max = 0;
+
+    let B1Winner = this.selectedElection.ballots[0].options[0].name;
+    let B2Winner = this.selectedElection.ballots[1].options[0].name;
+    let B3Winner = this.selectedElection.ballots[2].options[0].name;
+
+    for (let i = 0; i < numbers[0].length; i++) {
+      B1Max += parseInt(numbers[0][i]);
+
+      if (parseInt(numbers[0][i]) > B1) {
+        B1 = parseInt(numbers[0][i]);
+        B1Winner = this.selectedElection.ballots[0].options[i].name;
+      }
+    }
+
+    for (let i = 0; i < numbers[1].length; i++) {
+      B2Max += parseInt(numbers[1][i]);
+
+      if (parseInt(numbers[1][i]) > B2) {
+        B2 = parseInt(numbers[1][i]);
+        B2Winner = this.selectedElection.ballots[1].options[i].name;
+      }
+    }
+
+    for (let i = 0; i < numbers[2].length; i++) {
+      B3Max += parseInt(numbers[2][i]);
+
+      if (parseInt(numbers[2][i]) > B3) {
+        B3 = parseInt(numbers[2][i]);
+        B3Winner = this.selectedElection.ballots[2].options[i].name;
+      }
+    }
+
+    this.winner1 = B1Winner;
+    this.winner2 = B2Winner;
+    this.winner3 = B3Winner;
+
+    // Graph metadata with the current results
     this.type = 'bar';
     this.data = {
       labels: this.results[0].nameslistballot1,
@@ -75,7 +185,7 @@ export class ResultsPageComponent implements OnInit {
           ticks: {
               steps : 10,
               stepValue : 10,
-              max : 100,
+              max : B1Max,
               min: 0
             }
         }]
@@ -107,7 +217,7 @@ export class ResultsPageComponent implements OnInit {
           ticks: {
               steps : 10,
               stepValue : 10,
-              max : 100,
+              max : B2Max,
               min: 0
             }
         }]
@@ -139,7 +249,7 @@ export class ResultsPageComponent implements OnInit {
           ticks: {
               steps : 10,
               stepValue : 10,
-              max : 100,
+              max : B3Max,
               min: 0
             }
         }]
@@ -147,12 +257,7 @@ export class ResultsPageComponent implements OnInit {
       responsive: true,
       maintainAspectRatio: false
     }
-  };
 
-  async selectElection(e : any) : Promise<void> {
-    let numbers = [];
-    this.selectedElection = e
-    numbers = await this.dataService.getElectionResults(this.selectedElection.address);
-    
   }
 }
+
