@@ -47,6 +47,14 @@ export class ResultsPageComponent implements OnInit {
   winner3 : any;
 
   constructor(private dataService : DataService) {
+    this.selectedElection = null;
+    setTimeout(function(){
+      if (this.selectedElection == null) {
+        // do nothing
+      } else {
+        this.selectElection(this.selectedElection);
+      }
+    },10000);
     this.names1 = [];
     this.names2 = [];
     this.names3 = [];
@@ -249,3 +257,4 @@ export class ResultsPageComponent implements OnInit {
 
   }
 }
+
