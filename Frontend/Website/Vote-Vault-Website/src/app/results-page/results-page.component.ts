@@ -155,7 +155,6 @@ export class ResultsPageComponent implements OnInit {
     numbers = await this.dataService.getElectionResults(this.selectedElection.address);
     console.log(parseInt(numbers[0][0]._hex));
 
-
     for (let i = 0; i < numbers[0].length; i++) {
       this.ballot1[i] = parseInt(numbers[0][i]);
     }
@@ -166,6 +165,18 @@ export class ResultsPageComponent implements OnInit {
 
     for (let i = 0; i < numbers[0].length; i++) {
       this.ballot3[i] = parseInt(numbers[2][i]);
+    }
+
+    for (let i = 0; i < this.selectedElection.ballots[0].options.length; i++) {
+      this.names1[i] = this.selectedElection.ballots[0].options[i].name;
+    }
+
+    for (let i = 0; i < this.selectedElection.ballots[1].options.length; i++) {
+      this.names2[i] = this.selectedElection.ballots[1].options[i].name;
+    }
+
+    for (let i = 0; i < this.selectedElection.ballots[2].options.length; i++) {
+      this.names3[i] = this.selectedElection.ballots[2].options[i].name;
     }
 
     this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
