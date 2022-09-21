@@ -112,16 +112,25 @@ export class DataService {
     let votersRemaining80 = 9000;
     let votersRemaining90 = 9000;
 
+    let votedANC = 0;
+
     // Formula for ANC, since ANC is the first row according to how the matrix was set up
     this.ageResults[0][0] = this.ageBasedANC[0] * votersRemaining18;
-    this.ageResults[0][1] = this.ageBasedANC[0] * votersRemaining25;
-    this.ageResults[0][2] = this.ageBasedANC[0] * votersRemaining30;
-    this.ageResults[0][3] = this.ageBasedANC[0] * votersRemaining40;
-    this.ageResults[0][4] = this.ageBasedANC[0] * votersRemaining50;
-    this.ageResults[0][5] = this.ageBasedANC[0] * votersRemaining60;
-    this.ageResults[0][6] = this.ageBasedANC[0] * votersRemaining70;
-    this.ageResults[0][7] = this.ageBasedANC[0] * votersRemaining80;
-    this.ageResults[0][8] = this.ageBasedANC[0] * votersRemaining90;
+    this.ageResults[0][1] = this.ageBasedANC[1] * votersRemaining25;
+    this.ageResults[0][2] = this.ageBasedANC[2] * votersRemaining30;
+    this.ageResults[0][3] = this.ageBasedANC[3] * votersRemaining40;
+    this.ageResults[0][4] = this.ageBasedANC[4] * votersRemaining50;
+    this.ageResults[0][5] = this.ageBasedANC[5] * votersRemaining60;
+    this.ageResults[0][6] = this.ageBasedANC[6] * votersRemaining70;
+    this.ageResults[0][7] = this.ageBasedANC[7] * votersRemaining80;
+    this.ageResults[0][8] = this.ageBasedANC[8] * votersRemaining90;
+
+    let calcPredictionANC = 0;
+    for (let i = 0; i < 9; i++) {
+      calcPredictionANC += this.ageResults[0][i];
+    }
+
+    let finalPredictionANC = votedANC + calcPredictionANC;
 
   }
 
