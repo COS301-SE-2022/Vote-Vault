@@ -225,7 +225,7 @@ export class DataService {
     return this.maleCount;
   }
 
-  async fetchElections() {
+  async fetchElections() : Promise<any[]>{
       const colRef = collection(this.firestore, 'elections')
       const electionsSnap = await getDocs(colRef)
 
