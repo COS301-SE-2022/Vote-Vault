@@ -43,5 +43,9 @@ describe('DataService', () => {
   //       done();
   //   });
   // });
+
+  it('should return winner index', () => {
+    expect(service.findWinnerIndex([10,0,0])).toBe(0);
+  });
 });
 
