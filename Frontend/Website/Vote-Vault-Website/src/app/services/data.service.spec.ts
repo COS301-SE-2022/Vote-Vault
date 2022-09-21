@@ -47,5 +47,9 @@ describe('DataService', () => {
   it('should return winner index', () => {
     expect(service.findWinnerIndex([10,0,0])).toBe(0);
   });
+
+  it('should return winner index again', () => {
+    expect(service.findWinnerIndex([10,9,8, 100, 230123123])).toBe(4);
+  });
 });
 
