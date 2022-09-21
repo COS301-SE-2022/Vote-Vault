@@ -38,8 +38,13 @@ export class ResultsPageComponent implements OnInit {
   options2 : any;
   elections : Election[];
   selectedElection : Election;
+  ballotName1 : any;
+  ballotName2 : any;
+  ballotName3 : any;
+  electionName : any;
 
   constructor(private dataService : DataService) {
+    this.ballotName1 = "some stuff";
     this.names1 = [];
     this.names2 = [];
     this.names3 = [];
@@ -152,32 +157,36 @@ export class ResultsPageComponent implements OnInit {
   async selectElection(e : any) : Promise<void> {
     let numbers = [];
     this.selectedElection = e
+
+    this.electionName = this.selectedElection.electionName;
     numbers = await this.dataService.getElectionResults(this.selectedElection.address);
-    console.log(parseInt(numbers[0][0]._hex));
 
     for (let i = 0; i < numbers[0].length; i++) {
       this.ballot1[i] = parseInt(numbers[0][i]);
     }
 
-    for (let i = 0; i < numbers[0].length; i++) {
+    for (let i = 0; i < numbers[1].length; i++) {
       this.ballot2[i] = parseInt(numbers[1][i]);
     }
 
-    for (let i = 0; i < numbers[0].length; i++) {
+    for (let i = 0; i < numbers[2].length; i++) {
       this.ballot3[i] = parseInt(numbers[2][i]);
     }
 
     for (let i = 0; i < this.selectedElection.ballots[0].options.length; i++) {
       this.names1[i] = this.selectedElection.ballots[0].options[i].name;
     }
+    this.ballotName1 = this.selectedElection.ballots[0].name;
 
     for (let i = 0; i < this.selectedElection.ballots[1].options.length; i++) {
       this.names2[i] = this.selectedElection.ballots[1].options[i].name;
     }
+    this.ballotName2 = this.selectedElection.ballots[1].name;
 
     for (let i = 0; i < this.selectedElection.ballots[2].options.length; i++) {
       this.names3[i] = this.selectedElection.ballots[2].options[i].name;
     }
+    this.ballotName3 = this.selectedElection.ballots[2].name;
 
     this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
 
