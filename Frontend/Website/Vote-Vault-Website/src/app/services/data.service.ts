@@ -239,4 +239,8 @@ export class DataService {
       this.elections = elections
       return elections
   }
+
+  // getPredictions(voteMatrix : number[]) : number[] {
+    
+  // }
 }
