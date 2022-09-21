@@ -42,6 +42,9 @@ export class ResultsPageComponent implements OnInit {
   ballotName2 : any;
   ballotName3 : any;
   electionName : any;
+  winner1 : any;
+  winner2 : any;
+  winner3 : any;
 
   constructor(private dataService : DataService) {
     this.names1 = [];
@@ -112,9 +115,9 @@ export class ResultsPageComponent implements OnInit {
     let B2Max = 0;
     let B3Max = 0;
 
-    let B1Winner = "";
-    let B2Winner = "";
-    let B3Winner = "";
+    let B1Winner = this.selectedElection.ballots[0].options[0].name;
+    let B2Winner = this.selectedElection.ballots[1].options[0].name;
+    let B3Winner = this.selectedElection.ballots[2].options[0].name;
 
     for (let i = 0; i < numbers[0].length; i++) {
       B1Max += parseInt(numbers[0][i]);
@@ -142,6 +145,10 @@ export class ResultsPageComponent implements OnInit {
         B3Winner = this.selectedElection.ballots[2].options[i].name;
       }
     }
+
+    this.winner1 = B1Winner;
+    this.winner2 = B2Winner;
+    this.winner3 = B3Winner;
 
     // Graph metadata with the current results
     this.type = 'bar';
