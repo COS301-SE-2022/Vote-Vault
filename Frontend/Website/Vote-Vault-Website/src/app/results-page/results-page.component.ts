@@ -153,6 +153,7 @@ export class ResultsPageComponent implements OnInit {
     let numbers = [];
     this.selectedElection = e
     numbers = await this.dataService.getElectionResults(this.selectedElection.address);
-    
+    console.log(parseInt(numbers[0][0]._hex));
+    this.ballot1 = [12, 34, 100, 90, 50, 78, 64];
   }
 }
