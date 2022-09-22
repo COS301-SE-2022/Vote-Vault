@@ -3,6 +3,7 @@ import { Firestore } from '@angular/fire/firestore';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, setDoc, updateDoc } from 'firebase/firestore';
 import {ContractFactory, ethers, providers} from 'ethers';
 import { environment } from 'src/environments/environment';
+import { HighlightSpanKind } from 'typescript';
 
 declare let window : any;
 
@@ -74,6 +75,8 @@ export class DataService {
   genderBasedEFF : any[2];
   genderBasedVFP : any[2];
 
+  stillToVoteAges : any[9];
+
   // ageReults is a matrix first containing the parties and then containing the age groups, in the order:
   // ANC, DA, EFF, VFP
   // 18, 25, 30, etc
@@ -107,15 +110,16 @@ export class DataService {
   calculateProbabilities() {
     // TODO: get values from blockchain that states how many voters registered for each age group and how many of them have voted already
     // currently using mock data
+    // 18 29 39 49 59 69 79 89 99
     let votersRemaining18 = 9000;
-    let votersRemaining25 = 9000;
-    let votersRemaining30 = 9000;
-    let votersRemaining40 = 9000;
-    let votersRemaining50 = 9000;
-    let votersRemaining60 = 9000;
-    let votersRemaining70 = 9000;
-    let votersRemaining80 = 9000;
-    let votersRemaining90 = 9000;
+    let votersRemaining29 = 9000;
+    let votersRemaining39 = 9000;
+    let votersRemaining49 = 9000;
+    let votersRemaining59 = 9000;
+    let votersRemaining69 = 9000;
+    let votersRemaining79 = 9000;
+    let votersRemaining89 = 9000;
+    let votersRemaining99 = 9000;
 
     let votedANC = 0;
     let votedDA = 0;
@@ -124,14 +128,14 @@ export class DataService {
 
     // Formula for ANC, since ANC is the first row according to how the matrix was set up
     this.ageResults[0][0] = this.ageBasedANC[0] * votersRemaining18;
-    this.ageResults[0][1] = this.ageBasedANC[1] * votersRemaining25;
-    this.ageResults[0][2] = this.ageBasedANC[2] * votersRemaining30;
-    this.ageResults[0][3] = this.ageBasedANC[3] * votersRemaining40;
-    this.ageResults[0][4] = this.ageBasedANC[4] * votersRemaining50;
-    this.ageResults[0][5] = this.ageBasedANC[5] * votersRemaining60;
-    this.ageResults[0][6] = this.ageBasedANC[6] * votersRemaining70;
-    this.ageResults[0][7] = this.ageBasedANC[7] * votersRemaining80;
-    this.ageResults[0][8] = this.ageBasedANC[8] * votersRemaining90;
+    this.ageResults[0][1] = this.ageBasedANC[1] * votersRemaining29;
+    this.ageResults[0][2] = this.ageBasedANC[2] * votersRemaining39;
+    this.ageResults[0][3] = this.ageBasedANC[3] * votersRemaining49;
+    this.ageResults[0][4] = this.ageBasedANC[4] * votersRemaining59;
+    this.ageResults[0][5] = this.ageBasedANC[5] * votersRemaining69;
+    this.ageResults[0][6] = this.ageBasedANC[6] * votersRemaining79;
+    this.ageResults[0][7] = this.ageBasedANC[7] * votersRemaining89;
+    this.ageResults[0][8] = this.ageBasedANC[8] * votersRemaining99;
 
     let calcPredictionANC = 0;
     for (let i = 0; i < 9; i++) {
@@ -140,18 +144,17 @@ export class DataService {
 
     let finalPredictionANC = votedANC + calcPredictionANC;
 
-
     
     // Formula for DA, since DA is the second row according to how the matrix was set up
     this.ageResults[1][0] = this.ageBasedDA[0] * votersRemaining18;
-    this.ageResults[1][1] = this.ageBasedDA[1] * votersRemaining25;
-    this.ageResults[1][2] = this.ageBasedDA[2] * votersRemaining30;
-    this.ageResults[1][3] = this.ageBasedDA[3] * votersRemaining40;
-    this.ageResults[1][4] = this.ageBasedDA[4] * votersRemaining50;
-    this.ageResults[1][5] = this.ageBasedDA[5] * votersRemaining60;
-    this.ageResults[1][6] = this.ageBasedDA[6] * votersRemaining70;
-    this.ageResults[1][7] = this.ageBasedDA[7] * votersRemaining80;
-    this.ageResults[1][8] = this.ageBasedDA[8] * votersRemaining90;
+    this.ageResults[1][1] = this.ageBasedDA[1] * votersRemaining29;
+    this.ageResults[1][2] = this.ageBasedDA[2] * votersRemaining39;
+    this.ageResults[1][3] = this.ageBasedDA[3] * votersRemaining49;
+    this.ageResults[1][4] = this.ageBasedDA[4] * votersRemaining59;
+    this.ageResults[1][5] = this.ageBasedDA[5] * votersRemaining69;
+    this.ageResults[1][6] = this.ageBasedDA[6] * votersRemaining79;
+    this.ageResults[1][7] = this.ageBasedDA[7] * votersRemaining89;
+    this.ageResults[1][8] = this.ageBasedDA[8] * votersRemaining99;
 
     let calcPredictionDA = 0;
     for (let i = 0; i < 9; i++) {
@@ -162,14 +165,14 @@ export class DataService {
 
     // Formula for EFF, since EFF is the third row according to how the matrix was set up
     this.ageResults[2][0] = this.ageBasedEFF[0] * votersRemaining18;
-    this.ageResults[2][1] = this.ageBasedEFF[1] * votersRemaining25;
-    this.ageResults[2][2] = this.ageBasedEFF[2] * votersRemaining30;
-    this.ageResults[2][3] = this.ageBasedEFF[3] * votersRemaining40;
-    this.ageResults[2][4] = this.ageBasedEFF[4] * votersRemaining50;
-    this.ageResults[2][5] = this.ageBasedEFF[5] * votersRemaining60;
-    this.ageResults[2][6] = this.ageBasedEFF[6] * votersRemaining70;
-    this.ageResults[2][7] = this.ageBasedEFF[7] * votersRemaining80;
-    this.ageResults[2][8] = this.ageBasedEFF[8] * votersRemaining90;
+    this.ageResults[2][1] = this.ageBasedEFF[1] * votersRemaining29;
+    this.ageResults[2][2] = this.ageBasedEFF[2] * votersRemaining39;
+    this.ageResults[2][3] = this.ageBasedEFF[3] * votersRemaining49;
+    this.ageResults[2][4] = this.ageBasedEFF[4] * votersRemaining59;
+    this.ageResults[2][5] = this.ageBasedEFF[5] * votersRemaining69;
+    this.ageResults[2][6] = this.ageBasedEFF[6] * votersRemaining79;
+    this.ageResults[2][7] = this.ageBasedEFF[7] * votersRemaining89;
+    this.ageResults[2][8] = this.ageBasedEFF[8] * votersRemaining99;
 
     let calcPredictionEFF = 0;
     for (let i = 0; i < 9; i++) {
@@ -180,14 +183,14 @@ export class DataService {
           
     // Formula for VFP, since VFP is the second row according to how the matrix was set up
     this.ageResults[3][0] = this.ageBasedVFP[0] * votersRemaining18;
-    this.ageResults[3][1] = this.ageBasedVFP[1] * votersRemaining25;
-    this.ageResults[3][2] = this.ageBasedVFP[2] * votersRemaining30;
-    this.ageResults[3][3] = this.ageBasedVFP[3] * votersRemaining40;
-    this.ageResults[3][4] = this.ageBasedVFP[4] * votersRemaining50;
-    this.ageResults[3][5] = this.ageBasedVFP[5] * votersRemaining60;
-    this.ageResults[3][6] = this.ageBasedVFP[6] * votersRemaining70;
-    this.ageResults[3][7] = this.ageBasedVFP[7] * votersRemaining80;
-    this.ageResults[3][8] = this.ageBasedVFP[8] * votersRemaining90;
+    this.ageResults[3][1] = this.ageBasedVFP[1] * votersRemaining29;
+    this.ageResults[3][2] = this.ageBasedVFP[2] * votersRemaining39;
+    this.ageResults[3][3] = this.ageBasedVFP[3] * votersRemaining49;
+    this.ageResults[3][4] = this.ageBasedVFP[4] * votersRemaining59;
+    this.ageResults[3][5] = this.ageBasedVFP[5] * votersRemaining69;
+    this.ageResults[3][6] = this.ageBasedVFP[6] * votersRemaining79;
+    this.ageResults[3][7] = this.ageBasedVFP[7] * votersRemaining89;
+    this.ageResults[3][8] = this.ageBasedVFP[8] * votersRemaining99;
 
     let calcPredictionVFP = 0;
     for (let i = 0; i < 9; i++) {
@@ -291,43 +294,52 @@ export class DataService {
         const aproxAge = 2022 - this.yearBornFromID;
 
         console.log(aproxAge);
-
+        
 
         switch (true) {
           case (aproxAge > 99 && aproxAge < 105): {
             this.agesArray[8]++;
+            if (element.voted) this.stillToVoteAges[8]++;
             break;
           }
           case (aproxAge > 89): {
             this.agesArray[7]++;
+            if (element.voted) this.stillToVoteAges[7]++;
             break;
           }
           case (aproxAge > 79): {
             this.agesArray[6]++;
+            if (element.voted) this.stillToVoteAges[6]++;
             break;
           }
           case (aproxAge > 69): {
             this.agesArray[5]++;
+            if (element.voted) this.stillToVoteAges[5]++;
             break;
           }
           case (aproxAge > 59): {
             this.agesArray[4]++;
+            if (element.voted) this.stillToVoteAges[4]++;
             break;
           }
           case (aproxAge > 49): {
             this.agesArray[3]++;
+            if (element.voted) this.stillToVoteAges[3]++;
             break;
           }
           case (aproxAge > 39): {
             this.agesArray[2]++;
+            if (element.voted) this.stillToVoteAges[2]++;
             break;
           }
           case (aproxAge > 29): {
             this.agesArray[1]++;
+            if (element.voted) this.stillToVoteAges[1]++;
             break;
           }
           case (aproxAge > 18): {
             this.agesArray[0]++;
+            if (element.voted) this.stillToVoteAges[0]++;
             break;
           }
         }
