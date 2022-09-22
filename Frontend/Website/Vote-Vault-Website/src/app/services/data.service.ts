@@ -61,6 +61,7 @@ export class DataService {
   alcProvider = null
   signer = null
   pastElections : Election[] = []
+  predictionsArray : any[4]
 
   // declaration of arrays for each major political party - predictions for national elections
   ageBasedANC : any[9];
@@ -77,6 +78,10 @@ export class DataService {
   // ANC, DA, EFF, VFP
   // 18, 25, 30, etc
   ageResults : any[4][9];
+
+  // genderResults is a matrix that first contains the values of the parties and then each gender, in the order:
+  // ANC, DA, EFF, VFP
+  // F, M
   genderResults : any[4][2];
 
   constructor(private firestore: Firestore) {
@@ -113,6 +118,9 @@ export class DataService {
     let votersRemaining90 = 9000;
 
     let votedANC = 0;
+    let votedDA = 0;
+    let votedEFF = 0;
+    let votedVFP = 0;
 
     // Formula for ANC, since ANC is the first row according to how the matrix was set up
     this.ageResults[0][0] = this.ageBasedANC[0] * votersRemaining18;
@@ -131,6 +139,28 @@ export class DataService {
     }
 
     let finalPredictionANC = votedANC + calcPredictionANC;
+
+
+    
+    // Formula for DA, since DA is the second row according to how the matrix was set up
+    this.ageResults[1][0] = this.ageBasedDA[0] * votersRemaining18;
+    this.ageResults[1][1] = this.ageBasedDA[1] * votersRemaining25;
+    this.ageResults[1][2] = this.ageBasedDA[2] * votersRemaining30;
+    this.ageResults[1][3] = this.ageBasedDA[3] * votersRemaining40;
+    this.ageResults[1][4] = this.ageBasedDA[4] * votersRemaining50;
+    this.ageResults[1][5] = this.ageBasedDA[5] * votersRemaining60;
+    this.ageResults[1][6] = this.ageBasedDA[6] * votersRemaining70;
+    this.ageResults[1][7] = this.ageBasedDA[7] * votersRemaining80;
+    this.ageResults[1][8] = this.ageBasedDA[8] * votersRemaining90;
+
+    let calcPredictionDA = 0;
+    for (let i = 0; i < 9; i++) {
+      calcPredictionDA += this.ageResults[1][i];
+    }
+
+    let finalPredictionDA = votedDA + calcPredictionDA;
+
+
 
   }
 
