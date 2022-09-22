@@ -160,8 +160,25 @@ export class DataService {
 
     let finalPredictionDA = votedDA + calcPredictionDA;
 
+    // Formula for EFF, since EFF is the third row according to how the matrix was set up
+    this.ageResults[2][0] = this.ageBasedEFF[0] * votersRemaining18;
+    this.ageResults[2][1] = this.ageBasedEFF[1] * votersRemaining25;
+    this.ageResults[2][2] = this.ageBasedEFF[2] * votersRemaining30;
+    this.ageResults[2][3] = this.ageBasedEFF[3] * votersRemaining40;
+    this.ageResults[2][4] = this.ageBasedEFF[4] * votersRemaining50;
+    this.ageResults[2][5] = this.ageBasedEFF[5] * votersRemaining60;
+    this.ageResults[2][6] = this.ageBasedEFF[6] * votersRemaining70;
+    this.ageResults[2][7] = this.ageBasedEFF[7] * votersRemaining80;
+    this.ageResults[2][8] = this.ageBasedEFF[8] * votersRemaining90;
 
+    let calcPredictionEFF = 0;
+    for (let i = 0; i < 9; i++) {
+      calcPredictionEFF += this.ageResults[2][i];
+    }
 
+    let finalPredictionEFF = votedEFF + calcPredictionEFF;
+          
+    
   }
 
 
