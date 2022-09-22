@@ -196,7 +196,12 @@ export class DataService {
 
     let finalPredictionVFP = votedVFP + calcPredictionVFP;
 
-    
+    // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions
+    // This is temporary i guess
+    this.predictionsArray[0] = finalPredictionANC
+    this.predictionsArray[1] = finalPredictionDA
+    this.predictionsArray[2] = finalPredictionEFF
+    this.predictionsArray[3] = finalPredictionVFP
   }
 
 
