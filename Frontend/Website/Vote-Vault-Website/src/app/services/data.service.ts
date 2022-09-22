@@ -171,7 +171,7 @@ export class DataService {
   }
 
   async fetchPastElections() : Promise<Election[]> {
-    const colRef = collection(this.firestore, 'deleted_elections')
+    const colRef = collection(this.firestore, 'closed_elections')
     const electionsSnap = await getDocs(colRef)
 
     let pastElections = []
