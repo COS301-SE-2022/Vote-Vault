@@ -107,11 +107,15 @@ export class DataService {
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
 
-    // TODO: populate probability arrays with mock values
+    // TODO: populate probability arrays with mock values --> DONE
+    this.ageBasedANC = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+    this.ageBasedDA = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+    this.ageBasedEFF = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+    this.ageBasedVFP = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
   }
 
   calculateProbabilities() {
-    // TODO: get values from blockchain that states how many voters registered for each age group and how many of them have voted already
+    // TODO: get values that states how many voters registered for each age group and how many of them have voted already --> DONE
     // currently using mock data
     // 18 29 39 49 59 69 79 89 99
     // let votersRemaining18 = 9000;
@@ -208,6 +212,8 @@ export class DataService {
     this.predictionsArray[1] = finalPredictionDA
     this.predictionsArray[2] = finalPredictionEFF
     this.predictionsArray[3] = finalPredictionVFP
+
+    console.log(this.predictionsArray);
   }
 
 
