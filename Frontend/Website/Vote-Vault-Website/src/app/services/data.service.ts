@@ -86,6 +86,7 @@ export class DataService {
   // ANC, DA, EFF, VFP
   // F, M
   genderResults : any[4][2];
+  totalUserCount: any;
 
   constructor(private firestore: Firestore) {
    
@@ -94,6 +95,8 @@ export class DataService {
     this.femaleCount = 0;
     this.agesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.elections = [];
+
+    this.totalUserCount = 0;
 
     //Contract 
     this.contractABI = environment.contractABI
@@ -142,7 +145,7 @@ export class DataService {
       calcPredictionANC += this.ageResults[0][i];
     }
 
-    let finalPredictionANC = votedANC + calcPredictionANC;
+    let finalPredictionANC = (votedANC + calcPredictionANC) / this.totalUserCount;
 
     
     // Formula for DA, since DA is the second row according to how the matrix was set up
@@ -161,7 +164,7 @@ export class DataService {
       calcPredictionDA += this.ageResults[1][i];
     }
 
-    let finalPredictionDA = votedDA + calcPredictionDA;
+    let finalPredictionDA = (votedDA + calcPredictionDA) / this.totalUserCount;
 
     // Formula for EFF, since EFF is the third row according to how the matrix was set up
     this.ageResults[2][0] = this.ageBasedEFF[0] * this.stillToVoteAges[0];
@@ -179,7 +182,7 @@ export class DataService {
       calcPredictionEFF += this.ageResults[2][i];
     }
 
-    let finalPredictionEFF = votedEFF + calcPredictionEFF;
+    let finalPredictionEFF = (votedEFF + calcPredictionEFF) / this.totalUserCount;
           
     // Formula for VFP, since VFP is the second row according to how the matrix was set up
     this.ageResults[3][0] = this.ageBasedVFP[0] * this.stillToVoteAges[0];
@@ -197,7 +200,7 @@ export class DataService {
       calcPredictionVFP += this.ageResults[3][i];
     }
 
-    let finalPredictionVFP = votedVFP + calcPredictionVFP;
+    let finalPredictionVFP = (votedVFP + calcPredictionVFP) / this.totalUserCount;
 
     // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions
     // This is temporary i guess
@@ -285,6 +288,7 @@ export class DataService {
       e.users.forEach(element => {
         if (element.gender === "M") this.maleCount++;
         if (element.gender === "F") this.femaleCount++;
+        this.totalUserCount++;
 
         // Getting the age from the doc.id, by NOT calculating the current date correctly
         // TODO: calculate the current date correctly
