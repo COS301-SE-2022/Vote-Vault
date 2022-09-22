@@ -178,6 +178,24 @@ export class DataService {
 
     let finalPredictionEFF = votedEFF + calcPredictionEFF;
           
+    // Formula for VFP, since VFP is the second row according to how the matrix was set up
+    this.ageResults[3][0] = this.ageBasedVFP[0] * votersRemaining18;
+    this.ageResults[3][1] = this.ageBasedVFP[1] * votersRemaining25;
+    this.ageResults[3][2] = this.ageBasedVFP[2] * votersRemaining30;
+    this.ageResults[3][3] = this.ageBasedVFP[3] * votersRemaining40;
+    this.ageResults[3][4] = this.ageBasedVFP[4] * votersRemaining50;
+    this.ageResults[3][5] = this.ageBasedVFP[5] * votersRemaining60;
+    this.ageResults[3][6] = this.ageBasedVFP[6] * votersRemaining70;
+    this.ageResults[3][7] = this.ageBasedVFP[7] * votersRemaining80;
+    this.ageResults[3][8] = this.ageBasedVFP[8] * votersRemaining90;
+
+    let calcPredictionVFP = 0;
+    for (let i = 0; i < 9; i++) {
+      calcPredictionVFP += this.ageResults[3][i];
+    }
+
+    let finalPredictionVFP = votedVFP + calcPredictionVFP;
+
     
   }
 
