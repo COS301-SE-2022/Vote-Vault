@@ -61,13 +61,13 @@ export class ResultsPageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // setInterval(async ()=> {
-    //   if (this.selectedElection == null) {
-    //     console.log("dd");
-    //   } else {
-    //     await this.selectElection(this.selectedElection);
-    //   }
-    // }, 10000);
+    setInterval(async ()=> {
+      if (this.selectedElection == null) {
+        console.log("dd");
+      } else {
+        await this.selectElection(this.selectedElection);
+      }
+    }, 100000);
 
     this.elections = await this.dataService.fetchElections();
 
