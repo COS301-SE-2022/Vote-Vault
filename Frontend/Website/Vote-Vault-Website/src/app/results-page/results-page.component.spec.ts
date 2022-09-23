@@ -29,4 +29,13 @@ describe('ResultsPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set current election', () => {
+    component.selectElection(null);
+    expect(component.selectedElection).toEqual(null);
+  })
+
+  it('should hide loader initially', () =>  {
+    expect(component.shouldLoad).toEqual(false);
+  })
 });
