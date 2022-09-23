@@ -71,6 +71,9 @@ export class ResultsPageComponent implements OnInit {
 
     this.elections = await this.dataService.fetchElections();
 
+    console.log(this.elections);
+
+
     document.getElementById("info1").hidden = true;
     document.getElementById("info3").hidden = true;
     document.getElementById("info5").hidden = true;

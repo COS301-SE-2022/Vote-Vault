@@ -31,7 +31,7 @@ describe('DataService', () => {
   it('should return an array when fetching elections',
     (done: DoneFn) => {
       service.fetchElections().then(value => {
-        expect(value).toBe('array');
+        expect(value.length).toBeGreaterThanOrEqual(1);
         done();
     });
   });
