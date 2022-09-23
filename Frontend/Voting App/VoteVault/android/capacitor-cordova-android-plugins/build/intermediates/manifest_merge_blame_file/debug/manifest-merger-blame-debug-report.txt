@@ -1,0 +1,50 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+3    xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="capacitor.android.plugins" >
+5
+6    <uses-sdk
+7        android:minSdkVersion="21"
+7-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+8        android:targetSdkVersion="30" />
+8-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+9
+10    <uses-permission android:name="android.permission.CAMERA" />
+10-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-60
+10-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-58
+11    <uses-permission android:name="android.permission.FLASHLIGHT" />
+11-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:1-64
+11-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:18-62
+12
+13    <uses-feature
+13-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-79
+14        android:name="android.hardware.camera"
+14-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:15-53
+15        android:required="true" />
+15-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:54-77
+16
+17    <application>
+17-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-8:15
+18        <activity
+18-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-302
+19            android:name="com.google.zxing.client.android.CaptureActivity"
+19-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-73
+20            android:clearTaskOnLaunch="true"
+20-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:74-106
+21            android:configChanges="orientation|keyboardHidden|screenSize"
+21-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:107-168
+22            android:exported="false"
+22-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:276-300
+23            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+23-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:169-227
+24            android:windowSoftInputMode="stateAlwaysHidden" />
+24-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:228-275
+25        <activity
+25-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-103
+26            android:name="com.google.zxing.client.android.encode.EncodeActivity"
+26-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-79
+27            android:label="Share" />
+27-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:80-101
+28    </application>
+29
+30</manifest>
