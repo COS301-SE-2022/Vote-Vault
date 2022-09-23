@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
     AnalyticsPageComponent,
     ResultsPageComponent,
     HowtoPageComponent,
-    HistoryPageComponent
+    HistoryPageComponent,
   ],
   imports: [
     BrowserModule,

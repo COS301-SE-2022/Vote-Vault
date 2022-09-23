@@ -3,6 +3,8 @@
   <head>
 
   </head>
+  <div class="loader" *ngIf="shouldLoad"></div>
+  <div class="overlay" *ngIf="shouldLoad"></div>
   <!-- <body> -->
     <div class="navbar1">
       <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
@@ -14,25 +16,38 @@
     </div>
 
     <div class="rest">
+      <div>
+        <img src="assets/images/results-banner.jpg" class="banner" style="width:100%; height:20rem">
+      </div>
 
       <div class="col text-center" style="margin-top:2rem; margin-bottom: 4rem;">
         <h2>Election Results</h2>
         <h6>View the live and secured results of the current election</h6>
       </div>
 
+      <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Select Election</button>
+          <div ngbDropdownMenu aria-labelledby="demographicsDropdown">
+            <button (click) = "selectElection(e)" *ngFor="let e of elections" ngbDropdownItem>{{e.electionName}}</button>
+
+          </div>
+        </div>
+      </div>
+
       <div id="b1">
-        <div id="info1"><h2>Election Name - Ballot 1</h2></div>
+        <div id="info1"><h2>{{electionName}} - {{ballotName1}} - Front Runner: {{winner1}}</h2></div>
         <chart class="ch" [type]="type" [data]="data" [options]="options"></chart>
       </div>
       <div id="b2">
-        <div id="info3"><h2>Election Name - Ballot 2</h2></div>
+        <div id="info3"><h2>{{electionName}} - {{ballotName2}} - Winner: {{winner2}}</h2></div>
         <chart class="ch" [type]="type1" [data]="data1" [options]="options1"></chart>
       </div>
       <div id="b3">
-        <div id="info5"><h2>Election Name - Ballot 3</h2></div>
+        <div id="info5"><h2>{{electionName}} - {{ballotName3}} - Winner: {{winner3}}</h2></div>
         <chart class="ch" [type]="type2" [data]="data2" [options]="options2"></chart>
       </div>
-    </div>  
+    </div>
   <!-- </body> -->
 
 </html>

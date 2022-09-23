@@ -3,7 +3,7 @@
   <head>
 
   </head>
-  <body>
+  <!-- <body> -->
     <div class="navbar1">
       <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
@@ -19,14 +19,12 @@
         <h2>Past Election History Results</h2>
         <h6>Here you can view past elections that have taken place should you wish to know the results</h6>
       </div>
-        
+
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
         <div ngbDropdown class="d-inline-block">
-          <button type="button" class="btn btn-outline-primary" id="electionhistoryButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Choose an election year</button>
+          <button type="button" class="btn btn-outline-primary" id="electionhistoryButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">Select Election</button>
           <div ngbDropdownMenu aria-labelledby="electionhistoryDropdown">
-            <button ngbDropdownItem (click)="get21()">2021</button>
-            <button ngbDropdownItem (click)="get20()">2020</button>
-            <button ngbDropdownItem (click)="get19()">2019</button>
+            <button (click) = "selectElection(e)" ngbDropdownItem *ngFor="let e of previousElections">{{e.electionName}}</button>
           </div>
         </div>
       </div>
@@ -35,12 +33,21 @@
         <h1 style="text-align: center; font-size: 200%; margin-top: 1rem;">Use the dropdown above to select a graph</h1>
       </div>
 
-      <div *ngIf="div1">
-        <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
+      <div id="b1">
+        <div id="info1"><h2>{{electionName}} - {{ballotName1}} - Front Runner: {{winner1}}</h2></div>
+        <chart class="ch" [type]="type" [data]="data" [options]="options"></chart>
+      </div>
+      <div id="b2">
+        <div id="info3"><h2>{{electionName}} - {{ballotName2}} - Winner: {{winner2}}</h2></div>
+        <chart class="ch" [type]="type1" [data]="data1" [options]="options1"></chart>
+      </div>
+      <div id="b3">
+        <div id="info5"><h2>{{electionName}} - {{ballotName3}} - Winner: {{winner3}}</h2></div>
+        <chart class="ch" [type]="type2" [data]="data2" [options]="options2"></chart>
       </div>
 
-    </div>  
-  </body>
+    </div>
+  <!-- </body> -->
 
 
 </html>

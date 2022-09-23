@@ -56,3 +56,30 @@ h1 {
 .navbar1 {
   font-size: 1.5rem;
 }
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #f4717f; 
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  left: 40vw;
+  top: 30vh;
+  z-index: 101;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 100;
+}
