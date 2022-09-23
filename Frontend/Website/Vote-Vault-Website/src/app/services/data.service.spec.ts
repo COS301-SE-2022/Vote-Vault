@@ -23,10 +23,11 @@ describe('DataService', () => {
     expect(service).toBeTruthy();
   });
 
-  // if('should return eventually when fetchElections is called', async () => {
-  //   const serviceSpy: DataService = service;
-  //   spyOn(serviceSpy, 'fetchElections').and.returnValue(Promise.resolve())
-  // });
+  it('should return eventually when fetchElections is called', async () => {
+    const serviceSpy: DataService = service;
+    let t: any[];
+    spyOn(serviceSpy, 'fetchElections').and.returnValue(Promise.resolve<any[]>(t))
+  });
 
   it('should return an array when fetching elections',
     (done: DoneFn) => {
@@ -36,13 +37,13 @@ describe('DataService', () => {
     });
   });
 
-  // it('should return an array when fetching past elections',
-  //   (done: DoneFn) => {
-  //     service.fetchPastElections().then(value => {
-  //       expect(value).toBe('array');
-  //       done();
-  //   });
-  // });
+  it('should return an array when fetching past elections',
+    (done: DoneFn) => {
+      service.fetchPastElections().then(value => {
+        expect(value.length).toBeGreaterThanOrEqual(1);
+        done();
+    });
+  });
 
   it('should return winner index', () => {
     expect(service.findWinnerIndex([10,0,0])).toBe(0);
