@@ -34,7 +34,11 @@ describe('HistoryPageComponent', () => {
     expect(component.shouldLoad).toEqual(false);
   })
 
-  
+  it('should set selected election', () => {
+    component.selectElection(null);
+    expect(component.selectedElection).toEqual(null);
+  })
+
   // it('should display 2019 results', () => {
   //   component.get19();
 
