@@ -30,6 +30,11 @@ describe('HistoryPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should not display loader on startup', () => {
+    expect(component.shouldLoad).toEqual(false);
+  })
+
+  
   // it('should display 2019 results', () => {
   //   component.get19();
 
