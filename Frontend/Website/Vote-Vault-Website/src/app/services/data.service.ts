@@ -80,7 +80,9 @@ export class DataService {
   // ageReults is a matrix first containing the parties and then containing the age groups, in the order:
   // ANC, DA, EFF, VFP
   // 18, 25, 30, etc
-  ageResults : any[4][9];
+  // ageResults : any[][] = [];
+  ageResults = new Array(4).fill(0).map(() => new Array(9).fill(0));
+
 
   // genderResults is a matrix that first contains the values of the parties and then each gender, in the order:
   // ANC, DA, EFF, VFP
@@ -112,6 +114,14 @@ export class DataService {
     this.ageBasedDA = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedEFF = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedVFP = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+
+    // this.ageResults[0][0] = 0;
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 9; j++) {
+    //     this.ageResults[i][j] = 0;
+    //   }
+    // }
+    
   }
 
   calculateProbabilities() {
@@ -206,7 +216,7 @@ export class DataService {
 
     let finalPredictionVFP = (votedVFP + calcPredictionVFP) / this.totalUserCount;
 
-    // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions
+    // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions --> DONE
     // This is temporary i guess
     this.predictionsArray[0] = finalPredictionANC
     this.predictionsArray[1] = finalPredictionDA
@@ -214,6 +224,7 @@ export class DataService {
     this.predictionsArray[3] = finalPredictionVFP
 
     console.log(this.predictionsArray);
+    console.log('hey')
   }
 
 
