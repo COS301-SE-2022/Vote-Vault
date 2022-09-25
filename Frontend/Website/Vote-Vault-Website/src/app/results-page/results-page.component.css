@@ -89,6 +89,6 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 17%;
+  /* margin-bottom: 17%; */
   color: #e9e3e3; 
 }
