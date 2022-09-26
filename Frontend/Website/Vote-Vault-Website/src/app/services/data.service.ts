@@ -62,7 +62,8 @@ export class DataService {
   alcProvider = null
   signer = null
   pastElections : Election[] = []
-  predictionsArray : any[4]
+  predictionsArray = [0,0,0,0];
+  finalGendersArray;
 
   // declaration of arrays for each major political party - predictions for national elections
   ageBasedANC : any[9];
@@ -75,12 +76,16 @@ export class DataService {
   genderBasedEFF : any[2];
   genderBasedVFP : any[2];
 
-  stillToVoteAges : any[9];
+  stillToVoteAges = [0,0,0,0,0,0,0,0,0];
+  stillToVoteGenders = [0,0];
 
   // ageReults is a matrix first containing the parties and then containing the age groups, in the order:
   // ANC, DA, EFF, VFP
   // 18, 25, 30, etc
-  ageResults : any[4][9];
+  // ageResults : any[][] = [];
+  // ageResults = new Array(4).fill(0).map(() => new Array(9).fill(0));
+  ageResults = [[0, 0, 0, 0, 0, 0, 0, 0, 0],  [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]];
+  
 
   // genderResults is a matrix that first contains the values of the parties and then each gender, in the order:
   // ANC, DA, EFF, VFP
@@ -107,11 +112,20 @@ export class DataService {
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
 
-    // TODO: populate probability arrays with mock values --> DONE
+    // TODO: populate probability arrays with actual values 
     this.ageBasedANC = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedDA = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedEFF = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedVFP = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+
+    // this.ageResults[0][0] = 69;
+    // console.log(this.ageResults)
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 9; j++) {
+    //     this.ageResults[i][j] = 0;
+    //   }
+    // }
+    
   }
 
   calculateProbabilities() {
@@ -144,12 +158,20 @@ export class DataService {
     this.ageResults[0][7] = this.ageBasedANC[7] * this.stillToVoteAges[7];
     this.ageResults[0][8] = this.ageBasedANC[8] * this.stillToVoteAges[8];
 
+    console.log(this.ageBasedANC[0]);
+    console.log(this.stillToVoteAges[0]);
+    console.log(this.ageResults);
+
+
     let calcPredictionANC = 0;
     for (let i = 0; i < 9; i++) {
       calcPredictionANC += this.ageResults[0][i];
     }
 
     let finalPredictionANC = (votedANC + calcPredictionANC) / this.totalUserCount;
+    // console.log(votedANC)
+    // console.log(calcPredictionANC)
+    // console.log(this.totalUserCount)
 
     
     // Formula for DA, since DA is the second row according to how the matrix was set up
@@ -206,14 +228,18 @@ export class DataService {
 
     let finalPredictionVFP = (votedVFP + calcPredictionVFP) / this.totalUserCount;
 
-    // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions
-    // This is temporary i guess
-    this.predictionsArray[0] = finalPredictionANC
-    this.predictionsArray[1] = finalPredictionDA
-    this.predictionsArray[2] = finalPredictionEFF
-    this.predictionsArray[3] = finalPredictionVFP
+    // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions --> DONE
+    this.predictionsArray[0] = finalPredictionANC;
+    this.predictionsArray[1] = finalPredictionDA;
+    this.predictionsArray[2] = finalPredictionEFF;
+    this.predictionsArray[3] = finalPredictionVFP;
+
+    this.finalGendersArray = this.stillToVoteGenders;
+
+    // TODO: do something with the array, like display it in graph form --> Dhashin
 
     console.log(this.predictionsArray);
+    console.log(this.finalGendersArray);
   }
 
 
@@ -304,52 +330,63 @@ export class DataService {
         const aproxAge = 2022 - this.yearBornFromID;
 
         console.log(aproxAge);
-        
+
+        if (!element.voted && element.gender == "F") this.stillToVoteGenders[0]++;
+        if (!element.voted && element.gender == "M") this.stillToVoteGenders[1]++;
 
         switch (true) {
           case (aproxAge > 99 && aproxAge < 105): {
             this.agesArray[8]++;
-            if (element.voted) this.stillToVoteAges[8]++;
+            if (!element.voted) this.stillToVoteAges[8]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 89): {
             this.agesArray[7]++;
-            if (element.voted) this.stillToVoteAges[7]++;
+            if (!element.voted) this.stillToVoteAges[7]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 79): {
             this.agesArray[6]++;
-            if (element.voted) this.stillToVoteAges[6]++;
+            if (!element.voted) this.stillToVoteAges[6]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 69): {
             this.agesArray[5]++;
-            if (element.voted) this.stillToVoteAges[5]++;
+            if (!element.voted) this.stillToVoteAges[5]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 59): {
             this.agesArray[4]++;
-            if (element.voted) this.stillToVoteAges[4]++;
+            if (!element.voted) this.stillToVoteAges[4]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 49): {
             this.agesArray[3]++;
-            if (element.voted) this.stillToVoteAges[3]++;
+            if (!element.voted) this.stillToVoteAges[3]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 39): {
             this.agesArray[2]++;
-            if (element.voted) this.stillToVoteAges[2]++;
+            if (!element.voted) this.stillToVoteAges[2]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 29): {
             this.agesArray[1]++;
-            if (element.voted) this.stillToVoteAges[1]++;
+            if (!element.voted) this.stillToVoteAges[1]++;
+            console.log("entered");
             break;
           }
           case (aproxAge > 18): {
             this.agesArray[0]++;
-            if (element.voted) this.stillToVoteAges[0]++;
+            if (!element.voted) this.stillToVoteAges[0]++;
+            console.log("entered");
             break;
           }
         }

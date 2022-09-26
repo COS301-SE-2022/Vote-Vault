@@ -13,17 +13,31 @@
       <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+      <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
     </div>
 
     <div class="rest">
+
       <div>
+        <div>
+          <img src="assets/images/results-banner.jpg" class="banner" style="width:100%; height:20rem">
+          <h1 class="col text-center" style="margin-top:-14rem; margin-left: -3.7rem; font-size: 3rem; position: absolute; color: #e9e3e3;">Voting Results</h1>
+        </div>
+
+        <div class="col text-center" style="margin-top:2rem; margin-bottom: 4rem;">
+          <h2>Current Election Results</h2>
+          <h6>View the live and secured results of the current election</h6>
+        </div>
+      </div>
+      <!-- <div>
         <img src="assets/images/results-banner.jpg" class="banner" style="width:100%; height:20rem">
+        <h1 style="margin-top:-14rem; font-size: 3rem;">Election Results</h1>
       </div>
 
       <div class="col text-center" style="margin-top:2rem; margin-bottom: 4rem;">
         <h2>Election Results</h2>
         <h6>View the live and secured results of the current election</h6>
-      </div>
+      </div> -->
 
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 1rem;">
         <div ngbDropdown class="d-inline-block">

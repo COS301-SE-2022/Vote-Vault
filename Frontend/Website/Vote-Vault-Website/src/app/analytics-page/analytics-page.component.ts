@@ -144,6 +144,11 @@ export class AnalyticsPageComponent implements OnInit {
       this.div1=false
 
       await this.dataService.fetchAllElections();
+      await this.dataService.calculateProbabilities();
+
+      // await this.dataService.fetchElections().then(()  =>  {
+      //   this.dataService.calculateProbabilities();
+      //  })
 
       console.log(this.dataService.agesArray);
 

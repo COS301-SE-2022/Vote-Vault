@@ -56,6 +56,7 @@ export class HistoryPageComponent implements OnInit {
     this.votes = [{party1: 20, party2: 98, party3: 93},{party1: 56, party2: 10, party3: 45},{party1: 89, party2: 23, party3: 12}]
     this.year = [{year: 2021, partyname: this.names[0], results: this.votes[0]},{year: 2020, partyname: this.names[1], results: this.votes[1]},{year: 2019, partyname: this.names[2], results: this.votes[2]}];
     this.currentYear = 0;
+    this.shouldLoad = false;
   }
 
   async ngOnInit(): Promise<void> {

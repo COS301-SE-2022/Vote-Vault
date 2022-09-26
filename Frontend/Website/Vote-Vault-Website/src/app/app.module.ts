@@ -7,6 +7,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
+import { PredictionsPageComponent } from './predictions-page/predictions-page.component';
 import { ChartModule } from 'angular2-chartjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HistoryPageComponent } from './history-page/history-page.component';
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     ResultsPageComponent,
     HowtoPageComponent,
     HistoryPageComponent,
+    PredictionsPageComponent,
   ],
   imports: [
     BrowserModule,
