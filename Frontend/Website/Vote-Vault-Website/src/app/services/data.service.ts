@@ -76,6 +76,7 @@ export class DataService {
   genderBasedVFP : any[2];
 
   stillToVoteAges = [0,0,0,0,0,0,0,0,0];
+  stillToVoteGenders = [0,0];
 
   // ageReults is a matrix first containing the parties and then containing the age groups, in the order:
   // ANC, DA, EFF, VFP
@@ -325,7 +326,9 @@ export class DataService {
         const aproxAge = 2022 - this.yearBornFromID;
 
         console.log(aproxAge);
-        
+
+        if (!element.voted && element.gender == "F") this.stillToVoteGenders[0]++;
+        if (!element.voted && element.gender == "M") this.stillToVoteGenders[1]++;
 
         switch (true) {
           case (aproxAge > 99 && aproxAge < 105): {
