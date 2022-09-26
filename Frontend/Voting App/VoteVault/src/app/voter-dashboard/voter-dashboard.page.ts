@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./voter-dashboard.page.scss'],
 })
 export class VoterDashboardPage implements OnInit {
-
+  loaded : boolean = false
   elections: any[];
 
   constructor(private loadingController : LoadingController, private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
@@ -21,7 +21,10 @@ export class VoterDashboardPage implements OnInit {
 
   async ngOnInit() {
     // this.presentLoading()
-    this.elections = await this.dataService.fetchAllElections()
+    await this.dataService.fetchAllElections().then((res) =>  {
+      this.elections = res
+      this.loaded = true
+    })
     // this.loadingController.dismiss()
     console.log(this.elections)
   }

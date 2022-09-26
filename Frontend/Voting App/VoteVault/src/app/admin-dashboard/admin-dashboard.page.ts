@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./admin-dashboard.page.scss'],
 })
 export class AdminDashboardPage implements OnInit, ViewWillEnter {
-
+  loaded : boolean = false
   elections : any[]
   index : number
   constructor(private loadingController : LoadingController, private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
@@ -22,6 +22,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
     await this.dataService.fetchElections().then(() =>  {
       this.elections = this.dataService.elections
       this.loadingController.dismiss()
+      this.loaded = true
     })
   }
 

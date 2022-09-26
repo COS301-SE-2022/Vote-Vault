@@ -7,6 +7,19 @@ ion-card {
     animation: move-up 0.5s;
 }
 
+ion-list {
+    height: 100vh;
+    background-color: white;
+    ion-card {
+        // background-color: lightgrey !important;
+    }
+}
+
+ion-skeleton-text {
+    --background-rgb: 190,190,190;
+    --border-radius: 9999px;
+
+}
 #menuButton { 
     --background : transparent;
 }
