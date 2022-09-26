@@ -3,78 +3,31 @@ body {
   height: fit-content;
 }
 
-#div-1{
-  width: 100%;
-  display: table;
-  align-content: center;
+
+
+body {
+  height:fit-content;
 }
 
 #welcome{
   text-align: center;
-  padding-top: 3.125rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 8%;
-  color: #dad8d9;
+  width: 100%;
+  margin-bottom: 17%;
+  color: #e9e3e3; 
+  height: 20rem;
 }
 
-#linkImage{
-  width: 18.75rem;
-  align-self: center;
-  margin-bottom: 3.125rem;
-  margin-top: -5rem;
-
-}
-
-#link{
-  width: 18.75rem;
-  align-self: center;
-  margin-bottom: 2rem;
-  margin-top: 0.7rem;
-
-}
 
 .banner{
   width : 100vw;
-  height: 25rem;
+  height: 20rem;
   position: absolute;
   z-index: -1;
 }
 
-#banner-text2{
-  text-align: center;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  color: #dad8d9;
-}
 
-#context{
-  text-align: left;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 5%;
-
-}
-
-
-#appDown{
-  align-content: center;
-  display :flex;
-  flex-direction: column;
-}
 
 @media only screen and (max-width: 900px) {
   #context > h3 {
