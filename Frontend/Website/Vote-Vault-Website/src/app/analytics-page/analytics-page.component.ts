@@ -108,7 +108,6 @@ export class AnalyticsPageComponent implements OnInit {
     datasets: [
       {
         backgroundColor: ['#b56576','#e56b6f'],
-        // TODO: read gender data from firebase
         data: [this.dataService.maleCount, this.dataService.femaleCount]
       }
     ]
@@ -186,12 +185,18 @@ export class AnalyticsPageComponent implements OnInit {
       };
   }
 
+  async showPredictionsInfo() {
+    await this.dataService.fetchAllElections();
+    await this.dataService.calculateProbabilities();
+  }
+
   showProvinceInfo(){
     this.div0=false;
       this.div2=true;
       this.div1=false;
       this.div3=false
   }
+
 
   selectElection(e : any) {
     this.selectedElection = e
