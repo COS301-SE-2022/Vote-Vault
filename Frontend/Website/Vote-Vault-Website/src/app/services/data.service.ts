@@ -63,6 +63,7 @@ export class DataService {
   signer = null
   pastElections : Election[] = []
   predictionsArray = [0,0,0,0];
+  finalGendersArray;
 
   // declaration of arrays for each major political party - predictions for national elections
   ageBasedANC : any[9];
@@ -233,9 +234,12 @@ export class DataService {
     this.predictionsArray[2] = finalPredictionEFF;
     this.predictionsArray[3] = finalPredictionVFP;
 
+    this.finalGendersArray = this.stillToVoteGenders;
+
     // TODO: do something with the array, like display it in graph form --> Dhashin
 
     console.log(this.predictionsArray);
+    console.log(this.finalGendersArray);
   }
 
 
