@@ -110,7 +110,7 @@ export class DataService {
 
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
 
-    // TODO: populate probability arrays with mock values --> DONE
+    // TODO: populate probability arrays with actual values 
     this.ageBasedANC = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedDA = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
     this.ageBasedEFF = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
@@ -227,14 +227,14 @@ export class DataService {
     let finalPredictionVFP = (votedVFP + calcPredictionVFP) / this.totalUserCount;
 
     // TODO: do something with all the finalPredictionsPARTYNAMEHERE results, like return it as an array of predictions --> DONE
-    // This is temporary i guess
     this.predictionsArray[0] = finalPredictionANC;
     this.predictionsArray[1] = finalPredictionDA;
     this.predictionsArray[2] = finalPredictionEFF;
     this.predictionsArray[3] = finalPredictionVFP;
 
+    // TODO: do something with the array, like display it in graph form --> Dhashin
+
     console.log(this.predictionsArray);
-    console.log('hey')
   }
 
 
