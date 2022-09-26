@@ -238,7 +238,9 @@ export class DataService {
 
     // TODO: do something with the array, like display it in graph form --> Dhashin
 
+    console.log("Predictions array (estimated votes per party in order of ANC DA EFF VFP");
     console.log(this.predictionsArray);
+
     console.log(this.finalGendersArray);
   }
 
