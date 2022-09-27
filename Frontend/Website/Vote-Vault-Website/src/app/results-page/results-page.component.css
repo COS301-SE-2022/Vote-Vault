@@ -22,7 +22,7 @@
 } */
 
 body {
-  height: 100vh;
+  height: fit-content;
 }
 
 h1 {
