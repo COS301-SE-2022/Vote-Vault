@@ -145,3 +145,19 @@ input[type=text] {
   height: 10%;
 } */
 
+@media screen and (max-width:600px) {
+
+  .navbar1 #links {
+    display: none;
+  }
+
+  .navbar1 a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+}
+
