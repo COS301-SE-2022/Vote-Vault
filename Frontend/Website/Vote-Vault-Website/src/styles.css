@@ -24,7 +24,7 @@ body {
   border: 0px;
   padding: 0px;
   margin: 0px;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 
@@ -93,13 +93,6 @@ html {
   font-family:  sans-serif,Arial, Helvetica;
 }
 
-body {
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  height: 100vh;
-  width: 100vw;
-}
 
 .rest {
   animation: fadeInAnimation ease 1.5s;
