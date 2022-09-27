@@ -128,26 +128,36 @@ let BallotPage = class BallotPage {
         console.log(this.ballot1);
         this.ballot2 = this.dataService.getBallot(1);
         this.ballot3 = this.dataService.getBallot(2);
-        this.selected = {};
+        this.selected = [-1, -1, -1];
         console.log(this.dataService.contractAddress);
+        this.contractService.getVotes(this.dataService.contractAddress);
     }
     selectCandidate(o) {
-        if (this.selected != null)
-            this.selected.isChecked = false;
-        this.selected = o;
-        this.selected.isChecked = true;
+        console.log(this.ballot1);
+        if (this.selected[this.slideIndex] != -1) {
+            this.selected[this.slideIndex].isChecked = false;
+            this.selected[this.slideIndex] = o;
+            this.selected[this.slideIndex].isChecked = true;
+        }
+        else {
+            this.selected[this.slideIndex] = o;
+            this.selected[this.slideIndex].isChecked = true;
+        }
     }
     vote() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             this.presentLoading();
             this.dataService.votes.push(this.selected);
+            console.log(this.votes);
             //Deploy vote to blockchain
             yield this.contractService.addVote(this.dataService.contractAddress, this.votes)
-                .then(() => {
+                .then(() => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
                 this.loadingController.dismiss();
                 this.toast_vote('You voted!');
+                yield this.contractService.getVotes(this.dataService.contractAddress).then((res) => {
+                });
                 this.location.back();
-            })
+            }))
                 .catch((error) => {
                 this.toast_vote('Error recording vote');
                 this.loadingController.dismiss();
@@ -238,7 +248,7 @@ module.exports = "ion-item {\n  --background: transparent !important;\n  --backg
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content id = \"main\">\r\n  <h1 id=\"header\">Vote</h1>\r\n  <app-circle-top></app-circle-top>\r\n  <!-- <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button> -->\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot1.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot1.options; let b1 = index\" (click)=\"selectCandidate(o)\" (click)=\"ballot1Index(b1)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot2.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot2.options; let b2 = index\" (click)=\"ballot2Index(b2)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot3.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot3.options; let b3 = index\" (click)=\"ballot2Index(b3)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <p>You are about to submit your votes.</p>\r\n      <ion-button id=\"vote\" (click)=\"vote()\">\r\n        Submit Votes\r\n      </ion-button>\r\n    </ion-slide>\r\n\r\n  </ion-slides>\r\n\r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-content id = \"main\">\r\n  <h1 id=\"header\">Vote</h1>\r\n  <app-circle-top></app-circle-top>\r\n  <!-- <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button> -->\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot1.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot1.options; let b1 = index\" (click)=\"selectCandidate(o)\" (click)=\"ballot1Index(b1)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot2.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot2.options; let b2 = index\" (click)=\"ballot2Index(b2)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot3.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot3.options; let b3 = index\" (click)=\"ballot3Index(b3)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <p>You are about to submit your votes.</p>\r\n      <ion-button id=\"vote\" (click)=\"vote()\">\r\n        Submit Votes\r\n      </ion-button>\r\n    </ion-slide>\r\n\r\n  </ion-slides>\r\n\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

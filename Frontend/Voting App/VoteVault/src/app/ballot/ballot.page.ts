@@ -31,7 +31,6 @@ export class BallotPage implements OnInit {
     this.selected = [-1,-1,-1]
 
     console.log(this.dataService.contractAddress)
-    this.contractService.getVotes(this.dataService.contractAddress)
   }
 
   selectCandidate(o) : void {
@@ -58,8 +57,6 @@ export class BallotPage implements OnInit {
     .then(async ()  =>  {
       this.loadingController.dismiss()
       this.toast_vote('You voted!')
-      await this.contractService.getVotes(this.dataService.contractAddress).then((res) =>  {
-      })
       this.location.back();
     })
     .catch((error)  =>  {
@@ -72,7 +69,6 @@ export class BallotPage implements OnInit {
   ionSlidesDidLoad(slides) {
     slides.getActiveIndex().then((index : number) => {
       this.slideIndex = index
-      // console.log(this.slideIndex)
     });
   }
 
@@ -89,8 +85,6 @@ export class BallotPage implements OnInit {
 
   openCustom() {
     this.location.back();
-
-    // this.router.navigate(['voter-dashboard'])
   }
 
   navigate(s) {

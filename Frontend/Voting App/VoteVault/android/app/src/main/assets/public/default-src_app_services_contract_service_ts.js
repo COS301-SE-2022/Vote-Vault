@@ -81,6 +81,25 @@ let ContractService = class ContractService {
             }
         });
     }
+    getVotes(contractAddress) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            console.log(contractAddress);
+            const contract = new ethers__WEBPACK_IMPORTED_MODULE_5__.Contract(contractAddress, this.contractABI, this.alcProvider);
+            // console.log("GETTING VOTES...")
+            // var result = await contract.getVotes1()
+            // console.log(result[0].toNumber())
+            // console.log(result[1].toNumber())
+            // console.log(result[2].toNumber())
+            // var result1 = await contract.getVotes2()
+            // console.log(result1[0].toNumber())
+            // console.log(result1[1].toNumber())
+            // console.log(result1[2].toNumber())
+            // var result2 = await contract.getVotes3()
+            // console.log(result2[0].toNumber())
+            // console.log(result2[1].toNumber())
+            // console.log(result2[2].toNumber())
+        });
+    }
 };
 ContractService.ctorParameters = () => [
     { type: _data_service__WEBPACK_IMPORTED_MODULE_1__.DataService }
