@@ -178,8 +178,8 @@ export class AnalyticsPageComponent implements OnInit {
           yAxes: [{
              ticks: {
                 steps : 10,
-                stepValue : 10,
-                max : 100,
+                stepValue : Math.max(10, this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
+                max : Math.max(this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
                 min: 0
               }
           }]
