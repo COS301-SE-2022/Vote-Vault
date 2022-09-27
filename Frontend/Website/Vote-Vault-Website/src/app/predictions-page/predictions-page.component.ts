@@ -13,3 +13,9 @@ export class PredictionsPageComponent implements OnInit {
   }
 
 }
+
+div0:boolean=true;
+div1:boolean=false;
+div2:boolean=false;
+div3:boolean=false;
+div4:boolean=false;
