@@ -112,3 +112,41 @@ async showAgeInfo(){
     maintainAspectRatio: false
   };
 }
+
+async showPredictionsInfo() {
+  await this.dataService.fetchAllElections();
+  await this.dataService.calculateProbabilities();
+
+
+  this.type3 = 'bar';
+  this.data3 = {
+    labels: ["ANC","DA","EFF","VFP"],
+    datasets: [
+      {
+        backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9'],
+        data: [this.dataService.predictionsArray[0], this.dataService.predictionsArray[1], this.dataService.predictionsArray[2], this.dataService.predictionsArray[3]]
+      }
+    ]
+  };
+  this.options3= {
+    legend:{
+      display: false
+    },
+    title:{
+      display: true,
+      text:"Election Prediction"
+    },
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+            min: 0
+          }
+      }]
+    },
+    responsive: true,
+    maintainAspectRatio: false
+  };
+}
