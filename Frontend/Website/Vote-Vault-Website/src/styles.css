@@ -17,6 +17,9 @@ html {
   text-align: center;
   color: white;
   margin-bottom: 0;
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 body {
