@@ -158,6 +158,23 @@ input[type=text] {
     right: 0;
     top: 0;
   }
+
+  .navbar1 a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+    font-size: 17px;
+    height: 3.8rem;
+  }
+
+  a.active {
+    background-color: #FBFFF5;
+    color: #02224E;
+    height: 100%;
+    border-bottom: 6px solid #FBFFF5;
+  }
   
 }
 
