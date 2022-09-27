@@ -5,13 +5,25 @@
   </head>
   <!-- <body> -->
     <div class="navbar1">
-      <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
+      <div id="links">
+        <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
+        <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+        <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
+        <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+        <a class="active" [routerLink]="['/history']" routerLinkActive="active">History</a>
+        <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+      </div>
+      <!-- <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
       <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a class="active" [routerLink]="['/history']" routerLinkActive="active">History</a>
-      <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+      <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a> -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
 
     <div class="rest">
@@ -48,6 +60,17 @@
       </div>
 
     </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("links");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
   <!-- </body> -->
 
 
