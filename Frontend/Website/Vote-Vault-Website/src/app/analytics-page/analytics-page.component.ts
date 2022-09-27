@@ -122,7 +122,7 @@ export class AnalyticsPageComponent implements OnInit {
     },
     title:{
       display: true,
-      text:"Gender Distribution"
+      text:"Gender Distribution Percentage"
     },
     scales : {
       yAxes: [{
@@ -172,7 +172,7 @@ export class AnalyticsPageComponent implements OnInit {
         },
         title:{
           display: true,
-          text:"Age Distribution"
+          text:"Age Distribution Percentage"
         },
         scales : {
           yAxes: [{
