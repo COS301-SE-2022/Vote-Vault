@@ -128,8 +128,8 @@ export class AnalyticsPageComponent implements OnInit {
       yAxes: [{
          ticks: {
             steps : 10,
-            stepValue : 10,
-            max : 20,
+            stepValue : Math.max(10, this.dataService.maleCount, this.dataService.femaleCount),
+            max : Math.max(this.dataService.maleCount, this.dataService.femaleCount),
             min: 0
           }
       }]
