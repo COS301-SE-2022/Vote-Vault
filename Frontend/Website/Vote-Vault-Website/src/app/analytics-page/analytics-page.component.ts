@@ -112,7 +112,7 @@ export class AnalyticsPageComponent implements OnInit {
     datasets: [
       {
         backgroundColor: ['#b56576','#e56b6f'],
-        data: [this.dataService.maleCount, this.dataService.femaleCount]
+        data: [this.dataService.maleCount / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.femaleCount / (this.dataService.maleCount + this.dataService.femaleCount)]
       }
     ]
   };
@@ -162,7 +162,7 @@ export class AnalyticsPageComponent implements OnInit {
         datasets: [
           {
             backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9','#284b63','#4f6d7a','#c0d6df','#365535','#3d6e71'],
-            data: [this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]]
+            data: [this.dataService.agesArray[0] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[1] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[2] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[3] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[4] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[5] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[6] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[7] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[8] / (this.dataService.maleCount + this.dataService.femaleCount)]
           }
         ]
       };
