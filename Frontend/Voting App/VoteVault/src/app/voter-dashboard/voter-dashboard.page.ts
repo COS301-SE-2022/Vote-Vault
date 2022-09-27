@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-voter-dashboard',
@@ -12,7 +13,7 @@ export class VoterDashboardPage implements OnInit {
   loaded : boolean = false
   elections: any[];
 
-  constructor(private loadingController : LoadingController, private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
+  constructor(private location : Location, private loadingController : LoadingController, private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
     this.elections = []
   }
 
@@ -47,5 +48,9 @@ export class VoterDashboardPage implements OnInit {
 
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
+  }
+
+  back() : void {
+    this.location.back()
   }
 }

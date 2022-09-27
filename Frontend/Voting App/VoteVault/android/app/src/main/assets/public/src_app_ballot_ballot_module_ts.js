@@ -130,7 +130,6 @@ let BallotPage = class BallotPage {
         this.ballot3 = this.dataService.getBallot(2);
         this.selected = [-1, -1, -1];
         console.log(this.dataService.contractAddress);
-        this.contractService.getVotes(this.dataService.contractAddress);
     }
     selectCandidate(o) {
         console.log(this.ballot1);
@@ -154,8 +153,6 @@ let BallotPage = class BallotPage {
                 .then(() => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
                 this.loadingController.dismiss();
                 this.toast_vote('You voted!');
-                yield this.contractService.getVotes(this.dataService.contractAddress).then((res) => {
-                });
                 this.location.back();
             }))
                 .catch((error) => {
@@ -168,7 +165,6 @@ let BallotPage = class BallotPage {
     ionSlidesDidLoad(slides) {
         slides.getActiveIndex().then((index) => {
             this.slideIndex = index;
-            // console.log(this.slideIndex)
         });
     }
     toast_vote(message) {
@@ -184,7 +180,6 @@ let BallotPage = class BallotPage {
     }
     openCustom() {
         this.location.back();
-        // this.router.navigate(['voter-dashboard'])
     }
     navigate(s) {
         this.router.navigate([s]);

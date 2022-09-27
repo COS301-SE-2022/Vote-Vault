@@ -97,10 +97,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./voter-dashboard.page.html?ngResource */ 8623);
 /* harmony import */ var _voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./voter-dashboard.page.scss?ngResource */ 66787);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.service */ 81502);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+
 
 
 
@@ -109,31 +111,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VoterDashboardPage = class VoterDashboardPage {
-    constructor(loadingController, dataService, router, actionSheetController) {
+    constructor(location, loadingController, dataService, router, actionSheetController) {
+        this.location = location;
         this.loadingController = loadingController;
         this.dataService = dataService;
         this.router = router;
         this.actionSheetController = actionSheetController;
         this.loaded = false;
-        // this.elections = [{id : 1, name : 'Provincial Election', ballots : [{name : 'Cool', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]}]},
-        //                   {id : 86, name : 'National Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []},{name : '', options : []}]},
-        //                   {id : 129, name : 'District Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []}]}];
         this.elections = [];
     }
     ngOnInit() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
-            // this.presentLoading()
             yield this.dataService.fetchAllElections().then((res) => {
                 this.elections = res;
                 this.loaded = true;
             });
-            // this.loadingController.dismiss()
             console.log(this.elections);
         });
     }
     electionClicked(e) {
         this.dataService.editElection(e);
-        // this.presentActionSheet(e);
     }
     navigate(s) {
         this.router.navigate([s]);
@@ -142,29 +139,6 @@ let VoterDashboardPage = class VoterDashboardPage {
         this.electionClicked(e);
         this.navigate('register');
     }
-    // async presentActionSheet(e: any) {
-    //   const actionSheet = await this.actionSheetController.create({
-    //     header: e.electionName,
-    //     cssClass: 'my-custom-class',
-    //     buttons: [ {
-    //       text: 'Vote',
-    //       icon: 'checkmark-done-circle-outline',
-    //       handler: () => {
-    //         this.navigate('ballot');
-    //       }
-    //     }, {
-    //       text: 'Cancel',
-    //       icon: 'close',
-    //       role: 'cancel',
-    //       handler: () => {
-    //         console.log('Cancel clicked');
-    //       }
-    //     }]
-    //   });
-    //   await actionSheet.present();
-    //   const { role, data } = await actionSheet.onDidDismiss();
-    //   console.log('onDidDismiss resolved with role and data', role, data);
-    // }
     presentLoading() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
             const loading = yield this.loadingController.create({
@@ -177,15 +151,19 @@ let VoterDashboardPage = class VoterDashboardPage {
             console.log('Loading dismissed!');
         });
     }
+    back() {
+        this.location.back();
+    }
 };
 VoterDashboardPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.LoadingController },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__.Location },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.LoadingController },
     { type: _data_service__WEBPACK_IMPORTED_MODULE_2__.DataService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ActionSheetController }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ActionSheetController }
 ];
 VoterDashboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-voter-dashboard',
         template: _voter_dashboard_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_voter_dashboard_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -212,7 +190,7 @@ module.exports = "ion-card-title {\n  color: gray;\n}\n\n#header {\n  width: 80%
   \**********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<app-circle-top></app-circle-top>\r\n<app-elections-header></app-elections-header>\r\n\r\n<ion-content id=\"main\">\r\n    <!-- <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title>{{e.electionName}}</ion-card-title>\r\n        <br>\r\n      </ion-card-header>\r\n    </ion-card> -->\r\n\r\n    <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections; let i = index\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title text-capitalize><ion-icon name=\"newspaper-outline\"></ion-icon>{{e.electionName}}</ion-card-title>\r\n        <!-- <ion-card-subtitle>#{{e.id}}</ion-card-subtitle> -->\r\n        <!-- <ion-chip (click)=\"registerUser(e)\">\r\n          <ion-label><ion-icon name=\"person-add-outline\"></ion-icon>Register User</ion-label>\r\n        </ion-chip> -->\r\n        <ion-chip (click)=\"vote(e)\">\r\n          <ion-label><ion-icon name=\"checkbox-outline\"></ion-icon>Vote</ion-label>\r\n        </ion-chip>\r\n      </ion-card-header>\r\n    </ion-card>\r\n  </ion-content>\r\n\r\n\r\n<ion-list *ngIf=\"!loaded\">\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n</ion-list>\r\n";
+module.exports = "<app-circle-top></app-circle-top>\r\n<app-elections-header></app-elections-header>\r\n\r\n<ion-content id=\"main\" *ngIf=\"loaded\">\r\n    <!-- <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title>{{e.electionName}}</ion-card-title>\r\n        <br>\r\n      </ion-card-header>\r\n    </ion-card> -->\r\n\r\n    <ion-card (click)=\"electionClicked(e)\" *ngFor=\"let e of elections; let i = index\" id=\"election\">\r\n      <ion-card-header>\r\n        <ion-card-title text-capitalize><ion-icon name=\"newspaper-outline\"></ion-icon>{{e.electionName}}</ion-card-title>\r\n        <!-- <ion-card-subtitle>#{{e.id}}</ion-card-subtitle> -->\r\n        <!-- <ion-chip (click)=\"registerUser(e)\">\r\n          <ion-label><ion-icon name=\"person-add-outline\"></ion-icon>Register User</ion-label>\r\n        </ion-chip> -->\r\n        <ion-chip (click)=\"vote(e)\">\r\n          <ion-label><ion-icon name=\"checkbox-outline\"></ion-icon>Vote</ion-label>\r\n        </ion-chip>\r\n      </ion-card-header>\r\n    </ion-card>\r\n\r\n    <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n        <ion-fab-button color=\"primary\" (click)=\"back()\"><ion-icon name=\"log-out-outline\"></ion-icon></ion-fab-button>\r\n    </ion-fab>\r\n</ion-content>\r\n\r\n\r\n<ion-list *ngIf=\"!loaded\">\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <div>\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-skeleton-text [animated]=\"true\"></ion-skeleton-text>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 80%;\"></ion-skeleton-text>\r\n      </h3>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 60%;\"></ion-skeleton-text>\r\n      </p>\r\n      <p>\r\n        <ion-skeleton-text [animated]=\"true\" style=\"width: 30%;\"></ion-skeleton-text>\r\n      </p>\r\n    </ion-label>\r\n  </div>\r\n  </ion-card>\r\n</ion-list>\r\n";
 
 /***/ })
 

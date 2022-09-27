@@ -1,7 +1,7 @@
 <app-circle-top></app-circle-top>
 <app-elections-header></app-elections-header>
 
-<ion-content id="main">
+<ion-content id="main" *ngIf="loaded">
     <!-- <ion-card (click)="electionClicked(e)" *ngFor="let e of elections" id="election">
       <ion-card-header>
         <ion-card-title>{{e.electionName}}</ion-card-title>
@@ -21,7 +21,11 @@
         </ion-chip>
       </ion-card-header>
     </ion-card>
-  </ion-content>
+
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button color="primary" (click)="back()"><ion-icon name="log-out-outline"></ion-icon></ion-fab-button>
+    </ion-fab>
+</ion-content>
 
 
 <ion-list *ngIf="!loaded">
