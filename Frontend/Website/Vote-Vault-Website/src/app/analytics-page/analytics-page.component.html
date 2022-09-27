@@ -11,6 +11,7 @@
       <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
       <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
       <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+      <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
     </div>
 
     <div class="rest">
@@ -68,7 +69,9 @@
       <div *ngIf="div3">
         <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
       </div>
-
+      <div *ngIf="div4">
+        <chart id="gD" [type]="type3" [data]="data3" [options]="options3"></chart>
+      </div>
       
 
     </div>

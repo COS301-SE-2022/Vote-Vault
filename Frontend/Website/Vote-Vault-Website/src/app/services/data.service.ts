@@ -113,10 +113,10 @@ export class DataService {
     this.signer = new ethers.Wallet(this.privateKey, this.alcProvider)
 
     // TODO: populate probability arrays with actual values 
-    this.ageBasedANC = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
-    this.ageBasedDA = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
-    this.ageBasedEFF = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
-    this.ageBasedVFP = [0.1, 0.5, 0.2, 0.4, 0.6, 0.8, 0.9, 0.7, 0.5];
+    this.ageBasedANC = [0.2, 0.3, 0.2, 0.2, 0.1, 0.1, 0.2, 0.3, 0.2];
+    this.ageBasedDA = [0.5, 0.6, 0.5, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2];
+    this.ageBasedEFF = [0.2, 0.1, 0.1, 0.3, 0.2, 0.2, 0.1, 0.2, 0.1];
+    this.ageBasedVFP = [0.1, 0.2, 0.3, 0.1, 0.2, 0.2, 0.3, 0.2, 0.5];
 
     // this.ageResults[0][0] = 69;
     // console.log(this.ageResults)
@@ -238,7 +238,9 @@ export class DataService {
 
     // TODO: do something with the array, like display it in graph form --> Dhashin
 
+    console.log("Predictions array (estimated votes per party in order of ANC DA EFF VFP");
     console.log(this.predictionsArray);
+
     console.log(this.finalGendersArray);
   }
 

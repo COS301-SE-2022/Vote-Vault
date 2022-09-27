@@ -20,6 +20,9 @@ export class AnalyticsPageComponent implements OnInit {
   data2;
   type2;
   options2;
+  data3;
+  type3;
+  options3;
   selectedElection : any
 
   constructor(private dataService : DataService) {
@@ -90,6 +93,7 @@ export class AnalyticsPageComponent implements OnInit {
   div1:boolean=false;
   div2:boolean=false;
   div3:boolean=false;
+  div4:boolean=false;
 
 
   async showGenderInfo(){
@@ -108,7 +112,6 @@ export class AnalyticsPageComponent implements OnInit {
     datasets: [
       {
         backgroundColor: ['#b56576','#e56b6f'],
-        // TODO: read gender data from firebase
         data: [this.dataService.maleCount, this.dataService.femaleCount]
       }
     ]
@@ -186,12 +189,51 @@ export class AnalyticsPageComponent implements OnInit {
       };
   }
 
+  async showPredictionsInfo() {
+    await this.dataService.fetchAllElections();
+    await this.dataService.calculateProbabilities();
+
+
+    this.type3 = 'bar';
+    this.data3 = {
+      labels: ["ANC","DA","EFF","VFP"],
+      datasets: [
+        {
+          backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9'],
+          data: [this.dataService.predictionsArray[0], this.dataService.predictionsArray[1], this.dataService.predictionsArray[2], this.dataService.predictionsArray[3]]
+        }
+      ]
+    };
+    this.options3= {
+      legend:{
+        display: false
+      },
+      title:{
+        display: true,
+        text:"Election Prediction"
+      },
+      scales : {
+        yAxes: [{
+           ticks: {
+              steps : 10,
+              stepValue : 10,
+              max : 100,
+              min: 0
+            }
+        }]
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    };
+  }
+
   showProvinceInfo(){
     this.div0=false;
       this.div2=true;
       this.div1=false;
       this.div3=false
   }
+
 
   selectElection(e : any) {
     this.selectedElection = e
