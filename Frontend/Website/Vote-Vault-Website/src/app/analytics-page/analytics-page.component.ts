@@ -129,13 +129,13 @@ export class AnalyticsPageComponent implements OnInit {
          ticks: {
             steps : 10,
             stepValue : Math.max(10, this.dataService.maleCount, this.dataService.femaleCount),
-            max : Math.max(this.dataService.maleCount, this.dataService.femaleCount),
+            max : Math.max(5, this.dataService.maleCount, this.dataService.femaleCount),
             min: 0
           }
       }]
     },
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: true
   };
 
   }
@@ -179,13 +179,13 @@ export class AnalyticsPageComponent implements OnInit {
              ticks: {
                 steps : 10,
                 stepValue : Math.max(10, this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
-                max : Math.max(this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
+                max : Math.max(5, this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
                 min: 0
               }
           }]
         },
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: true
       };
   }
 

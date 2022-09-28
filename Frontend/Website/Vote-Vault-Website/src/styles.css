@@ -145,9 +145,12 @@ input[type=text] {
   height: 10%;
 } */
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
+  #icon{
+    display: block;
+  }
 
-  .navbar1 #links {
+  #links {
     display: none;
   }
 

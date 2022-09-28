@@ -13,9 +13,9 @@
         <a [routerLink]="['/history']" routerLinkActive="active">History</a>
         <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
       </div>
-        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a> -->
+      <a href="javascript:void(0);" id="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
 
     <div class="rest">
@@ -69,10 +69,10 @@
     <script>
       function myFunction() {
         var x = document.getElementById("links");
-        if (x.style.display === "block") {
-          x.style.display = "none";
+        if (x.style.visibility === "visible") {
+          x.style.display = "hidden";
         } else {
-          x.style.display = "block";
+          x.style.display = "visible";
         }
       }
     </script>
