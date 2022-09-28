@@ -3,7 +3,7 @@
   <head>
 
   </head>
-  <!-- <body> -->
+  <body>
     <div class="navbar1">
       <div id="links">
         <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
@@ -14,7 +14,7 @@
         <a class="active" [routerLink]="['/history']" routerLinkActive="active">History</a>
         <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" id="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
@@ -64,7 +64,7 @@
         }
       }
     </script>
-  <!-- </body> -->
+  </body>
 
 
 </html>

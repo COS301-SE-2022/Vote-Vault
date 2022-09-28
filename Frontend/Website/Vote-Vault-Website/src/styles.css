@@ -145,6 +145,9 @@ input[type=text] {
   height: 10%;
 } */
 
+#icon{
+  display: none;
+}
 @media screen and (max-width:700px) {
   #icon{
     display: block;
