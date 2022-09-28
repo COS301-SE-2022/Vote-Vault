@@ -3,6 +3,10 @@ body {
   height: fit-content;
 }
 
+#space{
+  height: 15.91rem;
+}
+
 #b1 {
   margin: 4%;
   height: 50%;
