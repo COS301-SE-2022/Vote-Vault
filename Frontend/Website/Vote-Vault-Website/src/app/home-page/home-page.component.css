@@ -15,11 +15,7 @@ body {
 }
 
 #linkImage{
-  width: 18.75rem;
-  align-self: center;
-  margin-bottom: 3.125rem;
-  margin-top: -5rem;
-  margin-left: 35%;
+  margin-top: 1rem;
 }
 
 #link{
@@ -59,7 +55,8 @@ body {
 
 
 #appDown{
-  align-content: center;
+  padding: 2rem;
+  align-items: center;
   display :flex;
   flex-direction: column;
 }
