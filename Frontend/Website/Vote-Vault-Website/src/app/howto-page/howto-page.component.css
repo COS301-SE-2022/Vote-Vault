@@ -14,12 +14,9 @@ body {
 }
 
 #regDiv {
-    top: 10%;
-    width: 100%;
-    height: auto;
     padding: 1rem;
     padding-bottom: 0rem;
-    margin-bottom: 3rem;
+    justify-items: center;
 }
 
 #HowToVote {
@@ -36,20 +33,20 @@ body {
 }
 
 .how-to-register-image {
-    width: 90%;
+    /* width: 90%; */
 }
 
 .how-to-vote-image {
-    width: 90%;
+    /* width: 90%; */
 }
 
 .how-to-register-image, .how-to-vote-image {
-    margin-top: 5%;
     border-radius: 3%;
 }
 
 #voteDiv {
     margin-top: 3rem;
+    justify-items: center;
 }
 
 hr {
