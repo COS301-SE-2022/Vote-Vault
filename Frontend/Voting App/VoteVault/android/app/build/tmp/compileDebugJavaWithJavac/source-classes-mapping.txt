@@ -1,0 +1,4 @@
+io/ionic/starter/BuildConfig.java
+ io.ionic.starter.BuildConfig
+io/ionic/starter/MainActivity.java
+ io.ionic.starter.MainActivity

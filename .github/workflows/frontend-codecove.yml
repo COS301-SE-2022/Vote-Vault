@@ -1,6 +1,6 @@
-name: Frontend-CODECOV
+name: Frontend-test-Commit-CODECOV
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   App:
