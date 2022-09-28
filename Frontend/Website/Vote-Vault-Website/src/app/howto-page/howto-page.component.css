@@ -1,16 +1,16 @@
 .Title{
     font-size: xx-large;
     padding: 0.8rem;
+    text-decoration-line: underline;
 }
 
-/* .Details {
+.Details {
   padding: 1rem;
   font-size: x-large;
-} */
+}
 
 body {
     height: fit-content;
-    margin-bottom: 6%;
 }
 
 #regDiv {
@@ -20,10 +20,7 @@ body {
 }
 
 #HowToVote {
-    width: 100%;
-    height: auto;
     padding: 1rem;
-    top: 10%;
 }
 
 .flex-container {
@@ -32,12 +29,8 @@ body {
     grid-gap: 18px;
 }
 
-.how-to-register-image {
-    /* width: 90%; */
-}
-
-.how-to-vote-image {
-    /* width: 90%; */
+.how-to-image {
+    scale: 0.75;
 }
 
 .how-to-register-image, .how-to-vote-image {
@@ -61,7 +54,7 @@ hr {
         flex-direction: column;
     }
 
-    .how-to-register-image {
+    .how-to-image {
         display: flex;
     } 
 
@@ -70,7 +63,7 @@ hr {
         flex-direction: column;
     }
     
-    .how-to-vote-image {
+    .how-to-image {
         display: flex;
     } 
 }
