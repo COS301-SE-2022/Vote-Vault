@@ -23,7 +23,6 @@ body {
   align-self: center;
   margin-bottom: 2rem;
   margin-top: 0.7rem;
-
 }
 
 .banner{
@@ -53,6 +52,15 @@ body {
   
 }
 
+#icon{
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  #icon{
+    display: block;
+  }
+}
 
 #appDown{
   padding: 2rem;
@@ -83,7 +91,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   #context {
     width: 100%;
     padding-right: 0;
