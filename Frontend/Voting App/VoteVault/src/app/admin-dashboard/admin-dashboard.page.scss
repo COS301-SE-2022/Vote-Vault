@@ -4,8 +4,22 @@ ion-card {
     }
     padding: 5vw;
     margin-bottom: 3vh;
+    animation: move-up 0.5s;
 }
 
+ion-list {
+    height: 100vh;
+    background-color: white;
+    ion-card {
+        // background-color: lightgrey !important;
+    }
+}
+
+ion-skeleton-text {
+    --background-rgb: 190,190,190;
+    --border-radius: 9999px;
+
+}
 #menuButton { 
     --background : transparent;
 }
@@ -27,4 +41,17 @@ ion-chip{
     color: white;
     margin-right: 5px;
     margin-left: 2vw;
+}
+
+@keyframes move-up {
+    /* You could think of as "step 1" */
+    0% {
+      margin-top: 200px;
+      opacity: 0;
+    }
+    /* You could think of as "step 2" */
+    100% {
+      margin-top: 0px;
+      opacity: 1;
+    }
 }
