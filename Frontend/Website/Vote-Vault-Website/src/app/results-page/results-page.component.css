@@ -3,12 +3,6 @@ body {
   height: fit-content;
 }
 
-h1 {
-  width: 100%;
-  position: fixed;
-  left: 5%;
-}
-
 #b1 {
   margin: 4%;
   height: 50%;
@@ -28,7 +22,7 @@ h1 {
 }
 
 .ch {
-  height: 50vh;
+  height: 20rem;
 }
 
 .navbar1 {
@@ -66,7 +60,7 @@ h1 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
-  /* margin-bottom: 17%; */
+  width: 100%;
+  margin-bottom: 17rem;
   color: #e9e3e3; 
 }
