@@ -53,37 +53,37 @@ export class AnalyticsPageComponent implements OnInit {
 
 
 
-  type1 = 'bar';
-  data1 = {
-    labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
-    datasets: [
-      {
-        backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
-        data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
-      }
-    ]
-  };
-  options1 = {
-    legend:{
-      display: false
-    },
-    title:{
-      display: true,
-      text:"Location Distribution"
-    },
-    scales : {
-      yAxes: [{
-         ticks: {
-            steps : 10,
-            stepValue : 10,
-            max : 100,
-            min: 0
-          }
-      }]
-    },
-    responsive: true,
-    maintainAspectRatio: false
-  };
+  // type1 = 'bar';
+  // data1 = {
+  //   labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
+  //   datasets: [
+  //     {
+  //       backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
+  //       data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
+  //     }
+  //   ]
+  // };
+  // options1 = {
+  //   legend:{
+  //     display: false
+  //   },
+  //   title:{
+  //     display: true,
+  //     text:"Location Distribution"
+  //   },
+  //   scales : {
+  //     yAxes: [{
+  //        ticks: {
+  //           steps : 10,
+  //           stepValue : 10,
+  //           max : 100,
+  //           min: 0
+  //         }
+  //     }]
+  //   },
+  //   responsive: true,
+  //   maintainAspectRatio: false
+  // };
 
 
 
