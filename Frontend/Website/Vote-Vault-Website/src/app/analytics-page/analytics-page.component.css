@@ -3,8 +3,12 @@ td{
     border-radius: 7px;
 }
 
+#icon{
+  display: none;
+}
+
 #gD {
-  height: 55%;
+  height: 50%;
 }
 
 body {
