@@ -3,12 +3,6 @@ body {
   height: fit-content;
 }
 
-#div-1{
-  width: 100%;
-  display: table;
-  align-content: center;
-}
-
 #welcome{
   text-align: center;
   padding-top: 3.125rem;
@@ -16,10 +10,7 @@ body {
   padding-right: 2.5rem;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 8%;
+  margin-bottom: 10rem;
   color: #dad8d9; 
 }
 
@@ -52,10 +43,7 @@ body {
   padding-right: 2.5rem;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  color: #dad8d9; 
+  color: #dad8d9;
 }
 
 #context{
