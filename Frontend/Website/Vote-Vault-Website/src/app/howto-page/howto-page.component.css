@@ -50,6 +50,18 @@ hr {
   visibility: hidden;
 }
 @media only screen and (max-width: 645px)  {
+  .Title{
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    text-decoration-line: underline;
+  }
+  .Details {
+    padding: 1rem;
+    font-size: 15px;
+  }
+  .how-to-image{
+    scale: 0.7;
+  }
     #links {
         visibility: hidden;
     }
