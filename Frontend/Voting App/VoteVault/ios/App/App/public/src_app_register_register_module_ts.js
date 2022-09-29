@@ -162,6 +162,14 @@ let RegisterPage = class RegisterPage {
             }
             else {
                 alert('Already registered voter!');
+                if ((yield this.dataservice.checkVoted(this.voter)) == false) {
+                    alert('Already voted!');
+                    this.router.navigate(['voter-dashboard']);
+                }
+                else {
+                    yield this.dataservice.vote(this.voter);
+                    this.router.navigate(['ballot']);
+                }
             }
             this.name = '';
             this.surname = '';
@@ -171,6 +179,7 @@ let RegisterPage = class RegisterPage {
         });
     }
     openCustom() {
+        alert('here');
         this.router.navigate(['voter-dashboard']);
     }
     scanBarcode() {

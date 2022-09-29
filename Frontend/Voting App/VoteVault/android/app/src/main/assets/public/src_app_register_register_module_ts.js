@@ -162,11 +162,12 @@ let RegisterPage = class RegisterPage {
             }
             else {
                 alert('Already registered voter!');
-                if ((yield this.dataservice.checkVoted(this.voter)) == false) {
+                if ((yield this.dataservice.checkVoted(this.voter)) == true) {
                     alert('Already voted!');
                     this.router.navigate(['voter-dashboard']);
                 }
                 else {
+                    alert('Not yet voted!');
                     yield this.dataservice.vote(this.voter);
                     this.router.navigate(['ballot']);
                 }

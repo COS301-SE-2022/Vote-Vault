@@ -68,10 +68,11 @@ export class RegisterPage implements OnInit {
       }
     } else {
       alert('Already registered voter!');
-      if (await this.dataservice.checkVoted(this.voter) == false) {
+      if (await this.dataservice.checkVoted(this.voter) == true) {
         alert('Already voted!');
         this.router.navigate(['voter-dashboard']);
       } else {
+        alert('Not yet voted!');
         await this.dataservice.vote(this.voter);
         this.router.navigate(['ballot']);
       }
