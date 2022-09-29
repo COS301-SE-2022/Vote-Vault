@@ -5,6 +5,7 @@ import { HistoryPageComponent } from './history-page/history-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HowtoPageComponent } from './howto-page/howto-page.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
+import { PredictionsPageComponent } from './predictions-page/predictions-page.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'results', component: ResultsPageComponent},
   {path: 'howto', component: HowtoPageComponent},
   {path: 'history', component: HistoryPageComponent},
+  {path: 'predictions', component: PredictionsPageComponent},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 

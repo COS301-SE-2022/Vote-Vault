@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -11,9 +12,10 @@ export class HomePageComponent implements OnInit {
     title: 'Home'
   };
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.dataService.getElectionResults('0xb557a3673Bc1144f277196aB3b6fBAb47B55467c')
   }
 
 }
