@@ -46,15 +46,19 @@ hr {
     width: 80%;
     margin-left: 10%;
 }
-
+#borgir{
+  visibility: hidden;
+}
 @media only screen and (max-width: 645px)  {
     #links {
         visibility: hidden;
     }
-
-     #regDiv {
-        display: flex;
-        flex-direction: column;
+    #borgir{
+      visibility: visible;
+    }
+    #regDiv {
+      display: flex;
+      flex-direction: column;
     }
 
     .how-to-image {

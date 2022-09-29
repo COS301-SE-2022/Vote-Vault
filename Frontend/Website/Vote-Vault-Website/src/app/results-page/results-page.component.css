@@ -68,10 +68,15 @@ body {
   margin-bottom: 17rem;
   color: #e9e3e3; 
 }
-
+#borgir{
+  visibility: hidden;
+}
 @media only screen and (max-width: 645px) {
   #links {
     visibility: hidden;
+  }
+  #borgir{
+    visibility: visible;
   }
 }
 /* BURGER */

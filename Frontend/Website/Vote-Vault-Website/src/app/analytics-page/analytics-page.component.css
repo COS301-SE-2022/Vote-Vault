@@ -8,7 +8,11 @@ td{
 }
 
 #gD {
-  height: 50%;
+  height: 30rem;
+}
+
+#borgir{
+  visibility: hidden;
 }
 
 body {
@@ -27,6 +31,9 @@ body {
 @media only screen and (max-width: 645px) {
   #links {
     visibility: hidden;
+  }
+  #borgir{
+    visibility: visible;
   }
 }
 /* BURGER */

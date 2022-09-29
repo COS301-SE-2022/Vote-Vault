@@ -135,7 +135,7 @@ export class AnalyticsPageComponent implements OnInit {
       }]
     },
     responsive: true,
-    maintainAspectRatio: true
+    maintainAspectRatio: false
   };
 
   }
@@ -185,7 +185,7 @@ export class AnalyticsPageComponent implements OnInit {
           }]
         },
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: false
       };
   }
 

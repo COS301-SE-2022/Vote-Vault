@@ -7,14 +7,19 @@ td{
 height: 55%;
 }
 
-
 body {
   height: 100%;
 }
 
+#borgir{
+  visibility: hidden;
+}
 @media only screen and (max-width: 645px)  {
   #links{
     visibility: hidden;
+  }
+  #borgir{
+    visibility: visible;
   }
 }
 /* BURGER */
