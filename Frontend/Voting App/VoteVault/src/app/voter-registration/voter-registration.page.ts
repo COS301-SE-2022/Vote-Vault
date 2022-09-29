@@ -31,7 +31,7 @@ export class VoterRegistrationPage implements OnInit {
     this.voterIDs = [];
     this.voterNames = [];
     this.voterSurnames = [];
-    
+
     // console.log(this.dataservice.electionName)
   }
 
@@ -69,6 +69,7 @@ export class VoterRegistrationPage implements OnInit {
       }
     } else {
       alert('Already registered voter!');
+      this.router.navigate(['ballot'])
     }
 
     this.name = '';
