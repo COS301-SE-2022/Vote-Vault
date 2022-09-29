@@ -99,9 +99,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "Vote-Vault-Website"
+  "defaultProject": "Vote-Vault-Website",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
