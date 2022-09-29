@@ -7,18 +7,33 @@
   <div class="overlay" *ngIf="shouldLoad"></div>
   <body>
     <div class="navbar1">
-      <div id="links">
-        <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
-        <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-        <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
-        <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
-        <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-        <a [routerLink]="['/history']" routerLinkActive="active">History</a>
-        <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
-      </div>
-      <!-- <a href="javascript:void(0);" id="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a> -->
+      <div id="borgir">
+        <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+              <div class="main-content-wrapper">
+              <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+              <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+              <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
+              <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+              <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+              <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+              </div>
+          </div>
+        </div>
+        <div id="links">
+          <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
+          <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+          <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+          <a class="active" [routerLink]="['/results']" routerLinkActive="active">Results</a>
+          <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+          <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+          <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+        </div>
     </div>
 
     <div class="rest">
