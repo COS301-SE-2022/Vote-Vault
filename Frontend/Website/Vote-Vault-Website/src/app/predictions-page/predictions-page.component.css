@@ -12,6 +12,9 @@ body {
   font-weight: bold; 
 }
 
+.ch{
+  height: 31.5rem;
+}
 
 #banner{
   width : 100vw;
