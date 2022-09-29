@@ -14,6 +14,10 @@ body {
   color: #dad8d9; 
 }
 
+#desc{
+  width: 60%;
+}
+
 #homeText {
   font-size: 4rem;
 }
@@ -34,6 +38,11 @@ body {
   height: 25rem;
   position: absolute;
   z-index: -1;
+}
+
+#bannerHolder{
+  width: 100vw;
+  height: 25rem;
 }
 
 #banner-text2{
@@ -98,12 +107,38 @@ body {
 @media only screen and (max-width: 645px) {
   #homeText {
     font-size: 2rem;
-  } 
+  }
+
+  .banner {
+    height: 17rem;
+  }
+
+  #bannerHolder{
+    height: 17rem;
+  }
+
+  #welcome{
+    margin-bottom: 2rem;
+    padding-top: 2.125rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  #banner-text2{
+    font-size: 1rem;
+  }
+
+  #subText {
+    font-size: 0.5rem;
+  }
+
+  #desc {
+    width: 80%;
+  }
 
   #context {
     width: 100%;
     padding-right: 0;
-    /* margin-left: 10%; */
   }
 
   #context > h3 {
