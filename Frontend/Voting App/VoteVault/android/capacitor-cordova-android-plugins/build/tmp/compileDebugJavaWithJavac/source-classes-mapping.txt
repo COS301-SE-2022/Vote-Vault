@@ -3,3 +3,19 @@ com/phonegap/plugins/barcodescanner/BarcodeScanner.java
  com.phonegap.plugins.barcodescanner.BarcodeScanner$1
 capacitor/android/plugins/BuildConfig.java
  capacitor.android.plugins.BuildConfig
+com/mesmotronic/plugins/FullScreenPlugin.java
+ com.mesmotronic.plugins.FullScreenPlugin
+ com.mesmotronic.plugins.FullScreenPlugin$1
+ com.mesmotronic.plugins.FullScreenPlugin$10
+ com.mesmotronic.plugins.FullScreenPlugin$10$1
+ com.mesmotronic.plugins.FullScreenPlugin$10$2
+ com.mesmotronic.plugins.FullScreenPlugin$11
+ com.mesmotronic.plugins.FullScreenPlugin$2
+ com.mesmotronic.plugins.FullScreenPlugin$3
+ com.mesmotronic.plugins.FullScreenPlugin$4
+ com.mesmotronic.plugins.FullScreenPlugin$5
+ com.mesmotronic.plugins.FullScreenPlugin$5$1
+ com.mesmotronic.plugins.FullScreenPlugin$6
+ com.mesmotronic.plugins.FullScreenPlugin$7
+ com.mesmotronic.plugins.FullScreenPlugin$8
+ com.mesmotronic.plugins.FullScreenPlugin$9

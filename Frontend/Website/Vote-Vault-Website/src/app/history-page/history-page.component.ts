@@ -19,43 +19,43 @@ interface Election {
 })
 
 export class HistoryPageComponent implements OnInit {
-
-  votes : any[];
-  year : any[];
-  names: any[];
+  shouldLoad : boolean = false;
+  names1 : any[];
+  names2 : any[];
+  names3 : any[];
+  ballot1 : any[];
+  ballot2 : any[];
+  ballot3 : any[];
+  results : any[];
   type : any;
+  type1 : any;
+  type2 : any;
   data : any;
+  data1 : any;
+  data2 : any;
   options : any;
-  currentYear : any;
-  previousElections : any[];
-  shouldLoad: boolean;
-  selectedElection: any;
-  electionName: any;
-  ballot1: any;
-  ballot2: any;
-  ballot3: any;
-  names1: any;
-  ballotName1: any;
-  names2: any;
-  ballotName2: any;
-  names3: any;
-  ballotName3: any;
-  results: { nameslistballot1: any; nameslistballot2: any; nameslistballot3: any; bal1: any; bal2: any; bal3: any; }[];
-  winner1: any;
-  winner2: any;
-  winner3: any;
-  type1: string;
-  data1: { labels: any; datasets: { backgroundColor: string[]; data: any; }[]; };
-  options1: { legend: { display: boolean; }; title: { display: boolean; text: string; }; scales: { yAxes: { ticks: { steps: number; stepValue: number; max: number; min: number; }; }[]; }; responsive: boolean; maintainAspectRatio: boolean; };
-  type2: string;
-  data2: { labels: any; datasets: { backgroundColor: string[]; data: any; }[]; };
-  options2: { legend: { display: boolean; }; title: { display: boolean; text: string; }; scales: { yAxes: { ticks: { steps: number; stepValue: number; max: number; min: number; }; }[]; }; responsive: boolean; maintainAspectRatio: boolean; };
+  options1 : any;
+  options2 : any;
+  elections : Election[];
+  selectedElection : Election;
+  ballotName1 : any;
+  ballotName2 : any;
+  ballotName3 : any;
+  electionName : any;
+  winner1 : any;
+  winner2 : any;
+  winner3 : any;
+  previousElections: Election[];
 
   constructor(private dataService : DataService) {
-    this.names = [{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"},{name1: "party1", name2: "party2", name3: "party3"}];
-    this.votes = [{party1: 20, party2: 98, party3: 93},{party1: 56, party2: 10, party3: 45},{party1: 89, party2: 23, party3: 12}]
-    this.year = [{year: 2021, partyname: this.names[0], results: this.votes[0]},{year: 2020, partyname: this.names[1], results: this.votes[1]},{year: 2019, partyname: this.names[2], results: this.votes[2]}];
-    this.currentYear = 0;
+    this.selectedElection = null;
+    this.names1 = [];
+    this.names2 = [];
+    this.names3 = [];
+    this.ballot1 = [];
+    this.ballot2 = [];
+    this.ballot3 = [];
+    this.results = [{nameslistballot1: this.names1, nameslistballot2: this.names2, nameslistballot3: this.names3, bal1: this.ballot1, bal2: this.ballot2, bal3: this.ballot3}];
     this.shouldLoad = false;
   }
 
@@ -96,6 +96,8 @@ export class HistoryPageComponent implements OnInit {
       this.names1[i] = this.selectedElection.ballots[0].options[i].name;
     }
     this.ballotName1 = this.selectedElection.ballots[0].name;
+    console.log(this.ballotName1);
+
 
     for (let i = 0; i < this.selectedElection.ballots[1].options.length; i++) {
       this.names2[i] = this.selectedElection.ballots[1].options[i].name;

@@ -35,7 +35,7 @@ export class RegisterPage implements OnInit {
   }
 
   routeTest() {
-    alert("BEFORE NAV");
+    //alert("BEFORE NAV");
     this.router.navigate(['ballot']);
     alert("AFTER NAV");
   }
@@ -62,7 +62,7 @@ export class RegisterPage implements OnInit {
             // alert('Successfully registered!');
             this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum)
             this.loadingController.dismiss()
-            this.router.navigate(['admin-dashboard'])
+            this.router.navigate(['voter-dashboard'])
           })
         }).catch((error)  =>  {
           this.presentToast('Error registering')
@@ -82,7 +82,7 @@ export class RegisterPage implements OnInit {
         try {
           await this.dataservice.vote(this.voter);
         } finally {
-          this.router.navigate(['login']);
+          this.router.navigate(['ballot']);
         }
       }
     }
