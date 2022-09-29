@@ -168,8 +168,12 @@ let RegisterPage = class RegisterPage {
                 }
                 else {
                     alert('Not yet voted!');
-                    yield this.dataservice.vote(this.voter);
-                    this.router.navigate(['ballot']);
+                    try {
+                        yield this.dataservice.vote(this.voter);
+                    }
+                    finally {
+                        this.router.navigate(['login']);
+                    }
                 }
             }
             this.name = '';
