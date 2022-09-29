@@ -40,10 +40,6 @@ body {
   z-index: -1;
 }
 
-#borgir{
-  /* display: none; */
-}
-
 #bannerHolder{
   width: 100vw;
   height: 25rem;
@@ -72,12 +68,6 @@ body {
 
 #icon{
   display: none;
-}
-
-@media screen and (max-width: 700px) {
-  #icon{
-    display: block;
-  }
 }
 
 #appDown{
