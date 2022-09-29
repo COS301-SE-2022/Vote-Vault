@@ -86,7 +86,7 @@ body {
   overflow: none;
   width: 100%;
   z-index: 100;
-  transform: translateY(-240px); /*change here related your menu height*/
+  transform: translateY(-1000px); /*change here related your menu height*/
 }
 .main-content-wrapper a{
   width: 60%;

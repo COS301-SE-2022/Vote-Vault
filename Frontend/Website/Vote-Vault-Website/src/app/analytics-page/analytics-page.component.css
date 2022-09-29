@@ -43,7 +43,7 @@ body {
   overflow: none;
   width: 100%;
   z-index: 100;
-  transform: translateY(-240px); /*change here related your menu height*/
+  transform: translateY(-1000px); /*change here related your menu height*/
 }
 .main-content-wrapper a{
   width: 60%;
@@ -80,7 +80,7 @@ body {
 input[type="checkbox"]:checked ~ #sidebarMenu {
   transition-duration: 0.3s;
   transform: translatey(0);
-  top:38px /*change here related your top menu height*/
+  top:38px; /*change here related your top menu height*/
 }
 input[type=checkbox] {
   transition: all 0.3s;

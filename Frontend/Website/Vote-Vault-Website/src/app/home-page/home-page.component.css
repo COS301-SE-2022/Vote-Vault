@@ -77,6 +77,11 @@ body {
   flex-direction: column;
 }
 
+#line{
+  width: 90%;
+  margin-left: 5%;
+}
+
 #borgir{
   visibility: hidden;
 }
@@ -98,6 +103,22 @@ body {
     visibility: hidden;
   }
 
+  #line{
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #appDownT{
+    font-size: 19px;
+  }
+
+  #linkImage{
+    width: 15rem;
+  }
+
+  #link{
+    width: 15rem;
+  }
   #borgir{
     visibility: visible;
   }

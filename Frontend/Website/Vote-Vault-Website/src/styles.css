@@ -1,5 +1,6 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 #ftrr {
@@ -151,12 +152,12 @@ input[type=text] {
 
 
 @media screen and (max-width:645px) {
-  #icon{
-    display: block;
+  #ftrr{
+    font-size: 10px;
   }
 
-  #links {
-    /* display: none; */
+  #icon{
+    display: block;
   }
 
   .navbar1 a.icon {
