@@ -1,15 +1,26 @@
-
-/* You can add global styles to this file, and also import other style files */
 html {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
+#ftrr {
+  background-color: #f4717f;
+  /* background-color: rgb(58, 103, 228); */
+  width: 100%;
+  margin: 0px;
+  height: 8%;
+  border: 0px;
+  text-align: center;
+  color: black;
+  position: sticky;
+  border-top: 100px;
+  padding: 10px;
   text-align: center;
   color: white;
-  position: sticky;
+  margin-bottom: 0;
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 body {
@@ -17,7 +28,7 @@ body {
   border: 0px;
   padding: 0px;
   margin: 0px;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 
@@ -31,135 +42,6 @@ header {
   position: relative;
   color: black;
   border-top: 100px;
-}
-
-#ftrr {
-  background-color: #f4717f;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  position: sticky;
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-.navbar1 {
-  background-color: #544e50;
-  overflow: hidden;
-  position: sticky;
-  top: 0%;
-  z-index: 1;
-  display: table;
-  width: 100vw;
-  
-}
-
-#logo {
-  height: 2rem;
-}
-
-.navbar1 a:hover {
-  background-color: /*rgb(84, 123, 250)*/ #f4717f;
-  color: black;
-}
-
-.navbar1 a {
-  float: left;
-  color: whitesmoke;
-  text-align: center;
-  padding: 0.875rem 1rem;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-a.active {
-  background-color: #3c84cc;
-  color: #fff;
-}
-
-input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 22px;
-  margin-right: 16px;
-  font-size: 17px;
-  border-radius: 5px;
-}
-
-/* #logo {
-  position: relative;
-  top: 15%;
-  height: 10%;
-} */
-
-/* You can add global styles to this file, and also import other style files */
-html {
-  font-family:  sans-serif,Arial, Helvetica;
-}
-
-footer {
-  background-color: rgb(58, 103, 228);
-  padding-top: 1%;
-  text-align: center;
-  color: white;
-  position: sticky;
-}
-
-body {
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  height: 100vh;
-  width: 100vw;
-}
-
-.rest {
-  animation: fadeInAnimation ease 1.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-  
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-   }
-}
-
-header {
-  background-color: #fff;
-  width: 100%;
-  margin: 0px;
-  height: 20%;
-  border: 0px;
-  text-align: center;
-  position: relative;
-  color: black;
-  border-top: 100px;
-}
-
-#ftrr {
-  background-color: #544e50;
-  width: 100%;
-  margin: 0px;
-  height: 8%;
-  border: 0px;
-  text-align: center;
-  color: black;
-  position: sticky;
-  border-top: 100px;
-  padding: 10px;
-  text-align: center;
-  color: #FBFFF5;
 }
 
 .navbar1 {
@@ -178,10 +60,9 @@ header {
 }
 
 .navbar1 a:hover {
-  /* background-color: rgb(84, 123, 250); */
-  /* color: black; */
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px;
+  background-color: /*rgb(84, 123, 250)*/ #f4717f;
+  margin: 0;
+  color: white;
 }
 
 .navbar1 a {
@@ -191,14 +72,63 @@ header {
   padding: 0.875rem 1rem;
   text-decoration: none;
   font-size: 17px;
+  height: 3.8rem;
 }
 
 a.active {
   background-color: #FBFFF5;
   color: #02224E;
   height: 100%;
-  border-bottom: 6px solid #FBFFF5;
+  border-bottom: 6px solid #f4717f;
 }
+
+input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 22px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-family:  sans-serif,Arial, Helvetica;
+}
+
+
+.rest {
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  height: 100%;
+}
+
+  
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+
+
+
+#logo {
+  height: 2rem;
+}
+
+.navbar1 a:hover {
+  /* background-color: rgb(84, 123, 250); */
+  /* color: black; */
+  -webkit-text-fill-color: white;
+  /* -webkit-text-stroke: 0.3px; */
+}
+
 
 input[type=text] {
   float: right;
@@ -216,3 +146,70 @@ input[type=text] {
   height: 10%;
 } */
 
+#icon{
+  display: none;
+}
+
+
+@media screen and (max-width:645px) {
+  #ftrr{
+    font-size: 10px;
+  }
+
+  #icon{
+    display: block;
+  }
+
+  .navbar1 a.icon {
+    background: #544e50;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .navbar1 a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0.475rem 0.5rem;
+    text-decoration: none;
+    font-size: 11px;
+    height: 100%;
+  }
+
+  #logo {
+    height: 1.36rem;
+  }
+
+  a.active {
+    background-color: #FBFFF5;
+    color: #02224E;
+    height: 100%;
+    border-bottom: 6px solid #f4717f;
+  }
+  
+}
+
+@media only screen and (max-width:400px) {
+  .navbar1 a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0.475rem 0.5rem;
+    text-decoration: none;
+    font-size: 10px;
+    height: 100%;
+  }
+
+  #logo {
+    height: 1rem;
+  }
+
+  a.active {
+    background-color: #FBFFF5;
+    color: #02224E;
+    height: 100%;
+    border-bottom: 6px solid #f4717f;
+  }
+}

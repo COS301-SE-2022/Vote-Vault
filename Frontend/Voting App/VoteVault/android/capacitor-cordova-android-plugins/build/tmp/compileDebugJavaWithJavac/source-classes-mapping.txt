@@ -1,0 +1,5 @@
+com/phonegap/plugins/barcodescanner/BarcodeScanner.java
+ com.phonegap.plugins.barcodescanner.BarcodeScanner
+ com.phonegap.plugins.barcodescanner.BarcodeScanner$1
+capacitor/android/plugins/BuildConfig.java
+ capacitor.android.plugins.BuildConfig
