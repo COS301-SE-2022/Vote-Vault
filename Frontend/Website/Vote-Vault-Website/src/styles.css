@@ -78,7 +78,7 @@ a.active {
   background-color: #FBFFF5;
   color: #02224E;
   height: 100%;
-  border-bottom: 6px solid #FBFFF5;
+  border-bottom: 6px solid #f4717f;
 }
 
 input[type=text] {
@@ -148,28 +148,7 @@ input[type=text] {
 #icon{
   display: none;
 }
-@media only screen and (max-width:400px) {
-  .navbar1 a {
-    float: left;
-    color: whitesmoke;
-    text-align: center;
-    padding: 0.2rem 0.2rem;
-    text-decoration: none;
-    font-size: 5px;
-    height: 100%;
-  }
 
-  #logo {
-    height: 1rem;
-  }
-
-  a.active {
-    background-color: #FBFFF5;
-    color: #02224E;
-    height: 100%;
-    border-bottom: 6px solid #FBFFF5;
-  }
-}
 
 @media screen and (max-width:600px) {
   #icon{
@@ -206,8 +185,30 @@ input[type=text] {
     background-color: #FBFFF5;
     color: #02224E;
     height: 100%;
-    border-bottom: 6px solid #FBFFF5;
+    border-bottom: 6px solid #f4717f;
   }
   
 }
 
+@media only screen and (max-width:400px) {
+  .navbar1 a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0.475rem 0.5rem;
+    text-decoration: none;
+    font-size: 10px;
+    height: 100%;
+  }
+
+  #logo {
+    height: 1rem;
+  }
+
+  a.active {
+    background-color: #FBFFF5;
+    color: #02224E;
+    height: 100%;
+    border-bottom: 6px solid #f4717f;
+  }
+}
