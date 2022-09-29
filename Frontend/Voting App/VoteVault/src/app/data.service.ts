@@ -447,7 +447,7 @@ export class DataService {
     const idfound = {};
     try {
       for (let index = 0; index < getrefID.data().users.length; index++) {
-        if (v.IDnum === getrefID.data().voted[index].id) {
+        if (v.IDnum === getrefID.data().users[index].id && getrefID.data().users[index].voted === true) {
           found = true;
           throw idfound;
         }
@@ -472,13 +472,21 @@ export class DataService {
       voted: true
     };
 
-//Save to elections collection under voted
+    //Save to elections collection under voted
     const elRef = doc(this.firestore, 'elections' , this.electionID)
+
     const elSnap = await getDoc(elRef)
-    if(elSnap.exists()) {
-      await updateDoc(elRef, {
-      voted: arrayUnion(voter)
-    })
-    }
+    alert()
+
+    let userArray = elSnap.data()!["users"];
+
+    userArray.forEach(element => {
+      if(element.id == voter.id) {
+        element.voted = true
+      }
+    });
+
+    await updateDoc(elRef, {"users": userArray});
   }
 }
+

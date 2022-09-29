@@ -584,7 +584,7 @@ let DataService = class DataService {
             const idfound = {};
             try {
                 for (let index = 0; index < getrefID.data().users.length; index++) {
-                    if (v.IDnum === getrefID.data().voted[index].id) {
+                    if (v.IDnum === getrefID.data().users[index].id && getrefID.data().users[index].voted === true) {
                         found = true;
                         throw idfound;
                     }
@@ -612,11 +612,14 @@ let DataService = class DataService {
             //Save to elections collection under voted
             const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
             const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
-            if (elSnap.exists()) {
-                yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, {
-                    voted: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.arrayUnion)(voter)
-                });
-            }
+            alert();
+            let userArray = elSnap.data()["users"];
+            userArray.forEach(element => {
+                if (element.id == voter.id) {
+                    element.voted = true;
+                }
+            });
+            yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, { "users": userArray });
         });
     }
 };

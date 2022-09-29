@@ -68,7 +68,8 @@ export class VoterRegistrationPage implements OnInit {
         alert(err);
       }
     } else {
-      alert('Already registered voter!');
+      //alert('Already registered voter!');
+      alert('Redirecting');
       this.router.navigate(['ballot'])
     }
 
