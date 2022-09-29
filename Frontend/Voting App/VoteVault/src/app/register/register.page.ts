@@ -35,7 +35,9 @@ export class RegisterPage implements OnInit {
   }
 
   routeTest() {
+    alert("BEFORE NAV");
     this.router.navigate(['ballot']);
+    alert("AFTER NAV");
   }
 
   async registerVoter() {
