@@ -46,6 +46,9 @@ export class VoterRegistrationPage implements OnInit {
     // this.voterSurnames.push(nVoter.surname);
     // this.voterIDs.push(nVoter.id);
     // alert(this.voter)
+
+
+    //testing webhook
     this.presentLoading()
     if (await this.dataservice.checkVoters(this.idNum) == false) {
       alert('Not registered!');

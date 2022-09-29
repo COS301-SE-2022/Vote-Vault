@@ -34,6 +34,10 @@ export class RegisterPage implements OnInit {
     // console.log(this.dataservice.contractAddress)
   }
 
+  routeTest() {
+    this.router.navigate(['ballot']);
+  }
+
   async registerVoter() {
 
     // const first = this.voterIDs.find((obj) => obj === nVoter.id);

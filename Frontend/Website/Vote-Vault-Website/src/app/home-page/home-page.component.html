@@ -3,62 +3,97 @@
   <head></head>
   <body>
 
+    
     <div class="navbar1">
+      <div id="borgir">
+        <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+              <div class="main-content-wrapper">
+                <a class="active" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+                <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+                <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
+                <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+                <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+                <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+              </div>
+          </div>
+        </div>
+      <div id="links">
         <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
         <a class="active" [routerLink]="['/home']" routerLinkActive="active">Home</a>
         <a [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
         <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
         <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
         <a [routerLink]="['/history']" routerLinkActive="active">History</a>
-    </div> 
+        <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+      </div>
+    </div>
 
-    <!-- <div class="rest">
+    <div class="rest">
 
-      <div class="div-1">
+      <div id="bannerHolder">
+        <img src="assets/images/banner.jpg" class="banner">
 
-        <div id="welcome" style="background-image: url('assets/images/banner.jpg')">
-          <h1>Welcome to Vote Vault</h1>
-
-              <p>Your personal automated voting system</p>
-
-              <br/>
-              <br/>
-
-              <p>
-                This voting system automates a voting process for your needs, while also making sure the votes are valid and secure.
-                Blockchain and Smart Contracts will be used to save and verify user votes.
-                The system will be available to users on the web or in the form of a mobile application.
-                The votes to be made will be verified by scanning voter IDs, then users will be allowed to vote.
-                Votes will be verified and counted using the blockchain. Users will be able to see progress on the voting system via this website.
-                Instead of hard coding your forms for elections, they will be dynamically generated according to input provided by the voting official.
-                View the various dashboards that provide additional information about the voting process, such as distributions about the users etc.
-              </p>
-
-              <br/>
-              <br/>
-              <br/>
-              <hr>
-
-              <h4 style="padding-top: 2.5rem">
-              Click the link below to download the app!
-              </h4>
-              <br/>
-              <img src="assets/images/appPlaceholder.jpg" alt="image could not load" id="linkImage">
+        <div id="welcome">
+          <h1 id="homeText">Vote Vault</h1>
+          <p id="subtext" style="margin-top:0.7rem">Your personal automated voting system</p>
+        </div>
+        <div id="banner-text2">
+          <h3>Safe and secure, for all your voting needs</h3>
         </div>
 
       </div>
 
-    </div> -->
+      <div style="width: 100vw;">
 
-    <div class="rest">
+        <div id="context">
+          
+          <div id="desc">
+            <h3 style="margin-bottom: 1.5rem;">What is Vote Vault?</h3>
+            <p>This voting system automates a voting process for your needs, while also making sure the votes are valid and secure.</p>
+            <p>Ethereum blockchain powered smart contracts are used to save and verify user votes.</p>
+            <p>In order to vote, users are verified by scanning their ID in the app.</p>
+            <p>Instead of hard coding your forms for elections, they will be dynamically generated according to input provided by the voting official.</p>
+            <p>View the various dashboards on this site that provide additional information about the voting process.</p>
+          </div>
 
-      <img src="assets/images/banner.jpg">
+          <i style="text-align: center; margin-top: 6rem">This project is done for<br><img src="assets/images/epiuse.png" alt="image could not load" id="link"></i>
+          
 
-        
+          <br/>
+          <br/>
+          <br/>
+        </div>
+        <hr id="line">
+      </div>
 
-      
+      <div id="appDown">
+        <h4 id="appDownT">
+          Download the app so you can vote
+        </h4>
+        <a href="https://drive.google.com/drive/folders/1wp83AaVB2TBVfgPfLw5vgNCSbE1g6E8Q?usp=sharing">
+          <img src="assets/images/app_updated.png" alt="image could not load" id="linkImage">
+        </a>
+      </div>
 
     </div>
-      
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("links");
+        if (x.style.visibility === "visible") {
+          x.style.display = "hidden";
+        } else {
+          x.style.display = "visible";
+        }
+      }
+    </script>
+
+
   </body>
 </html>

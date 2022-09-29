@@ -622,6 +622,78 @@ let DataService = class DataService {
             yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, { "users": userArray });
         });
     }
+    setVote(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            let found;
+            found = false;
+            let i;
+            i = -1;
+            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
+            const idfound = {};
+            try {
+                for (let index = 0; index < getrefID.data().users.length; index++) {
+                    if (v.IDnum === getrefID.data().users[index].id) {
+                        found = true;
+                        v.Voted = true;
+                        getrefID.data().users[index].voted = true;
+                        i = index;
+                        throw idfound;
+                    }
+                    if (found == true) {
+                        alert('shouldnt reach this');
+                        throw idfound;
+                    }
+                }
+            }
+            catch (error) {
+            }
+        });
+    }
+    checkVoted(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            let found;
+            found = false;
+            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
+            const idfound = {};
+            try {
+                for (let index = 0; index < getrefID.data().users.length; index++) {
+                    if (v.IDnum === getrefID.data().voted[index].id) {
+                        found = true;
+                        throw idfound;
+                    }
+                    if (found == true) {
+                        alert('shouldnt reach this');
+                        throw idfound;
+                    }
+                }
+            }
+            catch (error) {
+                return true;
+            }
+            return false;
+        });
+    }
+    vote(v) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const voter = {
+                name: v.birthName,
+                surname: v.surname,
+                gender: v.Gender,
+                id: v.IDnum,
+                voted: true
+            };
+            //Save to elections collection under voted
+            const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
+            const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
+            if (elSnap.exists()) {
+                yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, {
+                    voted: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.arrayUnion)(voter)
+                });
+            }
+        });
+    }
 };
 DataService.ctorParameters = () => [
     { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__.Firestore }

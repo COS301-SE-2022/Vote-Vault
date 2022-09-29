@@ -402,6 +402,7 @@ export class DataService {
         address : elSnap.data().address,
         adminEmail : elSnap.data().adminEmail,
         ballots : elSnap.data().ballots,
+        electionName: elSnap.data().electionName,
         users : elSnap.data().users
       }).then(async ()  =>  {
         await deleteDoc(doc(this.firestore, "elections", id));
