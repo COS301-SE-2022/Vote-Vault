@@ -15,7 +15,7 @@ body {
 }
 
 #desc{
-  width: 60%;
+  width: 90%;
 }
 
 #homeText {
@@ -58,11 +58,12 @@ body {
   text-align: left;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px;
   flex-direction: column;
   width: 100%;
   margin-top: 5%;
-  
 }
 
 #icon{
@@ -83,24 +84,14 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-  #context > h3 {
-    margin-left: 30%;
-  }
-
-  #context > div > p {
+  #context{
+    text-align: left;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin-left: 30%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #context > h3 {
-    margin-left: 25%;
-  }
-
-  #context > div > p {
-    width: 100%;
-    margin-left: 25%;
+    margin-top: 5%;
   }
 }
 
