@@ -45,4 +45,8 @@ describe('ContractService', () => {
   it('should have a signer class member', () => {
     expect(service.signer).toBeDefined();
   });
+
+  it('should return contract address', () =>  {
+    spyOn(service, 'deploy').and.returnValue(Promise.resolve("contract address"));
+  });
 });

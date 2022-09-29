@@ -5,35 +5,49 @@
   </head>
   <body>
     <div class="navbar1">
-      <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
-      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-      <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
-      <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
-      <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
-      <a [routerLink]="['/history']" routerLinkActive="active">History</a>
-      <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+      <div id="borgir">
+        <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+              <div class="main-content-wrapper">
+              <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+              <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+              <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
+              <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+              <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+              <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+              </div>
+          </div>
+        </div>
+        <div id="links">
+          <a [routerLink]="['/home']"><img id="logo" alt="Logo for Vote Vault" src="assets/votevault transparent logo.png"></a>
+          <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+          <a class="active" [routerLink]="['/analytics']" routerLinkActive="active">Analytics</a>
+          <a [routerLink]="['/results']" routerLinkActive="active">Results</a>
+          <a [routerLink]="['/howto']" routerLinkActive="active">How To</a>
+          <a [routerLink]="['/history']" routerLinkActive="active">History</a>
+          <a [routerLink]="['/predictions']" routerLinkActive="active">Predictions</a>
+        </div>
     </div>
 
     <div class="rest">
       
       <div>
         <div id="welcome">
-          <img src="assets/images/analytics-banner.jpg" class="banner" style="width:100%">
-          <h1 style="margin-top:-14rem; font-size: 3rem;">Voting Analytics</h1>
+          <img src="assets/images/prediction-banner.jpg" class="banner">
+          <h1 id="photoHead">Voting Analytics</h1>
         </div>
         
 
-        <div class="col text-center" style="margin-top:2rem; margin-bottom: 2rem;">
+        <div id="homepage-top-text" class="col text-center" style="margin-top:2rem; margin-bottom: 2rem;">
           <h2>Current Election Analytics</h2>
           <h6>Here you can view live demographics affected by the current elections as a whole</h6>
         </div>
       </div>
-      <!-- <img src="assets/images/analytics-banner.jpg" class="banner" style="width:100%">
-
-      <div class="col text-center" style="margin-top:2rem; margin-bottom: 4rem;">
-        <h2>Current Election Analytics</h2>
-        <h6>Here you can view live demographics affected by the current elections as a whole</h6>
-      </div> -->
 
       <div class="col text-center" style="margin-top: 2rem; margin-bottom: 3rem;">
         <div ngbDropdown class="d-inline-block">
@@ -54,7 +68,7 @@
           <button type="button" class="btn btn-outline-primary" id="demographicsButton" ngbDropdownToggle style="color: #f4717f; border: 1px solid #f4717f">View Demographics</button>
           <div ngbDropdownMenu aria-labelledby="demographicsDropdown">
             <button ngbDropdownItem (click)="showGenderInfo()">Gender Information</button>
-            <button ngbDropdownItem (click)="showProvinceInfo()">Provinces Information</button>
+            <!-- <button ngbDropdownItem (click)="showProvinceInfo()">Provinces Information</button> -->
             <button ngbDropdownItem (click)="showAgeInfo()">Age Information</button>
           </div>
         </div>
@@ -63,9 +77,9 @@
       <div *ngIf="div1">
         <chart id="gD" [type]="type" [data]="data" [options]="options"></chart>
       </div>
-      <div *ngIf="div2">
+      <!-- <div *ngIf="div2">
         <chart id="gD" [type]="type1" [data]="data1" [options]="options1"></chart>
-      </div>
+      </div> -->
       <div *ngIf="div3">
         <chart id="gD" [type]="type2" [data]="data2" [options]="options2"></chart>
       </div>
@@ -79,6 +93,17 @@
     <br/>
     <br/>
     <br/>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("links");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
 
   </body>
 

@@ -45,4 +45,16 @@ describe('DataService', () => {
   it('should have a registeredUsers class member', () => {
     expect(service.registeredUsers).toEqual(jasmine.any(Object));
   });
+
+  it('should set admin state' , () => {
+    service.setAdminState("new state");
+    expect(service.adminState).toEqual("new state");
+  })
+
+  it('should clear ballot members', () => {
+    service.electionName = 'Name';
+    expect(service.electionName).toEqual('Name');
+    service.clear();
+    expect(service.electionName).toEqual('');
+  });
 });

@@ -117,31 +117,11 @@ export class DataService {
     this.ageBasedDA = [0.5, 0.6, 0.5, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2];
     this.ageBasedEFF = [0.2, 0.1, 0.1, 0.3, 0.2, 0.2, 0.1, 0.2, 0.1];
     this.ageBasedVFP = [0.1, 0.2, 0.3, 0.1, 0.2, 0.2, 0.3, 0.2, 0.5];
-
-    // this.ageResults[0][0] = 69;
-    // console.log(this.ageResults)
-    // for (let i = 0; i < 4; i++) {
-    //   for (let j = 0; j < 9; j++) {
-    //     this.ageResults[i][j] = 0;
-    //   }
-    // }
     
   }
 
   calculateProbabilities() {
     // TODO: get values that states how many voters registered for each age group and how many of them have voted already --> DONE
-    // currently using mock data
-    // 18 29 39 49 59 69 79 89 99
-    // let votersRemaining18 = 9000;
-    // let votersRemaining29 = 9000;
-    // let votersRemaining39 = 9000;
-    // let votersRemaining49 = 9000;
-    // let votersRemaining59 = 9000;
-    // let votersRemaining69 = 9000;
-    // let votersRemaining79 = 9000;
-    // let votersRemaining89 = 9000;
-    // let votersRemaining99 = 9000;
-
     let votedANC = 0;
     let votedDA = 0;
     let votedEFF = 0;

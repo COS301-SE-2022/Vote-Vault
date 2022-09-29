@@ -1,6 +1,8 @@
-<ion-content>
-  <app-circle-top></app-circle-top>
-  <app-elections-header></app-elections-header>
+<app-circle-top></app-circle-top>
+<app-elections-header></app-elections-header>
+
+<ion-content *ngIf="loaded">
+ 
   <ion-card (click)="electionClicked(e)" (click)="setIndex(i)" *ngFor="let e of elections; let i = index" id="election">
     <ion-card-header>
       <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
@@ -33,3 +35,62 @@
     </ion-fab-button>
   </ion-fab> -->
 </ion-content>
+
+<ion-list *ngIf="!loaded">
+  <ion-card>
+    <div>
+    <ion-thumbnail slot="start">
+      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+      </h3>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </div>
+  </ion-card>
+
+  <ion-card>
+    <div>
+    <ion-thumbnail slot="start">
+      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+      </h3>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </div>
+  </ion-card>
+
+  <ion-card>
+    <div>
+    <ion-thumbnail slot="start">
+      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+      </h3>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+      </p>
+      <p>
+        <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </div>
+  </ion-card>
+</ion-list>

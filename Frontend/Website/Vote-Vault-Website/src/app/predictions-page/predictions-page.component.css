@@ -12,6 +12,9 @@ body {
   font-weight: bold; 
 }
 
+.ch{
+  height: 31.5rem;
+}
 
 #banner{
   width : 100vw;
@@ -20,7 +23,9 @@ body {
   z-index: -1;
 }
 
-
+#borgir{
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 900px) {
   #context > h3 {
@@ -61,3 +66,127 @@ body {
     padding: 0;
   }
 }
+
+@media only screen and (max-width: 645px)  {
+  #links{
+    visibility: hidden;
+  }
+  #borgir{
+    visibility: visible;
+  }
+}
+/* BURGER */
+#sidebarMenu {
+  height: 240px; /*change here related your menu height*/
+  position: fixed;
+  overflow: none;
+  width: 100%;
+  z-index: 100;
+  transform: translateY(-240px); /*change here related your menu height*/
+}
+.main-content-wrapper a{
+  width: 60%;
+  height: 40px;
+  display: block;
+  margin-left: 0.5rem;
+  background: #544e50;
+  text-align: center;
+  padding-top: 15px;
+  border: 1px solid #030303;
+  color: whitesmoke;
+  text-decoration: none;
+}
+#sidebarMenu::-webkit-scrollbar {
+  width: 12px;
+}
+#sidebarMenu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px; 
+}
+#sidebarMenu::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+  background: #0000002e;
+  height: 50px;
+}
+.sidebarMenuInner{
+  margin:0;
+  padding:0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transition-duration: 0.3s;
+  transform: translatey(0);
+  top:38px /*change here related your top menu height*/
+}
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 22px;
+  width: 22px;
+  left:10px;
+  top:10px;
+  display: none
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+
+
+@media screen and (max-width: 645px) {
+    .sidebarIconToggle{
+        display:block
+     }
+  }

@@ -53,37 +53,37 @@ export class AnalyticsPageComponent implements OnInit {
 
 
 
-  type1 = 'bar';
-  data1 = {
-    labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
-    datasets: [
-      {
-        backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
-        data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
-      }
-    ]
-  };
-  options1 = {
-    legend:{
-      display: false
-    },
-    title:{
-      display: true,
-      text:"Location Distribution"
-    },
-    scales : {
-      yAxes: [{
-         ticks: {
-            steps : 10,
-            stepValue : 10,
-            max : 100,
-            min: 0
-          }
-      }]
-    },
-    responsive: true,
-    maintainAspectRatio: false
-  };
+  // type1 = 'bar';
+  // data1 = {
+  //   labels: ["Gauteng","Freestate","Kwazulu-Natal","Mpumalanga","Limpopo","Eastern Cape","North West","Northern Cape","Western Cape"],
+  //   datasets: [
+  //     {
+  //       backgroundColor: ['#a69cac','#474973 ','#161b33 ','#0d0c1d','#f1dac4 ','#033f63 ','#323031', '#a69cac','#474973'],
+  //       data: [60, 61, 59, 42, 45, 48, 51, 52, 42]
+  //     }
+  //   ]
+  // };
+  // options1 = {
+  //   legend:{
+  //     display: false
+  //   },
+  //   title:{
+  //     display: true,
+  //     text:"Location Distribution"
+  //   },
+  //   scales : {
+  //     yAxes: [{
+  //        ticks: {
+  //           steps : 10,
+  //           stepValue : 10,
+  //           max : 100,
+  //           min: 0
+  //         }
+  //     }]
+  //   },
+  //   responsive: true,
+  //   maintainAspectRatio: false
+  // };
 
 
 
@@ -112,7 +112,7 @@ export class AnalyticsPageComponent implements OnInit {
     datasets: [
       {
         backgroundColor: ['#b56576','#e56b6f'],
-        data: [this.dataService.maleCount, this.dataService.femaleCount]
+        data: [this.dataService.maleCount / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.femaleCount / (this.dataService.maleCount + this.dataService.femaleCount)]
       }
     ]
   };
@@ -122,14 +122,14 @@ export class AnalyticsPageComponent implements OnInit {
     },
     title:{
       display: true,
-      text:"Gender Distribution"
+      text:"Gender Distribution Percentage"
     },
     scales : {
       yAxes: [{
          ticks: {
             steps : 10,
-            stepValue : 10,
-            max : 20,
+            stepValue : Math.max(10, this.dataService.maleCount, this.dataService.femaleCount),
+            max : Math.max(5, this.dataService.maleCount, this.dataService.femaleCount),
             min: 0
           }
       }]
@@ -162,7 +162,7 @@ export class AnalyticsPageComponent implements OnInit {
         datasets: [
           {
             backgroundColor: ['#353535','#3c6e71','#b5fff8','#d9d9d9','#284b63','#4f6d7a','#c0d6df','#365535','#3d6e71'],
-            data: [this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]]
+            data: [this.dataService.agesArray[0] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[1] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[2] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[3] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[4] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[5] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[6] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[7] / (this.dataService.maleCount + this.dataService.femaleCount), this.dataService.agesArray[8] / (this.dataService.maleCount + this.dataService.femaleCount)]
           }
         ]
       };
@@ -172,14 +172,14 @@ export class AnalyticsPageComponent implements OnInit {
         },
         title:{
           display: true,
-          text:"Age Distribution"
+          text:"Age Distribution Percentage"
         },
         scales : {
           yAxes: [{
              ticks: {
                 steps : 10,
-                stepValue : 10,
-                max : 100,
+                stepValue : Math.max(10, this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
+                max : Math.max(5, this.dataService.agesArray[0], this.dataService.agesArray[1], this.dataService.agesArray[2], this.dataService.agesArray[3], this.dataService.agesArray[4], this.dataService.agesArray[5], this.dataService.agesArray[6], this.dataService.agesArray[7], this.dataService.agesArray[8]),
                 min: 0
               }
           }]

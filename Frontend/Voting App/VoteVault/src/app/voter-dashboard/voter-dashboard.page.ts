@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, LoadingController } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-voter-dashboard',
@@ -9,24 +10,23 @@ import { DataService } from '../data.service';
   styleUrls: ['./voter-dashboard.page.scss'],
 })
 export class VoterDashboardPage implements OnInit {
-
+  loaded : boolean = false
   elections: any[];
 
-  constructor(private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
-    // this.elections = [{id : 1, name : 'Provincial Election', ballots : [{name : 'Cool', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]}]},
-    //                   {id : 86, name : 'National Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []},{name : '', options : []}]},
-    //                   {id : 129, name : 'District Election', ballots : [{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : [{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'},{name : 'John', surname : 'Smith'}]},{name : '', options : []}]}];
+  constructor(private location : Location, private loadingController : LoadingController, private dataService: DataService, private router: Router, private actionSheetController: ActionSheetController) {
     this.elections = []
   }
 
   async ngOnInit() {
-    this.elections = await this.dataService.fetchAllElections()
+    await this.dataService.fetchAllElections().then((res) =>  {
+      this.elections = res
+      this.loaded = true
+    })
     console.log(this.elections)
   }
 
   electionClicked(e: any) {
     this.dataService.editElection(e);
-    // this.presentActionSheet(e);
   }
 
   navigate(s: string) {
@@ -38,28 +38,19 @@ export class VoterDashboardPage implements OnInit {
     this.navigate('register')
   }
 
-  // async presentActionSheet(e: any) {
-  //   const actionSheet = await this.actionSheetController.create({
-  //     header: e.electionName,
-  //     cssClass: 'my-custom-class',
-  //     buttons: [ {
-  //       text: 'Vote',
-  //       icon: 'checkmark-done-circle-outline',
-  //       handler: () => {
-  //         this.navigate('ballot');
-  //       }
-  //     }, {
-  //       text: 'Cancel',
-  //       icon: 'close',
-  //       role: 'cancel',
-  //       handler: () => {
-  //         console.log('Cancel clicked');
-  //       }
-  //     }]
-  //   });
-  //   await actionSheet.present();
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
 
-  //   const { role, data } = await actionSheet.onDidDismiss();
-  //   console.log('onDidDismiss resolved with role and data', role, data);
-  // }
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  back() : void {
+    this.location.back()
+  }
 }

@@ -77,6 +77,9 @@ export class ResultsPageComponent implements OnInit {
     document.getElementById("info1").hidden = true;
     document.getElementById("info3").hidden = true;
     document.getElementById("info5").hidden = true;
+    document.getElementById("b1").hidden = true;
+    document.getElementById("b2").hidden = true;
+    document.getElementById("b3").hidden = true;
   };
 
   async selectElection(e : any) : Promise<void> {
@@ -124,6 +127,10 @@ export class ResultsPageComponent implements OnInit {
     document.getElementById("info1").hidden = false;
     document.getElementById("info3").hidden = false;
     document.getElementById("info5").hidden = false;
+    document.getElementById("b1").hidden = false;
+    document.getElementById("b2").hidden = false;
+    document.getElementById("b3").hidden = false;
+    document.getElementById("space").hidden = true;
 
     let B1 = parseInt(numbers[0][0]);
     let B2 = parseInt(numbers[1][0]);
