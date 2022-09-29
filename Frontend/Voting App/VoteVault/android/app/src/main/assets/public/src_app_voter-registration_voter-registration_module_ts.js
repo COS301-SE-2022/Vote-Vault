@@ -165,6 +165,7 @@ let VoterRegistrationPage = class VoterRegistrationPage {
             }
             else {
                 alert('Already registered voter!');
+                this.router.navigate(['ballot']);
             }
             this.name = '';
             this.surname = '';
