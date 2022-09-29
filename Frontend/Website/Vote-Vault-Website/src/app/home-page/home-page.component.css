@@ -40,6 +40,10 @@ body {
   z-index: -1;
 }
 
+#borgir{
+  display: none;
+}
+
 #bannerHolder{
   width: 100vw;
   height: 25rem;
@@ -96,6 +100,10 @@ body {
 }
 
 @media only screen and (max-width: 645px) {
+  #links {
+    visibility: hidden;
+  }
+
   #homeText {
     font-size: 2rem;
   }
@@ -142,3 +150,6 @@ body {
     padding: 0; 
   }
 }
+
+/* BURGER */
+
