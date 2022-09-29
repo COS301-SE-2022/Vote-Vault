@@ -148,13 +148,36 @@ input[type=text] {
 #icon{
   display: none;
 }
-@media screen and (max-width:700px) {
+@media only screen and (max-width:400px) {
+  .navbar1 a {
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0.2rem 0.2rem;
+    text-decoration: none;
+    font-size: 5px;
+    height: 100%;
+  }
+
+  #logo {
+    height: 1rem;
+  }
+
+  a.active {
+    background-color: #FBFFF5;
+    color: #02224E;
+    height: 100%;
+    border-bottom: 6px solid #FBFFF5;
+  }
+}
+
+@media screen and (max-width:600px) {
   #icon{
     display: block;
   }
 
   #links {
-    display: none;
+    /* display: none; */
   }
 
   .navbar1 a.icon {
@@ -169,10 +192,14 @@ input[type=text] {
     float: left;
     color: whitesmoke;
     text-align: center;
-    padding: 0.875rem 1rem;
+    padding: 0.475rem 0.5rem;
     text-decoration: none;
-    font-size: 17px;
-    height: 3.8rem;
+    font-size: 11px;
+    height: 100%;
+  }
+
+  #logo {
+    height: 1.36rem;
   }
 
   a.active {
