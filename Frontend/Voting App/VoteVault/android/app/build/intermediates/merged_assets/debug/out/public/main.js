@@ -613,7 +613,6 @@ let DataService = class DataService {
             //Save to elections collection under voted
             const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
             const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
-            alert();
             let userArray = elSnap.data()["users"];
             userArray.forEach(element => {
                 if (element.id == voter.id) {

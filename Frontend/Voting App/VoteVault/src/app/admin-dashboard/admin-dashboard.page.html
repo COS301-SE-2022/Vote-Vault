@@ -1,8 +1,8 @@
-<app-circle-top></app-circle-top>
-<app-elections-header></app-elections-header>
+
 
 <ion-content *ngIf="loaded">
- 
+  <app-circle-top></app-circle-top>
+  <app-elections-header></app-elections-header>
   <ion-card (click)="electionClicked(e)" (click)="setIndex(i)" *ngFor="let e of elections; let i = index" id="election">
     <ion-card-header>
       <ion-card-title text-capitalize><ion-icon name="newspaper-outline"></ion-icon>{{e.electionName}}</ion-card-title>
@@ -37,6 +37,8 @@
 </ion-content>
 
 <ion-list *ngIf="!loaded">
+  <app-circle-top></app-circle-top>
+<app-elections-header></app-elections-header>
   <ion-card>
     <div>
     <ion-thumbnail slot="start">
