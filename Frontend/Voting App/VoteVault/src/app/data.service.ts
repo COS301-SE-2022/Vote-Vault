@@ -477,7 +477,6 @@ export class DataService {
     const elRef = doc(this.firestore, 'elections' , this.electionID)
 
     const elSnap = await getDoc(elRef)
-    alert()
 
     let userArray = elSnap.data()!["users"];
 
