@@ -34,6 +34,12 @@ export class RegisterPage implements OnInit {
     // console.log(this.dataservice.contractAddress)
   }
 
+  routeTest() {
+    //alert("BEFORE NAV");
+    this.router.navigate(['ballot']);
+    alert("AFTER NAV");
+  }
+
   async registerVoter() {
 
     // const first = this.voterIDs.find((obj) => obj === nVoter.id);
@@ -56,7 +62,7 @@ export class RegisterPage implements OnInit {
             // alert('Successfully registered!');
             this.presentToast('Successfully registered ' + this.voter.birthName + ", " + this.voter.IDnum)
             this.loadingController.dismiss()
-            this.router.navigate(['admin-dashboard'])
+            this.router.navigate(['voter-dashboard'])
           })
         }).catch((error)  =>  {
           this.presentToast('Error registering')
@@ -68,12 +74,16 @@ export class RegisterPage implements OnInit {
       }
     } else {
       alert('Already registered voter!');
-      if (await this.dataservice.checkVoted(this.voter) == false) {
+      if (await this.dataservice.checkVoted(this.voter) == true) {
         alert('Already voted!');
         this.router.navigate(['voter-dashboard']);
       } else {
-        await this.dataservice.vote(this.voter);
-        this.router.navigate(['ballot']);
+        alert('Not yet voted!');
+        try {
+          await this.dataservice.vote(this.voter);
+        } finally {
+          this.router.navigate(['ballot']);
+        }
       }
     }
 

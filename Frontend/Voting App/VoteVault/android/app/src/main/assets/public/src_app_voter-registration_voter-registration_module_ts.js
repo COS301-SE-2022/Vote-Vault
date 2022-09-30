@@ -165,7 +165,9 @@ let VoterRegistrationPage = class VoterRegistrationPage {
                 }
             }
             else {
-                alert('Already registered voter!');
+                //alert('Already registered voter!');
+                alert('Redirecting');
+                this.router.navigate(['ballot']);
             }
             this.name = '';
             this.surname = '';

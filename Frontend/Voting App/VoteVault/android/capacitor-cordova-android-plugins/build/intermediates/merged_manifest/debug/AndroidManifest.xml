@@ -15,6 +15,10 @@
         android:required="true" />
 
     <application>
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.16" />
+
         <activity
             android:name="com.google.zxing.client.android.CaptureActivity"
             android:clearTaskOnLaunch="true"

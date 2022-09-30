@@ -278,9 +278,7 @@ let GenerateBallotPage = class GenerateBallotPage {
     }
     openCustom() {
         this.dataService.clear();
-        // this.dataService.fetchElections()
         this.location.back();
-        // this.router.navigate(['admin-dashboard']);
     }
     navigate(s) {
         this.router.navigate([s]);

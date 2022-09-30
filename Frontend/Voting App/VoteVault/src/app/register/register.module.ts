@@ -10,13 +10,13 @@ import { RegisterPage } from './register.page';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { FirestoreModule } from '@angular/fire/firestore';
+import { BallotPage } from '../ballot/ballot.page';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule,
-    RouterTestingModule.withRoutes([])
+    RegisterPageRoutingModule
   ],
   declarations: [RegisterPage]
 })

@@ -128,26 +128,33 @@ let BallotPage = class BallotPage {
         console.log(this.ballot1);
         this.ballot2 = this.dataService.getBallot(1);
         this.ballot3 = this.dataService.getBallot(2);
-        this.selected = {};
+        this.selected = [-1, -1, -1];
         console.log(this.dataService.contractAddress);
     }
     selectCandidate(o) {
-        if (this.selected != null)
-            this.selected.isChecked = false;
-        this.selected = o;
-        this.selected.isChecked = true;
+        console.log(this.ballot1);
+        if (this.selected[this.slideIndex] != -1) {
+            this.selected[this.slideIndex].isChecked = false;
+            this.selected[this.slideIndex] = o;
+            this.selected[this.slideIndex].isChecked = true;
+        }
+        else {
+            this.selected[this.slideIndex] = o;
+            this.selected[this.slideIndex].isChecked = true;
+        }
     }
     vote() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             this.presentLoading();
             this.dataService.votes.push(this.selected);
+            console.log(this.votes);
             //Deploy vote to blockchain
             yield this.contractService.addVote(this.dataService.contractAddress, this.votes)
-                .then(() => {
+                .then(() => (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
                 this.loadingController.dismiss();
                 this.toast_vote('You voted!');
                 this.location.back();
-            })
+            }))
                 .catch((error) => {
                 this.toast_vote('Error recording vote');
                 this.loadingController.dismiss();
@@ -158,7 +165,6 @@ let BallotPage = class BallotPage {
     ionSlidesDidLoad(slides) {
         slides.getActiveIndex().then((index) => {
             this.slideIndex = index;
-            // console.log(this.slideIndex)
         });
     }
     toast_vote(message) {
@@ -174,7 +180,6 @@ let BallotPage = class BallotPage {
     }
     openCustom() {
         this.location.back();
-        // this.router.navigate(['voter-dashboard'])
     }
     navigate(s) {
         this.router.navigate([s]);
@@ -228,7 +233,7 @@ BallotPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-item {\n  --background: transparent !important;\n  --background-color: transparent;\n  width: 90%;\n  font-size: 1em;\n}\n\nion-label {\n  --color: transparent;\n  width: 100%;\n}\n\nion-card {\n  padding-top: 5vh;\n  padding-bottom: 10vh;\n  margin-bottom: 35vh;\n  width: 90%;\n}\n\nion-card-title {\n  color: var(--ion-color-primary);\n  font-size: 1.2em;\n}\n\nion-slides {\n  height: 60%;\n  width: 100%;\n  left: 0;\n  position: absolute;\n  bottom: 0;\n}\n\n#vote {\n  width: 80%;\n  position: fixed;\n  bottom: 30vh;\n}\n\np {\n  width: 80%;\n  text-align: center;\n  position: fixed;\n  bottom: 40vh;\n}\n\n#header {\n  height: 10%;\n  width: 80%;\n  margin-left: 10%;\n  text-align: center;\n  font-size: 2em;\n  padding-top: 5%;\n  color: white;\n  font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcYmFsbG90XFxiYWxsb3QucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQUE7RUFDQSwrQkFBQTtFQUNBLFVBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUE7RUFDSSxvQkFBQTtFQUNBLFdBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUNDSjs7QURFQTtFQUNJLCtCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtBQ0NKOztBREVBO0VBQ0ksVUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0FDQ0o7O0FERUE7RUFDSSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUNDSiIsImZpbGUiOiJiYWxsb3QucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW0ge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIHdpZHRoOiA5MCU7XHJcbiAgICBmb250LXNpemU6IDFlbTtcclxufVxyXG5cclxuaW9uLWxhYmVsIHtcclxuICAgIC0tY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlvbi1jYXJkIHsgXHJcbiAgICBwYWRkaW5nLXRvcDogNXZoO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDEwdmg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzNXZoO1xyXG4gICAgd2lkdGg6IDkwJTtcclxufVxyXG5cclxuaW9uLWNhcmQtdGl0bGV7XHJcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG4gICAgZm9udC1zaXplOiAxLjJlbTtcclxufVxyXG5cclxuaW9uLXNsaWRlcyB7XHJcbiAgICBoZWlnaHQ6IDYwJTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbGVmdDowO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG4jdm90ZSB7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYm90dG9tOiAzMHZoO1xyXG59XHJcblxyXG5wIHtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBib3R0b206IDQwdmg7XHJcbn1cclxuXHJcbiNoZWFkZXIge1xyXG4gICAgaGVpZ2h0OiAxMCU7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGZvbnQtc2l6ZTogMmVtO1xyXG4gICAgcGFkZGluZy10b3A6IDUlO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn0iLCJpb24taXRlbSB7XG4gIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiAgLS1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgd2lkdGg6IDkwJTtcbiAgZm9udC1zaXplOiAxZW07XG59XG5cbmlvbi1sYWJlbCB7XG4gIC0tY29sb3I6IHRyYW5zcGFyZW50O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQge1xuICBwYWRkaW5nLXRvcDogNXZoO1xuICBwYWRkaW5nLWJvdHRvbTogMTB2aDtcbiAgbWFyZ2luLWJvdHRvbTogMzV2aDtcbiAgd2lkdGg6IDkwJTtcbn1cblxuaW9uLWNhcmQtdGl0bGUge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xuICBmb250LXNpemU6IDEuMmVtO1xufVxuXG5pb24tc2xpZGVzIHtcbiAgaGVpZ2h0OiA2MCU7XG4gIHdpZHRoOiAxMDAlO1xuICBsZWZ0OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvdHRvbTogMDtcbn1cblxuI3ZvdGUge1xuICB3aWR0aDogODAlO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMzB2aDtcbn1cblxucCB7XG4gIHdpZHRoOiA4MCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDQwdmg7XG59XG5cbiNoZWFkZXIge1xuICBoZWlnaHQ6IDEwJTtcbiAgd2lkdGg6IDgwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDJlbTtcbiAgcGFkZGluZy10b3A6IDUlO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufSJdfQ== */";
+module.exports = "ion-item {\n  --background: transparent !important;\n  --background-color: transparent;\n  width: 90%;\n  font-size: 1em;\n}\n\nion-label {\n  --color: transparent;\n  width: 100%;\n}\n\nion-card {\n  padding-top: 5vh;\n  padding-bottom: 10vh;\n  margin-bottom: 35vh;\n  width: 90%;\n}\n\nion-card-title {\n  color: var(--ion-color-primary);\n  font-size: 1.2em;\n}\n\nion-slides {\n  height: 60%;\n  width: 100%;\n  left: 0;\n  position: absolute;\n  bottom: 0;\n}\n\n#vote {\n  width: 80%;\n  position: fixed;\n  bottom: 30vh;\n}\n\np {\n  width: 80%;\n  text-align: center;\n  position: fixed;\n  bottom: 40vh;\n}\n\n#header {\n  height: 10%;\n  width: 80%;\n  margin-left: 10%;\n  text-align: center;\n  font-size: 2em;\n  padding-top: 5%;\n  color: white;\n  font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbGxvdC5wYWdlLnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXFZvdGluZyUyMEFwcFxcVm90ZVZhdWx0XFxzcmNcXGFwcFxcYmFsbG90XFxiYWxsb3QucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQUE7RUFDQSwrQkFBQTtFQUNBLFVBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUE7RUFDSSxvQkFBQTtFQUNBLFdBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUNDSjs7QURFQTtFQUNJLCtCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0EsT0FBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtBQ0NKOztBREVBO0VBQ0ksVUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0FDQ0o7O0FERUE7RUFDSSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVBO0VBQ0ksV0FBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUNDSiIsImZpbGUiOiJiYWxsb3QucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWl0ZW0ge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIHdpZHRoOiA5MCU7XHJcbiAgICBmb250LXNpemU6IDFlbTtcclxufVxyXG5cclxuaW9uLWxhYmVsIHtcclxuICAgIC0tY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlvbi1jYXJkIHtcclxuICAgIHBhZGRpbmctdG9wOiA1dmg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMTB2aDtcclxuICAgIG1hcmdpbi1ib3R0b206IDM1dmg7XHJcbiAgICB3aWR0aDogOTAlO1xyXG59XHJcblxyXG5pb24tY2FyZC10aXRsZXtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICBmb250LXNpemU6IDEuMmVtO1xyXG59XHJcblxyXG5pb24tc2xpZGVzIHtcclxuICAgIGhlaWdodDogNjAlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3R0b206IDA7XHJcbn1cclxuXHJcbiN2b3RlIHtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBib3R0b206IDMwdmg7XHJcbn1cclxuXHJcbnAge1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGJvdHRvbTogNDB2aDtcclxufVxyXG5cclxuI2hlYWRlciB7XHJcbiAgICBoZWlnaHQ6IDEwJTtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1zaXplOiAyZW07XHJcbiAgICBwYWRkaW5nLXRvcDogNSU7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4iLCJpb24taXRlbSB7XG4gIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiAgLS1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgd2lkdGg6IDkwJTtcbiAgZm9udC1zaXplOiAxZW07XG59XG5cbmlvbi1sYWJlbCB7XG4gIC0tY29sb3I6IHRyYW5zcGFyZW50O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQge1xuICBwYWRkaW5nLXRvcDogNXZoO1xuICBwYWRkaW5nLWJvdHRvbTogMTB2aDtcbiAgbWFyZ2luLWJvdHRvbTogMzV2aDtcbiAgd2lkdGg6IDkwJTtcbn1cblxuaW9uLWNhcmQtdGl0bGUge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xuICBmb250LXNpemU6IDEuMmVtO1xufVxuXG5pb24tc2xpZGVzIHtcbiAgaGVpZ2h0OiA2MCU7XG4gIHdpZHRoOiAxMDAlO1xuICBsZWZ0OiAwO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvdHRvbTogMDtcbn1cblxuI3ZvdGUge1xuICB3aWR0aDogODAlO1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGJvdHRvbTogMzB2aDtcbn1cblxucCB7XG4gIHdpZHRoOiA4MCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBib3R0b206IDQwdmg7XG59XG5cbiNoZWFkZXIge1xuICBoZWlnaHQ6IDEwJTtcbiAgd2lkdGg6IDgwJTtcbiAgbWFyZ2luLWxlZnQ6IDEwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDJlbTtcbiAgcGFkZGluZy10b3A6IDUlO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufSJdfQ== */";
 
 /***/ }),
 
@@ -238,7 +243,7 @@ module.exports = "ion-item {\n  --background: transparent !important;\n  --backg
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content id = \"main\">\r\n  <h1 id=\"header\">Vote</h1>\r\n  <app-circle-top></app-circle-top>\r\n  <!-- <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button> -->\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot1.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot1.options; let b1 = index\" (click)=\"selectCandidate(o)\" (click)=\"ballot1Index(b1)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot2.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot2.options; let b2 = index\" (click)=\"ballot2Index(b2)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot3.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot3.options; let b3 = index\" (click)=\"ballot2Index(b3)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <p>You are about to submit your votes.</p>\r\n      <ion-button id=\"vote\" (click)=\"vote()\">\r\n        Submit Votes\r\n      </ion-button>\r\n    </ion-slide>\r\n\r\n  </ion-slides>\r\n\r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-content id = \"main\">\r\n  <h1 id=\"header\">Vote</h1>\r\n  <app-circle-top></app-circle-top>\r\n  <!-- <ion-button id = \"menuButton\" (click) = \"openCustom()\"><ion-icon name=\"chevron-back-outline\"></ion-icon></ion-button> -->\r\n  <ion-slides #slides pager=\"true\" mode=\"ios\" (ionSlideDidChange)=\"ionSlidesDidLoad(slides)\">\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot1.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot1.options; let b1 = index\" (click)=\"selectCandidate(o)\" (click)=\"ballot1Index(b1)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot2.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot2.options; let b2 = index\" (click)=\"ballot2Index(b2)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <ion-card>\r\n        <ion-card-title>{{ballot3.name}}</ion-card-title>\r\n          <ion-item *ngFor=\"let o of ballot3.options; let b3 = index\" (click)=\"ballot3Index(b3)\" (click)=\"selectCandidate(o)\">\r\n            <ion-label>{{o.surname}}, {{o.name}}</ion-label>\r\n            <ion-checkbox slot=\"end\" [(ngModel)]=\"o.isChecked\"></ion-checkbox>\r\n          </ion-item>\r\n\r\n      </ion-card>\r\n    </ion-slide>\r\n\r\n    <ion-slide>\r\n      <p>You are about to submit your votes.</p>\r\n      <ion-button id=\"vote\" (click)=\"vote()\">\r\n        Submit Votes\r\n      </ion-button>\r\n    </ion-slide>\r\n\r\n  </ion-slides>\r\n\r\n\r\n</ion-content>\r\n";
 
 /***/ })
 

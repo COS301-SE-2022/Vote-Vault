@@ -166,7 +166,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
             (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_10__.provideFirebaseApp)(() => (0,_angular_fire_app__WEBPACK_IMPORTED_MODULE_10__.initializeApp)(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.firebase)),
             (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__.provideFirestore)(() => (0,_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__.getFirestore)()),
             (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__.provideAuth)(() => (0,_angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__.getAuth)())],
-        providers: [_ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner, _data_service__WEBPACK_IMPORTED_MODULE_3__.DataService, { provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy }, _ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner],
+        providers: [_ionic_native_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_4__.BarcodeScanner, _data_service__WEBPACK_IMPORTED_MODULE_3__.DataService, { provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
@@ -540,6 +540,7 @@ let DataService = class DataService {
                     address: elSnap.data().address,
                     adminEmail: elSnap.data().adminEmail,
                     ballots: elSnap.data().ballots,
+                    electionName: elSnap.data().electionName,
                     users: elSnap.data().users
                 }).then(() => (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
                     yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.deleteDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, "elections", id));
@@ -584,7 +585,7 @@ let DataService = class DataService {
             const idfound = {};
             try {
                 for (let index = 0; index < getrefID.data().users.length; index++) {
-                    if (v.IDnum === getrefID.data().voted[index].id) {
+                    if (v.IDnum === getrefID.data().users[index].id && getrefID.data().users[index].voted === true) {
                         found = true;
                         throw idfound;
                     }
@@ -612,83 +613,14 @@ let DataService = class DataService {
             //Save to elections collection under voted
             const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
             const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
-            if (elSnap.exists()) {
-                yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, {
-                    voted: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.arrayUnion)(voter)
-                });
-            }
-        });
-    }
-    setVote(v) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            let found;
-            found = false;
-            let i;
-            i = -1;
-            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
-            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
-            const idfound = {};
-            try {
-                for (let index = 0; index < getrefID.data().users.length; index++) {
-                    if (v.IDnum === getrefID.data().users[index].id) {
-                        found = true;
-                        v.Voted = true;
-                        getrefID.data().users[index].voted = true;
-                        i = index;
-                        throw idfound;
-                    }
-                    if (found == true) {
-                        alert('shouldnt reach this');
-                        throw idfound;
-                    }
+            alert();
+            let userArray = elSnap.data()["users"];
+            userArray.forEach(element => {
+                if (element.id == voter.id) {
+                    element.voted = true;
                 }
-            }
-            catch (error) {
-            }
-        });
-    }
-    checkVoted(v) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            let found;
-            found = false;
-            const registeredIDs = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
-            const getrefID = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(registeredIDs);
-            const idfound = {};
-            try {
-                for (let index = 0; index < getrefID.data().users.length; index++) {
-                    if (v.IDnum === getrefID.data().voted[index].id) {
-                        found = true;
-                        throw idfound;
-                    }
-                    if (found == true) {
-                        alert('shouldnt reach this');
-                        throw idfound;
-                    }
-                }
-            }
-            catch (error) {
-                return true;
-            }
-            return false;
-        });
-    }
-    vote(v) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
-            const voter = {
-                name: v.birthName,
-                surname: v.surname,
-                gender: v.Gender,
-                id: v.IDnum,
-                voted: true
-            };
-            //Save to elections collection under voted
-            const elRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.doc)(this.firestore, 'elections', this.electionID);
-            const elSnap = yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.getDoc)(elRef);
-            if (elSnap.exists()) {
-                yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, {
-                    voted: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.arrayUnion)(voter)
-                });
-            }
+            });
+            yield (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.updateDoc)(elRef, { "users": userArray });
         });
     }
 };
