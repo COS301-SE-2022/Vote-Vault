@@ -231,7 +231,7 @@ let RegisterPage = class RegisterPage {
             const loading = yield this.loadingController.create({
                 cssClass: 'my-custom-class',
                 message: 'Please wait...',
-                duration: 30000
+                duration: 8000
             });
             yield loading.present();
             const { role, data } = yield loading.onDidDismiss();
