@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-12:12
-INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-12:12
-INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-12:12
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-13:12
 	xmlns:amazon
 		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-57
 	package
@@ -12,41 +12,47 @@ INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVau
 	xmlns:android
 		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-59
 application
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-8:15
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-9:15
+meta-data#android.max_aspect
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-68
+	android:value
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:46-66
+	android:name
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:12-45
 activity#com.google.zxing.client.android.CaptureActivity
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-302
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-302
 	android:clearTaskOnLaunch
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:74-106
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:74-106
 	android:windowSoftInputMode
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:228-275
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:228-275
 	android:exported
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:276-300
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:276-300
 	android:configChanges
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:107-168
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:107-168
 	android:theme
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:169-227
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:169-227
 	android:name
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-73
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-73
 activity#com.google.zxing.client.android.encode.EncodeActivity
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-103
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-103
 	android:label
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:80-101
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:80-101
 	android:name
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-79
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:11-79
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-60
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:1-60
 	android:name
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-58
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:18-58
 uses-permission#android.permission.FLASHLIGHT
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:1-64
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-64
 	android:name
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:10:18-62
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:18-62
 uses-feature#android.hardware.camera
-ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-79
+ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:1-79
 	android:required
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:54-77
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:54-77
 	android:name
-		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:15-53
+		ADDED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:15-53
 uses-sdk
 INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml

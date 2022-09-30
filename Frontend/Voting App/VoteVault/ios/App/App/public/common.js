@@ -1,6 +1,41 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
+/***/ 47691:
+/*!***************************************************************!*\
+  !*** ./src/app/components/circle-top/circle-top.component.ts ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CircleTopComponent": () => (/* binding */ CircleTopComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _circle_top_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./circle-top.component.html?ngResource */ 92751);
+/* harmony import */ var _circle_top_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./circle-top.component.scss?ngResource */ 53616);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+let CircleTopComponent = class CircleTopComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+CircleTopComponent.ctorParameters = () => [];
+CircleTopComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-circle-top',
+        template: _circle_top_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_circle_top_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], CircleTopComponent);
+
+
+
+/***/ }),
+
 /***/ 56300:
 /*!**************************************************************!*\
   !*** ./src/app/components/circle/circle/circle.component.ts ***!
@@ -31,6 +66,41 @@ CircleComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
         styles: [_circle_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], CircleComponent);
+
+
+
+/***/ }),
+
+/***/ 10796:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/elections-header/elections-header.component.ts ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ElectionsHeaderComponent": () => (/* binding */ ElectionsHeaderComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _elections_header_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./elections-header.component.html?ngResource */ 97218);
+/* harmony import */ var _elections_header_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./elections-header.component.scss?ngResource */ 28991);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+
+let ElectionsHeaderComponent = class ElectionsHeaderComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+ElectionsHeaderComponent.ctorParameters = () => [];
+ElectionsHeaderComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-elections-header',
+        template: _elections_header_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_elections_header_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], ElectionsHeaderComponent);
 
 
 
@@ -287,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 59158);
 
 
@@ -297,7 +367,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
+  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps, inline) {
     var _a;
 
     if (delegate) {
@@ -346,7 +416,7 @@ const CoreDelegate = () => {
   let Reference;
 
   const attachViewToDom = /*#__PURE__*/function () {
-    var _ref2 = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
+    var _ref2 = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
       var _a, _b;
 
       BaseComponent = parentElement;
@@ -580,7 +650,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "p": () => (/* binding */ printIonContentErrorMsg),
 /* harmony export */   "s": () => (/* binding */ scrollToTop)
 /* harmony export */ });
-/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-4d272360.js */ 59158);
 /* harmony import */ var _index_9ac92660_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-9ac92660.js */ 2141);
 
@@ -617,7 +687,7 @@ const isIonContent = el => el && el.tagName === ION_CONTENT_TAG_NAME;
 
 
 const getScrollElement = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
+  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (el) {
     if (isIonContent(el)) {
       yield new Promise(resolve => (0,_helpers_4d272360_js__WEBPACK_IMPORTED_MODULE_1__.c)(el, resolve));
       return el.getScrollElement();
@@ -1231,7 +1301,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h": () => (/* binding */ hostContext),
 /* harmony export */   "o": () => (/* binding */ openURL)
 /* harmony export */ });
-/* harmony import */ var C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 
 
 /*!
@@ -1270,7 +1340,7 @@ const getClassMap = classes => {
 const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
 const openURL = /*#__PURE__*/function () {
-  var _ref = (0,C_Users_bevan_OneDrive_Documents_GitHub_Vote_Vault_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
+  var _ref = (0,C_Users_Hange_Documents_GitHub_backup_Frontend_Voting_App_VoteVault_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
     if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
       const router = document.querySelector('ion-router');
 
@@ -1295,6 +1365,16 @@ const openURL = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ 53616:
+/*!****************************************************************************!*\
+  !*** ./src/app/components/circle-top/circle-top.component.scss?ngResource ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+module.exports = ".circle {\n  z-index: -10;\n  height: 200vw;\n  width: 200vw;\n  top: -170vw;\n  left: -50vw;\n  background-color: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNpcmNsZS10b3AuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxWb3RpbmclMjBBcHBcXFZvdGVWYXVsdFxcc3JjXFxhcHBcXGNvbXBvbmVudHNcXGNpcmNsZS10b3BcXGNpcmNsZS10b3AuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsV0FBQTtFQUNBLDBDQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0FDQ0oiLCJmaWxlIjoiY2lyY2xlLXRvcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jaXJjbGUge1xyXG4gICAgei1pbmRleDogLTEwO1xyXG4gICAgaGVpZ2h0OiAyMDB2dztcclxuICAgIHdpZHRoOiAyMDB2dztcclxuICAgIHRvcDogLTE3MHZ3O1xyXG4gICAgbGVmdDogLTUwdnc7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn0iLCIuY2lyY2xlIHtcbiAgei1pbmRleDogLTEwO1xuICBoZWlnaHQ6IDIwMHZ3O1xuICB3aWR0aDogMjAwdnc7XG4gIHRvcDogLTE3MHZ3O1xuICBsZWZ0OiAtNTB2dztcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgcG9zaXRpb246IGFic29sdXRlO1xufSJdfQ== */";
+
+/***/ }),
+
 /***/ 71937:
 /*!***************************************************************************!*\
   !*** ./src/app/components/circle/circle/circle.component.scss?ngResource ***!
@@ -1302,6 +1382,16 @@ const openURL = /*#__PURE__*/function () {
 /***/ ((module) => {
 
 module.exports = ".circle {\n  z-index: -10;\n  height: 900px;\n  width: 900px;\n  top: -450px;\n  background-color: var(--ion-color-primary);\n  border-radius: 50%;\n  display: inline-block;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNpcmNsZS5jb21wb25lbnQuc2NzcyIsIi4uXFwuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxWb3RpbmclMjBBcHBcXFZvdGVWYXVsdFxcc3JjXFxhcHBcXGNvbXBvbmVudHNcXGNpcmNsZVxcY2lyY2xlXFxjaXJjbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsMENBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7QUNDSiIsImZpbGUiOiJjaXJjbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2lyY2xlIHtcclxuICAgIHotaW5kZXg6IC0xMDtcclxuICAgIGhlaWdodDogOTAwcHg7XHJcbiAgICB3aWR0aDogOTAwcHg7XHJcbiAgICB0b3A6IC00NTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufSIsIi5jaXJjbGUge1xuICB6LWluZGV4OiAtMTA7XG4gIGhlaWdodDogOTAwcHg7XG4gIHdpZHRoOiA5MDBweDtcbiAgdG9wOiAtNDUwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn0iXX0= */";
+
+/***/ }),
+
+/***/ 28991:
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/elections-header/elections-header.component.scss?ngResource ***!
+  \****************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "h1 {\n  color: white;\n  font-size: 2em;\n  font-weight: bold;\n  width: 70%;\n  margin-left: 15%;\n  margin-top: 10%;\n  text-align: center;\n  margin-bottom: 15%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVsZWN0aW9ucy1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCIuLlxcLi5cXC4uXFwuLlxcLi5cXC4uXFxWb3RpbmclMjBBcHBcXFZvdGVWYXVsdFxcc3JjXFxhcHBcXGNvbXBvbmVudHNcXGVsZWN0aW9ucy1oZWFkZXJcXGVsZWN0aW9ucy1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsY0FBQTtFQUVBLGlCQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUNBSiIsImZpbGUiOiJlbGVjdGlvbnMtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDEge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiAyZW07XHJcbiAgICAvLyBmb250LWZhbWlseTogJ1JvYm90byc7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIHdpZHRoOiA3MCU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gICAgbWFyZ2luLXRvcDogMTAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTUlO1xyXG59IiwiaDEge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMmVtO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgd2lkdGg6IDcwJTtcbiAgbWFyZ2luLWxlZnQ6IDE1JTtcbiAgbWFyZ2luLXRvcDogMTAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi1ib3R0b206IDE1JTtcbn0iXX0= */";
 
 /***/ }),
 
@@ -1315,6 +1405,16 @@ module.exports = "h1 {\n  color: white;\n  font-size: 3em;\n  font-weight: bold;
 
 /***/ }),
 
+/***/ 92751:
+/*!****************************************************************************!*\
+  !*** ./src/app/components/circle-top/circle-top.component.html?ngResource ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<span class=\"circle\"></span>";
+
+/***/ }),
+
 /***/ 69833:
 /*!***************************************************************************!*\
   !*** ./src/app/components/circle/circle/circle.component.html?ngResource ***!
@@ -1322,6 +1422,16 @@ module.exports = "h1 {\n  color: white;\n  font-size: 3em;\n  font-weight: bold;
 /***/ ((module) => {
 
 module.exports = "<span class=\"circle\"></span>";
+
+/***/ }),
+
+/***/ 97218:
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/elections-header/elections-header.component.html?ngResource ***!
+  \****************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<h1>Elections</h1>";
 
 /***/ }),
 
