@@ -64,4 +64,18 @@ export class ContractService {
       console.error(error)
     }
   }
+
+  async hanroeVote() {
+    const contract = new ethers.Contract("0x37278460037e0974B1094bAea1E04fB5e13a0BD3", this.contractABI, this.signer)
+
+    try {
+      console.log("voting")
+      const tx = await contract.addVote("0101235074081", [0,0,0], {gasLimit : 250000})
+      await tx.wait()
+    }
+    catch(error) {
+      console.error(error)
+    }
+
+  }
 }

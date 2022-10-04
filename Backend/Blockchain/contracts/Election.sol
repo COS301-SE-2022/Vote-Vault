@@ -4,9 +4,9 @@ pragma solidity^0.5.0;
     
     //Votes in matrix mapped to ballots
     // uint [][] public voteCount;
-    uint [] public votes_one;
-    uint [] public votes_two;
-    uint [] public votes_three;
+    uint [] private votes_one;
+    uint [] private votes_two;
+    uint [] private votes_three;
 
     //ID of election on firestore
     string public electionID;
