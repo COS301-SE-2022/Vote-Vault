@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActionSheetController, AlertController, LoadingController, MenuController, ViewWillEnter } from '@ionic/angular';
 import { signOut } from 'firebase/auth';
 import { DataService } from '../data.service';
+import { ContractService } from '../services/contract.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -13,7 +14,7 @@ export class AdminDashboardPage implements OnInit, ViewWillEnter {
   loaded : boolean = false
   elections : any[]
   index : number
-  constructor(private loadingController : LoadingController, private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
+  constructor(private cs : ContractService, private loadingController : LoadingController, private alertController: AlertController, private dataService : DataService, private actionSheetController : ActionSheetController, private router : Router, private menu : MenuController) {
     
   }
 

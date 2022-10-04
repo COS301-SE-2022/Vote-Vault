@@ -167,9 +167,7 @@ export class ResultsPageComponent implements OnInit {
 
       if (parseInt(numbers[2][i]) > B3) {
         B3 = parseInt(numbers[2][i]);
-        B3Winner = this.selectedElection.ballots[2].options[i].name.then(() =>  {
-          this.shouldLoad = false;
-        });
+        B3Winner = this.selectedElection.ballots[2].options[i].name
       }
     }
 

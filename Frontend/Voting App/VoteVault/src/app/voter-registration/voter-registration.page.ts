@@ -71,6 +71,7 @@ export class VoterRegistrationPage implements OnInit {
         alert(err);
       }
     } else {
+      this.dataservice.voterId = this.idNum
       //alert('Already registered voter!');
       alert('Redirecting');
       this.router.navigate(['ballot'])
