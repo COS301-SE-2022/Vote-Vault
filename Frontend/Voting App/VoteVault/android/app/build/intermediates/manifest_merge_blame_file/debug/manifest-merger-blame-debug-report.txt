@@ -48,77 +48,76 @@
 29-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:9:9-54
 30        android:supportsRtl="true"
 30-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:10:9-35
-31        android:testOnly="true"
-32        android:theme="@style/AppTheme" >
-32-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:11:9-40
-33        <activity
-33-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:13:9-25:20
-34            android:name="io.ionic.starter.MainActivity"
-34-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:15:13-57
-35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-35-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:14:13-129
-36            android:label="@string/title_activity_main"
-36-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:16:13-56
-37            android:launchMode="singleTask"
-37-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:18:13-44
-38            android:theme="@style/AppTheme.NoActionBarLaunch" >
-38-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:17:13-62
-39            <intent-filter>
-39-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:20:13-23:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:21:17-69
-40-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:21:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:22:17-77
-42-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:22:27-74
-43            </intent-filter>
-44        </activity>
-45
-46        <provider
-47            android:name="androidx.core.content.FileProvider"
-47-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:28:13-62
-48            android:authorities="io.ionic.starter.fileprovider"
-48-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:29:13-64
-49            android:exported="false"
-49-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:30:13-37
-50            android:grantUriPermissions="true" >
-50-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:31:13-47
-51            <meta-data
-51-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:32:13-34:64
-52                android:name="android.support.FILE_PROVIDER_PATHS"
-52-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:33:17-67
-53                android:resource="@xml/file_paths" />
-53-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:34:17-51
-54        </provider>
-55
-56        <meta-data
-56-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:36
-57            android:name="android.max_aspect"
-57-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-46
-58            android:value="2.16" />
-58-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-33
-59
-60        <activity
-60-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-28:63
-61            android:name="com.google.zxing.client.android.CaptureActivity"
-61-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-75
-62            android:clearTaskOnLaunch="true"
-62-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-45
-63            android:configChanges="orientation|keyboardHidden|screenSize"
-63-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-74
-64            android:exported="false"
-64-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
-65            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-65-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-71
-66            android:windowSoftInputMode="stateAlwaysHidden" />
-66-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-60
-67        <activity
-67-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-31:37
-68            android:name="com.google.zxing.client.android.encode.EncodeActivity"
-68-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-81
-69            android:label="Share" />
-69-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-34
-70    </application>
-71
-72</manifest>
+31        android:theme="@style/AppTheme" >
+31-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:11:9-40
+32        <activity
+32-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:13:9-25:20
+33            android:name="io.ionic.starter.MainActivity"
+33-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:15:13-57
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+34-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:14:13-129
+35            android:label="@string/title_activity_main"
+35-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:16:13-56
+36            android:launchMode="singleTask"
+36-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:18:13-44
+37            android:theme="@style/AppTheme.NoActionBarLaunch" >
+37-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:17:13-62
+38            <intent-filter>
+38-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:20:13-23:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:21:17-69
+39-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:21:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:22:17-77
+41-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:22:27-74
+42            </intent-filter>
+43        </activity>
+44
+45        <provider
+46            android:name="androidx.core.content.FileProvider"
+46-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:28:13-62
+47            android:authorities="io.ionic.starter.fileprovider"
+47-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:29:13-64
+48            android:exported="false"
+48-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:30:13-37
+49            android:grantUriPermissions="true" >
+49-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:31:13-47
+50            <meta-data
+50-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:32:13-34:64
+51                android:name="android.support.FILE_PROVIDER_PATHS"
+51-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:33:17-67
+52                android:resource="@xml/file_paths" />
+52-->C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\app\src\main\AndroidManifest.xml:34:17-51
+53        </provider>
+54
+55        <meta-data
+55-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:36
+56            android:name="android.max_aspect"
+56-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-46
+57            android:value="2.16" />
+57-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-33
+58
+59        <activity
+59-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-28:63
+60            android:name="com.google.zxing.client.android.CaptureActivity"
+60-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-75
+61            android:clearTaskOnLaunch="true"
+61-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-45
+62            android:configChanges="orientation|keyboardHidden|screenSize"
+62-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-74
+63            android:exported="false"
+63-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+64            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+64-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-71
+65            android:windowSoftInputMode="stateAlwaysHidden" />
+65-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-60
+66        <activity
+66-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-31:37
+67            android:name="com.google.zxing.client.android.encode.EncodeActivity"
+67-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-81
+68            android:label="Share" />
+68-->[:capacitor-cordova-android-plugins] C:\Users\Hange\Documents\GitHub\backup\Frontend\Voting App\VoteVault\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-34
+69    </application>
+70
+71</manifest>

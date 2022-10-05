@@ -79,11 +79,9 @@ export class RegisterPage implements OnInit {
         this.router.navigate(['voter-dashboard']);
       } else {
         alert('Not yet voted!');
-        try {
-          await this.dataservice.vote(this.voter);
-        } finally {
-          this.router.navigate(['ballot']);
-        }
+        this.dataservice.voterId = this.idNum;
+        await this.dataservice.vote(this.voter);
+        this.router.navigate(['ballot']);
       }
     }
 
