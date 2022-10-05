@@ -170,12 +170,9 @@ let RegisterPage = class RegisterPage {
                 }
                 else {
                     alert('Not yet voted!');
-                    try {
-                        yield this.dataservice.vote(this.voter);
-                    }
-                    finally {
-                        this.router.navigate(['ballot']);
-                    }
+                    this.dataservice.voterId = this.idNum;
+                    yield this.dataservice.vote(this.voter);
+                    this.router.navigate(['ballot']);
                 }
             }
             this.name = '';
