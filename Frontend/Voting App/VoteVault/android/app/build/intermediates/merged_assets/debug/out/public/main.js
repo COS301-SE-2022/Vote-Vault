@@ -49,7 +49,7 @@ const routes = [
     },
     {
         path: 'admin-dashboard',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_admin-dashboard_admin-dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./admin-dashboard/admin-dashboard.module */ 73870)).then(m => m.AdminDashboardPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_contract_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_admin-dashboard_admin-dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./admin-dashboard/admin-dashboard.module */ 73870)).then(m => m.AdminDashboardPageModule)
     },
     {
         path: 'voter-dashboard',

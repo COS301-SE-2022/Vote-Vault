@@ -165,6 +165,7 @@ let VoterRegistrationPage = class VoterRegistrationPage {
                 }
             }
             else {
+                this.dataservice.voterId = this.idNum;
                 //alert('Already registered voter!');
                 alert('Redirecting');
                 this.router.navigate(['ballot']);

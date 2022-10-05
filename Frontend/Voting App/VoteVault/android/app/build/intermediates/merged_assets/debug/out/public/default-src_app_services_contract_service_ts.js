@@ -75,6 +75,19 @@ let ContractService = class ContractService {
             }
         });
     }
+    hanroeVote() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            const contract = new ethers__WEBPACK_IMPORTED_MODULE_5__.Contract("0x37278460037e0974B1094bAea1E04fB5e13a0BD3", this.contractABI, this.signer);
+            try {
+                console.log("voting");
+                const tx = yield contract.addVote("0101235074081", [0, 0, 0], { gasLimit: 250000 });
+                yield tx.wait();
+            }
+            catch (error) {
+                console.error(error);
+            }
+        });
+    }
 };
 ContractService.ctorParameters = () => [
     { type: _data_service__WEBPACK_IMPORTED_MODULE_1__.DataService }
