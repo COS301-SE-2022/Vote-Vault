@@ -152,4 +152,8 @@ export class RegisterPage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
     console.log('Loading dismissed!');
   }
+
+  back() {
+    this.router.navigate(["voter-dashboard"])
+  }
 }

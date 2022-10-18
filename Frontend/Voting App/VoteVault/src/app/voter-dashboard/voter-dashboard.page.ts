@@ -51,6 +51,6 @@ export class VoterDashboardPage implements OnInit {
   }
 
   back() : void {
-    this.location.back()
+    this.navigate("login")
   }
 }
