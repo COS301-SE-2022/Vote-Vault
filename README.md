@@ -26,56 +26,12 @@ Welcome to the Vote-Vault!
 [![Vercel](https://vercelbadge.vercel.app/api/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://vercel.com/ssdpressed/vote-vault)
 </div>
 
-# Demo Links
-Demo 1
-* [SSDpressed-Demo1](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
-* [SRS Documentation Demo1](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation)
+* [Demo Links](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Demo-Links)
 
-Demo 2
-* [SSDpressed-Demo2](https://drive.google.com/drive/folders/1wS9xnRXvj-LQQezgtjb8tp6dltM2jlMG)
-* [SRS Documentation Demo2](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
-* [Architectural Requirements Document](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Architectural-Requirements-Document)
+* [Useful Commands](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Useful-Commands)
 
-Demo 3
-* [User Manual](https://github.com/COS301-SE-2022/Vote-Vault/wiki/User-Manual)
-* [Technical Installation Manual](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Technical-Installation-Manual)
-* [Coding Standards/Quality Document](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Coding-Standards-Document)
-* [SRS Documentation Demo3](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Document-D3)
-
-# Commands
-* Useful commands:
-
-  ```
-  ionic serve
-  ionic cap run build android/ios
-  ionic g page //page name//
-  ionic g component //component name//
-  ```
-
-* For installing dependencies:
-
-  ```
-  npm install -g @angular/cli
-  npm install -g @angular/core
-  npm install -g @//packadge name//
-  ```
-
-* For issues relating to Jasmine
-
-  ```
-  npm install @types/jasmine
-  ```
-
-* To change the branch you are woking on in VSCode of Git Bash terminal:
-
-  ```
-  git checkout feature-API
-  git checkout feature-Mobile-App
-  git checkout feature-blockchain
-  git checkout feature-website
-  ```
-* [Video Demo] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
+* [Video Demo](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
  
-* [SRS Documentation] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
+* [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
  
-* [Member Profiles] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/Team-Profiles)
+* [Member Profiles](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Team-Profiles)
