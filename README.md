@@ -25,7 +25,7 @@
 
 
 * [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
-* 
+
 * [Video Demo](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
 
 * [PowerPoint Presentation](https://drive.google.com/drive/folders/1BwhZuLw0_U0Qt9-8kkDAKGlH_hq--0Ze?usp=sharing)
