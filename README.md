@@ -24,7 +24,7 @@
 </div>
 
 
-* [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects)
+* [Project Board](https://github.com/COS301-SE-2022/Vote-Vault/projects-classic)
 
 * [Video Demo](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
 
