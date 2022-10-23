@@ -74,78 +74,8 @@ Demo 3
   git checkout feature-blockchain
   git checkout feature-website
   ```
+* [Video Demo] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
  
- # Meet the Team
+* [SRS Documentation] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
  
-* ## Bevan Slabbert
-     ![bevon](https://user-images.githubusercontent.com/86471999/173820687-010608e4-82ef-4d63-8731-a6cff7710dc9.jpg)  
-     - **Bio:**
-         Third year Computer Science student at the University of Pretoria.
-     - **Info:**
-          - Has experience in Ionic/Angular PWA development.
-          - Has experience in using Firebase in conjunction with Ionic/Angular.
-          - Has experience in database management.
-     - **Skills:**
-          - Proficient in web development technologies such as Typescript, HTML and CSS.
-     - **Role:**
-          Team Leader
-     - **LinkedIn Profile:**
-          https://www.linkedin.com/in/bevan-slabbert-5ba17a152/
-* ## Hugo Esterhuyse
-     ![hugo](https://user-images.githubusercontent.com/86471999/173826556-28df51b7-d662-4524-a1a9-dad6a2030b01.jpg)
-     - **Bio:**
-         Third year Computer Science student at the University of Pretoria.
-     - **Info:**
-          - Experience in Angular development.
-          - Experience in database management.
-          - Experience in PWA development.
-     - **Skills:**
-          - Proficient in web development technologies such as Typescript, HTML, JavaScript, PHP and CSS.
-     - **Role:**
-          Business Analyst
-     - **LinkedIn Profile:**
-          https://www.linkedin.com/in/hugo-esterhuyse-00b475115/
-* ## Markus van Tubbergh
-     ![markus_pwerfection](https://user-images.githubusercontent.com/86471999/181428281-8ba73b96-e0d4-45d4-8491-a36326d0d95f.jpg)
-     - **Bio:**
-         - Third year student at University of Pretoria busy with my degree in Information and Knowledge Systems - Data Science
-     - **Info:**
-          - Experience in Angular development.
-          - Experience in database management.
-          - Experience in Flutter development.
-          - Experience in website development and management.
-     - **Skills:**
-          - Experienced in web development technologies such as HTML, CSS, JavaScript and PHP.
-     - **Role:**
-          API Engineer
-     - **LinkedIn Profile:**
-          https://www.linkedin.com/in/markus-van-tubbergh-63a635141/
-* ## Hanroe Geyser
-     ![hanroe](https://user-images.githubusercontent.com/86471999/173820704-a4e0b038-7438-40a6-b349-ae298755859f.jpg)
-     - **Bio:**
-         Third year BSc Computer Science student at the University of Pretoria.
-     - **Info:**
-         - Experience in Mobile Application development with Ionic Angular.
-         - Experience with front-end and back-end web development.
-         - Experience in database management as well as database creation.
-     - **Skills:**
-         - Proficient with technologies related to back-end and front-end web development such as HTML, CSS, JavaScript and PHP.
-         - Proficient in database management as well as the construction thereof.
-     - **Role:**
-          Web Developer
-     - **LinkedIn Profile:**
-          https://www.linkedin.com/in/hanroe-geyser-197b1721b
-* ## Dhashin Reddy
-     ![dhashin2](https://user-images.githubusercontent.com/86471999/173822394-27762c27-6033-48c7-a5c1-42b11c18234a.png)
-     - **Bio:**
-         Third year Computer Science student at the University of Pretoria
-     - **Info:**
-          - Experience in database management
-          - Experience with PWA development
-     - **Skills:**
-          - Proficient with basic front-end and back-end stack (HTML, CSS, JS, PHP, SQL)
-          - Experience with commercial API's 
-     - **Role:**
-          Web developer
-     - **LinkedIn Profile:**
-          https://www.linkedin.com/in/dhashin-reddy-03658423a/
+* [Member Profiles] (https://github.com/COS301-SE-2022/Vote-Vault/wiki/Team-Profiles)
