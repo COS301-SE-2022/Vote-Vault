@@ -26,12 +26,20 @@ Welcome to the Vote-Vault!
 [![Vercel](https://vercelbadge.vercel.app/api/COS301-SE-2022/Vote-Vault?style=for-the-badge)](https://vercel.com/ssdpressed/vote-vault)
 </div>
 
+
+
+
+* [Video Demo](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
+
+* [PowerPoint Presentation](https://drive.google.com/drive/folders/1BwhZuLw0_U0Qt9-8kkDAKGlH_hq--0Ze?usp=sharing)
+
+* [Member Profiles](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Team-Profiles)
+
 * [Demo Links](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Demo-Links)
 
 * [Useful Commands](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Useful-Commands)
 
-* [Video Demo](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
+* [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Document-D4)
  
-* [SRS Documentation](https://github.com/COS301-SE-2022/Vote-Vault/wiki/SRS-Documentation-D2)
- 
-* [Member Profiles](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Team-Profiles)
+* [Technical Installation Manuak](https://github.com/COS301-SE-2022/Vote-Vault/wiki/Technical-Installation-Manual) 
+
