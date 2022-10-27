@@ -90,6 +90,10 @@ export class VoterRegistrationPage implements OnInit {
     this.router.navigate(['admin-dashboard']);
   }
 
+  back() {
+    this.router.navigate(["admin-dashboard"])
+  }
+
   scanBarcode() {
     const options: BarcodeScannerOptions = {
       preferFrontCamera: false,
